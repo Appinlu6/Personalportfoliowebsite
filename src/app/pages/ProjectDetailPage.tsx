@@ -138,16 +138,11 @@ function BauhiniaMind() {
         </motion.div>
 
         <motion.div variants={fadeUp} className="mb-16">
-          <div className="mb-4 flex items-center gap-3">
-            <span className="rounded-full bg-white/70 px-3 py-1 text-xs text-[var(--bm-burgundy)] shadow-sm">
-              Featured Project
-            </span>
-          </div>
           <h1 className="mb-4 text-[var(--bm-red)]" style={{ fontSize: '3rem', lineHeight: '1.1' }}>
             Bauhinia-Mind
           </h1>
           <p className="mb-8 text-xl text-[var(--bm-slate)]">
-            A Bilingual GraphRAG-Based Empathic Medical Navigation and Emotional Companion
+            An Empathic, Memory-Enabled AI Health Companion for Mainland Chinese Students in Hong Kong
           </p>
           <div className="flex flex-wrap gap-8 text-sm">
             <div>
@@ -240,7 +235,7 @@ function BauhiniaMind() {
             </motion.div>
 
             <motion.div
-              className="mb-16 grid gap-8 md:grid-cols-[0.85fr_1.15fr]"
+              className="mb-16 grid gap-8"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.25 }}
@@ -285,27 +280,41 @@ function BauhiniaMind() {
             </motion.div>
           </CaseSection>
 
-          <CaseSection title="Design Process">
-            <p className="mb-6 leading-relaxed text-[var(--bm-slate)]">
+          <CaseSection title="Theory — Interactive Acculturation Model" number="05 — Theoretical Anchor">
+            <div className="grid items-start gap-10 md:grid-cols-2">
+              <div className="space-y-6">
+                <CopySlot label="IAM theoretical bridge · ~3 short paragraphs explaining how Berry's Interactive Acculturation Model anchors the design — the theory→system translation" />
+                <CopySlot label="Key constructs (integration / assimilation / separation / marginalization) mapped to product behaviour · 1 paragraph" />
+              </div>
+              <FigPlaceholder
+                id="Fig 05"
+                label="IAM spine diagram"
+                ratio="4:3"
+                caption="Fig 05 — IAM Theoretical Spine (placeholder)"
+              />
+            </div>
+          </CaseSection>
+
+          <CaseSection title="Design Process" number="06 — Design Direction">
+            <p className="mb-12 max-w-prose leading-relaxed text-[var(--bm-slate)]">
               The design process followed an iterative, user-centered approach involving stakeholder workshops,
               low-fidelity prototyping, and usability testing with target users. The platform architecture was
               informed by established digital health frameworks and mental health clinical guidelines.
             </p>
 
-            <div className="my-12 overflow-hidden rounded-[2rem] bg-white/55 p-3 shadow-[var(--bm-shadow)]">
-              <div className="aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-muted">
-                <img
-                  src="https://images.unsplash.com/photo-1627542557169-5ed71c66ed85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBtb2NrdXAlMjBtaW5pbWFsJTIwY2xlYW4lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzc5NTExODc4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Design mockups"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
-          </CaseSection>
+            <FigPlaceholder
+              id="Fig 06"
+              label="Two-arms design diagram"
+              ratio="16:9"
+              caption="Fig 06 — Design Two-Arms Architecture (placeholder)"
+              className="mb-12"
+            />
 
-          <CaseSection title="Key Features">
-            <div className="mb-12 space-y-6">
-              {features.map((feature) => (
+            <p className="mb-6 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+              Key Features · A / B / C
+            </p>
+            <div className="grid gap-6 md:grid-cols-3">
+              {features.map((feature, i) => (
                 <motion.div
                   key={feature.title}
                   className="rounded-[1.5rem] border-l-4 bg-white/48 p-6 shadow-[var(--bm-shadow)]"
@@ -315,34 +324,149 @@ function BauhiniaMind() {
                   viewport={{ once: true, amount: 0.25 }}
                   variants={fadeUp}
                 >
+                  <p className="mb-3 text-xl italic text-[var(--bm-red)]">
+                    {String.fromCharCode(65 + i)}
+                  </p>
                   <h4 className="mb-2">{feature.title}</h4>
-                  <p className="leading-relaxed text-[var(--bm-slate)]">{feature.body}</p>
+                  <p className="text-sm leading-relaxed text-[var(--bm-slate)]">{feature.body}</p>
                 </motion.div>
               ))}
             </div>
           </CaseSection>
 
-          <CaseSection title="Impact & Outcomes">
-            <p className="mb-6 leading-relaxed text-[var(--bm-slate)]">
+          <CaseSection title="System Architecture" number="07 — Orchestration">
+            <div className="grid items-start gap-10 md:grid-cols-[1.5fr_1fr]">
+              <FigPlaceholder
+                id="Fig 07"
+                label="GraphRAG orchestration diagram"
+                ratio="16:9"
+                caption="Fig 07 — System Orchestration (placeholder)"
+              />
+              <div className="space-y-4">
+                <CopySlot label="Annotation A · Neo4j structured-reasoning layer · 1 short paragraph" />
+                <CopySlot label="Annotation B · Supabase semantic vector layer · 1 short paragraph" />
+                <CopySlot label="Annotation C · Gemini LLM empathy controller · 1 short paragraph" />
+              </div>
+            </div>
+          </CaseSection>
+
+          <CaseSection title="Safety & Non-Clinical Boundaries" number="08 — Safety">
+            <div className="max-w-prose space-y-6">
+              <CopySlot label="Lead paragraph · how the system refuses clinical claims, redirects to humans, and logs escalations · ~2 short paragraphs" />
+              <div className="flex flex-wrap gap-2 text-xs">
+                <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)] shadow-sm">
+                  Non-clinical
+                </span>
+                <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)] shadow-sm">
+                  Crisis-aware
+                </span>
+                <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)] shadow-sm">
+                  Bilingual escalation
+                </span>
+                <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)] shadow-sm">
+                  Cultural broker
+                </span>
+              </div>
+            </div>
+          </CaseSection>
+
+          <CaseSection title="Impact & Outcomes" number="09 — Outcomes">
+            <p className="mb-12 max-w-prose leading-relaxed text-[var(--bm-slate)]">
               Preliminary pilot testing with 45 students over 4 weeks showed statistically significant
               improvements in self-reported anxiety and depression symptoms. The platform received a System
               Usability Scale score of 82.5, indicating excellent usability. The project received Grade A+
               for the MSc capstone and is currently under consideration for implementation at partner universities.
             </p>
 
-            <div className="my-12 overflow-hidden rounded-[2rem] bg-white/55 p-3 shadow-[var(--bm-shadow)]">
-              <div className="aspect-video overflow-hidden rounded-[1.5rem] bg-muted">
-                <img
-                  src="https://images.unsplash.com/photo-1526724038726-3007ffb8025f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxtZW50YWwlMjBoZWFsdGglMjBtaW5kZnVsbmVzcyUyMG1lZGl0YXRpb24lMjBjYWxtJTIwcGVyc29ufGVufDF8fHx8MTc3OTUxMTg3NHww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Impact visualization"
-                  className="h-full w-full object-cover"
+            {/* big stat blocks */}
+            <div className="mb-12 grid gap-6 md:grid-cols-3">
+              <div className="rounded-[1.5rem] bg-white/60 p-6 shadow-[var(--bm-shadow)]">
+                <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+                  Pilot sample
+                </p>
+                <p className="text-[var(--bm-red)]" style={{ fontSize: '3rem', lineHeight: '1.05' }}>
+                  45
+                </p>
+                <p className="mt-1 text-sm text-[var(--bm-slate)]">students · 4 weeks</p>
+              </div>
+              <div className="rounded-[1.5rem] bg-white/60 p-6 shadow-[var(--bm-shadow)]">
+                <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+                  SUS score
+                </p>
+                <p className="text-[var(--bm-red)]" style={{ fontSize: '3rem', lineHeight: '1.05' }}>
+                  82.5
+                </p>
+                <p className="mt-1 text-sm text-[var(--bm-slate)]">excellent usability</p>
+              </div>
+              <div className="rounded-[1.5rem] bg-white/60 p-6 shadow-[var(--bm-shadow)]">
+                <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+                  Capstone grade
+                </p>
+                <p className="text-[var(--bm-red)]" style={{ fontSize: '3rem', lineHeight: '1.05' }}>
+                  A+
+                </p>
+                <p className="mt-1 text-sm text-[var(--bm-slate)]">MScGAH · PolyU</p>
+              </div>
+            </div>
+
+            {/* 86.7 vs 80 comparison bar */}
+            <div className="rounded-[2rem] bg-white/55 p-8 shadow-[var(--bm-shadow)]">
+              <p className="mb-6 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+                [ Metric label · what 86.7% vs 80% measures · TBD ]
+              </p>
+              <div className="space-y-5">
+                <div>
+                  <div className="mb-2 flex items-baseline justify-between">
+                    <span className="text-sm text-foreground">Bauhinia-Mind</span>
+                    <span className="text-xl italic text-[var(--bm-red)]">86.7%</span>
+                  </div>
+                  <div className="h-3 overflow-hidden rounded-full bg-white/70">
+                    <div className="h-full rounded-full bg-[var(--bm-red)]" style={{ width: '86.7%' }} />
+                  </div>
+                </div>
+                <div>
+                  <div className="mb-2 flex items-baseline justify-between">
+                    <span className="text-sm text-[var(--bm-slate)]">Baseline</span>
+                    <span className="text-xl italic text-[var(--bm-slate)]">80%</span>
+                  </div>
+                  <div className="h-3 overflow-hidden rounded-full bg-white/70">
+                    <div className="h-full rounded-full bg-[var(--bm-slate)]/70" style={{ width: '80%' }} />
+                  </div>
+                </div>
+              </div>
+              <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+                Fig 09 — Bauhinia-Mind vs baseline (placeholder metric)
+              </figcaption>
+            </div>
+          </CaseSection>
+
+          <CaseSection title="User Journeys" number="10 — Journeys">
+            <div className="space-y-12">
+              {/* journey 1 — image left */}
+              <div className="grid items-center gap-8 md:grid-cols-[0.7fr_1fr]">
+                <FigPlaceholder
+                  id="Fig 10A"
+                  label="Journey UI · onboarding flow"
+                  ratio="9:16"
+                  caption="Fig 10A — Onboarding journey (placeholder)"
+                />
+                <CopySlot label="Journey A · onboarding narrative · what the newcomer sees in the first 60 seconds · 1–2 paragraphs" />
+              </div>
+              {/* journey 2 — image right */}
+              <div className="grid items-center gap-8 md:grid-cols-[1fr_0.7fr]">
+                <CopySlot label="Journey B · in-moment help narrative · the late-night symptom check flow · 1–2 paragraphs" />
+                <FigPlaceholder
+                  id="Fig 10B"
+                  label="Journey UI · symptom-check flow"
+                  ratio="9:16"
+                  caption="Fig 10B — Symptom-check journey (placeholder)"
                 />
               </div>
             </div>
           </CaseSection>
 
-          <CaseSection title="Reflections & Future Work">
-            <p className="mb-12 leading-relaxed text-[var(--bm-slate)]">
+          <CaseSection title="Reflections & Future Work" number="11 — Reflection">
+            <p className="max-w-prose leading-relaxed text-[var(--bm-slate)]">
               This project reinforced the importance of co-design with clinical stakeholders and the necessity
               of rigorous ethical frameworks when designing AI-driven health interventions. Future iterations
               will explore peer support features, integration with wearable devices for passive symptom monitoring,
@@ -365,18 +489,74 @@ function BauhiniaMind() {
   );
 }
 
-function CaseSection({ title, children }: { title: string; children: ReactNode }) {
+function CaseSection({
+  title,
+  number,
+  children,
+}: {
+  title: string;
+  number?: string;
+  children: ReactNode;
+}) {
   return (
     <motion.section
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeUp}
+      className="mb-16"
     >
-      <h2 className="mb-4 text-[var(--bm-wine)]" style={{ fontSize: '1.5rem' }}>
+      {number && (
+        <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+          {number}
+        </p>
+      )}
+      <h2 className="mb-6 text-[var(--bm-wine)]" style={{ fontSize: '1.5rem' }}>
         {title}
       </h2>
       {children}
     </motion.section>
+  );
+}
+
+function FigPlaceholder({
+  id,
+  label,
+  ratio,
+  caption,
+  className = '',
+}: {
+  id: string;
+  label: string;
+  ratio: string;
+  caption: string;
+  className?: string;
+}) {
+  return (
+    <figure className={className}>
+      <div
+        className="relative overflow-hidden rounded-[2rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/45 shadow-[var(--bm-shadow)]"
+        style={{ aspectRatio: ratio.replace(':', ' / ') }}
+      >
+        <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+          <p className="text-3xl italic text-[rgba(201,43,46,0.34)]">
+            [ {id} · {label} · {ratio} ]
+          </p>
+        </div>
+      </div>
+      <figcaption className="mt-3 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+function CopySlot({ label }: { label: string }) {
+  return (
+    <div className="rounded-[1.5rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/30 p-6">
+      <p className="text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+        [ Copy slot · {label} ]
+      </p>
+    </div>
   );
 }

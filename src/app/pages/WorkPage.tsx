@@ -5,46 +5,43 @@ const projects = [
   {
     slug: 'bauhinia-mind',
     title: 'Bauhinia-Mind',
-    year: '2024–2025',
+    year: '2026 Jan – Apr',
     description:
-      'A digital mental health platform leveraging AI-driven personalization to deliver evidence-based psychological interventions for university students in Hong Kong.',
+      'An Empathic, Memory-Enabled AI Health Companion for Mainland Chinese Students in Hong Kong',
     tags: ['UX Research', 'Service Design', 'AI/ML', 'Digital Health'],
     featured: true,
     image:
       'https://images.unsplash.com/photo-1526779259212-939e64788e3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxtZW50YWwlMjBoZWFsdGglMjBtaW5kZnVsbmVzcyUyMG1lZGl0YXRpb24lMjBjYWxtJTIwcGVyc29ufGVufDF8fHx8MTc3OTUxMTg3NHww&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
-    slug: 'edu-access',
-    title: 'EduAccess',
-    year: '2023–2024',
+    slug: 'tencent-micision-smart-hospital',
+    title: 'Tencent Micision — Smart Hospital',
+    year: '2018 – 2021',
     description:
-      'Redesigning a university e-learning platform to meet WCAG 2.1 AA standards, with a focus on cognitive accessibility for students with learning differences.',
-    tags: ['Accessibility', 'UX Audit', 'Inclusive Design'],
+      'Led the 0-to-1 design of a medical big data visualization platform, piloted at a Shenzhen hospital, empowering administrators with data-driven insights to optimize hospital operations and management.',
+    tags: ['0-1 Product Design', 'Data Visualization', 'Healthcare UX', 'Design Leadership'],
     featured: false,
-    image:
-      'https://images.unsplash.com/photo-1620067285935-ead87c731296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhY2Nlc3NpYmlsaXR5JTIwZGlnaXRhbCUyMGxlYXJuaW5nJTIwVVglMjBkZXNpZ24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzc5NTEyOTA0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/smart-hospital.png',
   },
   {
-    slug: 'wayfinder-hk',
-    title: 'Wayfinder HK',
-    year: '2023',
+    slug: 'tencent-medical-cloud-o2o',
+    title: 'Healthcare Service Design',
+    year: '2017 – 2018',
     description:
-      "A contextual wayfinding system for low-vision users navigating Hong Kong's MTR network, combining haptic feedback, audio cues, and simplified visual hierarchy.",
-    tags: ['HCI Research', 'Assistive Tech', 'Prototyping'],
+      'Spearheaded an O2O service design solution for Tencent Medical Cloud to optimize the patient experience. By mapping complex medical journeys and integrating digital-physical touchpoints, the project successfully reduced average patient wait times by 4.5 hours.',
+    tags: ['Patient Experience', 'O2O Service Design', 'Journey Mapping', 'Field Research'],
     featured: false,
-    image:
-      'https://images.unsplash.com/photo-1602479185169-21606c8ce362?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1cmJhbiUyMG5hdmlnYXRpb24lMjB3YXlmaW5kaW5nJTIwY2l0eSUyMEhvbmclMjBLb25nfGVufDF8fHx8MTc3OTUxMjkwNXww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/healthcare-service-design.png',
   },
   {
-    slug: 'care-connect',
-    title: 'CareConnect',
-    year: '2022–2023',
+    slug: 'tencent-micision-smart-marathon',
+    title: 'Tencent Micision — Smart Marathon',
+    year: '2019 Jan – Apr',
     description:
-      'A service design project mapping and redesigning the support journey for informal caregivers in Hong Kong, surfacing systemic gaps through participatory co-design workshops.',
-    tags: ['Service Design', 'Co-design', 'Journey Mapping'],
+      "Spearheaded the 0-to-1 product management and design of Tencent's Smart Marathon Big Data Platform. Leveraging Unreal Engine for 3D city mapping and real-time biometric tracking, the system empowered cross-department command centers with instant emergency dispatch capabilities, successfully safeguarding the Yangzhou Marathon.",
+    tags: ['0-to-1 Product Management', 'Complex Data Visualization', '3D Technical Design (UE)', 'Requirement Translation'],
     featured: false,
-    image:
-      'https://images.unsplash.com/photo-1760992003987-efc5259bcfbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJlZ2l2ZXIlMjBzdXBwb3J0JTIwY29tbXVuaXR5JTIwc2VydmljZSUyMGRlc2lnbiUyMHBlb3BsZXxlbnwxfHx8fDE3Nzk1MTI5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/smart-Marathon.png',
   },
 ];
 
