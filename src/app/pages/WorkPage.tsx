@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -47,6 +48,21 @@ const projects = [
   },
 ];
 
+const cardStagger = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.04,
+    },
+  },
+};
+
+const cardFadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export function WorkPage() {
   const featured = projects.find((p) => p.featured)!;
   const rest = projects.filter((p) => !p.featured);
@@ -59,45 +75,58 @@ export function WorkPage() {
         </h1>
         <p className="text-muted-foreground mb-16 max-w-2xl">Product and interaction design across healthcare, AI, and consumer tech.</p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <motion.div
+          className="grid md:grid-cols-2 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.18 }}
+          variants={cardStagger}
+        >
           {projects.map((project) => (
-            <Link key={project.slug} to={`/work/${project.slug}`} className="block group cursor-pointer">
-              <div className="bg-card rounded-xl overflow-hidden border border-border hover:border-[var(--warm-accent)] transition-all duration-300 h-full flex flex-col">
-                <div className="aspect-[16/9] bg-muted overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={`${project.title} project visual`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    {project.featured && (
-                      <span
-                        className="text-xs px-3 py-1 rounded-full"
-                        style={{ backgroundColor: '#F5E6DC', color: 'var(--warm-accent)' }}
-                      >
-                        Latest
-                      </span>
-                    )}
-                    <span className="text-xs text-muted-foreground">{project.year}</span>
+            <motion.div
+              key={project.slug}
+              variants={cardFadeUp}
+              transition={{ duration: 0.42, ease: 'easeOut' }}
+              whileHover={{ y: -6 }}
+            >
+              <Link to={`/work/${project.slug}`} className="block group cursor-pointer h-full">
+                <div className="bg-card rounded-xl overflow-hidden border border-border hover:border-[var(--warm-accent)] transition-all duration-300 h-full flex flex-col hover:shadow-[0_18px_45px_rgba(210,116,92,0.16)]">
+                  <div className="aspect-[16/9] bg-muted overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={`${project.title} project visual`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <h3 className="mb-2" style={{ fontSize: '1.25rem' }}>
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4 flex-1">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="text-xs px-3 py-1 rounded-full bg-muted text-muted-foreground">
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      {project.featured && (
+                        <span
+                          className="text-xs px-3 py-1 rounded-full"
+                          style={{ backgroundColor: '#F5E6DC', color: 'var(--warm-accent)' }}
+                        >
+                          Latest
+                        </span>
+                      )}
+                      <span className="text-xs text-muted-foreground">{project.year}</span>
+                    </div>
+                    <h3 className="mb-2" style={{ fontSize: '1.25rem' }}>
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 flex-1">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="text-xs px-3 py-1 rounded-full bg-muted text-muted-foreground">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
