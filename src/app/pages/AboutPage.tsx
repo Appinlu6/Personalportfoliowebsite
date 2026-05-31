@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { PageContainer } from '../components/PageContainer';
 
 const skills = [
   'User Research',
@@ -38,11 +39,11 @@ const skillStagger = {
 
 export function AboutPage() {
   return (
-    <section className="py-32 min-h-screen">
-      <div className="max-w-4xl mx-auto px-6 pt-8">
+    <section className="page-shell py-32">
+      <PageContainer className="pt-8">
         <motion.h1
           className="mb-20 font-semibold font-['Work_Sans']"
-          style={{ fontSize: '3.5rem' }}
+          style={{ fontSize: '32px' }}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
@@ -180,7 +181,7 @@ export function AboutPage() {
             </motion.div>
           </div>
         </motion.div>
-      </div>
+      </PageContainer>
     </section>
   );
 }

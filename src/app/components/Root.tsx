@@ -20,8 +20,8 @@ export function Root() {
       {/* Contact footer */}
       <div className="border-t border-border">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          <div className="flex items-start justify-between">
-            <div className="flex items-start gap-[84px] -ml-6">
+          <div className="flex items-start justify-between gap-20">
+            <div className="grid flex-1 grid-cols-3 gap-12">
               <div className="flex flex-col gap-1 whitespace-nowrap">
                 <span className="font-semibold text-foreground tracking-wide uppercase font-['Work_Sans']" style={{ fontSize: '18px' }}>Email</span>
                 <div className="flex items-center gap-2 text-muted-foreground" style={{ fontSize: '16px' }}>
@@ -44,7 +44,7 @@ export function Root() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col items-end gap-1 text-muted-foreground" style={{ fontSize: '16px' }}>
+            <div className="flex flex-col items-end gap-1 text-muted-foreground flex-shrink-0" style={{ fontSize: '16px' }}>
               <span>© 2026 Lu Zhengping.</span>
               <span>Designed with care.</span>
             </div>

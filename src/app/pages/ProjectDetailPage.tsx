@@ -24,10 +24,28 @@ const stagger = {
 
 const metadata = [
   { label: 'Type', value: 'MScGAH Capstone Project · Grade A+' },
-  { label: 'Role', value: 'Sole Designer & Developer (UX, GraphRAG, Neo4j, Frontend)' },
   { label: 'Duration', value: 'Jan 2026 – Apr 2026' },
+  { label: 'Role', value: 'Sole Designer & Developer (UX, GraphRAG, Neo4j, Frontend)' },
   { label: 'Stack', value: 'Figma · React · Supabase pgvector · Neo4j · Gemini LLM' },
   { label: 'Methods', value: 'Double Diamond · Research-through-Design · IAM' },
+];
+
+const coreProblems = [
+  {
+    title: 'Information Island',
+    description:
+      "Fragmented medical infrastructure and unfamiliar GP-first triage create high cognitive load when students need care.",
+  },
+  {
+    title: 'Cultural Island',
+    description:
+      'Cross-border healthcare norms and the "Good News Only" communication loop block culturally grounded support.',
+  },
+  {
+    title: 'Emotional Island',
+    description:
+      'Acculturation stress and physical vulnerability compound into subjective isolation when illness is handled alone.',
+  },
 ];
 
 const researchWorkflow = [
@@ -122,7 +140,7 @@ function BauhiniaMind() {
       <div className="pointer-events-none absolute right-[-7rem] top-[11rem] z-0 hidden h-64 w-80 rounded-full bg-[#F1B996]/55 md:block" />
 
       <motion.div
-        className="relative z-10 mx-auto max-w-4xl px-6"
+        className="relative z-10 page-container"
         initial="hidden"
         animate="visible"
         variants={stagger}
@@ -144,68 +162,252 @@ function BauhiniaMind() {
           <p className="mb-8 text-xl text-[var(--bm-slate)]">
             An Empathic, Memory-Enabled AI Health Companion for Mainland Chinese Students in Hong Kong
           </p>
-          <div className="flex flex-wrap gap-8 text-sm">
-            <div>
-              <p className="mb-1 text-[var(--bm-slate)]">Role</p>
-              <p>Lead UX Researcher & Designer</p>
-            </div>
-            <div>
-              <p className="mb-1 text-[var(--bm-slate)]">Timeline</p>
-              <p>Jan 2026 – Apr 2026</p>
-            </div>
-            <div>
-              <p className="mb-1 text-[var(--bm-slate)]">Recognition</p>
-              <p>Capstone Grade: A+</p>
-            </div>
-          </div>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="mb-16 overflow-hidden rounded-[2rem] bg-white/55 p-3 shadow-[var(--bm-shadow)]">
-          <div className="aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-muted">
-            <img
-              src="https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZW50YWwlMjBoZWFsdGglMjBtaW5kZnVsbmVzcyUyMG1lZGl0YXRpb24lMjBjYWxtJTIwcGVyc29ufGVufDF8fHx8MTc3OTUxMTg3NHww&ixlib=rb-4.1.0&q=80&w=1080"
-              alt="Project overview"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </motion.div>
-
-        <div className="prose max-w-none">
-          <CaseSection title="Introduction">
-            <div className="not-prose mb-16 rounded-[2rem] border border-white/65 bg-white/68 p-8 shadow-[var(--bm-shadow)] md:p-10">
-              <div className="max-w-4xl">
-                <p className="text-base leading-relaxed text-foreground" style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}>
-                  Bauhinia-Mind is an empathic, memory-enabled AI health companion designed for Mainland Chinese students facing cross-cultural adaptation stress in Hong Kong. By combining a hybrid GraphRAG orchestration layer (Neo4j structured reasoning + Supabase semantic vector search) with a tailored Know–Feel–Act empathy framework, the platform operationalizes abstract humanities theories into a computational system. Operating strictly within non-clinical boundaries, it acts as a supportive cultural broker, transforming fragmented medical infrastructure data into stable, traceable, and actionable navigation guidance.
-                </p>
+        <motion.div
+          variants={fadeUp}
+          className="not-prose mb-16 rounded-[2rem] border border-white/65 bg-white/68 p-8 shadow-[var(--bm-shadow)] md:p-10"
+        >
+          <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-10">
+            <div className="flex w-full flex-col md:w-[52%] md:flex-shrink-0">
+              <div className="flex aspect-[16/9] flex-col items-center justify-center gap-3 overflow-hidden rounded-[1.25rem] border border-dashed border-[var(--bm-slate)]/25 bg-white/80">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M8 5.5v13l11-6.5-11-6.5Z" fill="var(--bm-red)" />
+                  </svg>
+                </div>
+                <p className="text-sm text-[var(--bm-slate)]">Video placeholder</p>
               </div>
 
-              <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+              <div className="mt-8 grid flex-1 grid-cols-2 content-start gap-x-10 gap-y-5">
                 {metadata.map(({ label, value }) => (
                   <div key={label}>
-                    <p className="mb-1 text-xs uppercase tracking-widest text-[var(--bm-slate)]" style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}>
+                    <p
+                      className="mb-0.5 text-[14px] uppercase tracking-widest text-black"
+                      style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                    >
                       {label}
                     </p>
-                    <p className="text-sm leading-relaxed text-foreground" style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}>
+                    <p
+                      className="text-[11px] leading-snug text-foreground"
+                      style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                    >
                       {value}
                     </p>
                   </div>
                 ))}
                 <div>
-                  <p className="mb-1 text-xs uppercase tracking-widest text-[var(--bm-slate)]" style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}>
+                  <p
+                    className="mb-0.5 text-[14px] uppercase tracking-widest text-black"
+                    style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                  >
                     Links
                   </p>
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-[var(--bm-burgundy)]">
-                    <a href="#" className="transition-opacity hover:opacity-70">Live demo</a>
+                  <div className="flex flex-wrap gap-x-2 gap-y-0.5 text-[11px] text-[var(--bm-burgundy)]">
+                    <a href="#" className="transition-opacity hover:opacity-70">
+                      Final report
+                    </a>
                     <span className="text-[var(--bm-slate)]">·</span>
-                    <a href="#" className="transition-opacity hover:opacity-70">Final report</a>
-                    <span className="text-[var(--bm-slate)]">·</span>
-                    <a href="#" className="transition-opacity hover:opacity-70">Usability findings</a>
+                    <a href="#" className="transition-opacity hover:opacity-70">
+                      Usability findings
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-          </CaseSection>
 
+            <div className="flex min-w-0 flex-1 flex-col md:pt-0">
+              <h2
+                className="mb-3 font-semibold text-[var(--bm-red)] font-['Work_Sans']"
+                style={{ fontSize: '1.125rem' }}
+              >
+                Abstract
+              </h2>
+              <div
+                className="space-y-4 text-[14px] leading-[1.8] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                <p>
+                  Bauhinia-Mind is an empathic, memory-enabled AI health companion for Mainland Chinese students
+                  navigating cross-cultural adaptation stress in Hong Kong.
+                </p>
+                <p>
+                  The project reframes acculturation pressure through the Interactive Acculturation Model (IAM), turning
+                  companionship from an abstract feeling into a designable, measurable variable.
+                </p>
+                <p>
+                  A hybrid GraphRAG layer combines Neo4j structured reasoning with Supabase semantic search,
+                  operationalizing humanities theory into a computational Know–Feel–Act empathy framework.
+                </p>
+                <p>
+                  Operating within non-clinical boundaries, the platform acts as a supportive cultural broker—
+                  transforming fragmented medical infrastructure data into stable, traceable, and actionable navigation
+                  guidance for students who often handle illness alone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-stretch md:gap-8">
+          <motion.div
+            variants={fadeUp}
+            className="not-prose flex-1 rounded-[2rem] border border-white/65 bg-white/68 p-8 shadow-[var(--bm-shadow)] md:p-10"
+          >
+            <h2
+              className="mb-6 font-semibold text-[var(--bm-red)] font-['Work_Sans']"
+              style={{ fontSize: '1.125rem' }}
+            >
+              Background / Brief intro
+            </h2>
+
+            <div className="space-y-5">
+              <div>
+                <h3
+                  className="mb-2 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Target problem
+                </h3>
+                <p
+                  className="text-[14px] leading-[1.8] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Mainland Chinese students in Hong Kong face a systemic gap where acculturation stress meets
+                  healthcare literacy. Through qualitative profiling of 25 students, the research revealed invisible
+                  behavioral loops—socio-technical friction with Hong Kong&apos;s GP-first triage, and a &ldquo;Good News
+                  Only&rdquo; communication norm that blocks peer and family support—turning transient physical illness
+                  into profound subjective isolation.
+                </p>
+
+                <div className="mt-4 flex flex-col gap-3">
+                  {coreProblems.map((problem) => (
+                    <div
+                      key={problem.title}
+                      className="rounded-xl border border-[var(--bm-orange)]/20 bg-[#FBE5DE]/55 px-4 py-3 shadow-sm"
+                    >
+                      <p
+                        className="mb-1 text-[13px] font-semibold text-[var(--bm-burgundy)]"
+                        style={{ fontFamily: "'Work Sans', sans-serif" }}
+                      >
+                        {problem.title}
+                      </p>
+                      <p
+                        className="text-[12px] leading-relaxed text-[var(--bm-slate)]"
+                        style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                      >
+                        {problem.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3
+                  className="mb-2 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  What this project aims
+                </h3>
+                <p
+                  className="text-[14px] leading-[1.8] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Bauhinia-Mind aims to close this gap by translating acculturation pressure into a designable system
+                  imperative: immediate solution closure through automated Action Cards, cross-border medication
+                  translation, and traceable medical navigation—while operating as a supportive cultural broker within
+                  strict non-clinical boundaries.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            className="not-prose flex-1 rounded-[2rem] border border-white/65 bg-white/68 p-8 shadow-[var(--bm-shadow)] md:p-10"
+          >
+            <h2
+              className="mb-3 font-semibold text-[var(--bm-red)] font-['Work_Sans']"
+              style={{ fontSize: '1.125rem' }}
+            >
+              Related work
+            </h2>
+            <p
+              className="mb-5 text-[13px] leading-relaxed text-[var(--bm-slate)]"
+              style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+            >
+              Theoretical and empirical foundations that anchor the design—from acculturation psychology to
+              human-centered AI in cross-cultural health contexts.
+            </p>
+
+            <div className="space-y-5">
+              <div className="border-t border-[rgba(122,16,35,0.12)] pt-5">
+                <p
+                  className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Reference
+                </p>
+                <p
+                  className="mb-3 text-[13px] leading-relaxed text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Berry, J. W. (1997). Immigration, acculturation, and adaptation.{' '}
+                  <em>Applied Psychology: An International Review</em>, 46(1), 5–34.
+                </p>
+                <p
+                  className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Context description
+                </p>
+                <p
+                  className="text-[13px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  The Interactive Acculturation Model (IAM) frames how newcomers negotiate integration,
+                  assimilation, separation, or marginalization. Bauhinia-Mind maps these constructs to product
+                  behaviour—translating abstract acculturation dynamics into measurable companionship variables and
+                  culturally-sensitive interaction patterns.
+                </p>
+              </div>
+
+              <div className="border-t border-[rgba(122,16,35,0.12)] pt-5">
+                <p
+                  className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Reference
+                </p>
+                <p
+                  className="mb-3 text-[13px] leading-relaxed text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Bourque F., &amp; Biron, C. (2015). Contextual and cultural factors in mental health help-seeking
+                  among immigrants. <em>International Journal of Culture and Mental Health</em>, 8(4), 365–378.
+                </p>
+                <p
+                  className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Context description
+                </p>
+                <p
+                  className="text-[13px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Prior work shows that stigma, language barriers, and unfamiliar care pathways suppress help-seeking
+                  among mobile student populations. This project extends that literature by pairing ethnographic
+                  insight with a GraphRAG architecture that makes navigation guidance explicit, traceable, and
+                  culturally brokered rather than generic.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="prose max-w-none">
           <CaseSection title="Research & Discovery">
             <p className="mb-12 max-w-3xl leading-relaxed text-[var(--bm-slate)]">
               Investigating the systemic gap where acculturation stress meets healthcare literacy. Through deep qualitative
