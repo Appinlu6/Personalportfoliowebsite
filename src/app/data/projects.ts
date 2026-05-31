@@ -50,4 +50,26 @@ export const projects: Project[] = [
     featured: false,
     image: '/smart-Marathon.png',
   },
+  {
+    slug: 'lark-global-marketing-website',
+    title: 'Lark Global Marketing Website',
+    year: '2022 – 2023',
+    description:
+      'Responsible for the website design of Meego, the project management tool within Lark software, and the design of the Customer Stories section on the global marketing website. Also responsible for creative design, marketing solutions, and new media art support.',
+    tags: ['Web Design', 'Interface Design', 'Marketing Process Optimization', 'Front-end Implementation'],
+    featured: false,
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+  },
+  {
+    slug: 'before-evening-vr',
+    title: 'BEFORE EVENING — An AI-Driven VR Narrative Experience Game',
+    year: '2026 Jan – Apr',
+    description:
+      'Before Evening is a VR narrative experience built on a single hypothesis: that the future of interactive storytelling lies in characters who truly listen. Rather than choosing from preset dialogue options, players speak naturally to photorealistic MetaHuman NPCs, each with their own memories, personalities, and understanding of the story. The result is an experience where every conversation is unique, and every playthrough reveals the story differently.',
+    tags: ['UE5 Engine', 'VR Development', 'AI-Driven Dialogue', 'MCP Development'],
+    featured: false,
+    image:
+      'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+  },
 ];

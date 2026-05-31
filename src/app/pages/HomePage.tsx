@@ -55,8 +55,7 @@ export function HomePage() {
               transition={{ duration: 0.42, ease: 'easeOut' }}
             >
               <p className="text-[15px]">
-                I'm LU Zhengping (Arvin) — a UX / HCI designer and researcher working at the intersection of AI,
-                design, and human well-being.
+                A UX / HCI designer and researcher working at the intersection of AI, design, and human well-being.
               </p>
               <p className="font-[Avenir] text-[15px]">
                 After 6 years designing UX at Tencent and ByteDance, I'm now an MSc candidate in Generative AI and
