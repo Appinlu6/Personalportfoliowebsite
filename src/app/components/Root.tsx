@@ -1,23 +1,52 @@
 import { Outlet, useLocation } from 'react-router';
 import { useEffect } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Mail, Phone, Linkedin } from 'lucide-react';
+import { IntroProvider, useIntro } from '../context/IntroContext';
+import { introRevealTransition } from '../lib/motion';
+import { CinematicIntro } from './CinematicIntro';
 import { Navigation } from './Navigation';
 
-export function Root() {
+function RootLayout() {
   const { pathname } = useLocation();
+  const { phase, isHome } = useIntro();
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  useEffect(() => {
+    const shouldLock = isHome && phase === 'playing';
+    document.body.style.overflow = shouldLock ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isHome, phase]);
+
+  const concealDuringIntro = isHome && phase === 'playing';
+  const animateNavReveal = isHome && phase === 'exiting';
+
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      <motion.div
+        key={animateNavReveal ? 'nav-reveal' : 'nav-idle'}
+        initial={animateNavReveal ? { opacity: 0, y: 16 } : false}
+        animate={concealDuringIntro ? { opacity: 0, y: 16 } : { opacity: 1, y: 0 }}
+        transition={
+          animateNavReveal
+            ? introRevealTransition(2, !!reducedMotion)
+            : { duration: 0 }
+        }
+        aria-hidden={concealDuringIntro}
+      >
+        <Navigation />
+      </motion.div>
+
       <main className="flex-1">
         <Outlet />
       </main>
 
-      {/* Contact footer */}
       <div className="border-t border-border">
         <div className="page-container py-16">
           <div className="flex flex-wrap items-start justify-between gap-x-16 gap-y-8 lg:gap-x-24">
@@ -51,6 +80,16 @@ export function Root() {
           </div>
         </div>
       </div>
+
+      <CinematicIntro />
     </div>
+  );
+}
+
+export function Root() {
+  return (
+    <IntroProvider>
+      <RootLayout />
+    </IntroProvider>
   );
 }
