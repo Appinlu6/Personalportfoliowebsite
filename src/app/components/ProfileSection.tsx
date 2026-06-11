@@ -70,11 +70,27 @@ function BlockSubtitle({ children }: { children: ReactNode }) {
   );
 }
 
-function BlockBody({ children }: { children: ReactNode }) {
+function BlockBody({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
-    <p className="font-['Work_Sans'] font-normal" style={{ color: SECONDARY, fontSize: '12px', lineHeight: 1.5 }}>
+    <p className={`font-['Work_Sans'] font-normal text-sm text-muted-foreground leading-relaxed ${className}`.trim()}>
       {children}
     </p>
+  );
+}
+
+function BlockMeta({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return (
+    <p className={`font-['Work_Sans'] font-normal text-sm text-muted-foreground leading-relaxed ${className}`.trim()}>
+      {children}
+    </p>
+  );
+}
+
+function BlockList({ children }: { children: ReactNode }) {
+  return (
+    <ul className="space-y-1 font-['Work_Sans'] font-normal text-sm text-muted-foreground leading-relaxed">
+      {children}
+    </ul>
   );
 }
 
@@ -208,24 +224,19 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
                 Contributed to healthcare platforms serving hospitals, public-health agencies, and
                 government departments across China.
               </BlockBody>
-              <p
-                className="font-['Work_Sans'] font-normal"
-                style={{ color: SECONDARY, fontSize: '12px', lineHeight: 1.5, marginTop: '8px', marginBottom: '6px' }}
-              >
-                Work recognized through:
-              </p>
-              <ul className="space-y-1 font-['Work_Sans'] font-normal" style={{ color: SECONDARY, fontSize: '12px', lineHeight: 1.45 }}>
+              <BlockMeta className="mt-2 mb-1.5">Work recognized through:</BlockMeta>
+              <BlockList>
                 {[
                   '2 Business Breakthrough Awards',
                   '2 Innovative Product Awards',
                   '1 Medical Anti-Epidemic Contribution Award',
                 ].map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span style={{ color: PRIMARY }}>·</span>
+                    <span className="text-foreground">·</span>
                     <span>{item}</span>
                   </li>
                 ))}
-              </ul>
+              </BlockList>
             </ProfileBlock>
             <ProfileBlock>
               <BlockTitle>Research Focus</BlockTitle>
@@ -233,20 +244,15 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
                 Exploring how human-centered design can transform AI from a tool into a meaningful
                 companion.
               </BlockBody>
-              <p
-                className="font-['Work_Sans'] font-normal"
-                style={{ color: SECONDARY, fontSize: '12px', lineHeight: 1.5, marginTop: '8px', marginBottom: '6px' }}
-              >
-                Current interests include:
-              </p>
-              <ul className="space-y-1 font-['Work_Sans'] font-normal" style={{ color: SECONDARY, fontSize: '12px', lineHeight: 1.45 }}>
+              <BlockMeta className="mt-2 mb-1.5">Current interests include:</BlockMeta>
+              <BlockList>
                 {interests.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span style={{ color: PRIMARY }}>·</span>
+                    <span className="text-foreground">·</span>
                     <span>{item}</span>
                   </li>
                 ))}
-              </ul>
+              </BlockList>
             </ProfileBlock>
           </ProfileRow>
         </motion.div>
