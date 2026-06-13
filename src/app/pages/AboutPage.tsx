@@ -11,21 +11,21 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-function LogoPlaceholder() {
+function LogoPlaceholder({ className = '' }: { className?: string }) {
   return (
     <div
-      className="h-[60px] w-[60px] flex-shrink-0 rounded-xl bg-white border border-border"
+      className={`h-[60px] w-[60px] flex-shrink-0 rounded-xl bg-white border border-border ${className}`.trim()}
       aria-hidden
     />
   );
 }
 
-function CompanyLogo({ src, alt }: { src: string; alt: string }) {
+function CompanyLogo({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
   return (
     <img
       src={src}
       alt={alt}
-      className="h-[60px] w-[60px] flex-shrink-0 rounded-xl object-cover"
+      className={`h-[60px] w-[60px] flex-shrink-0 rounded-xl object-cover ${className}`.trim()}
     />
   );
 }
@@ -41,24 +41,25 @@ function ResumeEntry({
   logoAlt?: string;
   children: ReactNode;
 }) {
+  const logoOrder = 'order-1 sm:order-none';
   return (
     <motion.div
-      className="grid grid-cols-[10rem_60px_1fr] items-start gap-x-6"
+      className="grid grid-cols-[60px_1fr] items-start gap-x-4 gap-y-3 sm:grid-cols-[10rem_60px_1fr] sm:gap-x-6 sm:gap-y-0"
       variants={fadeUp}
       transition={{ duration: 0.42, ease: 'easeOut' }}
     >
       <span
-        className="block pt-0.5 text-right text-base text-muted-foreground"
+        className="order-2 self-center text-sm text-muted-foreground sm:order-none sm:self-start sm:pt-0.5 sm:text-right sm:text-base"
         style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
       >
         {date}
       </span>
       {logoSrc ? (
-        <CompanyLogo src={logoSrc} alt={logoAlt ?? ''} />
+        <CompanyLogo src={logoSrc} alt={logoAlt ?? ''} className={logoOrder} />
       ) : (
-        <LogoPlaceholder />
+        <LogoPlaceholder className={logoOrder} />
       )}
-      <div>{children}</div>
+      <div className="order-3 col-span-2 sm:order-none sm:col-span-1">{children}</div>
     </motion.div>
   );
 }
@@ -96,10 +97,10 @@ const skillStagger = {
 
 export function AboutPage() {
   return (
-    <section className="page-shell py-32">
-      <PageContainer className="pt-8">
+    <section className="page-shell pt-28 pb-20 md:py-32">
+      <PageContainer className="pt-4 md:pt-8">
         <motion.h1
-          className="mb-20 font-semibold font-['Work_Sans']"
+          className="mb-12 font-semibold font-['Work_Sans'] md:mb-20"
           style={{ fontSize: '32px' }}
           initial="hidden"
           animate="visible"
@@ -111,16 +112,16 @@ export function AboutPage() {
 
         {/* Work Experience */}
         <motion.div
-          className="flex gap-16 mb-20 pb-20 border-b border-border"
+          className="flex flex-col gap-6 mb-12 pb-12 border-b border-border md:flex-row md:gap-16 md:mb-20 md:pb-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.18 }}
           variants={stagger}
         >
-          <motion.div className="w-48 flex-shrink-0" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
+          <motion.div className="w-full flex-shrink-0 md:w-48" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
             <h2 className="font-semibold font-['Work_Sans']" style={{ fontSize: '28px' }}>Work Experience</h2>
           </motion.div>
-          <div className="flex-1 space-y-10">
+          <div className="flex-1 space-y-8 md:space-y-10">
             <ResumeEntry date="2022 – 2023" logoSrc={bytedanceLogo} logoAlt="ByteDance">
               <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">ByteDance (Lark / Feishu)</p>
               <p className="text-base text-muted-foreground italic mb-2">Creative Designer, Global Marketing</p>
@@ -151,16 +152,16 @@ export function AboutPage() {
 
         {/* Education */}
         <motion.div
-          className="flex gap-16 mb-20 pb-20 border-b border-border"
+          className="flex flex-col gap-6 mb-12 pb-12 border-b border-border md:flex-row md:gap-16 md:mb-20 md:pb-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.18 }}
           variants={stagger}
         >
-          <motion.div className="w-48 flex-shrink-0" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
+          <motion.div className="w-full flex-shrink-0 md:w-48" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
             <h2 className="font-semibold font-['Work_Sans']" style={{ fontSize: '28px' }}>Education</h2>
           </motion.div>
-          <div className="flex-1 space-y-10">
+          <div className="flex-1 space-y-8 md:space-y-10">
             <ResumeEntry date="2025 – 2026" logoSrc={polyuLogo} logoAlt="The Hong Kong Polytechnic University">
               <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-1">The Hong Kong Polytechnic University</p>
               <p className="text-base text-muted-foreground mb-2">MSc in Generative AI & Humanities</p>
@@ -175,18 +176,18 @@ export function AboutPage() {
 
         {/* Skills */}
         <motion.div
-          className="flex gap-16 mb-20"
+          className="flex flex-col gap-6 mb-12 md:flex-row md:gap-16 md:mb-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.18 }}
           variants={stagger}
         >
-          <motion.div className="w-48 flex-shrink-0" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
+          <motion.div className="w-full flex-shrink-0 md:w-48" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
             <h2 className="font-semibold font-['Work_Sans']" style={{ fontSize: '28px' }}>Skills & Expertise</h2>
           </motion.div>
           <div className="flex-1">
             <motion.div
-              className="grid grid-cols-2 gap-3 ml-[12.5rem]"
+              className="grid grid-cols-2 gap-3 sm:grid-cols-2 md:ml-[12.5rem]"
               variants={skillStagger}
             >
               {skills.map((skill) => (
