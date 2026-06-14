@@ -27,7 +27,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
     <Link to={`/work/${project.slug}`} className="block group cursor-pointer h-full">
       <div className="bg-card rounded-xl overflow-hidden border border-border hover:border-[var(--warm-accent)] transition-all duration-300 h-full flex flex-col hover:shadow-[0_18px_45px_rgba(210,116,92,0.16)]">
-        <div className="aspect-[16/9] bg-muted overflow-hidden">
+        <div className="aspect-[4/3] bg-muted overflow-hidden">
           <img
             src={project.image}
             alt={`${project.title} project visual`}
@@ -46,10 +46,9 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
             )}
             <span className="text-xs text-muted-foreground">{project.year}</span>
           </div>
-          <h3 className="mb-2 font-medium" style={{ fontSize: '1.125rem' }}>
+          <h3 className="mb-4 font-medium" style={{ fontSize: '1.125rem' }}>
             {project.title}
           </h3>
-          <p className="text-muted-foreground text-sm mb-3 flex-1 line-clamp-3">{project.description}</p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground">

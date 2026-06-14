@@ -78,14 +78,6 @@ function BlockBody({ children, className = '' }: { children: ReactNode; classNam
   );
 }
 
-function BlockMeta({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return (
-    <p className={`font-['Work_Sans'] font-normal text-sm text-muted-foreground leading-relaxed ${className}`.trim()}>
-      {children}
-    </p>
-  );
-}
-
 function BlockList({ children }: { children: ReactNode }) {
   return (
     <ul className="space-y-1 font-['Work_Sans'] font-normal text-sm text-muted-foreground leading-relaxed">
@@ -127,7 +119,7 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
   const skipMotion = !!reducedMotion;
 
   const interests = [
-    'Human-AI Interaction',
+    'Human–AI Interaction',
     'AI Companionship',
     'Memory Systems',
     'Digital Health',
@@ -181,14 +173,14 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
               <InfoBlock
                 title="9 Years"
                 subtitle="Healthcare × AI × Product Design"
-                body="From Tencent Healthcare to Generative AI research, building products and systems that serve both organizations and people."
+                body="From healthcare innovation to human-centered AI, designing systems that connect technology and people."
               />
             </ProfileBlock>
             <ProfileBlock>
               <InfoBlock
                 title="40+ Projects"
                 subtitle="23 Hospitals · 5 Government Departments"
-                body="Led design and data-visualization initiatives across healthcare platforms, public services, and smart-city systems throughout China."
+                body="Led large-scale healthcare, public-service, and smart-city initiatives across China."
               />
             </ProfileBlock>
           </ProfileRow>
@@ -201,14 +193,14 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
               <InfoBlock
                 title="Founder"
                 subtitle="0 → 1 Consumer Brand"
-                body="Co-founded and operated a consumer brand, developing more than 60 products and building a community of over 10,000 followers."
+                body="Built 60+ products and grew a community of 10,000+ users."
               />
             </ProfileBlock>
             <ProfileBlock>
               <InfoBlock
                 title="A+ Research"
                 subtitle="Bauhinia-Mind"
-                body="A memory-enabled AI health companion integrating GraphRAG, knowledge graphs, and long-term memory to support international students through healthcare navigation and emotional companionship."
+                body="A memory-enabled AI companion exploring digital health, care, and human-AI relationships."
               />
             </ProfileBlock>
           </ProfileRow>
@@ -221,15 +213,15 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
               <BlockTitle>Recognition</BlockTitle>
               <BlockSubtitle>Innovation in Healthcare Technology</BlockSubtitle>
               <BlockBody>
-                Contributed to healthcare platforms serving hospitals, public-health agencies, and
-                government departments across China.
+                Recognized through product innovation, business impact, and public-health
+                contributions.
               </BlockBody>
-              <BlockMeta className="mt-2 mb-1.5">Work recognized through:</BlockMeta>
+              <BlockSubtitle>Awards</BlockSubtitle>
               <BlockList>
                 {[
                   '2 Business Breakthrough Awards',
-                  '2 Innovative Product Awards',
-                  '1 Medical Anti-Epidemic Contribution Award',
+                  '2 Product Innovation Awards',
+                  '1 Anti-Epidemic Contribution Award',
                 ].map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="text-foreground">·</span>
@@ -240,11 +232,7 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
             </ProfileBlock>
             <ProfileBlock>
               <BlockTitle>Research Focus</BlockTitle>
-              <BlockBody>
-                Exploring how human-centered design can transform AI from a tool into a meaningful
-                companion.
-              </BlockBody>
-              <BlockMeta className="mt-2 mb-1.5">Current interests include:</BlockMeta>
+              <BlockSubtitle>Current Interests</BlockSubtitle>
               <BlockList>
                 {interests.map((item) => (
                   <li key={item} className="flex gap-2">
