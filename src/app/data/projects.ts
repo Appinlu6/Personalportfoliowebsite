@@ -6,6 +6,8 @@ export type Project = {
   tags: string[];
   featured: boolean;
   image: string;
+  hoverImage?: string;
+  hoverVideo?: string;
 };
 
 export const projects: Project[] = [
@@ -17,8 +19,8 @@ export const projects: Project[] = [
       'An Empathic, Memory-Enabled AI Health Companion for Mainland Chinese Students in Hong Kong',
     tags: ['UX Research', 'Service Design', 'AI/ML', 'Digital Health'],
     featured: true,
-    image:
-      'https://images.unsplash.com/photo-1526779259212-939e64788e3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxtZW50YWwlMjBoZWFsdGglMjBtaW5kZnVsbmVzcyUyMG1lZGl0YXRpb24lMjBjYWxtJTIwcGVyc29ufGVufDF8fHx8MTc3OTUxMTg3NHww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/bauhinia-mind-cover-lastframe.jpg',
+    hoverVideo: '/videos/bauhinia-logo.mp4',
   },
   {
     slug: 'tencent-micision-smart-hospital',
@@ -29,6 +31,7 @@ export const projects: Project[] = [
     tags: ['0-1 Product Design', 'Data Visualization', 'Healthcare UX', 'Design Leadership'],
     featured: false,
     image: '/smart-hospital.png',
+    hoverVideo: '/videos/smart-hospital-cover.mp4',
   },
   {
     slug: 'tencent-medical-cloud-o2o',
@@ -49,6 +52,7 @@ export const projects: Project[] = [
     tags: ['0-to-1 Product Management', 'Complex Data Visualization', '3D Technical Design (UE)', 'Requirement Translation'],
     featured: false,
     image: '/smart-Marathon.png',
+    hoverVideo: '/videos/smart-marathon-cover.mp4',
   },
   {
     slug: 'lark-global-marketing-website',

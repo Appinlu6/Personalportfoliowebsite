@@ -1,6 +1,7 @@
 import { useEffect, useState, type ComponentProps, type ReactNode } from 'react';
 import image_20260523_1315046 from '@/imports/20260523-1315046.png';
 import { motion, useReducedMotion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 import { EASE_OUT_EXPO } from '../lib/motion';
 import { useIntro } from '../context/IntroContext';
 
@@ -106,6 +107,7 @@ function InfoBlock({
 
 export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
   const { phase, isHome } = useIntro();
+  const { isCN } = useLanguage();
   const reducedMotion = useReducedMotion();
   const [ready, setReady] = useState(false);
 
@@ -118,14 +120,23 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
   const animateState = concealed ? 'hidden' : ready ? 'visible' : 'hidden';
   const skipMotion = !!reducedMotion;
 
-  const interests = [
-    'Human–AI Interaction',
-    'AI Companionship',
-    'Memory Systems',
-    'Digital Health',
-    'Computational Humanities',
-    'Human-Centered AI',
-  ];
+  const interests = isCN
+    ? [
+        '人机交互',
+        'AI 陪伴',
+        '记忆系统',
+        '数字健康',
+        '计算人文',
+        '以人为中心的 AI',
+      ]
+    : [
+        'Human–AI Interaction',
+        'AI Companionship',
+        'Memory Systems',
+        'Digital Health',
+        'Computational Humanities',
+        'Human-Centered AI',
+      ];
 
   return (
     <div className="mx-auto mb-8 flex max-w-[1200px] flex-col items-start gap-8 lg:flex-row">
@@ -150,18 +161,18 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
               className="font-['Work_Sans'] font-semibold tracking-[-0.02em]"
               style={{ color: PRIMARY, fontSize: '32px', lineHeight: 1.2, marginBottom: '16px' }}
             >
-              Lu Zhengping (Arvin)
+              {isCN ? '陆正平 (Arvin)' : 'Lu Zhengping (Arvin)'}
             </h1>
             <p
               className="font-['Work_Sans'] font-semibold"
               style={{ color: PRIMARY, fontSize: '14px', lineHeight: 1.45, marginBottom: '12px' }}
             >
-              AI Product Designer
+              {isCN ? 'AI 产品设计师' : 'AI Product Designer'}
             </p>
             <BlockBody>
-              Product practitioner with 9 years of experience across healthcare technology, AI, and
-              entrepreneurship, exploring how design can create meaningful connections between
-              technology and human wellbeing.
+              {isCN
+                ? '拥有 9 年医疗科技、AI 与创业领域的产品实践经验，持续探索如何通过设计在技术与人的福祉之间建立更有意义的连接。'
+                : 'Product practitioner with 9 years of experience across healthcare technology, AI, and entrepreneurship, exploring how design can create meaningful connections between technology and human wellbeing.'}
             </BlockBody>
           </ProfileBlock>
 
@@ -171,16 +182,16 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
           <ProfileRow className="mt-[30px]">
             <ProfileBlock>
               <InfoBlock
-                title="9 Years"
-                subtitle="Healthcare × AI × Product Design"
-                body="From healthcare innovation to human-centered AI, designing systems that connect technology and people."
+                title={isCN ? '9 年经验' : '9 Years'}
+                subtitle={isCN ? '医疗 × AI × 产品设计' : 'Healthcare × AI × Product Design'}
+                body={isCN ? '从医疗创新到以人为中心的 AI，持续设计连接技术与人的系统。' : 'From healthcare innovation to human-centered AI, designing systems that connect technology and people.'}
               />
             </ProfileBlock>
             <ProfileBlock>
               <InfoBlock
-                title="40+ Projects"
-                subtitle="23 Hospitals · 5 Government Departments"
-                body="Led large-scale healthcare, public-service, and smart-city initiatives across China."
+                title={isCN ? '40+ 项目' : '40+ Projects'}
+                subtitle={isCN ? '23 家医院 · 5 个政府部门' : '23 Hospitals · 5 Government Departments'}
+                body={isCN ? '主导中国多地大型医疗、公共服务与智慧城市项目。' : 'Led large-scale healthcare, public-service, and smart-city initiatives across China.'}
               />
             </ProfileBlock>
           </ProfileRow>
@@ -191,16 +202,16 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
           <ProfileRow className="mt-[10px]">
             <ProfileBlock>
               <InfoBlock
-                title="Founder"
-                subtitle="0 → 1 Consumer Brand"
-                body="Built 60+ products and grew a community of 10,000+ users."
+                title={isCN ? '创始人' : 'Founder'}
+                subtitle={isCN ? '0 → 1 消费品牌' : '0 → 1 Consumer Brand'}
+                body={isCN ? '完成 60+ 产品从 0 到 1 的构建，并建立 10,000+ 用户社群。' : 'Built 60+ products and grew a community of 10,000+ users.'}
               />
             </ProfileBlock>
             <ProfileBlock>
               <InfoBlock
-                title="A+ Research"
+                title={isCN ? 'A+ 研究' : 'A+ Research'}
                 subtitle="Bauhinia-Mind"
-                body="A memory-enabled AI companion exploring digital health, care, and human-AI relationships."
+                body={isCN ? '一个具备记忆能力的 AI 伙伴，探索数字健康、照护与人机关系。' : 'A memory-enabled AI companion exploring digital health, care, and human-AI relationships.'}
               />
             </ProfileBlock>
           </ProfileRow>
@@ -210,19 +221,26 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
           {/* Row 3: Block 5 + Block 6 */}
           <ProfileRow className="mt-[10px]">
             <ProfileBlock>
-              <BlockTitle>Recognition</BlockTitle>
-              <BlockSubtitle>Innovation in Healthcare Technology</BlockSubtitle>
+              <BlockTitle>{isCN ? '成果认可' : 'Recognition'}</BlockTitle>
+              <BlockSubtitle>{isCN ? '医疗科技创新' : 'Innovation in Healthcare Technology'}</BlockSubtitle>
               <BlockBody>
-                Recognized through product innovation, business impact, and public-health
-                contributions.
+                {isCN
+                  ? '在产品创新、业务影响与公共健康贡献方面获得认可。'
+                  : 'Recognized through product innovation, business impact, and public-health contributions.'}
               </BlockBody>
-              <BlockSubtitle>Awards</BlockSubtitle>
+              <BlockSubtitle>{isCN ? '奖项' : 'Awards'}</BlockSubtitle>
               <BlockList>
-                {[
-                  '2 Business Breakthrough Awards',
-                  '2 Product Innovation Awards',
-                  '1 Anti-Epidemic Contribution Award',
-                ].map((item) => (
+                {(isCN
+                  ? [
+                      '2 项业务突破奖',
+                      '2 项产品创新奖',
+                      '1 项抗疫贡献奖',
+                    ]
+                  : [
+                      '2 Business Breakthrough Awards',
+                      '2 Product Innovation Awards',
+                      '1 Anti-Epidemic Contribution Award',
+                    ]).map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="text-foreground">·</span>
                     <span>{item}</span>
@@ -231,8 +249,8 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
               </BlockList>
             </ProfileBlock>
             <ProfileBlock>
-              <BlockTitle>Research Focus</BlockTitle>
-              <BlockSubtitle>Current Interests</BlockSubtitle>
+              <BlockTitle>{isCN ? '研究方向' : 'Research Focus'}</BlockTitle>
+              <BlockSubtitle>{isCN ? '当前兴趣' : 'Current Interests'}</BlockSubtitle>
               <BlockList>
                 {interests.map((item) => (
                   <li key={item} className="flex gap-2">

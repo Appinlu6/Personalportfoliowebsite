@@ -1,12 +1,14 @@
 import { Link, useLocation } from 'react-router';
+import { useLanguage } from '../context/LanguageContext';
 
 export function Navigation() {
   const { pathname } = useLocation();
+  const { isCN } = useLanguage();
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'Resume' },
-    { path: '/work', label: 'Projects' },
+    { path: '/', label: isCN ? '首页' : 'Home' },
+    { path: '/about', label: isCN ? '简历' : 'Resume' },
+    { path: '/work', label: isCN ? '项目' : 'Projects' },
   ];
 
   const isActive = (path: string) => {
@@ -21,7 +23,8 @@ export function Navigation() {
           <Link to="/" className="tracking-tight">
             Lu Zhengping
           </Link>
-          <ul className="flex items-center">
+          <div className="flex items-center">
+            <ul className="flex items-center">
             {navItems.map((item, index) => (
               <li key={item.path} className="flex items-center">
                 {index > 0 && <span className="w-px h-4 bg-border mx-6" />}
@@ -36,7 +39,8 @@ export function Navigation() {
                 </Link>
               </li>
             ))}
-          </ul>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>

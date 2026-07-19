@@ -1,6 +1,7 @@
 import image_20260523_1315046 from '@/imports/20260523-1315046.png';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useIntro } from '../context/IntroContext';
+import { useLanguage } from '../context/LanguageContext';
 import { useHomeContentReady } from '../hooks/useHomeContentReady';
 import { introRevealTransition } from '../lib/motion';
 import { PageContainer } from '../components/PageContainer';
@@ -9,6 +10,7 @@ import { ProjectGrid } from '../components/ProjectGrid';
 
 export function HomePage() {
   const { phase, isHome } = useIntro();
+  const { isCN } = useLanguage();
   const reducedMotion = useReducedMotion();
 
   useHomeContentReady(image_20260523_1315046);
@@ -36,7 +38,7 @@ export function HomePage() {
               className="font-['Work_Sans'] font-semibold text-left tracking-[-0.01em]"
               style={{ fontSize: '1.5rem', color: '#111111' }}
             >
-              Projects
+              {isCN ? '项目' : 'Projects'}
             </h2>
           </div>
           <ProjectGrid columns={3} animated={false} />

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { animate, motion, useMotionValue, useReducedMotion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 import { EASE_OUT_EXPO, INTRO_BG, INTRO_TEXT } from '../lib/motion';
 import { useIntro } from '../context/IntroContext';
 
@@ -20,6 +21,7 @@ const TIMELINE = {
 const SKIP_EXIT_DURATION = 500;
 
 export function CinematicIntro() {
+  const { isCN } = useLanguage();
   const reducedMotion = useReducedMotion();
   const { shouldPlayIntro, completeIntro, startExit, isRevealing, isHomeReady } = useIntro();
 
@@ -163,7 +165,7 @@ export function CinematicIntro() {
               ease: EASE_OUT_EXPO,
             }}
           >
-            Lu Zhengping
+            {isCN ? '陆正平' : 'Lu Zhengping'}
           </motion.h1>
 
           <motion.p
@@ -182,7 +184,7 @@ export function CinematicIntro() {
               ease: EASE_OUT_EXPO,
             }}
           >
-            Bridging AI and Design
+            {isCN ? '连接 AI 与设计' : 'Bridging AI and Design'}
           </motion.p>
 
           <motion.p
@@ -200,7 +202,7 @@ export function CinematicIntro() {
               ease: EASE_OUT_EXPO,
             }}
           >
-            for human intelligence.
+            {isCN ? '为了人的智慧。' : 'for human intelligence.'}
           </motion.p>
         </motion.div>
       </motion.div>
