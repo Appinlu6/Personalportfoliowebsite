@@ -14,8 +14,8 @@ const cardStagger = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.04,
+      staggerChildren: 0.05,
+      delayChildren: 0.01,
     },
   },
 };
@@ -177,14 +177,14 @@ export function ProjectGrid({ columns = 3, className = '', animated = true }: Pr
       className={`${gridClass} ${className}`.trim()}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.18 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={cardStagger}
     >
       {projects.map((project) => (
         <motion.div
           key={project.slug}
           variants={cardFadeUp}
-          transition={{ duration: 0.42, ease: 'easeOut' }}
+          transition={{ duration: 0.32, ease: 'easeOut' }}
           whileHover={{ y: -6 }}
         >
           <ProjectCard project={project} isCN={isCN} />

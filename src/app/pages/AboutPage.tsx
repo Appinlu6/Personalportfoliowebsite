@@ -80,8 +80,8 @@ const stagger = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.04,
+      staggerChildren: 0.05,
+      delayChildren: 0.01,
     },
   },
 };
@@ -90,8 +90,8 @@ const skillStagger = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.04,
-      delayChildren: 0.06,
+      staggerChildren: 0.03,
+      delayChildren: 0.01,
     },
   },
 };
@@ -131,7 +131,7 @@ export function AboutPage() {
           className="flex flex-col gap-6 mb-12 pb-12 border-b border-border md:flex-row md:items-start md:gap-16 md:mb-20 md:pb-20"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.18 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={stagger}
         >
           <motion.div className="w-full flex-shrink-0 md:w-48" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
@@ -171,7 +171,7 @@ export function AboutPage() {
           className="flex flex-col gap-6 mb-12 pb-12 border-b border-border md:flex-row md:gap-16 md:mb-20 md:pb-20"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.18 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={stagger}
         >
           <motion.div className="w-full flex-shrink-0 md:w-48" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
@@ -200,7 +200,7 @@ export function AboutPage() {
           className="flex flex-col gap-6 mb-12 md:flex-row md:gap-16 md:mb-20"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.18 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={stagger}
         >
           <motion.div className="w-full flex-shrink-0 md:w-48" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>

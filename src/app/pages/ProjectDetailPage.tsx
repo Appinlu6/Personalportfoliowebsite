@@ -16,8 +16,8 @@ const stagger = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.04,
+      staggerChildren: 0.05,
+      delayChildren: 0.01,
     },
   },
 };
@@ -101,19 +101,19 @@ const researchInsights = [
 
 const features = [
   {
-    title: 'Personalized Assessment & Recommendation',
+    title: 'Hybrid GraphRAG Retrieval',
     body:
-      'Machine learning algorithms analyze user responses to validated psychological assessments (PHQ-9, GAD-7) to recommend tailored intervention modules and track symptom progression over time.',
+      'Combines Supabase pgvector semantic retrieval with Neo4j structured reasoning to deliver localized, pathway-level healthcare navigation grounded in Hong Kong medical resources.',
   },
   {
-    title: 'Modular Intervention Library',
+    title: 'Empathy Policy (Know–Feel–Act)',
     body:
-      'Evidence-based content modules covering CBT, mindfulness, behavioral activation, and emotion regulation, each adapted for Hong Kong university student context and cultural considerations.',
+      'Implements an A/B/C response structure: emotional acknowledgment, gentle follow-up, and executable micro-action, translating empathy into consistent conversational behavior.',
   },
   {
-    title: 'Crisis Detection & Escalation',
+    title: 'Safety & Non-clinical Guardrails',
     body:
-      'Safety protocols built into the system detect high-risk responses and provide immediate resources, including direct connections to university counseling services and crisis hotlines.',
+      'Enforces strict non-diagnostic boundaries with high-risk intent escalation, PII redaction, and auditable interaction logs for healthcare-adjacent, safety-aware support.',
   },
 ];
 
@@ -373,8 +373,8 @@ function BauhiniaMind() {
                 research, and trustworthy retrieval-augmented AI.
               </p>
 
-              <div className="space-y-5">
-              <div className="border-t border-[rgba(122,16,35,0.12)] pt-5">
+              <div className="grid gap-5 md:grid-cols-2">
+              <div className="rounded-xl border border-[rgba(122,16,35,0.12)] bg-white/45 p-5">
                 <p
                   className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                   style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
@@ -405,7 +405,7 @@ function BauhiniaMind() {
                 </p>
               </div>
 
-              <div className="border-t border-[rgba(122,16,35,0.12)] pt-5">
+              <div className="rounded-xl border border-[rgba(122,16,35,0.12)] bg-white/45 p-5">
                 <p
                   className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                   style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
@@ -434,7 +434,7 @@ function BauhiniaMind() {
                 </p>
               </div>
 
-              <div className="border-t border-[rgba(122,16,35,0.12)] pt-5">
+              <div className="rounded-xl border border-[rgba(122,16,35,0.12)] bg-white/45 p-5">
                 <p
                   className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                   style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
@@ -464,7 +464,7 @@ function BauhiniaMind() {
                 </p>
               </div>
 
-              <div className="border-t border-[rgba(122,16,35,0.12)] pt-5">
+              <div className="rounded-xl border border-[rgba(122,16,35,0.12)] bg-white/45 p-5">
                 <p
                   className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                   style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
@@ -502,7 +502,7 @@ function BauhiniaMind() {
 
         <div className="prose max-w-none">
           <CaseSection title="Research & Discovery">
-            <p className="mb-12 max-w-3xl leading-relaxed text-[var(--bm-slate)]">
+            <p className="mb-12 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
               This phase focused on validating the core problem in the final report: Mainland Chinese students in Hong Kong
               often face a dual challenge of medical-system uncertainty and acculturative emotional stress. The research
               translated this into a system objective: localized, explainable navigation plus structured empathy in one
@@ -513,7 +513,7 @@ function BauhiniaMind() {
               className="my-12 rounded-[2rem] bg-white/52 p-8 shadow-[var(--bm-shadow)]"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.15 }}
               variants={stagger}
             >
               <p className="mb-8 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
@@ -534,7 +534,7 @@ function BauhiniaMind() {
               className="mb-16 grid gap-8 md:grid-cols-[1.15fr_0.85fr]"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.25 }}
+              viewport={{ once: true, amount: 0.15 }}
               variants={stagger}
             >
               <motion.div variants={fadeUp} className="rounded-[2rem] border border-white/65 bg-white/44 p-8 shadow-[var(--bm-shadow)]">
@@ -573,7 +573,7 @@ function BauhiniaMind() {
           </CaseSection>
 
           <CaseSection title="Design Process">
-            <p className="mb-12 max-w-prose leading-relaxed text-[var(--bm-slate)]">
+            <p className="mb-12 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
               The process starts with field research (user and market) to define real-world friction, then moves to
               literature review for theoretical grounding, and finally translates findings into system and interaction
               decisions.
@@ -583,7 +583,7 @@ function BauhiniaMind() {
               <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                 Part 1 · Research Discovery (User + Market)
               </p>
-              <p className="mb-6 max-w-3xl text-sm leading-relaxed text-[var(--bm-slate)]">
+              <p className="mb-6 w-full max-w-none text-sm leading-relaxed text-[var(--bm-slate)]">
                 This stage documents interviews and context observation with Mainland Chinese students in Hong Kong,
                 plus market/landscape scans of existing health-support and medical-navigation solutions.
               </p>
@@ -626,41 +626,75 @@ function BauhiniaMind() {
               </div>
             </div>
 
-            <div className="mb-10 rounded-[1.5rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6 shadow-[var(--bm-shadow)]">
+            <div className="mb-10">
               <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                Part 2 · Literature Review to Design Principles
+                Part 2 · User Personas and Pain Points
               </p>
-              <p className="mb-4 text-sm leading-relaxed text-[var(--bm-slate)]">
-                After field findings were stabilized, literature review was used to formalize the framework that
-                connects cross-cultural adaptation, empathy communication, and non-clinical AI safety.
+              <p className="mb-6 w-full max-w-none text-sm leading-relaxed text-[var(--bm-slate)]">
+                Synthesis from interviews and field observations identified repeatable personas and high-frequency
+                friction points. These insights were used to prioritize design requirements before system implementation.
               </p>
-              <div className="divide-y divide-[rgba(122,16,35,0.12)]">
-                <div className="grid gap-2 py-4 md:grid-cols-[0.34fr_0.66fr]">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">
-                    Interactive Acculturation Model
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="rounded-[1.5rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6 shadow-[var(--bm-shadow)]">
+                  <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                    Representative Personas
                   </p>
-                  <p className="text-sm leading-relaxed text-foreground">
-                    Mapped cross-cultural adaptation pressure into three designable friction domains: information,
-                    cultural pathway mismatch, and emotional vulnerability during help-seeking.
-                  </p>
+                  <ul className="space-y-2 text-sm leading-relaxed text-foreground">
+                    <li>Newly arrived first-year student unfamiliar with GP-first triage and local pathways.</li>
+                    <li>Postgraduate student under homesickness and academic stress, requiring emotional continuity.</li>
+                    <li>Returning user with recurring symptoms, expecting memory-aware follow-up and practical guidance.</li>
+                  </ul>
                 </div>
-                <div className="grid gap-2 py-4 md:grid-cols-[0.34fr_0.66fr]">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">
-                    Narrative Medicine + Know-Feel-Act
+                <div className="rounded-[1.5rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6 shadow-[var(--bm-shadow)]">
+                  <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                    Core Pain Points
                   </p>
-                  <p className="text-sm leading-relaxed text-foreground">
-                    Translated into an A/B/C response policy: emotional acknowledgment, gentle follow-up, and a
-                    low-pressure executable micro-action.
-                  </p>
+                  <ul className="space-y-2 text-sm leading-relaxed text-foreground">
+                    <li>Fragmented authoritative information that is hard to apply in urgent moments.</li>
+                    <li>Cross-cultural mismatch in triage logic, insurance expectations, and language habits.</li>
+                    <li>Emotional support and actionable guidance often appear separately, not as a closed loop.</li>
+                  </ul>
                 </div>
-                <div className="grid gap-2 py-4 md:grid-cols-[0.34fr_0.66fr]">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">
-                    Human-Centered AI Boundaries
-                  </p>
-                  <p className="text-sm leading-relaxed text-foreground">
-                    Implemented as non-clinical guardrails, high-risk escalation, and auditable safety logic that
-                    keeps the system supportive without crossing into diagnosis.
-                  </p>
+              </div>
+            </div>
+
+            <div className="mb-10">
+              <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                Part 3 · Literature Review to Design Principles
+              </p>
+              <div className="rounded-[1.5rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6 shadow-[var(--bm-shadow)]">
+                <p className="mb-4 text-sm leading-relaxed text-[var(--bm-slate)]">
+                  After field findings were stabilized, literature review was used to formalize the framework that
+                  connects cross-cultural adaptation, empathy communication, and non-clinical AI safety.
+                </p>
+                <div className="divide-y divide-[rgba(122,16,35,0.12)]">
+                  <div className="grid gap-2 py-4 md:grid-cols-[0.34fr_0.66fr]">
+                    <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">
+                      Interactive Acculturation Model
+                    </p>
+                    <p className="text-sm leading-relaxed text-foreground">
+                      Mapped cross-cultural adaptation pressure into three designable friction domains: information,
+                      cultural pathway mismatch, and emotional vulnerability during help-seeking.
+                    </p>
+                  </div>
+                  <div className="grid gap-2 py-4 md:grid-cols-[0.34fr_0.66fr]">
+                    <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">
+                      Narrative Medicine + Know-Feel-Act
+                    </p>
+                    <p className="text-sm leading-relaxed text-foreground">
+                      Translated into an A/B/C response policy: emotional acknowledgment, gentle follow-up, and a
+                      low-pressure executable micro-action.
+                    </p>
+                  </div>
+                  <div className="grid gap-2 py-4 md:grid-cols-[0.34fr_0.66fr]">
+                    <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">
+                      Human-Centered AI Boundaries
+                    </p>
+                    <p className="text-sm leading-relaxed text-foreground">
+                      Implemented as non-clinical guardrails, high-risk escalation, and auditable safety logic that
+                      keeps the system supportive without crossing into diagnosis.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -673,28 +707,6 @@ function BauhiniaMind() {
               className="mb-12"
             />
 
-            <p className="mb-6 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-              Key Features · A / B / C
-            </p>
-            <div className="grid gap-6 md:grid-cols-3">
-              {features.map((feature, i) => (
-                <motion.div
-                  key={feature.title}
-                  className="rounded-[1.5rem] border-l-4 bg-white/48 p-6 shadow-[var(--bm-shadow)]"
-                  style={{ borderColor: 'var(--bm-orange)' }}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.25 }}
-                  variants={fadeUp}
-                >
-                  <p className="mb-3 text-xl italic text-[var(--bm-red)]">
-                    {String.fromCharCode(65 + i)}
-                  </p>
-                  <h4 className="mb-2">{feature.title}</h4>
-                  <p className="text-sm leading-relaxed text-[var(--bm-slate)]">{feature.body}</p>
-                </motion.div>
-              ))}
-            </div>
           </CaseSection>
 
           <CaseSection title="System Architecture">
@@ -711,10 +723,61 @@ function BauhiniaMind() {
                 <CopySlot label="Annotation C · Gemini LLM empathy controller · 1 short paragraph" />
               </div>
             </div>
+            <p className="mb-6 mt-10 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+              Core Modules · A / B / C
+            </p>
+            <div className="grid gap-6 md:grid-cols-3">
+              {features.map((feature, i) => (
+                <motion.div
+                  key={feature.title}
+                  className="rounded-[1.5rem] border-l-4 bg-white/48 p-6 shadow-[var(--bm-shadow)]"
+                  style={{ borderColor: 'var(--bm-orange)' }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.12 }}
+                  variants={fadeUp}
+                >
+                  <p className="mb-3 text-xl italic text-[var(--bm-red)]">
+                    {String.fromCharCode(65 + i)}
+                  </p>
+                  <h4 className="mb-2">{feature.title}</h4>
+                  <p className="text-sm leading-relaxed text-[var(--bm-slate)]">{feature.body}</p>
+                </motion.div>
+              ))}
+            </div>
+          </CaseSection>
+
+          <CaseSection title="Validation">
+            <p className="mb-6 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
+              User journeys are used as validation narratives to test whether the system can connect emotional
+              reassurance, localized medical navigation, and safety-aware decision support in realistic situations.
+            </p>
+            <div className="space-y-12">
+              {/* journey 1 — image left */}
+              <div className="grid items-center gap-8 md:grid-cols-[0.7fr_1fr]">
+                <FigPlaceholder
+                  id="Fig 10A"
+                  label="Journey UI · onboarding flow"
+                  ratio="9:16"
+                  caption="Fig 10A — Onboarding journey (placeholder)"
+                />
+                <CopySlot label="Journey A · onboarding narrative · what the newcomer sees in the first 60 seconds · 1–2 paragraphs" />
+              </div>
+              {/* journey 2 — image right */}
+              <div className="grid items-center gap-8 md:grid-cols-[1fr_0.7fr]">
+                <CopySlot label="Journey B · in-moment help narrative · the late-night symptom check flow · 1–2 paragraphs" />
+                <FigPlaceholder
+                  id="Fig 10B"
+                  label="Journey UI · symptom-check flow"
+                  ratio="9:16"
+                  caption="Fig 10B — Symptom-check journey (placeholder)"
+                />
+              </div>
+            </div>
           </CaseSection>
 
           <CaseSection title="Safety & Non-Clinical Boundaries">
-            <div className="max-w-prose space-y-6">
+            <div className="w-full max-w-none space-y-6">
               <CopySlot label="Lead paragraph · how the system refuses clinical claims, redirects to humans, and logs escalations · ~2 short paragraphs" />
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)] shadow-sm">
@@ -734,7 +797,7 @@ function BauhiniaMind() {
           </CaseSection>
 
           <CaseSection title="Impact & Outcomes">
-            <p className="mb-12 max-w-prose leading-relaxed text-[var(--bm-slate)]">
+            <p className="mb-12 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
               Preliminary pilot testing with 45 students over 4 weeks showed statistically significant
               improvements in self-reported anxiety and depression symptoms. The platform received a System
               Usability Scale score of 82.5, indicating excellent usability. The project received Grade A+
@@ -803,33 +866,8 @@ function BauhiniaMind() {
             </div>
           </CaseSection>
 
-          <CaseSection title="User Journeys">
-            <div className="space-y-12">
-              {/* journey 1 — image left */}
-              <div className="grid items-center gap-8 md:grid-cols-[0.7fr_1fr]">
-                <FigPlaceholder
-                  id="Fig 10A"
-                  label="Journey UI · onboarding flow"
-                  ratio="9:16"
-                  caption="Fig 10A — Onboarding journey (placeholder)"
-                />
-                <CopySlot label="Journey A · onboarding narrative · what the newcomer sees in the first 60 seconds · 1–2 paragraphs" />
-              </div>
-              {/* journey 2 — image right */}
-              <div className="grid items-center gap-8 md:grid-cols-[1fr_0.7fr]">
-                <CopySlot label="Journey B · in-moment help narrative · the late-night symptom check flow · 1–2 paragraphs" />
-                <FigPlaceholder
-                  id="Fig 10B"
-                  label="Journey UI · symptom-check flow"
-                  ratio="9:16"
-                  caption="Fig 10B — Symptom-check journey (placeholder)"
-                />
-              </div>
-            </div>
-          </CaseSection>
-
           <CaseSection title="Reflections & Future Work">
-            <p className="max-w-prose leading-relaxed text-[var(--bm-slate)]">
+            <p className="w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
               This project reinforced the importance of co-design with clinical stakeholders and the necessity
               of rigorous ethical frameworks when designing AI-driven health interventions. Future iterations
               will explore peer support features, integration with wearable devices for passive symptom monitoring,
@@ -863,7 +901,7 @@ function CaseSection({
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.12 }}
       variants={fadeUp}
       className="mb-16"
     >
