@@ -176,11 +176,11 @@ function BauhiniaMind() {
 
         <motion.div
           variants={fadeUp}
-          className="not-prose mb-16 rounded-[2rem] border border-white/65 bg-white/68 p-8 shadow-[var(--bm-shadow)] md:p-10"
+          className="not-prose mb-16 rounded-[1rem] border border-white/65 bg-white/68 p-8 md:p-10"
         >
           <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-10">
             <div className="flex w-full flex-col md:w-[52%] md:flex-shrink-0">
-              <div className="aspect-[16/9] overflow-hidden rounded-[1.25rem] border border-[var(--bm-slate)]/20 bg-black/5">
+              <div className="aspect-[16/9] overflow-hidden rounded-[0.625rem] border border-[var(--bm-slate)]/20 bg-black/5">
                 <video
                   className="h-full w-full"
                   controls
@@ -283,9 +283,16 @@ function BauhiniaMind() {
               className="mb-6 text-[var(--bm-wine)]"
               style={{ fontSize: '1.5rem' }}
             >
-              Background / Brief intro
+              Background
             </h2>
-            <div className="not-prose rounded-[2rem] border border-white/65 bg-white/68 p-8 shadow-[var(--bm-shadow)] md:p-10">
+            <div className="mb-6 overflow-hidden rounded-[0.625rem] border border-[var(--bm-slate)]/20 bg-white/70">
+              <img
+                src="/target-problem-overview.png"
+                alt="Target problem overview diagram"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="bg-text hidden not-prose rounded-[1rem] border border-white/65 bg-white/68 p-8 md:p-10">
               <div className="space-y-5">
               <div>
                 <h3
@@ -364,7 +371,7 @@ function BauhiniaMind() {
             >
               Related work
             </h2>
-            <div className="not-prose rounded-[2rem] border border-white/65 bg-white/68 p-8 shadow-[var(--bm-shadow)] md:p-10">
+            <div className="not-prose rounded-[1rem] border border-white/65 bg-white/68 p-8 md:p-10">
               <p
                 className="mb-5 text-[13px] leading-relaxed text-[var(--bm-slate)]"
                 style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
@@ -510,7 +517,7 @@ function BauhiniaMind() {
             </p>
 
             <motion.div
-              className="my-12 rounded-[2rem] bg-white/52 p-8 shadow-[var(--bm-shadow)]"
+              className="my-12 rounded-[1rem] bg-white/52 p-8"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
@@ -537,7 +544,7 @@ function BauhiniaMind() {
               viewport={{ once: true, amount: 0.15 }}
               variants={stagger}
             >
-              <motion.div variants={fadeUp} className="rounded-[2rem] border border-white/65 bg-white/44 p-8 shadow-[var(--bm-shadow)]">
+              <motion.div variants={fadeUp} className="rounded-[1rem] border border-white/65 bg-white/44 p-8">
                 <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                   Core Discovery
                 </p>
@@ -551,7 +558,7 @@ function BauhiniaMind() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeUp} className="rounded-[2rem] bg-white/60 p-8 shadow-[var(--bm-shadow)]">
+              <motion.div variants={fadeUp} className="rounded-[1rem] bg-white/60 p-8">
                 <p className="mb-3 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                   Data and Validation Snapshot
                 </p>
@@ -635,7 +642,7 @@ function BauhiniaMind() {
                 friction points. These insights were used to prioritize design requirements before system implementation.
               </p>
               <div className="grid gap-6 md:grid-cols-2">
-                <div className="rounded-[1.5rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6 shadow-[var(--bm-shadow)]">
+                <div className="rounded-[0.75rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6">
                   <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                     Representative Personas
                   </p>
@@ -645,7 +652,7 @@ function BauhiniaMind() {
                     <li>Returning user with recurring symptoms, expecting memory-aware follow-up and practical guidance.</li>
                   </ul>
                 </div>
-                <div className="rounded-[1.5rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6 shadow-[var(--bm-shadow)]">
+                <div className="rounded-[0.75rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6">
                   <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                     Core Pain Points
                   </p>
@@ -662,7 +669,7 @@ function BauhiniaMind() {
               <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                 Part 3 · Literature Review to Design Principles
               </p>
-              <div className="rounded-[1.5rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6 shadow-[var(--bm-shadow)]">
+              <div className="rounded-[0.75rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6">
                 <p className="mb-4 text-sm leading-relaxed text-[var(--bm-slate)]">
                   After field findings were stabilized, literature review was used to formalize the framework that
                   connects cross-cultural adaptation, empathy communication, and non-clinical AI safety.
@@ -730,7 +737,7 @@ function BauhiniaMind() {
               {features.map((feature, i) => (
                 <motion.div
                   key={feature.title}
-                  className="rounded-[1.5rem] border-l-4 bg-white/48 p-6 shadow-[var(--bm-shadow)]"
+                  className="rounded-[0.75rem] border-l-4 bg-white/48 p-6"
                   style={{ borderColor: 'var(--bm-orange)' }}
                   initial="hidden"
                   whileInView="visible"
@@ -806,7 +813,7 @@ function BauhiniaMind() {
 
             {/* big stat blocks */}
             <div className="mb-12 grid gap-6 md:grid-cols-3">
-              <div className="rounded-[1.5rem] bg-white/60 p-6 shadow-[var(--bm-shadow)]">
+              <div className="rounded-[0.75rem] bg-white/60 p-6">
                 <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
                   Pilot sample
                 </p>
@@ -815,7 +822,7 @@ function BauhiniaMind() {
                 </p>
                 <p className="mt-1 text-sm text-[var(--bm-slate)]">students · 4 weeks</p>
               </div>
-              <div className="rounded-[1.5rem] bg-white/60 p-6 shadow-[var(--bm-shadow)]">
+              <div className="rounded-[0.75rem] bg-white/60 p-6">
                 <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
                   SUS score
                 </p>
@@ -824,7 +831,7 @@ function BauhiniaMind() {
                 </p>
                 <p className="mt-1 text-sm text-[var(--bm-slate)]">excellent usability</p>
               </div>
-              <div className="rounded-[1.5rem] bg-white/60 p-6 shadow-[var(--bm-shadow)]">
+              <div className="rounded-[0.75rem] bg-white/60 p-6">
                 <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
                   Capstone grade
                 </p>
@@ -836,7 +843,7 @@ function BauhiniaMind() {
             </div>
 
             {/* 86.7 vs 80 comparison bar */}
-            <div className="rounded-[2rem] bg-white/55 p-8 shadow-[var(--bm-shadow)]">
+            <div className="rounded-[1rem] bg-white/55 p-8">
               <p className="mb-6 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
                 [ Metric label · what 86.7% vs 80% measures · TBD ]
               </p>
@@ -931,7 +938,7 @@ function FigPlaceholder({
   return (
     <figure className={className}>
       <div
-        className="relative overflow-hidden rounded-[2rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/45 shadow-[var(--bm-shadow)]"
+        className="relative overflow-hidden rounded-[1rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/45"
         style={{ aspectRatio: ratio.replace(':', ' / ') }}
       >
         {imageSrc ? (
@@ -953,7 +960,7 @@ function FigPlaceholder({
 
 function CopySlot({ label }: { label: string }) {
   return (
-    <div className="rounded-[1.5rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/30 p-6">
+    <div className="rounded-[0.75rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/30 p-6">
       <p className="text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
         [ Copy slot · {label} ]
       </p>

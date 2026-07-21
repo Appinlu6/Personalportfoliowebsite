@@ -178,7 +178,7 @@ export function AboutPage() {
             <h2 className="font-semibold font-['Work_Sans']" style={{ fontSize: '28px' }}>{isCN ? '教育经历' : 'Education'}</h2>
           </motion.div>
           <div className="flex-1 h-auto overflow-visible space-y-8 md:space-y-10">
-            <ResumeEntry date="2026 – 2029" logoSrc={polyuLogo} logoAlt="The Hong Kong Polytechnic University">
+            <ResumeEntry date="2026 - Now" logoSrc={polyuLogo} logoAlt="The Hong Kong Polytechnic University">
               <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-1">The Hong Kong Polytechnic University</p>
               <p className="text-base text-muted-foreground mb-2">{isCN ? 'Doctor of AI（在读）' : 'Doctor of AI (In Progress)'}</p>
               <p className="text-base text-muted-foreground">{isCN ? '三年制博士项目（2026 – 2029）' : 'Three-year doctoral program (2026 – 2029)'}</p>

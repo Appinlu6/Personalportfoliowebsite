@@ -34,16 +34,6 @@ export const projects: Project[] = [
     hoverVideo: '/videos/smart-hospital-cover.mp4',
   },
   {
-    slug: 'tencent-medical-cloud-o2o',
-    title: 'Healthcare Service Design',
-    year: '2017 – 2018',
-    description:
-      'Spearheaded an O2O service design solution for Tencent Medical Cloud to optimize the patient experience. By mapping complex medical journeys and integrating digital-physical touchpoints, the project successfully reduced average patient wait times by 4.5 hours.',
-    tags: ['Patient Experience', 'O2O Service Design', 'Journey Mapping', 'Field Research'],
-    featured: false,
-    image: '/healthcare-service-design.png',
-  },
-  {
     slug: 'tencent-micision-smart-marathon',
     title: 'Tencent Micision — Smart Marathon',
     year: '2019 Jan – Apr',
@@ -53,6 +43,16 @@ export const projects: Project[] = [
     featured: false,
     image: '/smart-Marathon.png',
     hoverVideo: '/videos/smart-marathon-cover.mp4',
+  },
+  {
+    slug: 'tencent-medical-cloud-o2o',
+    title: 'Healthcare Service Design',
+    year: '2017 – 2018',
+    description:
+      'Spearheaded an O2O service design solution for Tencent Medical Cloud to optimize the patient experience. By mapping complex medical journeys and integrating digital-physical touchpoints, the project successfully reduced average patient wait times by 4.5 hours.',
+    tags: ['Patient Experience', 'O2O Service Design', 'Journey Mapping', 'Field Research'],
+    featured: false,
+    image: '/healthcare-service-design.png',
   },
   {
     slug: 'lark-global-marketing-website',
