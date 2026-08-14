@@ -48,36 +48,30 @@ const coreProblems = [
   },
 ];
 
-const researchWorkflow = [
+const methodologyMapping = [
   {
-    number: '01',
-    name: 'Problem Framing',
-    desc: 'Defined the dual challenge from the report: practical uncertainty in healthcare navigation plus emotional stress during cross-cultural transition.',
+    finding: 'Information Island',
+    related: 'RAG / Grounded AI',
+    principle: 'Reliable + actionable',
+    translation: 'HK Sources + GraphRAG',
   },
   {
-    number: '02',
-    name: 'Localized Data Collection',
-    desc: 'Collected 30 Hong Kong-localized resources, including Hospital Authority triage guidance, university health manuals, and support documents.',
+    finding: 'Cultural Island',
+    related: 'IAM',
+    principle: 'Bridge two systems',
+    translation: 'Bilingual + pathway reasoning',
   },
   {
-    number: '03',
-    name: 'Hybrid Knowledge Modeling',
-    desc: 'Built a GraphRAG pipeline by combining Supabase pgvector semantic retrieval and Neo4j structured reasoning for pathway-level answers.',
+    finding: 'Emotional Island',
+    related: 'Narrative Medicine + Know–Feel–Act',
+    principle: 'Understand before acting',
+    translation: 'A/B/C empathy policy',
   },
   {
-    number: '04',
-    name: 'Bilingual Retrieval Enhancement',
-    desc: 'Added Chinese-English symptom synonym expansion and emergency phrase normalization to improve Chinese query reliability.',
-  },
-  {
-    number: '05',
-    name: 'Empathy Policy Design',
-    desc: 'Translated the Know-Feel-Act structure into an A/B/C response policy: acknowledgment, gentle follow-up, and micro-action.',
-  },
-  {
-    number: '06',
-    name: 'Safety and Privacy',
-    desc: 'Embedded non-diagnostic boundaries, high-risk escalation, PII redaction, and audit logging for healthcare-adjacent use.',
+    finding: 'Discontinuous Support',
+    related: 'Bickmore / Generative Agents',
+    principle: 'Continuity builds trust',
+    translation: 'Cross-session memory',
   },
 ];
 
@@ -176,7 +170,8 @@ function BauhiniaMind() {
 
         <motion.div
           variants={fadeUp}
-          className="not-prose mb-16 rounded-[1rem] border border-white/65 bg-white/68 p-8 md:p-10"
+          className="not-prose mb-16 rounded-[1rem] border border-white/65 p-8 md:p-10"
+          style={{ backgroundColor: '#fbfaf8' }}
         >
           <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-10">
             <div className="flex w-full flex-col md:w-[52%] md:flex-shrink-0">
@@ -285,12 +280,119 @@ function BauhiniaMind() {
             >
               Background
             </h2>
-            <div className="mb-6 overflow-hidden rounded-[0.625rem] border border-[var(--bm-slate)]/20 bg-white/70">
+            <div className="mb-6 overflow-hidden rounded-[0.625rem] bg-white/70">
               <img
-                src="/target-problem-overview.png"
+                src="/BG_AIMS_Final.png"
                 alt="Target problem overview diagram"
                 className="h-full w-full object-cover"
               />
+            </div>
+            <h2
+              className="mb-6 text-[var(--bm-wine)]"
+              style={{ fontSize: '1.5rem' }}
+            >
+              Research & Gap
+            </h2>
+            <div className="mb-10">
+              <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                User Research & Summary
+              </p>
+              <p className="mb-6 w-full max-w-none text-sm leading-relaxed text-[var(--bm-slate)]">
+                Multi-dimensional Questionnaire, Journey × 5 Dimensions.
+              </p>
+              <div className="mb-8 grid gap-6 md:grid-cols-3">
+                <FigPlaceholder
+                  id="R1"
+                  label="Student interview moment"
+                  ratio="4:3"
+                  imageSrc="/research-r1-student-interview.png"
+                />
+                <FigPlaceholder
+                  id="R2"
+                  label="Student context observation"
+                  ratio="4:3"
+                  imageSrc="/research-r2-student-context.png"
+                />
+                <FigPlaceholder
+                  id="R3"
+                  label="Group discussion / notes"
+                  ratio="4:3"
+                  imageSrc="/research-r3-group-discussion.png"
+                />
+              </div>
+              <div className="mb-8 space-y-6">
+                <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+                  <img
+                    src="/research-framework.png"
+                    alt="Research framework: Healthcare Journey × five dimensions"
+                    className="block h-auto w-full"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+                  <img
+                    src="/research-framework-detail.png"
+                    alt="Research framework detail"
+                    className="block h-auto w-full"
+                  />
+                </div>
+              </div>
+              <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                Market Research & Benchmark Matrix
+              </p>
+              <div className="grid gap-6 md:grid-cols-2">
+                <FigPlaceholder
+                  id="M1"
+                  label="Competitive landscape map"
+                  ratio="4:3"
+                  imageSrc="/competitive-landscape-map.png"
+                  fit="contain"
+                />
+                <FigPlaceholder
+                  id="M2"
+                  label="Service benchmark matrix"
+                  ratio="4:3"
+                  imageSrc="/service-benchmark-matrix.png"
+                  fit="contain"
+                />
+              </div>
+              <div className="mt-6 space-y-4">
+                <p
+                  className="text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Conclusion
+                </p>
+                <p
+                  className="text-[13px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  The competitive landscape and service benchmark reveal a consistent gap: existing solutions are
+                  strong in isolated areas, but no single service integrates localized healthcare grounding,
+                  cross-cultural adaptation, empathetic support, continuity, and actionable navigation across the
+                  full user journey.
+                </p>
+                <div>
+                  <p
+                    className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                    style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                  >
+                    Design Opportunity
+                  </p>
+                  <p
+                    className="text-[13px] leading-[1.75] text-foreground"
+                    style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                  >
+                    Bauhinia-Mind addresses this gap by acting as a non-clinical cultural host, connecting reliable
+                    local information with emotional understanding and clear next steps.
+                  </p>
+                </div>
+                <p
+                  className="text-[13px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  From fragmented support → to an integrated, grounded, empathetic, and actionable pathway.
+                </p>
+              </div>
             </div>
             <div className="bg-text hidden not-prose rounded-[1rem] border border-white/65 bg-white/68 p-8 md:p-10">
               <div className="space-y-5">
@@ -371,17 +473,10 @@ function BauhiniaMind() {
             >
               Related work
             </h2>
-            <div className="not-prose rounded-[1rem] border border-white/65 bg-white/68 p-8 md:p-10">
-              <p
-                className="mb-5 text-[13px] leading-relaxed text-[var(--bm-slate)]"
-                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-              >
-                This project is grounded in cross-cultural adaptation theory, narrative medicine, empathy
-                research, and trustworthy retrieval-augmented AI.
-              </p>
-
+            <div className="not-prose rounded-[1rem] border border-white/65 p-8 md:p-10" style={{ backgroundColor: '#fbfaf8' }}>
               <div className="grid gap-5 md:grid-cols-2">
-              <div className="rounded-xl border border-[rgba(122,16,35,0.12)] bg-white/45 p-5">
+              <div>
+              <div className="rounded-xl p-5">
                 <p
                   className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                   style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
@@ -410,9 +505,18 @@ function BauhiniaMind() {
                   Bauhinia-Mind models this as a dual challenge: practical pathway uncertainty and emotional
                   vulnerability.
                 </p>
+                <img
+                  src="/related-iam.png"
+                  alt="Interactive Acculturation Model visual"
+                  width={2501}
+                  height={1383}
+                  className="mt-4 block w-full"
+                  style={{ height: 'auto' }}
+                />
+              </div>
               </div>
 
-              <div className="rounded-xl border border-[rgba(122,16,35,0.12)] bg-white/45 p-5">
+              <div className="rounded-xl p-5">
                 <p
                   className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                   style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
@@ -439,9 +543,17 @@ function BauhiniaMind() {
                   The system operationalizes empathy into a structured Know-Feel-Act policy: acknowledge
                   emotion, gently follow up, then offer low-pressure executable next steps.
                 </p>
+                <img
+                  src="/related-narrative.png"
+                  alt="Narrative Medicine visual"
+                  width={1024}
+                  height={566}
+                  className="mt-4 block w-full"
+                  style={{ height: 'auto' }}
+                />
               </div>
 
-              <div className="rounded-xl border border-[rgba(122,16,35,0.12)] bg-white/45 p-5">
+              <div className="rounded-xl p-5">
                 <p
                   className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                   style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
@@ -469,9 +581,17 @@ function BauhiniaMind() {
                   Healthcare support benefits from continuity, not one-off answers. Bauhinia-Mind uses
                   cross-session memory to provide context-aware follow-up and build relational trust.
                 </p>
+                <img
+                  src="/related-know-feel-act.png"
+                  alt="Know Feel Act visual"
+                  width={1024}
+                  height={566}
+                  className="mt-4 block w-full"
+                  style={{ height: 'auto' }}
+                />
               </div>
 
-              <div className="rounded-xl border border-[rgba(122,16,35,0.12)] bg-white/45 p-5">
+              <div className="rounded-xl p-5">
                 <p
                   className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                   style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
@@ -501,6 +621,14 @@ function BauhiniaMind() {
                   combines bilingual vector retrieval and Neo4j graph reasoning to improve factual reliability
                   while preserving supportive interaction.
                 </p>
+                <img
+                  src="/related-emotional-design.png"
+                  alt="Emotional Design visual"
+                  width={1024}
+                  height={566}
+                  className="mt-4 block w-full"
+                  style={{ height: 'auto' }}
+                />
               </div>
               </div>
             </div>
@@ -508,75 +636,144 @@ function BauhiniaMind() {
         </div>
 
         <div className="prose max-w-none">
-          <CaseSection title="Research & Discovery">
-            <p className="mb-12 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
-              This phase focused on validating the core problem in the final report: Mainland Chinese students in Hong Kong
-              often face a dual challenge of medical-system uncertainty and acculturative emotional stress. The research
-              translated this into a system objective: localized, explainable navigation plus structured empathy in one
-              safety-aware pipeline.
+          <CaseSection title="Methodology">
+            <p className="mb-4 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
+              Bauhinia-Mind translates cross-cultural healthcare challenges and humanistic theories into a
+              grounded, empathetic, and safety-aware conversational pipeline.
             </p>
+            <div className="mb-12 flex flex-wrap gap-2 text-xs">
+              <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)]">
+                Grounded
+              </span>
+              <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)]">
+                Culturally Bridged
+              </span>
+              <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)]">
+                Empathetic
+              </span>
+            </div>
 
-            <motion.div
-              className="my-12 rounded-[1rem] bg-white/52 p-8"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
-              variants={stagger}
+            <div
+              className="mb-6 rounded-[1rem] p-8"
+              style={{ backgroundColor: '#fbfaf8' }}
             >
-              <p className="mb-8 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                Methodology Alignment with Final Report
+              <p className="mb-6 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                Related Work → Methodology Mapping Table
               </p>
-              <div className="grid gap-6 md:grid-cols-3">
-                {researchWorkflow.map((step) => (
-                  <motion.div key={step.number} variants={fadeUp} className="relative">
-                    <p className="mb-2 text-xl italic text-[var(--bm-red)]">{step.number}</p>
-                    <h3 className="mb-3 text-base font-semibold text-foreground">{step.name}</h3>
-                    <p className="text-sm leading-relaxed text-[var(--bm-slate)]">{step.desc}</p>
-                  </motion.div>
-                ))}
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[640px] border-collapse text-left">
+                  <thead>
+                    <tr className="border-b border-[rgba(122,16,35,0.16)]">
+                      {['Background Finding', 'Related Work', 'Design Principle', 'System Translation'].map(
+                        (heading) => (
+                          <th
+                            key={heading}
+                            className="px-3 py-3 text-[14px] uppercase tracking-widest text-black"
+                            style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                          >
+                            {heading}
+                          </th>
+                        ),
+                      )}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {methodologyMapping.map((row) => (
+                      <tr key={row.finding} className="border-b border-[rgba(122,16,35,0.08)] last:border-b-0">
+                        <td
+                          className="px-3 py-3.5 text-[13px] leading-[1.75] text-foreground"
+                          style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                        >
+                          {row.finding}
+                        </td>
+                        <td
+                          className="px-3 py-3.5 text-[13px] leading-[1.75] text-foreground"
+                          style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                        >
+                          {row.related}
+                        </td>
+                        <td
+                          className="px-3 py-3.5 text-[13px] leading-[1.75] text-foreground"
+                          style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                        >
+                          {row.principle}
+                        </td>
+                        <td
+                          className="px-3 py-3.5 text-[13px] leading-[1.75] text-foreground"
+                          style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                        >
+                          {row.translation}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            </motion.div>
-
-            <motion.div
-              className="mb-16 grid gap-8 md:grid-cols-[1.15fr_0.85fr]"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
-              variants={stagger}
-            >
-              <motion.div variants={fadeUp} className="rounded-[1rem] border border-white/65 bg-white/44 p-8">
-                <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                  Core Discovery
-                </p>
-                <div className="divide-y divide-[rgba(122,16,35,0.14)]">
-                  {researchInsights.map((insight) => (
-                    <div key={insight.label} className="grid gap-3 py-5 md:grid-cols-[0.35fr_0.65fr]">
-                      <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">{insight.label}</p>
-                      <p className="text-sm leading-relaxed text-foreground">{insight.value}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div variants={fadeUp} className="rounded-[1rem] bg-white/60 p-8">
-                <p className="mb-3 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                  Data and Validation Snapshot
-                </p>
-                <div className="space-y-4 text-sm leading-relaxed text-foreground">
-                  <p>
-                    Processed <strong>30</strong> localized medical documents and constructed a Neo4j graph with
-                    <strong> 1,188 nodes</strong> and <strong>1,733 relations</strong> (from 1,592 extracted triples).
+              <p className="mb-6 mt-8 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                Expected Outcome
+              </p>
+              <div className="flex flex-col items-stretch gap-3 md:flex-row md:gap-4">
+                <div className="flex min-h-[6.25rem] min-w-0 flex-1 flex-col justify-center rounded-lg bg-white/70 px-4 py-3">
+                  <p
+                    className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                    style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                  >
+                    Background Problem
                   </p>
-                  <p>
-                    Hybrid GraphRAG achieved <strong>86.7%</strong> pathway correctness versus <strong>80.0%</strong> for
-                    vector-only retrieval, with average end-to-end latency under <strong>2.5s</strong>.
-                  </p>
-                  <p className="text-[var(--bm-slate)]">
-                    These findings directly informed the later system architecture, safety design, and output formatting.
+                  <p
+                    className="text-[13px] leading-[1.75] text-foreground"
+                    style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                  >
+                    Fragmented · Unfamiliar · Emotionally unsupported
                   </p>
                 </div>
-              </motion.div>
-            </motion.div>
+                <p className="hidden self-center text-lg text-[var(--bm-orange)] md:block" aria-hidden="true">
+                  →
+                </p>
+                <div className="flex min-h-[6.25rem] min-w-0 flex-1 flex-col justify-center rounded-lg bg-white/70 px-4 py-3">
+                  <p
+                    className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                    style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                  >
+                    Bauhinia-Mind
+                  </p>
+                  <p
+                    className="text-[13px] leading-[1.75] text-foreground"
+                    style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                  >
+                    Grounded · Culturally bridged · Empathetic
+                  </p>
+                </div>
+                <p className="hidden self-center text-lg text-[var(--bm-orange)] md:block" aria-hidden="true">
+                  →
+                </p>
+                <div className="flex min-h-[6.25rem] min-w-0 flex-1 flex-col justify-center rounded-lg bg-white/70 px-4 py-3">
+                  <p
+                    className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                    style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                  >
+                    Outcome
+                  </p>
+                  <p
+                    className="text-[13px] leading-[1.75] text-foreground"
+                    style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                  >
+                    Clear, executable next steps
+                  </p>
+                </div>
+              </div>
+              <p className="mb-6 mt-8 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                Theoretical Framework
+              </p>
+              <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+                <img
+                  src="/methodology-pipeline.png"
+                  alt="Methodology pipeline diagram"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
           </CaseSection>
 
           <CaseSection title="Design Process">
@@ -585,126 +782,6 @@ function BauhiniaMind() {
               literature review for theoretical grounding, and finally translates findings into system and interaction
               decisions.
             </p>
-
-            <div className="mb-10">
-              <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                Part 1 · Research Discovery (User + Market)
-              </p>
-              <p className="mb-6 w-full max-w-none text-sm leading-relaxed text-[var(--bm-slate)]">
-                This stage documents interviews and context observation with Mainland Chinese students in Hong Kong,
-                plus market/landscape scans of existing health-support and medical-navigation solutions.
-              </p>
-              <div className="mb-8 grid gap-6 md:grid-cols-3">
-                <FigPlaceholder
-                  id="R1"
-                  label="Student interview moment"
-                  ratio="4:3"
-                  caption="User research photo 01"
-                  imageSrc="/research-r1-student-interview.png"
-                />
-                <FigPlaceholder
-                  id="R2"
-                  label="Student context observation"
-                  ratio="4:3"
-                  caption="User research photo 02"
-                  imageSrc="/research-r2-student-context.png"
-                />
-                <FigPlaceholder
-                  id="R3"
-                  label="Group discussion / notes"
-                  ratio="4:3"
-                  caption="User research photo 03"
-                  imageSrc="/research-r3-group-discussion.png"
-                />
-              </div>
-              <div className="grid gap-6 md:grid-cols-2">
-                <FigPlaceholder
-                  id="M1"
-                  label="Competitive landscape map"
-                  ratio="16:9"
-                  caption="Market research mapping (placeholder)"
-                />
-                <FigPlaceholder
-                  id="M2"
-                  label="Service benchmark matrix"
-                  ratio="16:9"
-                  caption="Product/service benchmark (placeholder)"
-                />
-              </div>
-            </div>
-
-            <div className="mb-10">
-              <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                Part 2 · User Personas and Pain Points
-              </p>
-              <p className="mb-6 w-full max-w-none text-sm leading-relaxed text-[var(--bm-slate)]">
-                Synthesis from interviews and field observations identified repeatable personas and high-frequency
-                friction points. These insights were used to prioritize design requirements before system implementation.
-              </p>
-              <div className="grid gap-6 md:grid-cols-2">
-                <div className="rounded-[0.75rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6">
-                  <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                    Representative Personas
-                  </p>
-                  <ul className="space-y-2 text-sm leading-relaxed text-foreground">
-                    <li>Newly arrived first-year student unfamiliar with GP-first triage and local pathways.</li>
-                    <li>Postgraduate student under homesickness and academic stress, requiring emotional continuity.</li>
-                    <li>Returning user with recurring symptoms, expecting memory-aware follow-up and practical guidance.</li>
-                  </ul>
-                </div>
-                <div className="rounded-[0.75rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6">
-                  <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                    Core Pain Points
-                  </p>
-                  <ul className="space-y-2 text-sm leading-relaxed text-foreground">
-                    <li>Fragmented authoritative information that is hard to apply in urgent moments.</li>
-                    <li>Cross-cultural mismatch in triage logic, insurance expectations, and language habits.</li>
-                    <li>Emotional support and actionable guidance often appear separately, not as a closed loop.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-10">
-              <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                Part 3 · Literature Review to Design Principles
-              </p>
-              <div className="rounded-[0.75rem] border border-[rgba(122,16,35,0.14)] bg-white/45 p-6">
-                <p className="mb-4 text-sm leading-relaxed text-[var(--bm-slate)]">
-                  After field findings were stabilized, literature review was used to formalize the framework that
-                  connects cross-cultural adaptation, empathy communication, and non-clinical AI safety.
-                </p>
-                <div className="divide-y divide-[rgba(122,16,35,0.12)]">
-                  <div className="grid gap-2 py-4 md:grid-cols-[0.34fr_0.66fr]">
-                    <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">
-                      Interactive Acculturation Model
-                    </p>
-                    <p className="text-sm leading-relaxed text-foreground">
-                      Mapped cross-cultural adaptation pressure into three designable friction domains: information,
-                      cultural pathway mismatch, and emotional vulnerability during help-seeking.
-                    </p>
-                  </div>
-                  <div className="grid gap-2 py-4 md:grid-cols-[0.34fr_0.66fr]">
-                    <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">
-                      Narrative Medicine + Know-Feel-Act
-                    </p>
-                    <p className="text-sm leading-relaxed text-foreground">
-                      Translated into an A/B/C response policy: emotional acknowledgment, gentle follow-up, and a
-                      low-pressure executable micro-action.
-                    </p>
-                  </div>
-                  <div className="grid gap-2 py-4 md:grid-cols-[0.34fr_0.66fr]">
-                    <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">
-                      Human-Centered AI Boundaries
-                    </p>
-                    <p className="text-sm leading-relaxed text-foreground">
-                      Implemented as non-clinical guardrails, high-risk escalation, and auditable safety logic that
-                      keeps the system supportive without crossing into diagnosis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <FigPlaceholder
               id="Fig 06"
@@ -810,6 +887,47 @@ function BauhiniaMind() {
               Usability Scale score of 82.5, indicating excellent usability. The project received Grade A+
               for the MSc capstone and is currently under consideration for implementation at partner universities.
             </p>
+
+            <motion.div
+              className="mb-12 grid gap-8 md:grid-cols-[1.15fr_0.85fr]"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+              variants={stagger}
+            >
+              <motion.div variants={fadeUp} className="rounded-[1rem] border border-white/65 bg-white/44 p-8">
+                <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                  Core Discovery
+                </p>
+                <div className="divide-y divide-[rgba(122,16,35,0.14)]">
+                  {researchInsights.map((insight) => (
+                    <div key={insight.label} className="grid gap-3 py-5 md:grid-cols-[0.35fr_0.65fr]">
+                      <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">{insight.label}</p>
+                      <p className="text-sm leading-relaxed text-foreground">{insight.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="rounded-[1rem] bg-white/60 p-8">
+                <p className="mb-3 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+                  Data and Validation Snapshot
+                </p>
+                <div className="space-y-4 text-sm leading-relaxed text-foreground">
+                  <p>
+                    Processed <strong>30</strong> localized medical documents and constructed a Neo4j graph with
+                    <strong> 1,188 nodes</strong> and <strong>1,733 relations</strong> (from 1,592 extracted triples).
+                  </p>
+                  <p>
+                    Hybrid GraphRAG achieved <strong>86.7%</strong> pathway correctness versus <strong>80.0%</strong> for
+                    vector-only retrieval, with average end-to-end latency under <strong>2.5s</strong>.
+                  </p>
+                  <p className="text-[var(--bm-slate)]">
+                    These findings directly informed the later system architecture, safety design, and output formatting.
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
 
             {/* big stat blocks */}
             <div className="mb-12 grid gap-6 md:grid-cols-3">
@@ -927,22 +1045,34 @@ function FigPlaceholder({
   caption,
   imageSrc,
   className = '',
+  fit = 'cover',
 }: {
   id: string;
   label: string;
   ratio: string;
-  caption: string;
+  caption?: string;
   imageSrc?: string;
   className?: string;
+  fit?: 'cover' | 'contain';
 }) {
+  const showImage = Boolean(imageSrc);
+
   return (
     <figure className={className}>
       <div
-        className="relative overflow-hidden rounded-[1rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/45"
-        style={{ aspectRatio: ratio.replace(':', ' / ') }}
+        className={
+          showImage
+            ? 'relative overflow-hidden rounded-[1rem] bg-white/70'
+            : 'relative overflow-hidden rounded-[1rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/45'
+        }
+        style={fit === 'contain' && showImage ? undefined : { aspectRatio: ratio.replace(':', ' / ') }}
       >
         {imageSrc ? (
-          <img src={imageSrc} alt={label} className="h-full w-full object-cover" />
+          <img
+            src={imageSrc}
+            alt={label}
+            className={fit === 'contain' ? 'block h-auto w-full' : 'h-full w-full object-cover'}
+          />
         ) : (
           <div className="absolute bottom-0 right-0 flex h-full w-full items-center justify-center px-6 text-center">
             <p className="text-3xl italic text-[rgba(201,43,46,0.34)]">
@@ -951,9 +1081,11 @@ function FigPlaceholder({
           </div>
         )}
       </div>
-      <figcaption className="mt-3 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-        {caption}
-      </figcaption>
+      {caption ? (
+        <figcaption className="mt-3 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+          {caption}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
