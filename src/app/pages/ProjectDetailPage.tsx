@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { Link, useParams } from 'react-router';
 import { motion } from 'framer-motion';
 import { ArrowLeft, X } from 'lucide-react';
+import { ProjectSectionNavigator } from '../components/ProjectSectionNavigator';
 
 const caseStudies: Record<string, ReactNode> = {
   'bauhinia-mind': <BauhiniaMind />,
@@ -113,6 +114,7 @@ export function ProjectDetailPage() {
 
   return (
     <div className="min-h-screen pt-20">
+      <ProjectSectionNavigator />
       <ImageZoomProvider>{content}</ImageZoomProvider>
     </div>
   );
@@ -358,12 +360,37 @@ function BauhiniaMind() {
                   imageSrc="/research-r3-group-discussion.png"
                 />
               </div>
-              <div className="mb-8 overflow-hidden rounded-[0.625rem] bg-white/70">
-                <img
-                  src="/research-framework.png"
-                  alt="Research framework: Healthcare Journey × five dimensions"
-                  className="block h-auto w-full"
-                />
+              <div className="mb-8 space-y-6">
+                <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+                  <img
+                    src="/research-framework.png"
+                    alt="Research framework: Healthcare Journey × five dimensions"
+                    className="block h-auto w-full"
+                  />
+                </div>
+                <div className="grid gap-6 md:grid-cols-3">
+                  <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+                    <img
+                      src="/research-framework-a.png"
+                      alt="Research framework analysis A"
+                      className="block h-auto w-full"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+                    <img
+                      src="/research-framework-b.png"
+                      alt="Research framework analysis B"
+                      className="block h-auto w-full"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+                    <img
+                      src="/research-framework-c.png"
+                      alt="Research framework analysis C"
+                      className="block h-auto w-full"
+                    />
+                  </div>
+                </div>
               </div>
               <div className="mb-6 space-y-4">
                 <div>
@@ -645,7 +672,7 @@ function BauhiniaMind() {
                   Reference
                 </p>
                 <p
-                  className="mb-3 text-[13px] leading-relaxed text-foreground"
+                  className="mb-3 text-[13px] italic leading-relaxed text-[var(--bm-slate)]"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   Bourhis, R. Y., Moise, L. C., Perreault, S., &amp; Senecal, S. (1997). Towards an
@@ -685,7 +712,7 @@ function BauhiniaMind() {
                   Reference
                 </p>
                 <p
-                  className="mb-3 text-[13px] leading-relaxed text-foreground"
+                  className="mb-3 text-[13px] italic leading-relaxed text-[var(--bm-slate)]"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   Charon, R. (2006). <em>Narrative Medicine</em>. Oxford University Press. <br />
@@ -722,7 +749,7 @@ function BauhiniaMind() {
                   Reference
                 </p>
                 <p
-                  className="mb-3 text-[13px] leading-relaxed text-foreground"
+                  className="mb-3 text-[13px] italic leading-relaxed text-[var(--bm-slate)]"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   Bickmore, T. W., &amp; Picard, R. W. (2005). Establishing and maintaining long-term
@@ -760,7 +787,7 @@ function BauhiniaMind() {
                   Reference
                 </p>
                 <p
-                  className="mb-3 text-[13px] leading-relaxed text-foreground"
+                  className="mb-3 text-[13px] italic leading-relaxed text-[var(--bm-slate)]"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   Lewis, P., et al. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks.
@@ -938,19 +965,117 @@ function BauhiniaMind() {
           </CaseSection>
 
           <CaseSection title="Design Process">
-            <p className="mb-12 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
-              The process starts with field research (user and market) to define real-world friction, then moves to
-              literature review for theoretical grounding, and finally translates findings into system and interaction
-              decisions.
-            </p>
-
-            <FigPlaceholder
-              id="Fig 06"
-              label="Two-arms design diagram"
-              ratio="16:9"
-              caption="Fig 06 — Design Two-Arms Architecture (placeholder)"
-              className="mb-12"
-            />
+            <div className="mb-6">
+              <p
+                className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+              >
+                Design Translation & Product Architecture
+              </p>
+              <div className="space-y-4 pt-4">
+              <div>
+                <p
+                  className="mb-1.5 text-[12px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  A → B · From Evidence to Principles
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Research findings, market gaps, and theoretical insights were synthesized into a small set of
+                  design principles. This creates a consistent decision framework rather than translating individual
+                  findings directly into isolated features.
+                </p>
+              </div>
+              <div>
+                <p
+                  className="mb-1.5 text-[12px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  B → C · From Principles to Capabilities
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Abstract principles were converted into concrete product capabilities that can be designed,
+                  implemented, and evaluated. This step ensures that each capability has a clear rationale and
+                  directly supports a defined user or system need.
+                </p>
+              </div>
+              <div>
+                <p
+                  className="mb-1.5 text-[12px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  C → D · From Capabilities to Architecture
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  The capabilities were then organized according to their role in the overall experience: visible
+                  user-facing functions, intelligent support mechanisms, and underlying grounding and safety
+                  infrastructure. This clarifies how different capabilities work together as one coherent system.
+                </p>
+              </div>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+              <img
+                src="/design-process.png"
+                alt="Bauhinia-Mind design process diagram"
+                className="block h-auto w-full"
+              />
+            </div>
+            <div className="mt-8">
+              <p
+                className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+              >
+                Service & User Flow
+              </p>
+              <div className="space-y-4 pt-4">
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Based on the survey findings, the service flow was designed around one core need: Reduce the
+                  amount of thinking required when users are already unwell or anxious.
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  <span style={{ fontWeight: 600 }}>Key needs identified:</span>
+                  <br />
+                  Voice-first interaction · Symptom & medication translation · Step-by-step healthcare guidance ·
+                  Clear preparation · Emotional support
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  These needs were translated into a continuous service journey:{' '}
+                  <span style={{ fontWeight: 600 }}>Express → Understand → Translate → Navigate → Act → Follow-up</span>
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  The goal is to move users from: “I don’t know what to do.” → “I know the next step.”
+                </p>
+              </div>
+              <div className="mt-4 overflow-hidden rounded-[0.625rem] bg-white/70">
+                <img
+                  src="/service-user-flow.png"
+                  alt="Service and user flow diagram"
+                  className="block h-auto w-full"
+                />
+              </div>
+            </div>
 
           </CaseSection>
 
