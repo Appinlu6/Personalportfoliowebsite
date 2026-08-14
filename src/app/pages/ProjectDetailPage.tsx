@@ -278,7 +278,7 @@ function BauhiniaMind() {
               className="mb-6 text-[var(--bm-wine)]"
               style={{ fontSize: '1.5rem' }}
             >
-              Background
+              Overview
             </h2>
             <div className="mb-6 overflow-hidden rounded-[0.625rem] bg-white/70">
               <img
@@ -288,14 +288,14 @@ function BauhiniaMind() {
               />
             </div>
             <h2
-              className="mb-6 text-[var(--bm-wine)]"
+              className="mb-6 mt-12 text-[var(--bm-wine)]"
               style={{ fontSize: '1.5rem' }}
             >
               Research & Gap
             </h2>
             <div className="mb-10">
               <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                User Research & Summary
+                User Research
               </p>
               <p className="mb-6 w-full max-w-none text-sm leading-relaxed text-[var(--bm-slate)]">
                 Multi-dimensional Questionnaire, Journey × 5 Dimensions.
@@ -320,7 +320,7 @@ function BauhiniaMind() {
                   imageSrc="/research-r3-group-discussion.png"
                 />
               </div>
-              <div className="mb-8 space-y-6">
+              <div className="space-y-6">
                 <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
                   <img
                     src="/research-framework.png"
@@ -335,6 +335,46 @@ function BauhiniaMind() {
                     className="block h-auto w-full"
                   />
                 </div>
+              </div>
+              <div className="mb-8 mt-6 space-y-4">
+                <p
+                  className="text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Conclusion
+                </p>
+                <p
+                  className="text-[13px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  The user research reveals that the three challenges—information fragmentation, cross-cultural
+                  system mismatch, and emotional vulnerability—are not isolated. They reinforce one another
+                  across the healthcare-seeking journey, increasing uncertainty and making it harder for students
+                  to decide what to do next.
+                </p>
+                <div>
+                  <p
+                    className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                    style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                  >
+                    Opportunity
+                  </p>
+                  <p
+                    className="text-[13px] leading-[1.75] text-foreground"
+                    style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                  >
+                    Bauhinia-Mind can address this interconnected gap by acting as a non-clinical cultural host
+                    that translates local healthcare information into culturally understandable, emotionally
+                    supportive, and executable guidance.
+                  </p>
+                </div>
+                <p
+                  className="text-[13px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  From isolated pain points → to an integrated support journey that connects information, culture,
+                  emotion, and action.
+                </p>
               </div>
               <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                 Market Research & Benchmark Matrix
@@ -376,7 +416,7 @@ function BauhiniaMind() {
                     className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                     style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
                   >
-                    Design Opportunity
+                    Opportunity
                   </p>
                   <p
                     className="text-[13px] leading-[1.75] text-foreground"
@@ -794,6 +834,14 @@ function BauhiniaMind() {
           </CaseSection>
 
           <CaseSection title="System Architecture">
+            <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+              Architecture Overview
+            </p>
+            <p className="mb-12 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
+              Bauhinia-Mind is a modular hybrid GraphRAG system that combines semantic retrieval, structured
+              medical pathway reasoning, empathetic dialogue, memory continuity, and safety guardrails within one
+              conversational architecture.
+            </p>
             <div className="grid items-start gap-10 md:grid-cols-[1.5fr_1fr]">
               <FigPlaceholder
                 id="Fig 07"
