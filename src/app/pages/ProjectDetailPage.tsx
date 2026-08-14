@@ -361,14 +361,14 @@ function BauhiniaMind() {
                 />
               </div>
               <div className="mb-8 space-y-6">
-                <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
-                  <img
-                    src="/research-framework.png"
-                    alt="Research framework: Healthcare Journey × five dimensions"
-                    className="block h-auto w-full"
-                  />
-                </div>
-                <div className="grid gap-6 md:grid-cols-3">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+                    <img
+                      src="/research-framework.png"
+                      alt="Research framework: Healthcare Journey × five dimensions"
+                      className="block h-auto w-full"
+                    />
+                  </div>
                   <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
                     <img
                       src="/research-framework-a.png"
@@ -376,6 +376,8 @@ function BauhiniaMind() {
                       className="block h-auto w-full"
                     />
                   </div>
+                </div>
+                <div className="grid gap-6 md:grid-cols-2">
                   <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
                     <img
                       src="/research-framework-b.png"
