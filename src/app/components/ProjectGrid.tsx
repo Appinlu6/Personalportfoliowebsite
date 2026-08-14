@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
@@ -58,6 +58,20 @@ const projectCopyCN: Record<string, { title: string; year: string; tags: string[
   },
 };
 
+function usePrefersHover() {
+  const [prefersHover, setPrefersHover] = useState(true);
+
+  useEffect(() => {
+    const media = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const update = () => setPrefersHover(media.matches);
+    update();
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
+  }, []);
+
+  return prefersHover;
+}
+
 function ProjectCard({
   project,
   isCN,
@@ -69,7 +83,10 @@ function ProjectCard({
   const title = localized?.title ?? project.title;
   const year = localized?.year ?? project.year;
   const tags = localized?.tags ?? project.tags;
+  const cardRef = useRef<HTMLAnchorElement | null>(null);
   const hoverVideoRef = useRef<HTMLVideoElement | null>(null);
+  const prefersHover = usePrefersHover();
+  const [isCoverActive, setIsCoverActive] = useState(false);
   const shouldUseHoverVideo = !project.hoverImage && Boolean(project.hoverVideo);
 
   const playHoverVideo = () => {
@@ -88,34 +105,69 @@ function ProjectCard({
     videoEl.currentTime = 0;
   };
 
+  useEffect(() => {
+    if (prefersHover) return;
+    const node = cardRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsCoverActive(entry.isIntersecting && entry.intersectionRatio >= 0.4);
+      },
+      { threshold: [0.25, 0.4, 0.6, 0.8], rootMargin: '0px 0px -8% 0px' },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [prefersHover]);
+
+  useEffect(() => {
+    if (!shouldUseHoverVideo) return;
+    if (isCoverActive) playHoverVideo();
+    else resetHoverVideo();
+  }, [isCoverActive, shouldUseHoverVideo]);
+
   return (
     <Link
+      ref={cardRef}
       to={`/work/${project.slug}`}
       className="block group cursor-pointer h-full"
-      onMouseEnter={shouldUseHoverVideo ? playHoverVideo : undefined}
-      onMouseLeave={shouldUseHoverVideo ? resetHoverVideo : undefined}
-      onFocus={shouldUseHoverVideo ? playHoverVideo : undefined}
-      onBlur={shouldUseHoverVideo ? resetHoverVideo : undefined}
+      onMouseEnter={prefersHover ? () => setIsCoverActive(true) : undefined}
+      onMouseLeave={prefersHover ? () => setIsCoverActive(false) : undefined}
+      onFocus={prefersHover ? () => setIsCoverActive(true) : undefined}
+      onBlur={prefersHover ? () => setIsCoverActive(false) : undefined}
     >
-      <div className="bg-card rounded-xl overflow-hidden border border-border hover:border-[var(--warm-accent)] transition-all duration-300 h-full flex flex-col hover:shadow-[0_18px_45px_rgba(210,116,92,0.16)]">
+      <div
+        className={`bg-card rounded-xl overflow-hidden border transition-all duration-300 h-full flex flex-col ${
+          isCoverActive
+            ? 'border-[var(--warm-accent)] shadow-[0_18px_45px_rgba(210,116,92,0.16)]'
+            : 'border-border'
+        }`}
+      >
         <div className="relative aspect-[4/3] bg-muted overflow-hidden">
           <img
             src={project.image}
             alt={`${title} project visual`}
-            className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className={`h-full w-full object-cover transition-transform duration-500 ${
+              isCoverActive ? 'scale-105' : 'scale-100'
+            }`}
           />
           {project.hoverImage && (
             <img
               src={project.hoverImage}
               alt=""
-              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
+                isCoverActive ? 'opacity-100' : 'opacity-0'
+              }`}
               aria-hidden="true"
             />
           )}
           {!project.hoverImage && project.hoverVideo && (
             <video
               ref={hoverVideoRef}
-              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
+                isCoverActive ? 'opacity-100' : 'opacity-0'
+              }`}
               src={project.hoverVideo}
               poster={project.image}
               muted

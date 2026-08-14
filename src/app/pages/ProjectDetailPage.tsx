@@ -1,7 +1,8 @@
-import type { ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useParams } from 'react-router';
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, X } from 'lucide-react';
 
 const caseStudies: Record<string, ReactNode> = {
   'bauhinia-mind': <BauhiniaMind />,
@@ -93,24 +94,6 @@ const researchInsights = [
   },
 ];
 
-const features = [
-  {
-    title: 'Hybrid GraphRAG Retrieval',
-    body:
-      'Combines Supabase pgvector semantic retrieval with Neo4j structured reasoning to deliver localized, pathway-level healthcare navigation grounded in Hong Kong medical resources.',
-  },
-  {
-    title: 'Empathy Policy (Know–Feel–Act)',
-    body:
-      'Implements an A/B/C response structure: emotional acknowledgment, gentle follow-up, and executable micro-action, translating empathy into consistent conversational behavior.',
-  },
-  {
-    title: 'Safety & Non-clinical Guardrails',
-    body:
-      'Enforces strict non-diagnostic boundaries with high-risk intent escalation, PII redaction, and auditable interaction logs for healthcare-adjacent, safety-aware support.',
-  },
-];
-
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const content = slug ? caseStudies[slug] : null;
@@ -128,7 +111,11 @@ export function ProjectDetailPage() {
     );
   }
 
-  return <div className="min-h-screen pt-20">{content}</div>;
+  return (
+    <div className="min-h-screen pt-20">
+      <ImageZoomProvider>{content}</ImageZoomProvider>
+    </div>
+  );
 }
 
 function BauhiniaMind() {
@@ -297,9 +284,60 @@ function BauhiniaMind() {
               <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                 User Research
               </p>
-              <p className="mb-6 w-full max-w-none text-sm leading-relaxed text-[var(--bm-slate)]">
-                Multi-dimensional Questionnaire, Journey × 5 Dimensions.
-              </p>
+              <div className="mb-6">
+                <p
+                  className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Research Approach
+                </p>
+                <div className="space-y-4">
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  A structured multi-dimensional questionnaire was designed around the complete healthcare-seeking
+                  journey, rather than isolated service touchpoints.
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  The framework examines each stage through five UX dimensions—Information, Decision, Culture,
+                  Emotion, and Support—to identify where uncertainty, friction, and emotional stress emerge.
+                </p>
+                <div className="grid gap-6 md:grid-cols-2 md:items-start">
+                  <div>
+                    <p
+                      className="mb-1.5 text-[15px] leading-[1.75] text-foreground"
+                      style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 600 }}
+                    >
+                      From:
+                    </p>
+                    <p
+                      className="text-[15px] leading-[1.75] text-foreground"
+                      style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                    >
+                      Search → Decide → Navigate → Seek Care → Follow-up
+                    </p>
+                  </div>
+                  <div>
+                    <p
+                      className="mb-1.5 text-[15px] leading-[1.75] text-foreground"
+                      style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 600 }}
+                    >
+                      Across:
+                    </p>
+                    <p
+                      className="text-[15px] leading-[1.75] text-foreground"
+                      style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                    >
+                      Information · Decision · Culture · Emotion · Support
+                    </p>
+                  </div>
+                </div>
+                </div>
+              </div>
               <div className="mb-8 grid gap-6 md:grid-cols-3">
                 <FigPlaceholder
                   id="R1"
@@ -320,21 +358,104 @@ function BauhiniaMind() {
                   imageSrc="/research-r3-group-discussion.png"
                 />
               </div>
-              <div className="space-y-6">
-                <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
-                  <img
-                    src="/research-framework.png"
-                    alt="Research framework: Healthcare Journey × five dimensions"
-                    className="block h-auto w-full"
-                  />
+              <div className="mb-8 overflow-hidden rounded-[0.625rem] bg-white/70">
+                <img
+                  src="/research-framework.png"
+                  alt="Research framework: Healthcare Journey × five dimensions"
+                  className="block h-auto w-full"
+                />
+              </div>
+              <div className="mb-6 space-y-4">
+                <div>
+                  <p
+                    className="mb-1.5 text-[12px] uppercase tracking-widest text-black"
+                    style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                  >
+                    From Responses to Patterns
+                  </p>
+                  <p
+                    className="text-[15px] leading-[1.75] text-foreground"
+                    style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                  >
+                    Survey responses and qualitative feedback were mapped back onto the healthcare journey and
+                    grouped by recurring patterns of:{' '}
+                    <span style={{ fontWeight: 600 }}>Uncertainty · Friction · Vulnerability</span>
+                  </p>
                 </div>
-                <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
-                  <img
-                    src="/research-framework-detail.png"
-                    alt="Research framework detail"
-                    className="block h-auto w-full"
-                  />
+                <div className="pt-6">
+                  <p
+                    className="mb-1.5 text-[12px] uppercase tracking-widest text-black"
+                    style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                  >
+                    Three Recurring Patterns
+                  </p>
+                  <p
+                    className="mb-3 text-[15px] leading-[1.75] text-foreground"
+                    style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                  >
+                    The synthesis revealed three interconnected problem areas:
+                  </p>
+                  <div className="grid grid-cols-3 divide-x divide-[rgba(122,16,35,0.14)]">
+                    <div className="pr-5">
+                      <p
+                        className="mb-1.5 text-[12px] tracking-widest text-black"
+                        style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                      >
+                        Information Island
+                      </p>
+                      <p
+                        className="text-[15px] leading-[1.75] text-foreground"
+                        style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                      >
+                        Reliable information exists, but is fragmented and difficult to translate into action.
+                      </p>
+                    </div>
+                    <div className="px-5">
+                      <p
+                        className="mb-1.5 text-[12px] tracking-widest text-black"
+                        style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                      >
+                        Cultural Island
+                      </p>
+                      <p
+                        className="text-[15px] leading-[1.75] text-foreground"
+                        style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                      >
+                        Mainland students encounter unfamiliar healthcare rules, terminology, and service
+                        pathways.
+                      </p>
+                    </div>
+                    <div className="pl-5">
+                      <p
+                        className="mb-1.5 text-[12px] tracking-widest text-black"
+                        style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                      >
+                        Emotional Island
+                      </p>
+                      <p
+                        className="text-[15px] leading-[1.75] text-foreground"
+                        style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                      >
+                        Uncertainty becomes harder to manage when users are already anxious, isolated, or
+                        physically unwell.
+                      </p>
+                    </div>
+                  </div>
                 </div>
+                <p
+                  className="pt-6 text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  The research therefore points to a deeper gap: No integrated pathway currently connects local
+                  healthcare guidance, cultural translation, emotional understanding, and executable next steps.
+                </p>
+              </div>
+              <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+                <img
+                  src="/research-framework-detail.png"
+                  alt="Research framework detail"
+                  className="block h-auto w-full"
+                />
               </div>
               <div className="mb-8 mt-6 space-y-4">
                 <p
@@ -344,7 +465,7 @@ function BauhiniaMind() {
                   Conclusion
                 </p>
                 <p
-                  className="text-[13px] leading-[1.75] text-foreground"
+                  className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   The user research reveals that the three challenges—information fragmentation, cross-cultural
@@ -360,7 +481,7 @@ function BauhiniaMind() {
                     Opportunity
                   </p>
                   <p
-                    className="text-[13px] leading-[1.75] text-foreground"
+                    className="text-[15px] leading-[1.75] text-foreground"
                     style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                   >
                     Bauhinia-Mind can address this interconnected gap by acting as a non-clinical cultural host
@@ -369,7 +490,7 @@ function BauhiniaMind() {
                   </p>
                 </div>
                 <p
-                  className="text-[13px] leading-[1.75] text-foreground"
+                  className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   From isolated pain points → to an integrated support journey that connects information, culture,
@@ -403,7 +524,7 @@ function BauhiniaMind() {
                   Conclusion
                 </p>
                 <p
-                  className="text-[13px] leading-[1.75] text-foreground"
+                  className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   The competitive landscape and service benchmark reveal a consistent gap: existing solutions are
@@ -419,7 +540,7 @@ function BauhiniaMind() {
                     Opportunity
                   </p>
                   <p
-                    className="text-[13px] leading-[1.75] text-foreground"
+                    className="text-[15px] leading-[1.75] text-foreground"
                     style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                   >
                     Bauhinia-Mind addresses this gap by acting as a non-clinical cultural host, connecting reliable
@@ -427,7 +548,7 @@ function BauhiniaMind() {
                   </p>
                 </div>
                 <p
-                  className="text-[13px] leading-[1.75] text-foreground"
+                  className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   From fragmented support → to an integrated, grounded, empathetic, and actionable pathway.
@@ -538,7 +659,7 @@ function BauhiniaMind() {
                   Implication for design
                 </p>
                 <p
-                  className="text-[13px] leading-[1.75] text-foreground"
+                  className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   Mainland students in Hong Kong face both system unfamiliarity and identity stress.
@@ -577,7 +698,7 @@ function BauhiniaMind() {
                   Implication for design
                 </p>
                 <p
-                  className="text-[13px] leading-[1.75] text-foreground"
+                  className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   The system operationalizes empathy into a structured Know-Feel-Act policy: acknowledge
@@ -615,7 +736,7 @@ function BauhiniaMind() {
                   Implication for design
                 </p>
                 <p
-                  className="text-[13px] leading-[1.75] text-foreground"
+                  className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   Healthcare support benefits from continuity, not one-off answers. Bauhinia-Mind uses
@@ -654,7 +775,7 @@ function BauhiniaMind() {
                   Implication for design
                 </p>
                 <p
-                  className="text-[13px] leading-[1.75] text-foreground"
+                  className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   Pure generative chat is insufficient in healthcare-adjacent scenarios. Bauhinia-Mind
@@ -721,25 +842,25 @@ function BauhiniaMind() {
                     {methodologyMapping.map((row) => (
                       <tr key={row.finding} className="border-b border-[rgba(122,16,35,0.08)] last:border-b-0">
                         <td
-                          className="px-3 py-3.5 text-[13px] leading-[1.75] text-foreground"
+                          className="px-3 py-3.5 text-[15px] leading-[1.75] text-foreground"
                           style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                         >
                           {row.finding}
                         </td>
                         <td
-                          className="px-3 py-3.5 text-[13px] leading-[1.75] text-foreground"
+                          className="px-3 py-3.5 text-[15px] leading-[1.75] text-foreground"
                           style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                         >
                           {row.related}
                         </td>
                         <td
-                          className="px-3 py-3.5 text-[13px] leading-[1.75] text-foreground"
+                          className="px-3 py-3.5 text-[15px] leading-[1.75] text-foreground"
                           style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                         >
                           {row.principle}
                         </td>
                         <td
-                          className="px-3 py-3.5 text-[13px] leading-[1.75] text-foreground"
+                          className="px-3 py-3.5 text-[15px] leading-[1.75] text-foreground"
                           style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                         >
                           {row.translation}
@@ -761,7 +882,7 @@ function BauhiniaMind() {
                     Background Problem
                   </p>
                   <p
-                    className="text-[13px] leading-[1.75] text-foreground"
+                    className="text-[15px] leading-[1.75] text-foreground"
                     style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                   >
                     Fragmented · Unfamiliar · Emotionally unsupported
@@ -778,7 +899,7 @@ function BauhiniaMind() {
                     Bauhinia-Mind
                   </p>
                   <p
-                    className="text-[13px] leading-[1.75] text-foreground"
+                    className="text-[15px] leading-[1.75] text-foreground"
                     style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                   >
                     Grounded · Culturally bridged · Empathetic
@@ -795,7 +916,7 @@ function BauhiniaMind() {
                     Outcome
                   </p>
                   <p
-                    className="text-[13px] leading-[1.75] text-foreground"
+                    className="text-[15px] leading-[1.75] text-foreground"
                     style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                   >
                     Clear, executable next steps
@@ -835,47 +956,139 @@ function BauhiniaMind() {
 
           <CaseSection title="System Architecture">
             <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-              Architecture Overview
+              What does the system consist of?
             </p>
-            <p className="mb-12 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
-              Bauhinia-Mind is a modular hybrid GraphRAG system that combines semantic retrieval, structured
-              medical pathway reasoning, empathetic dialogue, memory continuity, and safety guardrails within one
-              conversational architecture.
-            </p>
-            <div className="grid items-start gap-10 md:grid-cols-[1.5fr_1fr]">
-              <FigPlaceholder
-                id="Fig 07"
-                label="GraphRAG orchestration diagram"
-                ratio="16:9"
-                caption="Fig 07 — System Orchestration (placeholder)"
+            <div className="mb-6 space-y-4">
+              <p
+                className="text-[15px] leading-[1.75] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                Bauhinia-Mind is built as a modular hybrid GraphRAG system, combining conversational interaction,
+                intent-based orchestration, semantic retrieval, knowledge-graph reasoning, and empathy-aware
+                generation within one coordinated architecture.
+              </p>
+              <p
+                className="text-[15px] leading-[1.75] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                The architecture separates semantic evidence retrieval from structured pathway reasoning, then fuses
+                both with user intent before response generation. This allows the system to answer not only “what
+                information is relevant?” but also “what should the user do next?”
+              </p>
+            </div>
+            <div className="mb-8 overflow-hidden rounded-[0.625rem] bg-white/70">
+              <img
+                src="/system-architecture-overview.png"
+                alt="Bauhinia-Mind system architecture overview"
+                className="block h-auto w-full"
               />
-              <div className="space-y-4">
-                <CopySlot label="Annotation A · Neo4j structured-reasoning layer · 1 short paragraph" />
-                <CopySlot label="Annotation B · Supabase semantic vector layer · 1 short paragraph" />
-                <CopySlot label="Annotation C · Gemini LLM empathy controller · 1 short paragraph" />
+            </div>
+            <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+              What is the path of a single request?
+            </p>
+            <div className="mb-6 space-y-4">
+              <p
+                className="text-[15px] leading-[1.75] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                The system does not activate every module for every query. Instead, requests are dynamically routed
+                according to user intent and risk level.
+              </p>
+              <p
+                className="text-[15px] leading-[1.75] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                A typical medical query first passes through intent detection and safety screening, then retrieves
+                both structured pathway evidence and relevant local documents. These contexts are fused before
+                empathy-aware generation and post-processing.
+              </p>
+              <div>
+                <p
+                  className="mb-1.5 text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 600 }}
+                >
+                  For example:
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Medical Query → Graph Retrieval + HA Vector Retrieval → Context Fusion → Empathy Policy → Action
+                  Card
+                </p>
               </div>
             </div>
-            <p className="mb-6 mt-10 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-              Core Modules · A / B / C
+            <div className="mb-8 overflow-hidden rounded-[0.625rem] bg-white/70">
+              <img
+                src="/system-architecture-detail.png"
+                alt="Bauhinia-Mind system architecture detail"
+                className="block h-auto w-full"
+              />
+            </div>
+            <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+              Key Supporting Mechanisms
             </p>
-            <div className="grid gap-6 md:grid-cols-3">
-              {features.map((feature, i) => (
-                <motion.div
-                  key={feature.title}
-                  className="rounded-[0.75rem] border-l-4 bg-white/48 p-6"
-                  style={{ borderColor: 'var(--bm-orange)' }}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.12 }}
-                  variants={fadeUp}
+            <div className="mb-6 space-y-4">
+              <p
+                className="text-[15px] leading-[1.75] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                Three supporting mechanisms extend the core architecture beyond retrieval and generation.
+              </p>
+              <div>
+                <p
+                  className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
                 >
-                  <p className="mb-3 text-xl italic text-[var(--bm-red)]">
-                    {String.fromCharCode(65 + i)}
-                  </p>
-                  <h4 className="mb-2">{feature.title}</h4>
-                  <p className="text-sm leading-relaxed text-[var(--bm-slate)]">{feature.body}</p>
-                </motion.div>
-              ))}
+                  Emotion & Empathy Processing
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Emotional cues, user intent, and retrieved context are translated into a structured Acknowledge
+                  → Gentle Follow-up → Micro-action policy, turning empathy into actionable support rather than
+                  generic reassurance.
+                </p>
+              </div>
+              <div>
+                <p
+                  className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Memory & Continuity
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Relevant cross-session context is retained and recalled to support personalized follow-up,
+                  allowing the system to build continuity rather than treating every interaction as a new
+                  conversation.
+                </p>
+              </div>
+              <div>
+                <p
+                  className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
+                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+                >
+                  Safety & Escalation
+                </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  Non-diagnostic boundaries, high-risk escalation, PII redaction, and audit logging keep the
+                  system appropriate for healthcare-adjacent use.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
+              <img
+                src="/system-architecture-flow.png"
+                alt="Bauhinia-Mind system architecture flow"
+                className="block h-auto w-full"
+              />
             </div>
           </CaseSection>
 
@@ -940,7 +1153,7 @@ function BauhiniaMind() {
               className="mb-12 grid gap-8 md:grid-cols-[1.15fr_0.85fr]"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
+              viewport={{ once: true, amount: 'some', margin: '0px 0px 28% 0px' }}
               variants={stagger}
             >
               <motion.div variants={fadeUp} className="rounded-[1rem] border border-white/65 bg-white/44 p-8">
@@ -1063,6 +1276,73 @@ function BauhiniaMind() {
   );
 }
 
+function ImageZoomProvider({ children }: { children: ReactNode }) {
+  const [active, setActive] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    if (!active) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setActive(null);
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [active]);
+
+  return (
+    <>
+      <div
+        className="[&_img]:cursor-zoom-in"
+        onClick={(event) => {
+          const target = event.target;
+          if (!(target instanceof HTMLImageElement)) return;
+          event.preventDefault();
+          setActive({
+            src: target.currentSrc || target.src,
+            alt: target.alt || 'Enlarged image',
+          });
+        }}
+      >
+        {children}
+      </div>
+      {active
+        ? createPortal(
+            <div
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 md:p-10"
+              role="dialog"
+              aria-modal="true"
+              aria-label={active.alt}
+              onClick={() => setActive(null)}
+            >
+              <button
+                type="button"
+                className="absolute right-4 top-4 rounded-full p-2 text-white/85 transition-opacity hover:text-white"
+                aria-label="Close"
+                onClick={() => setActive(null)}
+              >
+                <X size={22} />
+              </button>
+              <img
+                src={active.src}
+                alt={active.alt}
+                className="max-h-full max-w-full object-contain shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+                onClick={(event) => event.stopPropagation()}
+              />
+            </div>,
+            document.body,
+          )
+        : null}
+    </>
+  );
+}
+
 function CaseSection({
   title,
   children,
@@ -1074,7 +1354,7 @@ function CaseSection({
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.12 }}
+      viewport={{ once: true, amount: 'some', margin: '0px 0px 28% 0px' }}
       variants={fadeUp}
       className="mb-16"
     >
