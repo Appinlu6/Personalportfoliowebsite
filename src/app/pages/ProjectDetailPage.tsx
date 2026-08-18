@@ -1405,16 +1405,16 @@ function PrototypeJourneyInteractive() {
                 slotRefs.current[index] = node;
               }}
               className={`pointer-events-auto absolute transition-transform duration-300 ease-out ${
-                isActive ? 'z-20 scale-[1.25]' : 'scale-100'
+                isActive ? 'z-20 scale-[1.1]' : 'scale-100'
               } ${isTouch ? '' : 'hover:z-20 hover:scale-[1.4]'}`}
               style={{ top: slot.top, left: slot.left, width: '12.2%', aspectRatio: '3 / 4' }}
             >
               <div
                 className={`h-full w-full overflow-hidden rounded-[0.45rem] bg-white transition-[border-color,box-shadow] duration-300 ${
                   isTouch
-                    ? 'border-2 border-[var(--bm-red)]/60 shadow-[0_8px_18px_rgba(35,22,31,0.16)]'
+                    ? 'border border-white/85 shadow-[0_8px_18px_rgba(35,22,31,0.16)]'
                     : 'border border-white/85 shadow-[0_8px_18px_rgba(35,22,31,0.16)] hover:shadow-[0_14px_28px_rgba(35,22,31,0.24)]'
-                } ${isActive ? 'border-[var(--bm-red)] shadow-[0_14px_28px_rgba(35,22,31,0.28)]' : ''}`}
+                } ${isActive ? 'shadow-[0_12px_24px_rgba(35,22,31,0.24)]' : ''}`}
                 style={{ transform: `rotate(${slot.rotate ?? 0}deg)` }}
               >
                 <img
