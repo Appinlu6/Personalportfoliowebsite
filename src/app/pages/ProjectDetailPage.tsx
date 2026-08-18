@@ -1291,6 +1291,7 @@ function ImageZoomProvider({ children }: { children: ReactNode }) {
         onClick={(event) => {
           const target = event.target;
           if (!(target instanceof HTMLImageElement)) return;
+          if (target.dataset.noZoomMobile === 'true' && window.matchMedia('(hover: none)').matches) return;
           event.preventDefault();
           setActive({
             src: target.currentSrc || target.src,
@@ -1393,7 +1394,12 @@ function PrototypeJourneyInteractive() {
 
   return (
     <div className="relative overflow-hidden rounded-[0.625rem] bg-white/70">
-      <img src="/prototype-journey.png" alt="Prototype journey" className="block h-auto w-full" />
+      <img
+        src="/prototype-journey.png"
+        alt="Prototype journey"
+        className="block h-auto w-full"
+        data-no-zoom-mobile="true"
+      />
       <div className="pointer-events-none absolute inset-0">
         {slots.map((slot, index) => {
           const isActive = isTouch && activeIndex === index;
