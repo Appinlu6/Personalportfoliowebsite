@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useParams } from 'react-router';
 import { motion } from 'framer-motion';
@@ -918,45 +918,25 @@ function BauhiniaMind() {
                 className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
                 style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
               >
-                Service & User Flow
+                Prototype Journey
               </p>
               <div className="space-y-4 pt-4">
                 <p
                   className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
-                  Based on the survey findings, the service flow was designed around one core need: Reduce the
-                  amount of thinking required when users are already unwell or anxious.
+                  From core capabilities to a continuous interaction experience
                 </p>
                 <p
                   className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
-                  <span style={{ fontWeight: 600 }}>Key needs identified:</span>
-                  <br />
-                  Voice-first interaction · Symptom & medication translation · Step-by-step healthcare guidance ·
-                  Clear preparation · Emotional support
-                </p>
-                <p
-                  className="text-[15px] leading-[1.75] text-foreground"
-                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-                >
-                  These needs were translated into a continuous service journey:{' '}
-                  <span style={{ fontWeight: 600 }}>Express → Understand → Translate → Navigate → Act → Follow-up</span>
-                </p>
-                <p
-                  className="text-[15px] leading-[1.75] text-foreground"
-                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-                >
-                  The goal is to move users from: “I don’t know what to do.” → “I know the next step.”
+                  The prototype was structured around the user journey rather than individual screens, allowing each
+                  core capability to be tested at the moment it becomes meaningful.
                 </p>
               </div>
               <div className="mt-4 overflow-hidden rounded-[0.625rem] bg-white/70">
-                <img
-                  src="/service-user-flow.png"
-                  alt="Service and user flow diagram"
-                  className="block h-auto w-full"
-                />
+                <PrototypeJourneyInteractive />
               </div>
             </div>
 
@@ -1348,6 +1328,106 @@ function ImageZoomProvider({ children }: { children: ReactNode }) {
           )
         : null}
     </>
+  );
+}
+
+function PrototypeJourneyInteractive() {
+  // All offsets are percentages so cards stay locked to the base image on every viewport.
+  const slots = [
+    { id: '01', src: '/prototype-slot-1.png', top: '10.821%', left: '50.212%', rotate: -2 },
+    { id: '02', src: '/prototype-slot-2.png', top: '25.362%', left: '72.8%', rotate: -2 },
+    { id: '03', src: '/prototype-slot-3.png', top: '43.31%', left: '15.837%' },
+    { id: '04', src: '/prototype-slot-4.png', top: '43.194%', left: '44.023%', rotate: -1 },
+    { id: '05', src: '/prototype-slot-5.png', top: '43.252%', left: '70.26%', rotate: -1 },
+    { id: '06', src: '/prototype-slot-6.png', top: '64.221%', left: '19.586%' },
+    { id: '07', src: '/prototype-slot-7.png', top: '65.379%', left: '51.055%' },
+    { id: '08', src: '/prototype-slot-8.png', top: '84.562%', left: '26.31%' },
+    { id: '09', src: '/prototype-slot-9.png', top: '85.431%', left: '59.394%' },
+  ] as const;
+
+  const slotRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [isTouch, setIsTouch] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const media = window.matchMedia('(hover: none)');
+    const updateInputMode = () => setIsTouch(media.matches);
+    updateInputMode();
+    media.addEventListener('change', updateInputMode);
+    return () => media.removeEventListener('change', updateInputMode);
+  }, []);
+
+  useEffect(() => {
+    if (!isTouch) {
+      setActiveIndex(null);
+      return;
+    }
+
+    const updateActiveCard = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let nearestIndex: number | null = null;
+      let nearestDistance = Number.POSITIVE_INFINITY;
+
+      slotRefs.current.forEach((node, index) => {
+        if (!node) return;
+        const rect = node.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        const distance = Math.abs(rect.top + rect.height / 2 - viewportCenter);
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          nearestIndex = index;
+        }
+      });
+
+      setActiveIndex(nearestIndex);
+    };
+
+    updateActiveCard();
+    window.addEventListener('scroll', updateActiveCard, { passive: true });
+    window.addEventListener('resize', updateActiveCard);
+    return () => {
+      window.removeEventListener('scroll', updateActiveCard);
+      window.removeEventListener('resize', updateActiveCard);
+    };
+  }, [isTouch]);
+
+  return (
+    <div className="relative overflow-hidden rounded-[0.625rem] bg-white/70">
+      <img src="/prototype-journey.png" alt="Prototype journey" className="block h-auto w-full" />
+      <div className="pointer-events-none absolute inset-0">
+        {slots.map((slot, index) => {
+          const isActive = isTouch && activeIndex === index;
+
+          return (
+            <div
+              key={slot.id}
+              ref={(node) => {
+                slotRefs.current[index] = node;
+              }}
+              className={`pointer-events-auto absolute transition-transform duration-300 ease-out ${
+                isActive ? 'z-20 scale-[1.25]' : 'scale-100'
+              } ${isTouch ? '' : 'hover:z-20 hover:scale-[1.4]'}`}
+              style={{ top: slot.top, left: slot.left, width: '12.2%', aspectRatio: '3 / 4' }}
+            >
+              <div
+                className={`h-full w-full overflow-hidden rounded-[0.45rem] bg-white transition-[border-color,box-shadow] duration-300 ${
+                  isTouch
+                    ? 'border-2 border-[var(--bm-red)]/60 shadow-[0_8px_18px_rgba(35,22,31,0.16)]'
+                    : 'border border-white/85 shadow-[0_8px_18px_rgba(35,22,31,0.16)] hover:shadow-[0_14px_28px_rgba(35,22,31,0.24)]'
+                } ${isActive ? 'border-[var(--bm-red)] shadow-[0_14px_28px_rgba(35,22,31,0.28)]' : ''}`}
+                style={{ transform: `rotate(${slot.rotate ?? 0}deg)` }}
+              >
+                <img
+                  src={slot.src}
+                  alt={`Prototype journey card ${slot.id}`}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
