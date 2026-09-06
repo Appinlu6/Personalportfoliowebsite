@@ -67,13 +67,13 @@ export const projects: Project[] = [
   },
   {
     slug: 'before-evening-vr',
-    title: 'BEFORE EVENING — An AI-Driven VR Narrative Experience Game',
-    year: '2026 Jan – Apr',
+    title: 'Before Evening: VR Narrative Game',
+    year: '2026',
     description:
-      'Before Evening is a VR narrative experience built on a single hypothesis: that the future of interactive storytelling lies in characters who truly listen. Rather than choosing from preset dialogue options, players speak naturally to photorealistic MetaHuman NPCs, each with their own memories, personalities, and understanding of the story. The result is an experience where every conversation is unique, and every playthrough reveals the story differently.',
-    tags: ['UE5 Engine', 'VR Development', 'AI-Driven Dialogue', 'MCP Development'],
+      'A VR mystery set in a Chinese high school. Players investigate Yi Linlan\'s past by speaking naturally with AI-powered MetaHuman characters and showing them objects found around the campus. I worked on project management, scene design, and VR interaction programming.',
+    tags: ['UE5 Engine', 'VR Development', 'AI-Driven Dialogue', 'MetaHuman'],
     featured: false,
-    image:
-      'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/before-evening/cover.webp',
+    hoverImage: '/before-evening/school-gate.webp',
   },
 ];

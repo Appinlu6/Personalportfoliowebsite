@@ -1,12 +1,25 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useParams } from 'react-router';
 import { motion } from 'framer-motion';
 import { ArrowLeft, X } from 'lucide-react';
 import { ProjectSectionNavigator } from '../components/ProjectSectionNavigator';
 
+const BeforeEveningVR = lazy(() =>
+  import('../case-studies/BeforeEveningVR').then((module) => ({ default: module.BeforeEveningVR })),
+);
+const SmartHospital = lazy(() =>
+  import('../case-studies/SmartHospital').then((module) => ({ default: module.SmartHospital })),
+);
+const SmartMarathon = lazy(() =>
+  import('../case-studies/SmartMarathon').then((module) => ({ default: module.SmartMarathon })),
+);
+
 const caseStudies: Record<string, ReactNode> = {
   'bauhinia-mind': <BauhiniaMind />,
+  'before-evening-vr': <BeforeEveningVR />,
+  'tencent-micision-smart-hospital': <SmartHospital />,
+  'tencent-micision-smart-marathon': <SmartMarathon />,
 };
 
 const fadeUp = {
@@ -98,6 +111,29 @@ const researchInsights = [
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const content = slug ? caseStudies[slug] : null;
+  const isBeforeEvening = slug === 'before-evening-vr';
+  const isSmartHospital = slug === 'tencent-micision-smart-hospital';
+  const isSmartMarathon = slug === 'tencent-micision-smart-marathon';
+
+  const projectTheme = isBeforeEvening
+    ? ({
+        '--project-accent': '#d2a934',
+        '--project-muted': '#b8b09f',
+        '--project-nav-surface': 'rgba(24, 22, 18, 0.88)',
+      } as CSSProperties)
+    : isSmartHospital
+      ? ({
+          '--project-accent': '#4c7399',
+          '--project-muted': '#5e7185',
+          '--project-nav-surface': 'rgba(247, 250, 253, 0.9)',
+        } as CSSProperties)
+      : isSmartMarathon
+        ? ({
+            '--project-accent': '#3f7c59',
+            '--project-muted': '#5f746b',
+            '--project-nav-surface': 'rgba(248, 252, 249, 0.9)',
+          } as CSSProperties)
+        : undefined;
 
   if (!content) {
     return (
@@ -113,9 +149,32 @@ export function ProjectDetailPage() {
   }
 
   return (
-    <div className="min-h-screen pt-20">
-      <ProjectSectionNavigator />
-      <ImageZoomProvider>{content}</ImageZoomProvider>
+    <div
+      className={`min-h-[100dvh] pt-20 ${
+        isBeforeEvening
+          ? 'bg-[#11100e]'
+          : isSmartHospital
+            ? 'bg-[#f2f7fc]'
+            : isSmartMarathon
+              ? 'bg-[#f1f7f3]'
+              : ''
+      }`}
+      style={projectTheme}
+    >
+      <Suspense fallback={<CaseStudyLoading />}>
+        <ProjectSectionNavigator />
+        <ImageZoomProvider>{content}</ImageZoomProvider>
+      </Suspense>
+    </div>
+  );
+}
+
+function CaseStudyLoading() {
+  return (
+    <div className="mx-auto min-h-[100dvh] w-full max-w-[1320px] px-5 py-14 sm:px-8 lg:px-12">
+      <div className="h-11 w-40 rounded-2xl bg-black/5 motion-safe:animate-pulse" />
+      <div className="mt-14 h-24 max-w-3xl rounded-2xl bg-black/5 motion-safe:animate-pulse" />
+      <div className="mt-12 aspect-[16/7] rounded-2xl bg-black/5 motion-safe:animate-pulse" />
     </div>
   );
 }

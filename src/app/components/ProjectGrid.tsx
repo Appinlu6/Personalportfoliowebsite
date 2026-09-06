@@ -52,9 +52,9 @@ const projectCopyCN: Record<string, { title: string; year: string; tags: string[
     tags: ['网页设计', '界面设计', '营销流程优化', '前端落地'],
   },
   'before-evening-vr': {
-    title: 'BEFORE EVENING — AI 驱动 VR 叙事体验',
-    year: '2026 年 1 月 – 4 月',
-    tags: ['UE5 引擎', 'VR 开发', 'AI 对话系统', 'MCP 开发'],
+    title: 'Before Evening：VR 叙事游戏',
+    year: '2026',
+    tags: ['UE5 引擎', 'VR 开发', 'AI 对话系统', 'MetaHuman'],
   },
 };
 
