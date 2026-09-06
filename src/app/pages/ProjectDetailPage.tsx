@@ -14,12 +14,16 @@ const SmartHospital = lazy(() =>
 const SmartMarathon = lazy(() =>
   import('../case-studies/SmartMarathon').then((module) => ({ default: module.SmartMarathon })),
 );
+const HealthcareServiceDesign = lazy(() =>
+  import('../case-studies/HealthcareServiceDesign').then((module) => ({ default: module.HealthcareServiceDesign })),
+);
 
 const caseStudies: Record<string, ReactNode> = {
   'bauhinia-mind': <BauhiniaMind />,
   'before-evening-vr': <BeforeEveningVR />,
   'tencent-micision-smart-hospital': <SmartHospital />,
   'tencent-micision-smart-marathon': <SmartMarathon />,
+  'tencent-medical-cloud-o2o': <HealthcareServiceDesign />,
 };
 
 const fadeUp = {
@@ -114,6 +118,7 @@ export function ProjectDetailPage() {
   const isBeforeEvening = slug === 'before-evening-vr';
   const isSmartHospital = slug === 'tencent-micision-smart-hospital';
   const isSmartMarathon = slug === 'tencent-micision-smart-marathon';
+  const isHealthcareServiceDesign = slug === 'tencent-medical-cloud-o2o';
 
   const projectTheme = isBeforeEvening
     ? ({
@@ -133,6 +138,12 @@ export function ProjectDetailPage() {
             '--project-muted': '#5f746b',
             '--project-nav-surface': 'rgba(248, 252, 249, 0.9)',
           } as CSSProperties)
+        : isHealthcareServiceDesign
+          ? ({
+              '--project-accent': '#6b78a0',
+              '--project-muted': '#667187',
+              '--project-nav-surface': 'rgba(248, 249, 253, 0.92)',
+            } as CSSProperties)
         : undefined;
 
   if (!content) {
@@ -157,6 +168,8 @@ export function ProjectDetailPage() {
             ? 'bg-[#f2f7fc]'
             : isSmartMarathon
               ? 'bg-[#f1f7f3]'
+              : isHealthcareServiceDesign
+                ? 'bg-[#f4f6fb]'
               : ''
       }`}
       style={projectTheme}
