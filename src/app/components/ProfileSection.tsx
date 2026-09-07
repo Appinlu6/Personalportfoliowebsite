@@ -122,20 +122,20 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
 
   const interests = isCN
     ? [
-        '人机交互',
-        'AI 陪伴',
-        '记忆系统',
-        '数字健康',
-        '计算人文',
-        '以人为中心的 AI',
+        '情感与信息支持的自适应编排',
+        '跨文化求医',
+        '数字健康管理',
+        '智能硬件与运动康复',
+        '医院与企业协同研究',
+        '通过设计开展研究',
       ]
     : [
-        'Human–AI Interaction',
-        'AI Companionship',
-        'Memory Systems',
-        'Digital Health',
-        'Computational Humanities',
-        'Human-Centered AI',
+        'Adaptive Emotional and Informational Support',
+        'Cross-Cultural Care-Seeking',
+        'Digital Health Management',
+        'Smart Hardware for Sports Rehabilitation',
+        'Hospital and Industry Collaboration',
+        'Research through Design',
       ];
 
   return (
@@ -167,12 +167,12 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
               className="font-['Work_Sans'] font-semibold"
               style={{ color: PRIMARY, fontSize: '14px', lineHeight: 1.45, marginBottom: '12px' }}
             >
-              {isCN ? 'AI 产品设计师' : 'AI Product Designer'}
+              {isCN ? '跨学科 AI 研究者与产品设计师' : 'Interdisciplinary AI Researcher & Product Designer'}
             </p>
             <BlockBody>
               {isCN
-                ? '拥有 9 年医疗科技、AI 与创业领域的产品实践经验，持续探索如何通过设计在技术与人的福祉之间建立更有意义的连接。'
-                : 'Product practitioner with 9 years of experience across healthcare technology, AI, and entrepreneurship, exploring how design can create meaningful connections between technology and human wellbeing.'}
+                ? '九年的 UX、医疗科技、AI 与创业实践，构成了我研究 AI 如何支持人的健康与福祉的跨学科视角。'
+                : 'Nine years across UX, healthcare technology, AI, and entrepreneurship shape my interdisciplinary research on how AI can support human wellbeing.'}
             </BlockBody>
           </ProfileBlock>
 
@@ -202,9 +202,11 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
           <ProfileRow className="mt-[10px]">
             <ProfileBlock>
               <InfoBlock
-                title={isCN ? '创始人' : 'Founder'}
-                subtitle={isCN ? '0 → 1 消费品牌' : '0 → 1 Consumer Brand'}
-                body={isCN ? '完成 60+ 产品从 0 到 1 的构建，并建立 10,000+ 用户社群。' : 'Built 60+ products and grew a community of 10,000+ users.'}
+                title={isCN ? '联合创始人' : 'Co-founder'}
+                subtitle={isCN ? '熠安可创 × 健康科技' : "Yi'an Kechuang × Health Technology"}
+                body={isCN
+                  ? '与医院及产业伙伴合作，主导健康管理、智能硬件与运动康复方向的 AI 产品化。'
+                  : 'Leading AI product development across health management, smart hardware, and sports rehabilitation with hospital and industry partners.'}
               />
             </ProfileBlock>
             <ProfileBlock>
@@ -228,7 +230,9 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
                   ? '在产品创新、业务影响与公共健康贡献方面获得认可。'
                   : 'Recognized through product innovation, business impact, and public-health contributions.'}
               </BlockBody>
-              <BlockSubtitle>{isCN ? '奖项' : 'Awards'}</BlockSubtitle>
+              <div className="mt-4">
+                <BlockSubtitle>{isCN ? '奖项' : 'Awards'}</BlockSubtitle>
+              </div>
               <BlockList>
                 {(isCN
                   ? [
@@ -243,19 +247,19 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
                     ]).map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="text-foreground">·</span>
-                    <span>{item}</span>
+                    <span className="min-w-0">{item}</span>
                   </li>
                 ))}
               </BlockList>
             </ProfileBlock>
             <ProfileBlock>
               <BlockTitle>{isCN ? '研究方向' : 'Research Focus'}</BlockTitle>
-              <BlockSubtitle>{isCN ? '当前兴趣' : 'Current Interests'}</BlockSubtitle>
+              <BlockSubtitle>{isCN ? '医疗 AI、健康管理与运动康复' : 'Healthcare AI, Health Management, and Rehabilitation'}</BlockSubtitle>
               <BlockList>
                 {interests.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="text-foreground">·</span>
-                    <span>{item}</span>
+                    <span className="min-w-0">{item}</span>
                   </li>
                 ))}
               </BlockList>

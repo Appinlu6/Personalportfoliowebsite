@@ -52,7 +52,8 @@ export const projects: Project[] = [
       'Spearheaded an O2O service design solution for Tencent Medical Cloud to optimize the patient experience. By mapping complex medical journeys and integrating digital-physical touchpoints, the project successfully reduced average patient wait times by 4.5 hours.',
     tags: ['Patient Experience', 'O2O Service Design', 'Journey Mapping', 'Field Research'],
     featured: false,
-    image: '/healthcare-service-design.png',
+    image: '/healthcare-service-design-cover.png',
+    hoverVideo: '/videos/healthcare-service-design-cover.mp4',
   },
   {
     slug: 'lark-global-marketing-website',
@@ -74,6 +75,6 @@ export const projects: Project[] = [
     tags: ['UE5 Engine', 'VR Development', 'AI-Driven Dialogue', 'MetaHuman'],
     featured: false,
     image: '/before-evening/cover.webp',
-    hoverImage: '/before-evening/school-gate.webp',
+    hoverVideo: '/videos/before-evening-cover.mp4',
   },
 ];
