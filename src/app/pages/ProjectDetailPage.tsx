@@ -4,6 +4,10 @@ import { Link, useParams } from 'react-router';
 import { motion } from 'framer-motion';
 import { ArrowLeft, X } from 'lucide-react';
 import { ProjectSectionNavigator } from '../components/ProjectSectionNavigator';
+import { useLanguage } from '../context/LanguageContext';
+import { LocalizedContent } from '../i18n/LocalizedContent';
+import { bauhiniaMindTranslations } from '../i18n/caseStudyTranslations';
+import { projects } from '../data/projects';
 
 const BeforeEveningVR = lazy(() =>
   import('../case-studies/BeforeEveningVR').then((module) => ({ default: module.BeforeEveningVR })),
@@ -118,6 +122,8 @@ const researchInsights = [
 
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
+  const { isCN } = useLanguage();
+  const externalUrl = projects.find((project) => project.slug === slug)?.externalUrl;
   const content = slug ? caseStudies[slug] : null;
   const isBeforeEvening = slug === 'before-evening-vr';
   const isSmartHospital = slug === 'tencent-micision-smart-hospital';
@@ -157,13 +163,15 @@ export function ProjectDetailPage() {
               } as CSSProperties)
         : undefined;
 
+  if (externalUrl) return <ExternalProjectRedirect url={externalUrl} />;
+
   if (!content) {
     return (
       <div className="min-h-screen flex items-center justify-center pt-20">
         <div className="text-center">
-          <p className="text-muted-foreground mb-4">Project not found</p>
+          <p className="text-muted-foreground mb-4">{isCN ? '未找到该项目' : 'Project not found'}</p>
           <Link to="/work" className="underline" style={{ color: 'var(--warm-accent)' }}>
-            Back to Work
+            {isCN ? '返回项目列表' : 'Back to Work'}
           </Link>
         </div>
       </div>
@@ -195,6 +203,18 @@ export function ProjectDetailPage() {
   );
 }
 
+function ExternalProjectRedirect({ url }: { url: string }) {
+  useEffect(() => {
+    window.location.replace(url);
+  }, [url]);
+
+  return (
+    <div className="page-container min-h-[100dvh] pt-32">
+      <a href={url} className="underline">Open project document on Feishu</a>
+    </div>
+  );
+}
+
 function CaseStudyLoading() {
   return (
     <div className="mx-auto min-h-[100dvh] w-full max-w-[1320px] px-5 py-14 sm:px-8 lg:px-12">
@@ -206,8 +226,11 @@ function CaseStudyLoading() {
 }
 
 function BauhiniaMind() {
+  const { isCN } = useLanguage();
+
   return (
-    <article
+    <LocalizedContent translations={bauhiniaMindTranslations}>
+      <article
       className="relative overflow-hidden py-20"
       style={{
         background:
@@ -1249,12 +1272,18 @@ function BauhiniaMind() {
                 </p>
                 <div className="space-y-4 text-sm leading-relaxed text-foreground">
                   <p>
-                    Processed <strong>30</strong> localized medical documents and constructed a Neo4j graph with
-                    <strong> 1,188 nodes</strong> and <strong>1,733 relations</strong> (from 1,592 extracted triples).
+                    {isCN ? (
+                      <>已处理 <strong>30</strong> 份香港本地医疗资料，并基于 1,592 个三元组构建包含 <strong>1,188 个节点</strong>、<strong>1,733 条关系</strong>的 Neo4j 图谱。</>
+                    ) : (
+                      <>Processed <strong>30</strong> localized medical documents and constructed a Neo4j graph with <strong>1,188 nodes</strong> and <strong>1,733 relations</strong> (from 1,592 extracted triples).</>
+                    )}
                   </p>
                   <p>
-                    Hybrid GraphRAG achieved <strong>86.7%</strong> pathway correctness versus <strong>80.0%</strong> for
-                    vector-only retrieval, with average end-to-end latency under <strong>2.5s</strong>.
+                    {isCN ? (
+                      <>混合 GraphRAG 的路径正确率为 <strong>86.7%</strong>，高于纯向量检索的 <strong>80.0%</strong>；端到端平均延迟低于 <strong>2.5 秒</strong>。</>
+                    ) : (
+                      <>Hybrid GraphRAG achieved <strong>86.7%</strong> pathway correctness versus <strong>80.0%</strong> for vector-only retrieval, with average end-to-end latency under <strong>2.5s</strong>.</>
+                    )}
                   </p>
                   <p className="text-[var(--bm-slate)]">
                     These findings directly informed the later system architecture, safety design, and output formatting.
@@ -1345,7 +1374,8 @@ function BauhiniaMind() {
           </Link>
         </div>
       </motion.div>
-    </article>
+      </article>
+    </LocalizedContent>
   );
 }
 
@@ -1598,10 +1628,12 @@ function FigPlaceholder({
 }
 
 function CopySlot({ label }: { label: string }) {
+  const { isCN } = useLanguage();
+
   return (
     <div className="rounded-[0.75rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/30 p-6">
       <p className="text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-        [ Copy slot · {label} ]
+        [ {isCN ? '文案占位' : 'Copy slot'} · {label} ]
       </p>
     </div>
   );

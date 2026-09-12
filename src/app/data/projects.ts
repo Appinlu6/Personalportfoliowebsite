@@ -8,6 +8,7 @@ export type Project = {
   image: string;
   hoverImage?: string;
   hoverVideo?: string;
+  externalUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -24,6 +25,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'tencent-micision-smart-hospital',
+    externalUrl: 'https://ziyk5uftl8.feishu.cn/docx/POpndicefoLGIbxgfdCcWQrtnkb?from=from_copylink',
     title: 'Tencent Micision — Smart Hospital',
     year: '2018 – 2021',
     description:
@@ -35,6 +37,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'tencent-micision-smart-marathon',
+    externalUrl: 'https://ziyk5uftl8.feishu.cn/wiki/ZEQTw6ploiEHsCkXTSqccUeBnVd?from=from_copylink',
     title: 'Tencent Micision — Smart Marathon',
     year: '2019 Jan – Apr',
     description:
@@ -46,6 +49,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'tencent-medical-cloud-o2o',
+    externalUrl: 'https://ziyk5uftl8.feishu.cn/docx/TZ8Vd3AZbod2USxuRXxc9MoinNx?from=from_copylink',
     title: 'Healthcare Service Design',
     year: '2017 – 2018',
     description:

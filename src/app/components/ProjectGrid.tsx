@@ -27,12 +27,12 @@ const cardFadeUp = {
 
 const projectCopyCN: Record<string, { title: string; year: string; tags: string[] }> = {
   'bauhinia-mind': {
-    title: 'Bauhinia-Mind',
+    title: '紫荆心智',
     year: '2026 年 1 月 – 4 月',
     tags: ['用户研究', '服务设计', 'AI/ML', '数字健康'],
   },
   'tencent-micision-smart-hospital': {
-    title: '腾讯觅影 — 智慧医院',
+    title: '腾讯觅决 · 智慧医院',
     year: '2018 – 2021',
     tags: ['0-1 产品设计', '数据可视化', '医疗 UX', '设计领导力'],
   },
@@ -42,7 +42,7 @@ const projectCopyCN: Record<string, { title: string; year: string; tags: string[
     tags: ['患者体验', 'O2O 服务设计', '旅程地图', '田野调研'],
   },
   'tencent-micision-smart-marathon': {
-    title: '腾讯觅影 — 智慧马拉松',
+    title: '腾讯觅决 · 智慧马拉松',
     year: '2019 年 1 月 – 4 月',
     tags: ['0-1 产品管理', '复杂数据可视化', 'UE 3D 技术设计', '需求转译'],
   },
@@ -130,7 +130,8 @@ function ProjectCard({
   return (
     <Link
       ref={cardRef}
-      to={`/work/${project.slug}`}
+      to={project.externalUrl ?? `/work/${project.slug}`}
+      reloadDocument={Boolean(project.externalUrl)}
       className="block group cursor-pointer h-full"
       onMouseEnter={prefersHover ? () => setIsCoverActive(true) : undefined}
       onMouseLeave={prefersHover ? () => setIsCoverActive(false) : undefined}

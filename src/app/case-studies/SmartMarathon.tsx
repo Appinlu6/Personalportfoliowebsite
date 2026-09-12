@@ -2,6 +2,8 @@ import { type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { LocalizedContent } from '../i18n/LocalizedContent';
+import { smartMarathonTranslations } from '../i18n/caseStudyTranslations';
 
 const NEWS_URL = 'https://baijiahao.baidu.com/s?id=1631502413485477426&wfr=spider&for=pc';
 
@@ -164,7 +166,8 @@ function MediaPlaceholder({
 
 export function SmartMarathon() {
   return (
-    <article
+    <LocalizedContent translations={smartMarathonTranslations}>
+      <article
       className="relative min-h-[100dvh] overflow-hidden bg-[var(--sm-bg)] text-[var(--sm-text)]"
       style={
         {
@@ -496,6 +499,7 @@ export function SmartMarathon() {
           </Reveal>
         </section>
       </div>
-    </article>
+      </article>
+    </LocalizedContent>
   );
 }

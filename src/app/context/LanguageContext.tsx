@@ -10,6 +10,8 @@ import {
 export type Language = 'en' | 'cn';
 
 const LANGUAGE_STORAGE_KEY = 'portfolio-language';
+// Keep translations available while the public site is English-only.
+export const LANGUAGE_SWITCH_ENABLED = false;
 
 type LanguageContextValue = {
   language: Language;
@@ -19,10 +21,28 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
+function getInitialLanguage(): Language {
+  if (!LANGUAGE_SWITCH_ENABLED) return 'en';
+  if (typeof window === 'undefined') return 'en';
+
+  try {
+    const savedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (savedLanguage === 'en' || savedLanguage === 'cn') return savedLanguage;
+  } catch {
+    // Keep English as the default when storage is unavailable.
+  }
+
+  return 'en';
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('en');
+  const [savedLanguage, setLanguageState] = useState<Language>(getInitialLanguage);
+  const language = LANGUAGE_SWITCH_ENABLED ? savedLanguage : 'en';
 
   useEffect(() => {
+    document.documentElement.lang = language === 'cn' ? 'zh-Hans' : 'en';
+    document.documentElement.dataset.language = language;
+
     try {
       localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
     } catch {
@@ -33,7 +53,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const value = useMemo<LanguageContextValue>(
     () => ({
       language,
-      setLanguage: setLanguageState,
+      setLanguage: (nextLanguage) => {
+        if (LANGUAGE_SWITCH_ENABLED) setLanguageState(nextLanguage);
+      },
       isCN: language === 'cn',
     }),
     [language],

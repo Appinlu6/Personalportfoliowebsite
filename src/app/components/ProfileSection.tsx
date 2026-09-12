@@ -73,7 +73,7 @@ function BlockSubtitle({ children }: { children: ReactNode }) {
 
 function BlockBody({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
-    <p className={`font-['Work_Sans'] font-normal text-sm text-muted-foreground leading-relaxed ${className}`.trim()}>
+    <p className={`cn-balanced-copy font-['Work_Sans'] font-normal text-sm text-muted-foreground leading-relaxed ${className}`.trim()}>
       {children}
     </p>
   );
@@ -212,7 +212,7 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
             <ProfileBlock>
               <InfoBlock
                 title={isCN ? 'A+ 研究' : 'A+ Research'}
-                subtitle="Bauhinia-Mind"
+                subtitle={isCN ? '紫荆心智' : 'Bauhinia-Mind'}
                 body={isCN ? '一个具备记忆能力的 AI 伙伴，探索数字健康、照护与人机关系。' : 'A memory-enabled AI companion exploring digital health, care, and human-AI relationships.'}
               />
             </ProfileBlock>

@@ -2,6 +2,8 @@ import { type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { LocalizedContent } from '../i18n/LocalizedContent';
+import { healthcareServiceTranslations } from '../i18n/caseStudyTranslations';
 
 const NEWS_URL =
   'https://www.cn-healthcare.com/article/20180708/content-505457.html?appfrom=jkj&from=timeline&isappinstalled=0';
@@ -156,7 +158,8 @@ function MediaPlaceholder({
 
 export function HealthcareServiceDesign() {
   return (
-    <article
+    <LocalizedContent translations={healthcareServiceTranslations}>
+      <article
       className="relative min-h-[100dvh] overflow-hidden bg-[var(--hsd-bg)] text-[var(--hsd-text)]"
       style={
         {
@@ -505,6 +508,7 @@ export function HealthcareServiceDesign() {
           </Reveal>
         </section>
       </div>
-    </article>
+      </article>
+    </LocalizedContent>
   );
 }

@@ -155,13 +155,32 @@
     font-weight: 300;
   }
 
+  html[data-language='cn'] body {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.005em;
+  }
+
+  html[data-language='cn'] main {
+    line-break: strict;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  html[data-language='cn'] [class*='Work_Sans'],
+  html[data-language='cn'] [style*='Work Sans'],
+  html[data-language='cn'] [style*='Avenir'],
+  html[data-language='cn'] [style*='Nunito'] {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif !important;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   .page-container {
-    width: min(calc(100% - 1.5rem), calc((100vh - 5rem) * 16 / 9));
-    max-width: 100%;
+    width: min(calc(100vw - 1.5rem), calc((100vh - 5rem) * 16 / 9));
+    max-width: calc(100vw - 1.5rem);
     margin-inline: auto;
     padding-inline: 0.75rem;
   }
@@ -220,4 +239,27 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+}
+
+/* Balance short Chinese headings and avoid isolated characters in body copy. */
+html[data-language='cn'] main :is(h1, h2, h3, h4) {
+  text-wrap: balance;
+  letter-spacing: 0;
+}
+
+html[data-language='cn'] main article h1 {
+  line-height: 1.2 !important;
+}
+
+html[data-language='cn'] main :is(p, dd, li, figcaption) {
+  text-wrap: pretty;
+  line-height: 1.8;
+}
+
+html[data-language='cn'] main :is(.cn-balanced-copy, h1 + p) {
+  text-wrap: balance;
+}
+
+html[data-language='cn'] main :is(.uppercase, [class*='tracking-widest']) {
+  letter-spacing: 0.06em;
 }

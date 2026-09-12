@@ -2,6 +2,8 @@ import { type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { ArrowLeft } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { LocalizedContent } from '../i18n/LocalizedContent';
+import { smartHospitalTranslations } from '../i18n/caseStudyTranslations';
 
 const metadata = [
   { label: 'Type', value: 'Hospital operations platform' },
@@ -152,7 +154,8 @@ function MediaPlaceholder({
 
 export function SmartHospital() {
   return (
-    <article
+    <LocalizedContent translations={smartHospitalTranslations}>
+      <article
       className="relative min-h-[100dvh] overflow-hidden bg-[var(--sh-bg)] text-[var(--sh-text)]"
       style={
         {
@@ -203,12 +206,20 @@ export function SmartHospital() {
             transition={{ duration: 0.76, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex flex-col md:col-span-8">
-              <MediaPlaceholder
-                title="Project overview video"
-                note="16:9 video showing the product, navigation, and hospital scenarios"
-                className="aspect-video w-full shadow-[0_28px_70px_rgba(50,78,108,0.13)]"
-              />
-              <p className="mt-3 text-sm leading-6 text-[var(--sh-muted)]">Video will be added when the final source file is available.</p>
+              <div className="aspect-video overflow-hidden rounded-2xl border border-[var(--sh-line)] bg-black shadow-[0_28px_70px_rgba(50,78,108,0.13)]">
+                <video
+                  className="block h-full w-full object-contain"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/videos/smart-hospital-nanshan-poster.jpg"
+                  aria-label="Smart Hospital V2.0 demonstration at Nanshan Hospital"
+                >
+                  <source src="/videos/smart-hospital-nanshan-demo.mp4" type="video/mp4" />
+                  <a href="/videos/smart-hospital-nanshan-demo.mp4">Download the project video</a>
+                </video>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[var(--sh-muted)]">Smart Hospital V2.0, Nanshan Hospital. Product demonstration, 2 min 53 sec.</p>
             </div>
 
             <div className="rounded-2xl border border-[var(--sh-line)] bg-[var(--sh-surface)] p-6 md:col-span-4 md:p-7">
@@ -227,13 +238,13 @@ export function SmartHospital() {
         <section className="pb-12 md:pb-18">
           <Reveal>
             <SectionHeading intro="Hospital leaders had access to large amounts of operational data, but the reporting tools made comparison, prioritization, and early warning difficult.">
-              Turning reports into a decision space
+              From traditional reports to a 3D decision-making platform
             </SectionHeading>
           </Reveal>
           <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-stretch">
             <div className="rounded-2xl bg-[var(--sh-accent)] p-7 text-[#f6fafe] md:p-9 lg:col-span-5">
               <p className="text-[clamp(1.65rem,3vw,2.7rem)] font-medium leading-[1.08] tracking-[-0.035em]">
-                The challenge was to help administrators see how hospital operations behaved as one connected system.
+                We set out to help hospital leaders see operational data across space and time, with a clear, intuitive view of how the hospital works as a whole.
               </p>
               <p className="mt-10 max-w-[34rem] text-sm leading-6 text-[#e3eef8]">
                 The pilot brought departmental performance, patient distribution, medical resources, and regional context into one visual environment.
@@ -344,11 +355,17 @@ export function SmartHospital() {
           </Reveal>
           <div className="grid gap-6 lg:grid-cols-12 lg:items-stretch">
             <Reveal className="lg:col-span-7">
-              <MediaPlaceholder
-                title="3D scene layer diagram"
-                note="4:3 diagram showing data, infrastructure, administrative regions, and natural conditions"
-                className="aspect-[4/3] h-full"
-              />
+              <div className="flex aspect-[2/1] h-full items-center overflow-hidden rounded-2xl border border-[var(--sh-line)] bg-black">
+                <img
+                  src="/smart-hospital-scene-layers.png"
+                  alt="3D scene layer diagram"
+                  width={360}
+                  height={180}
+                  loading="lazy"
+                  decoding="async"
+                  className="block h-auto w-full object-contain"
+                />
+              </div>
             </Reveal>
             <div className="grid gap-4 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
               {sceneLayers.map((layer) => (
@@ -448,6 +465,7 @@ export function SmartHospital() {
           </div>
         </section>
       </div>
-    </article>
+      </article>
+    </LocalizedContent>
   );
 }

@@ -2,6 +2,8 @@ import { type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { LocalizedContent } from '../i18n/LocalizedContent';
+import { beforeEveningTranslations } from '../i18n/caseStudyTranslations';
 
 const VIDEO_ID = '12lrGjc5Ok49GS4F0buul_ob3fnZoFd5e';
 
@@ -107,7 +109,8 @@ function Figure({ src, alt, caption, className = '' }: { src: string; alt: strin
 
 export function BeforeEveningVR() {
   return (
-    <article
+    <LocalizedContent translations={beforeEveningTranslations}>
+      <article
       className="relative min-h-[100dvh] overflow-hidden bg-[var(--eve-bg)] text-[var(--eve-text)]"
       style={
         {
@@ -463,6 +466,7 @@ export function BeforeEveningVR() {
           </div>
         </section>
       </div>
-    </article>
+      </article>
+    </LocalizedContent>
   );
 }

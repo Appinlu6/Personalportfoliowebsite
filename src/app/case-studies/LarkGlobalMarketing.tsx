@@ -2,6 +2,8 @@ import { type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { ArrowLeft } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { LocalizedContent } from '../i18n/LocalizedContent';
+import { larkGlobalTranslations } from '../i18n/caseStudyTranslations';
 
 const metadata = [
   { label: 'Type', value: 'Global marketing website and design operations' },
@@ -165,7 +167,8 @@ function MediaPlaceholder({
 
 export function LarkGlobalMarketing() {
   return (
-    <article
+    <LocalizedContent translations={larkGlobalTranslations}>
+      <article
       className="relative min-h-[100dvh] overflow-hidden bg-[var(--lark-bg)] text-[var(--lark-text)]"
       style={
         {
@@ -575,6 +578,7 @@ export function LarkGlobalMarketing() {
           </Reveal>
         </section>
       </div>
-    </article>
+      </article>
+    </LocalizedContent>
   );
 }

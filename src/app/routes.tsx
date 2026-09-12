@@ -23,11 +23,8 @@ export const router = createBrowserRouter(
         { path: 'work', Component: WorkPage },
         { path: 'work/:slug', Component: ProjectDetailPage },
         { path: 'about', Component: AboutPage },
+        { path: '*', Component: NotFoundPage },
       ],
-    },
-    {
-      path: '*',
-      Component: NotFoundPage,
     },
   ],
   { basename: import.meta.env.BASE_URL },

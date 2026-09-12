@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 type ProjectSectionNavigatorProps = {
   contentSelector?: string;
@@ -17,6 +18,7 @@ export function ProjectSectionNavigator({
   contentSelector = 'main article',
   headingSelector = 'h2',
 }: ProjectSectionNavigatorProps) {
+  const { isCN, language } = useLanguage();
   const articleRef = useRef<HTMLElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const [sections, setSections] = useState<SectionItem[]>([]);
@@ -48,7 +50,7 @@ export function ProjectSectionNavigator({
       .filter((item): item is SectionItem => Boolean(item));
 
     setSections(preparedSections);
-  }, [contentSelector, headingSelector]);
+  }, [contentSelector, headingSelector, language]);
 
   const updateScrollState = () => {
     const article = articleRef.current ?? (document.querySelector(contentSelector) as HTMLElement | null);
@@ -180,7 +182,7 @@ export function ProjectSectionNavigator({
             }`}
           >
             <div className="mb-2 px-1 text-[10px] uppercase tracking-[0.2em] text-[var(--project-muted,var(--bm-slate))]">
-              Section Locator
+              {isCN ? '章节导航' : 'Section Locator'}
             </div>
             <div className="max-h-full space-y-1 overflow-y-auto pr-1">
               {sections.map((section, index) => {
