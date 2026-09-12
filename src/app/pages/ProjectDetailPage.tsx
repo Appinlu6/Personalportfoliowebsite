@@ -24,6 +24,9 @@ const HealthcareServiceDesign = lazy(() =>
 const LarkGlobalMarketing = lazy(() =>
   import('../case-studies/LarkGlobalMarketing').then((module) => ({ default: module.LarkGlobalMarketing })),
 );
+const CBS5504Mandarin = lazy(() =>
+  import('../case-studies/CBS5504Mandarin').then((module) => ({ default: module.CBS5504Mandarin })),
+);
 
 const caseStudies: Record<string, ReactNode> = {
   'bauhinia-mind': <BauhiniaMind />,
@@ -32,6 +35,7 @@ const caseStudies: Record<string, ReactNode> = {
   'tencent-micision-smart-marathon': <SmartMarathon />,
   'tencent-medical-cloud-o2o': <HealthcareServiceDesign />,
   'lark-global-marketing-website': <LarkGlobalMarketing />,
+  'cbs5504-mandarin-cultural-evolution': <CBS5504Mandarin />,
 };
 
 const fadeUp = {
@@ -130,6 +134,7 @@ export function ProjectDetailPage() {
   const isSmartMarathon = slug === 'tencent-micision-smart-marathon';
   const isHealthcareServiceDesign = slug === 'tencent-medical-cloud-o2o';
   const isLarkGlobalMarketing = slug === 'lark-global-marketing-website';
+  const isCBS5504Mandarin = slug === 'cbs5504-mandarin-cultural-evolution';
 
   const projectTheme = isBeforeEvening
     ? ({
@@ -161,6 +166,12 @@ export function ProjectDetailPage() {
                 '--project-muted': '#5d6d89',
                 '--project-nav-surface': 'rgba(247, 249, 255, 0.92)',
               } as CSSProperties)
+            : isCBS5504Mandarin
+              ? ({
+                  '--project-accent': '#a94f20',
+                  '--project-muted': '#6b584d',
+                  '--project-nav-surface': 'rgba(247, 244, 239, 0.92)',
+                } as CSSProperties)
         : undefined;
 
   if (externalUrl) return <ExternalProjectRedirect url={externalUrl} />;
@@ -191,6 +202,8 @@ export function ProjectDetailPage() {
                 ? 'bg-[#f4f6fb]'
                 : isLarkGlobalMarketing
                   ? 'bg-[#f3f6ff]'
+                  : isCBS5504Mandarin
+                    ? 'bg-[#f7f4ef]'
               : ''
       }`}
       style={projectTheme}
@@ -474,46 +487,6 @@ function BauhiniaMind() {
                   alt="User research workflow"
                   className="block h-auto w-full"
                 />
-              </div>
-              <div className="mb-8 mt-6 space-y-4">
-                <p
-                  className="text-[14px] uppercase tracking-widest text-black"
-                  style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
-                >
-                  Conclusion
-                </p>
-                <p
-                  className="text-[15px] leading-[1.75] text-foreground"
-                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-                >
-                  The user research reveals that the three challenges—information fragmentation, cross-cultural
-                  system mismatch, and emotional vulnerability—are not isolated. They reinforce one another
-                  across the healthcare-seeking journey, increasing uncertainty and making it harder for students
-                  to decide what to do next.
-                </p>
-                <div>
-                  <p
-                    className="mb-1.5 text-[14px] uppercase tracking-widest text-black"
-                    style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
-                  >
-                    Opportunity
-                  </p>
-                  <p
-                    className="text-[15px] leading-[1.75] text-foreground"
-                    style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-                  >
-                    Bauhinia-Mind can address this interconnected gap by acting as a non-clinical cultural host
-                    that translates local healthcare information into culturally understandable, emotionally
-                    supportive, and executable guidance.
-                  </p>
-                </div>
-                <p
-                  className="text-[15px] leading-[1.75] text-foreground"
-                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-                >
-                  From isolated pain points → to an integrated support journey that connects information, culture,
-                  emotion, and action.
-                </p>
               </div>
               <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                 Market Research & Benchmark Matrix
@@ -1213,26 +1186,6 @@ function BauhiniaMind() {
                   ratio="9:16"
                   caption="Fig 10B — Symptom-check journey (placeholder)"
                 />
-              </div>
-            </div>
-          </CaseSection>
-
-          <CaseSection title="Safety & Non-Clinical Boundaries">
-            <div className="w-full max-w-none space-y-6">
-              <CopySlot label="Lead paragraph · how the system refuses clinical claims, redirects to humans, and logs escalations · ~2 short paragraphs" />
-              <div className="flex flex-wrap gap-2 text-xs">
-                <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)] shadow-sm">
-                  Non-clinical
-                </span>
-                <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)] shadow-sm">
-                  Crisis-aware
-                </span>
-                <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)] shadow-sm">
-                  Bilingual escalation
-                </span>
-                <span className="rounded-full bg-white/70 px-3 py-1 text-[var(--bm-burgundy)] shadow-sm">
-                  Cultural broker
-                </span>
               </div>
             </div>
           </CaseSection>

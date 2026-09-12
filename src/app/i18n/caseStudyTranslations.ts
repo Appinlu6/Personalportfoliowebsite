@@ -764,13 +764,6 @@ export const bauhiniaMindTranslations: TranslationMap = {
   'Across:': '体验维度：',
   'Information · Decision · Culture · Emotion · Support': '信息 · 决策 · 文化 · 情绪 · 支持',
   'CONCLUSION': '结论',
-  'The user research reveals that the three challenges—information fragmentation, cross-cultural system mismatch, and emotional vulnerability—are not isolated. They reinforce one another across the healthcare-seeking journey, increasing uncertainty and making it harder for students to decide what to do next.':
-    '用户研究显示，信息碎片化、跨文化医疗路径差异和情绪脆弱会在求医过程中互相放大，让学生更难判断下一步。',
-  'OPPORTUNITY': '设计机会',
-  'Bauhinia-Mind can address this interconnected gap by acting as a non-clinical cultural host that translates local healthcare information into culturally understandable, emotionally supportive, and executable guidance.':
-    '紫荆心智可以作为非临床的“文化向导”，把本地医疗信息转化为文化上易理解、情绪上有支持、行动上可执行的指引。',
-  'From isolated pain points → to an integrated support journey that connects information, culture, emotion, and action.':
-    '设计机会在于把零散问题串成一段连接信息、文化、情绪与行动的支持旅程。',
   'Market Research & Benchmark Matrix': '市场研究与竞品矩阵',
   'The competitive landscape and service benchmark reveal a consistent gap: existing solutions are strong in isolated areas, but no single service integrates localized healthcare grounding, cross-cultural adaptation, empathetic support, continuity, and actionable navigation across the full user journey.':
     '竞品与服务基准分析发现了一个持续存在的空缺：现有方案往往只擅长单一环节，没有一项服务能在完整旅程中同时覆盖本地医疗依据、跨文化适应、共情支持、连续性与可执行导航。',
@@ -900,15 +893,6 @@ export const bauhiniaMindTranslations: TranslationMap = {
   'Journey UI · symptom-check flow': '旅程界面 · 症状查询流程',
   'Fig 10B — Symptom-check journey (placeholder)': '图 10B — 症状查询旅程（占位）',
   'FIG 10B — SYMPTOM-CHECK JOURNEY (PLACEHOLDER)': '图 10B — 症状查询旅程（占位）',
-  'Safety & Non-Clinical Boundaries': '安全与非临床边界',
-  '[ COPY SLOT · LEAD PARAGRAPH · HOW THE SYSTEM REFUSES CLINICAL CLAIMS, REDIRECTS TO HUMANS, AND LOGS ESCALATIONS · ~2 SHORT PARAGRAPHS ]':
-    '[ 文案占位 · 系统如何拒绝临床判断、转介人工支持并记录升级事件 · 约 2 个短段落 ]',
-  'Lead paragraph · how the system refuses clinical claims, redirects to humans, and logs escalations · ~2 short paragraphs':
-    '系统如何拒绝临床判断、转介人工支持并记录升级事件 · 约 2 个短段落',
-  'Non-clinical': '非临床',
-  'Crisis-aware': '识别危机',
-  'Bilingual escalation': '双语升级支持',
-  'Cultural broker': '文化桥梁',
   'Impact & Outcomes': '影响与成果',
   'Preliminary pilot testing with 45 students over 4 weeks showed statistically significant improvements in self-reported anxiety and depression symptoms. The platform received a System Usability Scale score of 82.5, indicating excellent usability. The project received Grade A+ for the MSc capstone and is currently under consideration for implementation at partner universities.':
     '为期四周、共 45 名学生参与的初步试点显示，参与者自述的焦虑与抑郁症状有统计显著改善。平台的系统可用性量表得分为 82.5，达到优秀水平。项目获得硕士毕业项目 A+，并正在与合作院校讨论落地可能。',

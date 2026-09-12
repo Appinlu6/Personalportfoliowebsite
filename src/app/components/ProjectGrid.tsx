@@ -29,7 +29,12 @@ const projectCopyCN: Record<string, { title: string; year: string; tags: string[
   'bauhinia-mind': {
     title: '紫荆心智',
     year: '2026 年 1 月 – 4 月',
-    tags: ['用户研究', '服务设计', 'AI/ML', '数字健康'],
+    tags: ['研究', '用户研究', '服务设计', 'AI/ML', '数字健康'],
+  },
+  'cbs5504-mandarin-cultural-evolution': {
+    title: '橘：跨越三千年的文化演变',
+    year: '2025 年 10 月 - 11 月',
+    tags: ['研究', '数字人文', 'NLP 研究', '语料库设计', '数据可视化'],
   },
   'tencent-micision-smart-hospital': {
     title: '腾讯觅决 · 智慧医院',
@@ -53,7 +58,7 @@ const projectCopyCN: Record<string, { title: string; year: string; tags: string[
   },
   'before-evening-vr': {
     title: 'Before Evening：VR 叙事游戏',
-    year: '2026',
+    year: '2026 年 1 月 - 4 月',
     tags: ['UE5 引擎', 'VR 开发', 'AI 对话系统', 'MetaHuman'],
   },
 };

@@ -18,10 +18,21 @@ export const projects: Project[] = [
     year: '2026 Jan – Apr',
     description:
       'An Empathic, Memory-Enabled AI Health Companion for Mainland Chinese Students in Hong Kong',
-    tags: ['UX Research', 'Service Design', 'AI/ML', 'Digital Health'],
-    featured: true,
+    tags: ['Research', 'UX Research', 'Service Design', 'AI/ML', 'Digital Health'],
+    featured: false,
     image: '/bauhinia-mind-cover-lastframe.jpg',
     hoverVideo: '/videos/bauhinia-logo.mp4',
+  },
+  {
+    slug: 'cbs5504-mandarin-cultural-evolution',
+    title: 'Mandarin: A Cultural Evolution',
+    year: '2025 Oct - Nov',
+    description:
+      'A digital humanities study tracing the changing meanings of the orange across three thousand years of Chinese history through a curated corpus, NLP analysis, close reading, and interactive visualisation.',
+    tags: ['Research', 'Digital Humanities', 'NLP Research', 'Corpus Design', 'Data Visualisation'],
+    featured: false,
+    image: '/cbs5504/mandarin-cover.webp',
+    hoverVideo: '/cbs5504/mandarin-cover-hover.mp4',
   },
   {
     slug: 'tencent-micision-smart-hospital',
@@ -73,7 +84,7 @@ export const projects: Project[] = [
   {
     slug: 'before-evening-vr',
     title: 'Before Evening: VR Narrative Game',
-    year: '2026',
+    year: '2026 Jan - Apr',
     description:
       'A VR mystery set in a Chinese high school. Players investigate Yi Linlan\'s past by speaking naturally with AI-powered MetaHuman characters and showing them objects found around the campus. I worked on project management, scene design, and VR interaction programming.',
     tags: ['UE5 Engine', 'VR Development', 'AI-Driven Dialogue', 'MetaHuman'],
