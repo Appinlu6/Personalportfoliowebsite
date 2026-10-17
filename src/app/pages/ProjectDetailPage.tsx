@@ -390,9 +390,32 @@ function BauhiniaMind() {
             >
               Overview
             </h2>
+            <div className="mb-6">
+              <h3
+                className="mb-3 text-[14px] uppercase tracking-widest text-black"
+                style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+              >
+                Target problem
+              </h3>
+              <div
+                className="space-y-3 text-[15px] leading-[1.75] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                <p>
+                  Mainland Chinese students in Hong Kong face a dual challenge: practical uncertainty in navigating
+                  an unfamiliar healthcare system and emotional stress caused by cross-cultural transition.
+                </p>
+                <p>
+                  Through qualitative profiling of 15 students, the research identified a recurring systemic gap:
+                  when health issues emerge, users are forced to choose between fragmented institutional information
+                  and generic emotional reassurance, with no integrated pathway that combines empathy and executable
+                  next steps.
+                </p>
+              </div>
+            </div>
             <div className="mb-6 overflow-hidden rounded-[0.625rem] bg-white/70">
               <img
-                src="/BG_AIMS_Final.png"
+                src="/BG_AIMS_Target_Problem.webp"
                 alt="Target problem overview diagram"
                 className="h-full w-full object-cover"
               />
@@ -420,7 +443,7 @@ function BauhiniaMind() {
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   A structured multi-dimensional questionnaire was designed around the complete healthcare-seeking
-                  journey, rather than isolated service touchpoints.
+                  journey.
                 </p>
                 <p
                   className="text-[15px] leading-[1.75] text-foreground"
@@ -429,36 +452,6 @@ function BauhiniaMind() {
                   The framework examines each stage through five UX dimensions—Information, Decision, Culture,
                   Emotion, and Support—to identify where uncertainty, friction, and emotional stress emerge.
                 </p>
-                <div className="grid gap-6 md:grid-cols-2 md:items-start">
-                  <div>
-                    <p
-                      className="mb-1.5 text-[15px] leading-[1.75] text-foreground"
-                      style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 600 }}
-                    >
-                      From:
-                    </p>
-                    <p
-                      className="text-[15px] leading-[1.75] text-foreground"
-                      style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-                    >
-                      Search → Decide → Navigate → Seek Care → Follow-up
-                    </p>
-                  </div>
-                  <div>
-                    <p
-                      className="mb-1.5 text-[15px] leading-[1.75] text-foreground"
-                      style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 600 }}
-                    >
-                      Across:
-                    </p>
-                    <p
-                      className="text-[15px] leading-[1.75] text-foreground"
-                      style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-                    >
-                      Information · Decision · Culture · Emotion · Support
-                    </p>
-                  </div>
-                </div>
                 </div>
               </div>
               <div className="mb-8 grid gap-6 md:grid-cols-3">
@@ -561,7 +554,7 @@ function BauhiniaMind() {
                 >
                   Mainland Chinese students in Hong Kong face a dual challenge: practical uncertainty in navigating
                   an unfamiliar healthcare system and emotional stress caused by cross-cultural transition. Through
-                  qualitative profiling of 25 students, the research identified a recurring systemic gap: when health
+                  qualitative profiling of 15 students, the research identified a recurring systemic gap: when health
                   issues emerge, users are forced to choose between fragmented institutional information and generic
                   emotional reassurance, with no integrated pathway that combines empathy and executable next steps.
                 </p>

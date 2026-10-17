@@ -445,9 +445,6 @@ export function BeforeEveningVR() {
                 <a href="/docs/before-evening-process-book.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[var(--eve-accent)] hover:text-[var(--eve-text)]">
                   Process book <ArrowUpRight size={15} strokeWidth={1.7} />
                 </a>
-                <a href="/docs/before-evening-pitch-deck.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[var(--eve-accent)] hover:text-[var(--eve-text)]">
-                  Pitch deck <ArrowUpRight size={15} strokeWidth={1.7} />
-                </a>
               </div>
             </Reveal>
             <Reveal>

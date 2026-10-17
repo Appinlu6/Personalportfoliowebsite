@@ -184,7 +184,7 @@ export function CinematicIntro() {
               ease: EASE_OUT_EXPO,
             }}
           >
-            {isCN ? '连接 AI 与设计' : 'Bridging AI and Design'}
+            {isCN ? '研究 AI。' : 'Researching AI.'}
           </motion.p>
 
           <motion.p
@@ -202,7 +202,7 @@ export function CinematicIntro() {
               ease: EASE_OUT_EXPO,
             }}
           >
-            {isCN ? '为了人的智慧。' : 'for human intelligence.'}
+            {isCN ? '为人的福祉而设计。' : 'Designing for human wellbeing.'}
           </motion.p>
         </motion.div>
       </motion.div>

@@ -153,7 +153,6 @@ export const beforeEveningTranslations: TranslationMap = {
   '(Right)': '（右）',
   '3D assets, texturing, level design, player flow, and Blueprint logic': '3D 资产、材质、关卡设计、玩家动线与蓝图逻辑',
   'Process book': '过程文档',
-  'Pitch deck': '项目提案',
   'Before Evening received a Commendation Award in the 2025/26 Metaverse + AI Contest at PolyU on 21 July 2026.':
     'Before Evening 于 2026 年 7 月 21 日获得香港理工大学 2025/26「Metaverse + AI Contest」优异奖。',
   'Contest details': '查看比赛详情',
@@ -751,18 +750,19 @@ export const bauhiniaMindTranslations: TranslationMap = {
     '系统采用混合 GraphRAG 检索（Supabase pgvector 3072 维向量与 Neo4j 结构化推理）、双语查询增强，以及结构化的 Know-Feel-Act（A/B/C）共情策略。',
   'The current prototype has processed 30 localized Hong Kong medical documents, built a knowledge graph with 1,188 nodes and 1,733 relations, and maintains average response latency under 2.5 seconds while preserving strict non-diagnostic boundaries.':
     '当前原型已处理 30 份香港本地医疗资料，建立包含 1,188 个节点和 1,733 条关系的知识图谱；在严格遵守非诊断边界的前提下，平均响应时间低于 2.5 秒。',
+  'Target problem': '目标问题',
+  'Mainland Chinese students in Hong Kong face a dual challenge: practical uncertainty in navigating an unfamiliar healthcare system and emotional stress caused by cross-cultural transition.':
+    '在港内地学生面对两重挑战：一方面，他们不熟悉香港医疗体系，不确定该如何求医；另一方面，跨文化适应也带来了持续的情绪压力。',
+  'Through qualitative profiling of 15 students, the research identified a recurring systemic gap: when health issues emerge, users are forced to choose between fragmented institutional information and generic emotional reassurance, with no integrated pathway that combines empathy and executable next steps.':
+    '通过对 15 名学生的定性画像研究，项目发现了一个反复出现的系统性缺口：当健康问题出现时，学生只能在零散的机构信息与泛化的情绪安慰之间选择，缺少一条同时提供共情支持与可执行下一步的完整路径。',
   'Research & Gap': '研究与机会缺口',
   'User Research': '用户研究',
   'RESEARCH APPROACH': '研究方法',
   'Research Approach': '研究方法',
-  'A structured multi-dimensional questionnaire was designed around the complete healthcare-seeking journey, rather than isolated service touchpoints.':
-    '问卷以完整求医旅程为线索，覆盖各阶段的服务触点。',
+  'A structured multi-dimensional questionnaire was designed around the complete healthcare-seeking journey.':
+    '问卷围绕完整的求医旅程展开。',
   'The framework examines each stage through five UX dimensions—Information, Decision, Culture, Emotion, and Support—to identify where uncertainty, friction, and emotional stress emerge.':
     '研究从信息、决策、文化、情绪和支持五个体验维度审视每个阶段，寻找不确定、阻碍与情绪压力出现的位置。',
-  'From:': '旅程阶段：',
-  'Search → Decide → Navigate → Seek Care → Follow-up': '搜索 → 决策 → 导航 → 就医 → 随访',
-  'Across:': '体验维度：',
-  'Information · Decision · Culture · Emotion · Support': '信息 · 决策 · 文化 · 情绪 · 支持',
   'CONCLUSION': '结论',
   'Market Research & Benchmark Matrix': '市场研究与竞品矩阵',
   'The competitive landscape and service benchmark reveal a consistent gap: existing solutions are strong in isolated areas, but no single service integrates localized healthcare grounding, cross-cultural adaptation, empathetic support, continuity, and actionable navigation across the full user journey.':

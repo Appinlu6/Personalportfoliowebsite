@@ -73,7 +73,7 @@ export function Contact() {
 
         <div className="mt-24 pt-12 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © 2026 Lu Zhengping. Designed with care.
+            © 2026 Lu Zhengping. Reimagined with AI.
           </p>
         </div>
       </div>
