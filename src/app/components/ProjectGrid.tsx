@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { projects } from '../data/projects';
+import { projects, projectTagLabelsCN } from '../data/projects';
 
 type ProjectGridProps = {
   columns?: 2 | 3;
@@ -25,41 +25,34 @@ const cardFadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-const projectCopyCN: Record<string, { title: string; year: string; tags: string[] }> = {
+const projectCopyCN: Record<string, { title: string; year: string }> = {
   'bauhinia-mind': {
     title: '紫荆心智',
     year: '2026 年 1 月 – 4 月',
-    tags: ['研究', '用户研究', '服务设计', 'AI/ML', '数字健康'],
   },
   'cbs5504-mandarin-cultural-evolution': {
     title: '橘：跨越三千年的文化演变',
     year: '2025 年 10 月 - 11 月',
-    tags: ['研究', '数字人文', 'NLP 研究', '语料库设计', '数据可视化'],
   },
   'tencent-micision-smart-hospital': {
     title: '腾讯觅决 · 智慧医院',
     year: '2018 – 2021',
-    tags: ['0-1 产品设计', '数据可视化', '医疗 UX', '设计领导力'],
   },
   'tencent-medical-cloud-o2o': {
     title: '医疗服务设计',
-    year: '2017 – 2018',
-    tags: ['患者体验', 'O2O 服务设计', '旅程地图', '田野调研'],
+    year: '2017 年 8 月 – 10 月',
   },
   'tencent-micision-smart-marathon': {
     title: '腾讯觅决 · 智慧马拉松',
     year: '2019 年 1 月 – 4 月',
-    tags: ['0-1 产品管理', '复杂数据可视化', 'UE 3D 技术设计', '需求转译'],
   },
   'lark-global-marketing-website': {
     title: 'Lark 全球营销官网',
     year: '2022 – 2023',
-    tags: ['网页设计', '界面设计', '营销流程优化', '前端落地'],
   },
   'before-evening-vr': {
     title: 'Before Evening：VR 叙事游戏',
     year: '2026 年 1 月 - 4 月',
-    tags: ['UE5 引擎', 'VR 开发', 'AI 对话系统', 'MetaHuman'],
   },
 };
 
@@ -87,7 +80,7 @@ function ProjectCard({
   const localized = isCN ? projectCopyCN[project.slug] : undefined;
   const title = localized?.title ?? project.title;
   const year = localized?.year ?? project.year;
-  const tags = localized?.tags ?? project.tags;
+  const tags = isCN ? project.tags.map((tag) => projectTagLabelsCN[tag]) : project.tags;
   const cardRef = useRef<HTMLAnchorElement | null>(null);
   const hoverVideoRef = useRef<HTMLVideoElement | null>(null);
   const prefersHover = usePrefersHover();

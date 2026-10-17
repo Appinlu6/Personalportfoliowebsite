@@ -165,8 +165,8 @@ export const smartHospitalTranslations: TranslationMap = {
   'Smart Hospital V2.0, Nanshan Hospital. Product demonstration, 2 min 53 sec.': '南山医院智慧医院运营管理系统 V2.0 演示，时长 2 分 53 秒。',
   'Tencent Micision': '腾讯觅决',
   'Smart Hospital': '智慧医院',
-  'A medical data platform that helps hospital leaders read operations across departments, regions, and time.':
-    '一套面向医院管理者的医疗数据平台，用同一视角查看跨科室、跨区域与不同时段的运营状况。',
+  'A medical data platform that helps hospital leaders read operations across departments, regions, and time, and anticipate what comes next.':
+    '一套面向医院管理者的医疗数据平台，用同一视角查看跨科室、跨区域与不同时段的运营状况，并预判接下来的变化。',
   'Project overview video': '项目概览视频',
   '16:9 video showing the product, navigation, and hospital scenarios': '16:9 视频，展示产品、浏览路径与医院应用场景',
   'Video will be added when the final source file is available.': '最终视频素材确认后补充。',
@@ -175,13 +175,13 @@ export const smartHospitalTranslations: TranslationMap = {
   'Product design lead': '产品设计负责人',
   Pilot: '试点',
   'A hospital in Shenzhen': '深圳某医院',
-  'Research, product framework, data visualization, 3D experience': '调研、产品框架、数据可视化与 3D 体验',
+  'Field research, product framework, data analysis and forecasting, 3D visualization': '实地调研、产品框架、数据分析与预测、3D 可视化',
   'Private cloud and cloud rendering': '私有云与云渲染',
   'From traditional reports to a 3D decision-making platform': '从传统报表到立体决策平台',
   'Hospital leaders had access to large amounts of operational data, but the reporting tools made comparison, prioritization, and early warning difficult.':
     '医院管理者掌握大量运营数据，但传统报表很难支持横向比较、优先级判断和风险预警。',
-  'We set out to help hospital leaders see operational data across space and time, with a clear, intuitive view of how the hospital works as a whole.':
-    '项目要解决的是：让管理者从空间和时间两个维度，整体、直观地理解医院系统的运行数据。',
+  'We set out to move hospital leaders from reading reports to anticipating change, by showing operational data across space and time as one connected system.':
+    '项目的目标，是让管理者从"看报表"走向"预判变化"：从空间和时间两个维度，把医院运营数据看成一个相互关联的整体。',
   'The pilot brought departmental performance, patient distribution, medical resources, and regional context into one visual environment.':
     '试点将科室运营、患者分布、医疗资源和区域信息放进同一个可视化环境。',
   'Product overview image': '产品概览图',
@@ -281,6 +281,28 @@ export const smartHospitalTranslations: TranslationMap = {
   'Designed the cross-scale viewing path': '设计跨尺度浏览路径',
   'Defined the 3D data presentation language': '定义 3D 数据呈现语言',
   'Supported component reuse and hospital deployment': '推动组件复用与医院落地',
+  'Defined cross-department analysis and forecasting scenarios': '定义跨科室数据分析与预测场景',
+  'From reporting to foresight': '从数据报表到前瞻洞察',
+  'Beyond statistics and dashboards for each level of management, the platform analysed hospital operations across time and space, then used historical data to anticipate what was likely to happen next.':
+    '平台不止于数据统计和面向各级管理者的可视化看板，还从时间与空间维度分析医院运营，并基于历史数据预判接下来可能发生的情况。',
+  Statistics: '数据统计',
+  'What happened': '发生了什么',
+  'Core indicators summarised for directors, department heads, and operational staff, each at the level of detail their role needs.':
+    '为院长、科室主任和运营人员汇总核心指标，每个角色看到与其职责相匹配的颗粒度。',
+  'Multi-dimensional analysis': '多维数据分析',
+  'Why it happened': '为什么发生',
+  'Data from separate departments compared across time and space to reveal patterns in patient flow, resource use, and operational load.':
+    '打通各科室数据，从时间和空间维度比较，揭示患者流动、资源使用和运营负荷中的规律。',
+  Forecasting: '多维预测',
+  'What happens next': '接下来会发生什么',
+  'Historical hospital data used to forecast trends across several dimensions, so the hospital could plan ahead instead of reacting.':
+    '基于医院历史数据进行多维趋势预测，让医院提前规划，而不是被动应对。',
+  'COVID-19': '新冠疫情期间',
+  'Forecasting where fever patients would gather, before they arrived.': '在发热患者到来之前，预测他们会在哪里聚集。',
+  'During the pandemic, the platform tracked how clusters of fever patients were moving across the region and forecast where they were likely to concentrate next, giving the hospital time to prepare contingency plans in advance.':
+    '疫情期间，平台追踪区域内发热患者聚集的迁移，并预测下一步可能集中的位置，让医院有时间提前做好预案。',
+  'Fever patient forecasting': '发热患者迁移预测',
+  '16:9 map view showing fever patient movement and forecast clusters': '16:9 地图视图，展示发热患者迁移与预测聚集区域',
 };
 
 export const smartMarathonTranslations: TranslationMap = {
@@ -293,7 +315,7 @@ export const smartMarathonTranslations: TranslationMap = {
   '16:9 video showing the race map, live data, and emergency workflow': '16:9 视频，展示赛事地图、实时数据与应急流程',
   'Video will be added when the final source file is available.': '最终视频素材确认后补充。',
   'Marathon command platform': '马拉松赛事指挥平台',
-  'March-April 2019': '2019 年 3–4 月',
+  'January-April 2019': '2019 年 1–4 月',
   'Product manager and design lead': '产品经理与设计负责人',
   'Yangzhou Marathon': '扬州马拉松',
   '3 people': '3 人',
@@ -307,14 +329,14 @@ export const smartMarathonTranslations: TranslationMap = {
     '平台把跑者位置、穿戴设备健康数据、赛道状态、救护车、急救站和调度决策放在同一视图。',
   'Race command overview': '赛事指挥总览',
   '16:10 interface view showing the Yangzhou course and live event data': '16:10 界面图，展示扬州赛道与实时赛事数据',
-  'Coordinating six partners in four weeks': '四周内协同六方落地',
-  'The project began without a domestic reference case and moved from concept to live event in less than one month.':
-    '当时国内没有可参考的同类案例，项目在不到一个月内从概念走到赛事现场。',
+  'Coordinating six partners in a four-week sprint': '四周冲刺内协同六方落地',
+  'The project began without a domestic reference case, and the race date could not move. After research and planning, the platform was built and delivered in a development sprint of under four weeks.':
+    '当时国内没有可参考的同类案例，而赛事日期不能延后。完成调研和规划后，平台在不到四周的开发冲刺内完成搭建并交付。',
   First: '首个',
   'Domestic marathon big data lake visualization project': '国内马拉松大数据湖可视化项目',
   'Partner organizations working across the event': '参与赛事协作的机构',
-  '< 1 month': '不到 1 个月',
-  'From exploration to live delivery': '从探索到现场交付',
+  '< 4 weeks': '不到 4 周',
+  'Development sprint to live race day': '从开发冲刺到比赛当天上线',
   'People on the core project team': '核心项目团队人数',
   'Partner and delivery map': '协作与交付关系图',
   '16:9 diagram showing the organizing committee, public security, rescue command, telecom, wearable, and technology partners':
@@ -390,15 +412,21 @@ export const smartMarathonTranslations: TranslationMap = {
   '16:9 photograph of the command team using the platform during the race': '16:9 现场照片，展示指挥团队在比赛期间使用平台',
   'Live event delivery': '赛事现场交付',
   '4:3 photograph showing the platform installed at the Yangzhou Marathon': '4:3 现场照片，展示平台在扬州马拉松完成部署',
-  'The system moved from product exploration to live delivery in under four weeks.': '系统在不到四周内从产品探索走到现场交付。',
+  'The platform went from development to live race-day use in under four weeks.': '平台从开发到比赛当天现场使用，用时不到四周。',
   'On-site review': '现场评审',
   '4:3 photograph of the event operations review and platform demonstration': '4:3 现场照片，记录赛事运营评审与平台演示',
-  'The live platform was reviewed on site by event leadership and the Mayor of Yangzhou.':
-    '赛事领导与扬州市市长在现场听取了平台汇报并进行评审。',
+  'The live platform was reviewed on site by event leadership and the Vice Mayor of Yangzhou.':
+    '赛事领导与扬州市副市长在现场视察了平台，并听取汇报。',
+  'In the press': '媒体报道',
+  '“Through AI and big-data analysis, the platform identified runners whose heart rates were approaching dangerous levels and alerted managers before it became an emergency.”':
+    '"通过人工智能与大数据分析，辅助决策平台能第一时间发现心率数据接近危险水平的选手，并向管理者发出预警，防范于未然。"',
+  'China Daily, 22 April 2019, reporting on the 2019 Yangzhou Half Marathon, which drew more than 30,000 registered runners. The article described the platform as the first smart marathon management platform in China.':
+    '中国日报网，2019 年 4 月 22 日。报道 2019 扬州国际半程马拉松，赛事吸引超过 3 万名选手报名；文中称该平台为国内首创的智慧马拉松体育赛事管理平台。',
+  'Read the article (Chinese)': '阅读原文',
   'Product management': '产品管理',
   'Defined the product scope': '明确产品范围',
   'Planned the delivery process': '规划交付流程',
-  'Balanced priorities within the four-week schedule': '在四周周期内协调优先级',
+  'Balanced priorities within a four-week development sprint': '在四周开发冲刺内协调优先级',
   'Research and design': '研究与设计',
   'Interviewed command staff': '访谈赛事指挥人员',
   'Translated scenarios into requirements': '把现场场景转化为产品需求',
@@ -409,9 +437,30 @@ export const smartMarathonTranslations: TranslationMap = {
   'Supported Unreal Engine implementation': '支持 Unreal Engine 落地',
   'Coordination and delivery': '协作与交付',
   'Aligned six partner organizations': '协调六家合作机构',
-  'Integrated bracelet and location data': '接入手环与定位数据',
+  'Calibrated wristband and location data on site in Yangzhou': '在扬州现场联调手环与定位数据',
+  'Defined abnormal-signal alert rules with the event team': '与赛事官方共同制定异常信号预警规则',
   'Supported the live event launch': '支持赛事现场上线',
-  'Read the event coverage': '查看赛事报道',
+  'Calibrating real hardware on site': '现场联调真实硬件',
+  'This was my first project using smart-hardware data in a live event. Before race day, I worked in Yangzhou with the official wristband team to test the data feeding the command screen.':
+    '这是我第一次把智能硬件采集的数据用在真实赛事中。赛前，我亲自到扬州，与赛事官方的手环团队一起联调指挥大屏的数据。',
+  'Location accuracy': '定位准确性',
+  'Checked whether the GIS positions reported by each wristband matched where runners actually were on the course.':
+    '核对手环回传的 GIS 定位，是否与跑者在赛道上的真实位置一致。',
+  'Sampling frequency': '采集频率',
+  'Tested how often wristbands should collect and send data so the command screen stayed current.':
+    '测试手环采集和回传数据的频率，确保指挥大屏的数据足够及时。',
+  'Battery life': '电池续航',
+  'Measured whether the battery could last the full race at each collection and upload rate.':
+    '验证在不同采集与回传频率下，电池能否支撑跑完全程。',
+  'Alert rules': '预警规则',
+  'Reviewed abnormal readings with the event team to separate false alarms from genuine health risks.':
+    '与赛事官方一起研究手环异常数据，区分误报和真正的健康风险。',
+  Outcome: '结果',
+  'A collection and upload schedule that kept the data fresh while letting every wristband last the whole race.':
+    '得出最佳的数据采集与回传频率方案：既保证数据及时，又让每只手环的续航撑完整场赛事。',
+  'Alert logic': '预警逻辑',
+  'Only confirmed abnormal signals reached the command screen, so supervisors could tell the medical team at a given kilometre exactly which runner needed help.':
+    '只有确认的异常信号才会推送到指挥大屏，监管人员可以直接通知对应公里处的急救人员，去援助具体编号的参赛者。',
 };
 
 export const healthcareServiceTranslations: TranslationMap = {
@@ -425,7 +474,8 @@ export const healthcareServiceTranslations: TranslationMap = {
   'Final project media will replace this placeholder.': '最终项目素材确认后替换此占位内容。',
   'Patient experience service design': '患者体验服务设计',
   'August-October 2017': '2017 年 8–10 月',
-  'Product manager and service designer': '产品经理与服务设计师',
+  'Product experience designer': '产品体验设计师',
+  'Experience strategy': '体验策略',
   Hospitals: '合作医院',
   'Fudan University Shanghai Cancer Center and Beijing 301 Hospital': '复旦大学附属肿瘤医院与北京 301 医院',
   Channels: '服务渠道',
@@ -434,10 +484,10 @@ export const healthcareServiceTranslations: TranslationMap = {
   'Shortening the hospital day': '缩短患者在医院的一天',
   'Long queues and repeated information handoffs made a hospital visit difficult for patients and staff.':
     '漫长排队和反复的信息交接，让患者和医务人员都承受了额外负担。',
-  'The service joined digital tasks and hospital guidance into one continuous visit.':
-    '这套服务把线上操作与院内引导接成一段连续的就医旅程。',
-  'It addressed registration, waiting, examinations, payment, and document collection through the hospital account and on-site materials.':
-    '患者可通过医院公众号与现场物料完成挂号、候诊、检查、缴费和资料领取。',
+  'Every touchpoint answered one question: what does the patient need to do next?':
+    '每一个触点都在回答同一个问题：患者下一步该做什么？',
+  'The service joined the hospital account and on-site guidance into one continuous visit, covering registration, waiting, examinations, payment, and document collection.':
+    '这套服务把医院公众号和院内引导接成一段连续的就医旅程，覆盖挂号、候诊、检查、缴费和资料领取。',
   'Average reduction in the time patients spent at the hospital.': '患者平均在院时间减少',
   "Average reduction in doctors' time spent collecting materials.": '医生平均资料收集时间减少',
   'Before and after launch': '上线前后',
@@ -449,8 +499,8 @@ export const healthcareServiceTranslations: TranslationMap = {
   'Portrait photograph of waiting areas, service counters, and in-hospital navigation': '竖幅照片，记录候诊区、服务台与院内导视',
   'On-site field study': '现场田野调研',
   'Portrait photograph documenting queues and communication during a hospital visit': '竖幅照片，记录就医过程中的排队与沟通',
-  'This was the first product project I led. Entering the service as a patient made the friction visible in a way reports could not.':
-    '这是我第一次主导产品项目。亲自以患者身份走完整个流程，让报告里看不见的摩擦变得具体。',
+  'My first project after joining Tencent. Walking the journey as a patient showed friction that no report could capture, and shaped how I approached every data product that followed.':
+    '这是我加入腾讯后的第一个项目。以患者身份亲自走完整个流程，让报告里看不到的摩擦变得具体，也影响了我之后做每一个数据产品的方式。',
   'The team visited Fudan University Shanghai Cancer Center and studied communication among patients, doctors, and department leaders.':
     '团队前往复旦大学附属肿瘤医院，观察患者、医生和科室负责人之间的信息传递。',
   Observe: '观察',
@@ -564,7 +614,9 @@ export const larkGlobalTranslations: TranslationMap = {
     '16:9 视频，展示客户案例、产品页面、3D 视觉与设计运营系统',
   'Final project media will replace this placeholder.': '最终项目素材确认后替换此占位内容。',
   'Global marketing website and design operations': '全球营销网站与设计运营',
-  'Web designer, visual designer, and frontend builder': '网页设计、视觉设计与前端搭建',
+  'Creative Designer, Global Marketing': '创意设计师（全球营销）',
+  Responsibilities: '具体职责',
+  'Web design, visual design, and frontend build': '网页设计、视觉设计与前端搭建',
   'PMM, Sales, Product, UX, and Creative Design': 'PMM、销售、产品、UX 与创意设计',
   'Customer Stories, product pages, 3D campaigns, component library, and brand assets':
     '客户案例、产品页面、3D 营销视觉、组件库与品牌资产',

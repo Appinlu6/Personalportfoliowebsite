@@ -8,7 +8,8 @@ import { larkGlobalTranslations } from '../i18n/caseStudyTranslations';
 const metadata = [
   { label: 'Type', value: 'Global marketing website and design operations' },
   { label: 'Duration', value: '2022-2023' },
-  { label: 'Role', value: 'Web designer, visual designer, and frontend builder' },
+  { label: 'Role', value: 'Creative Designer, Global Marketing' },
+  { label: 'Responsibilities', value: 'Web design, visual design, and frontend build' },
   { label: 'Partners', value: 'PMM, Sales, Product, UX, and Creative Design' },
   { label: 'Scope', value: 'Customer Stories, product pages, 3D campaigns, component library, and brand assets' },
   { label: 'Tools', value: 'Framer, CMS, Spline, Lark aPaaS, and low-code workflows' },
@@ -230,7 +231,7 @@ export function LarkGlobalMarketing() {
             <div className="rounded-2xl border border-[var(--lark-line)] bg-[var(--lark-surface)] p-6 md:col-span-4 md:p-7">
               <dl className="grid grid-cols-2 gap-x-5 gap-y-6">
                 {metadata.map((item, index) => (
-                  <div key={item.label} className={index > 2 ? 'col-span-2' : ''}>
+                  <div key={item.label} className={index > 1 ? 'col-span-2' : ''}>
                     <dt className="mb-1.5 text-sm font-medium text-[var(--lark-accent)]">{item.label}</dt>
                     <dd className="text-sm leading-6 text-[var(--lark-muted)]">{item.value}</dd>
                   </div>

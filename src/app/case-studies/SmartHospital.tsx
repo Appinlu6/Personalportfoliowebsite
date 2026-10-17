@@ -10,7 +10,7 @@ const metadata = [
   { label: 'Duration', value: '2018-2021' },
   { label: 'Role', value: 'Product design lead' },
   { label: 'Pilot', value: 'A hospital in Shenzhen' },
-  { label: 'Scope', value: 'Research, product framework, data visualization, 3D experience' },
+  { label: 'Scope', value: 'Field research, product framework, data analysis and forecasting, 3D visualization' },
   { label: 'Delivery', value: 'Private cloud and cloud rendering' },
 ];
 
@@ -91,10 +91,33 @@ const sceneLayers = [
   },
 ];
 
+const insightLevels = [
+  {
+    title: 'Statistics',
+    label: 'What happened',
+    copy: 'Core indicators summarised for directors, department heads, and operational staff, each at the level of detail their role needs.',
+  },
+  {
+    title: 'Multi-dimensional analysis',
+    label: 'Why it happened',
+    copy: 'Data from separate departments compared across time and space to reveal patterns in patient flow, resource use, and operational load.',
+  },
+  {
+    title: 'Forecasting',
+    label: 'What happens next',
+    copy: 'Historical hospital data used to forecast trends across several dimensions, so the hospital could plan ahead instead of reacting.',
+  },
+];
+
 const contributions = [
   {
     title: 'Product direction',
-    items: ['Led the 0-to-1 product definition', 'Translated field findings into a product framework', 'Structured the six operational modules'],
+    items: [
+      'Led the 0-to-1 product definition',
+      'Translated field findings into a product framework',
+      'Structured the six operational modules',
+      'Defined cross-department analysis and forecasting scenarios',
+    ],
   },
   {
     title: 'Design and delivery',
@@ -195,7 +218,7 @@ export function SmartHospital() {
               Smart Hospital
             </h1>
             <p className="mt-6 max-w-[43rem] text-lg leading-8 text-[var(--sh-muted)]">
-              A medical data platform that helps hospital leaders read operations across departments, regions, and time.
+              A medical data platform that helps hospital leaders read operations across departments, regions, and time, and anticipate what comes next.
             </p>
           </motion.div>
 
@@ -244,7 +267,7 @@ export function SmartHospital() {
           <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-stretch">
             <div className="rounded-2xl bg-[var(--sh-accent)] p-7 text-[#f6fafe] md:p-9 lg:col-span-5">
               <p className="text-[clamp(1.65rem,3vw,2.7rem)] font-medium leading-[1.08] tracking-[-0.035em]">
-                We set out to help hospital leaders see operational data across space and time, with a clear, intuitive view of how the hospital works as a whole.
+                We set out to move hospital leaders from reading reports to anticipating change, by showing operational data across space and time as one connected system.
               </p>
               <p className="mt-10 max-w-[34rem] text-sm leading-6 text-[#e3eef8]">
                 The pilot brought departmental performance, patient distribution, medical resources, and regional context into one visual environment.
@@ -419,6 +442,51 @@ export function SmartHospital() {
               <p className="mt-3 text-sm leading-6 text-[var(--sh-muted)]">The sky and timeline system add time to the scene, helping users compare trends across different moments.</p>
             </Reveal>
           </div>
+        </section>
+
+        <section className="pb-12 md:pb-18">
+          <Reveal>
+            <SectionHeading intro="Beyond statistics and dashboards for each level of management, the platform analysed hospital operations across time and space, then used historical data to anticipate what was likely to happen next.">
+              From reporting to foresight
+            </SectionHeading>
+          </Reveal>
+          <div className="grid gap-5 md:grid-cols-3">
+            {insightLevels.map((level, index) => (
+              <Reveal key={level.title}>
+                <article
+                  className={`h-full rounded-2xl p-7 ${
+                    index === insightLevels.length - 1
+                      ? 'bg-[var(--sh-accent)] text-[#f6fafe]'
+                      : 'border border-[var(--sh-line)] bg-[var(--sh-surface)]'
+                  }`}
+                >
+                  <p className={`text-sm font-medium ${index === insightLevels.length - 1 ? 'text-[#dce8f3]' : 'text-[var(--sh-accent)]'}`}>
+                    {level.label}
+                  </p>
+                  <h3 className="mt-3 text-xl font-medium tracking-[-0.02em]">{level.title}</h3>
+                  <p className={`mt-3 text-sm leading-6 ${index === insightLevels.length - 1 ? 'text-[#e3eef8]' : 'text-[var(--sh-muted)]'}`}>
+                    {level.copy}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-6 grid gap-6 rounded-2xl bg-[var(--sh-text)] p-6 text-[#edf5fc] md:p-9 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-5">
+              <p className="text-sm font-medium text-[#a6c6e2]">COVID-19</p>
+              <p className="mt-4 text-[clamp(1.5rem,2.6vw,2.3rem)] font-medium leading-[1.12] tracking-[-0.03em]">
+                Forecasting where fever patients would gather, before they arrived.
+              </p>
+              <p className="mt-6 max-w-[34rem] text-sm leading-6 text-[#c5d8e9]">
+                During the pandemic, the platform tracked how clusters of fever patients were moving across the region and forecast where they were likely to concentrate next, giving the hospital time to prepare contingency plans in advance.
+              </p>
+            </div>
+            <MediaPlaceholder
+              title="Fever patient forecasting"
+              note="16:9 map view showing fever patient movement and forecast clusters"
+              className="aspect-video border-white/14 bg-[linear-gradient(145deg,#2f4a63,#3d5d7b)] lg:col-span-7 [&_p]:text-[#dce8f3]"
+            />
+          </Reveal>
         </section>
 
         <section className="border-t border-[var(--sh-line)] pt-10 md:pt-12">

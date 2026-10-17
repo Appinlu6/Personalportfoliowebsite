@@ -4,6 +4,8 @@ import bytedanceLogo from '@/assets/logos/bytedance.png';
 import tencentLogo from '@/assets/logos/tencent.png';
 import polyuLogo from '@/assets/logos/polyu.png';
 import cuzLogo from '@/assets/logos/cuz.png';
+import chillttooLogo from '@/assets/logos/chillttoo.png';
+import yianLogo from '@/assets/logos/yian.png';
 import { useLanguage } from '../context/LanguageContext';
 import { PageContainer } from '../components/PageContainer';
 
@@ -65,15 +67,62 @@ function ResumeEntry({
   );
 }
 
-const skills = [
-  'User Research',
-  'Usability Testing',
-  'Service Design',
-  'Design Systems',
-  'Figma / Prototyping',
-  'Data Analysis',
-  'AI/ML Design',
-  'Accessibility',
+const skillStages = [
+  {
+    years: '2025 – Now',
+    yearsCN: '2025 至今',
+    title: 'Building AI',
+    titleCN: '构建 AI',
+    skills: [
+      'Model Fine-tuning',
+      'Model Evaluation',
+      'Human Activity Recognition (HAR)',
+      'Agent Framework Design',
+      'AI Product Design',
+      'RAG & Knowledge Graph',
+      'Conversational AI',
+      'NLP & Text Mining',
+      'AI Safety',
+    ],
+    skillsCN: [
+      '模型微调',
+      '模型评估',
+      '人体活动识别（HAR）',
+      '智能体框架设计',
+      'AI 产品设计',
+      'RAG 与知识图谱',
+      '对话式 AI',
+      'NLP 与文本挖掘',
+      'AI 安全',
+    ],
+  },
+  {
+    years: '2022 – 2025',
+    title: 'Scaling systems and business',
+    titleCN: '规模化与经营',
+    skills: ['Design Systems', 'Low-code & Frontend Build', 'Brand & Content Strategy', 'Social Community Growth', 'Product & SKU Development'],
+    skillsCN: ['设计系统', '低代码与前端搭建', '品牌与内容策略', '社媒社群增长', '产品与 SKU 开发'],
+  },
+  {
+    years: '2017 – 2022',
+    title: 'Turning data into decisions',
+    titleCN: '用数据驱动决策',
+    skills: [
+      'Data Platform (0→1)',
+      'Data Visualization',
+      'Multi-dimensional Analysis & Forecasting',
+      'Real-time IoT Data',
+      'Digital Marketing (AIPL, Segmentation, Targeting)',
+    ],
+    skillsCN: ['数据平台（0→1）', '数据可视化', '多维分析与预测', '实时物联网数据', '数字营销（AIPL、人群分层、精准投放）'],
+  },
+  {
+    years: '2013 – 2017',
+    title: 'Understanding people',
+    titleCN: '理解人',
+    skills: ['Visual Design', 'UX Research', 'Field Research', 'Journey Mapping', 'Service Design'],
+    skillsCN: ['视觉设计', '用户研究', '田野调研', '旅程地图', '服务设计'],
+  },
 ];
 
 const stagger = {
@@ -98,19 +147,6 @@ const skillStagger = {
 
 export function AboutPage() {
   const { isCN } = useLanguage();
-
-  const skillsLocalized = isCN
-    ? [
-        '用户研究',
-        '可用性测试',
-        '服务设计',
-        '设计系统',
-        'Figma / 原型',
-        '数据分析',
-        'AI/ML 设计',
-        '无障碍设计',
-      ]
-    : skills;
 
   return (
     <section className="page-shell pt-28 pb-20 md:py-32">
@@ -138,6 +174,40 @@ export function AboutPage() {
             <h2 className="font-semibold font-['Work_Sans']" style={{ fontSize: '28px' }}>{isCN ? '工作经历' : 'Work Experience'}</h2>
           </motion.div>
           <div className="flex-1 space-y-4 md:space-y-5">
+            <ResumeEntry date={isCN ? '2026 年 10 月 至今' : 'Oct 2026 – Now'} logoSrc={yianLogo} logoAlt="深圳熠安可创智能技术有限公司">
+              <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">深圳熠安可创智能技术有限公司</p>
+              <p className="text-base text-muted-foreground italic mb-2">{isCN ? 'AI 算法工程师（实习）· 深圳 · 混合办公' : 'AI Algorithm Engineer (Intern) · Shenzhen · Hybrid'}</p>
+              <div className="space-y-2" style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}>
+                <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 研究可穿戴传感器信号与大语言模型（LLM）结合的多模态学习，用于人体活动识别。' : '· Research multimodal learning with wearable sensor signals and large language models (LLMs) for human activity recognition.'}</p>
+                <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 面向运动与健康应用，开展模型微调与评估。' : '· Conduct model fine-tuning and evaluation for sports and health applications.'}</p>
+                <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 设计 AI 系统架构与应用框架。' : '· Design AI system architectures and application frameworks.'}</p>
+              </div>
+            </ResumeEntry>
+            <ResumeEntry date={isCN ? '2024 年 2 月 – 2025 年 7 月' : 'Feb 2024 – Jul 2025'} logoSrc={chillttooLogo} logoAlt="Chillttoo Market">
+              <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">{isCN ? 'Chillttoo Market（汽车文创商品 · 自主创业）' : 'Chillttoo Market (Automotive Culture Merchandise · Self-employed)'}</p>
+              <p className="text-base text-muted-foreground italic mb-2">{isCN ? '联合创始人兼营销总监' : 'Co-founder & Marketing Director'}</p>
+              <div className="space-y-2" style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}>
+                <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 与合伙人共同管理一家专注汽车文化周边（磁吸贴、贴纸、汽车挂件）的初创公司，负责战略方向、产品设计、营销创意与社交媒体内容运营，推动品牌增长与客户互动。' : '· Co-managed a startup making automotive culture merchandise, including magnetic decals, stickers, and car charms. Led strategy, product design, marketing creative, and social media content to drive brand growth and customer engagement.'}</p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  {isCN ? '· 通过有针对性的内容策略，在' : '· Built a community of 12,000+ followers on '}
+                  <a href="https://xhslink.cn/o/57w4W6YE0AU" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">
+                    {isCN ? '小红书' : 'Xiaohongshu'}
+                  </a>
+                  {isCN
+                    ? '建立超过 12,000 名粉丝的社群；开发并推出 60 多个 SKU，其中 5 个成为爆款，单款销量均超过 10,000 件，带动收入显著增长并提升市场影响力。'
+                    : ' through a targeted content strategy. Developed and launched 60+ SKUs, five of which became best-sellers with over 10,000 units sold each, driving significant revenue growth and market reach.'}
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  {isCN ? '· 运营' : '· Grew the '}
+                  <a href="https://m.tb.cn/h.jcn5eEbHbmVwUoy" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">
+                    {isCN ? '淘宝店铺' : 'Taobao store'}
+                  </a>
+                  {isCN
+                    ? '至双皇冠信誉等级，积累近 10,000 名店铺粉丝。'
+                    : ' to a Double Crown seller rating with nearly 10,000 followers.'}
+                </p>
+              </div>
+            </ResumeEntry>
             <ResumeEntry date="2022 – 2023" logoSrc={bytedanceLogo} logoAlt="ByteDance">
               <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">{isCN ? '字节跳动（Lark / 飞书）' : 'ByteDance (Lark / Feishu)'}</p>
               <p className="text-base text-muted-foreground italic mb-2">{isCN ? '创意设计师（全球营销）' : 'Creative Designer, Global Marketing'}</p>
@@ -146,17 +216,26 @@ export function AboutPage() {
                 <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 优化活动与官网设计，提升用户获取与转化。' : '· Improved campaign and website design to lift user acquisition and conversion.'}</p>
               </div>
             </ResumeEntry>
-            <ResumeEntry date="2018 – 2021" logoSrc={tencentLogo} logoAlt="Tencent">
+            <ResumeEntry date="2021 – 2022" logoSrc={tencentLogo} logoAlt="Tencent">
+              <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">{isCN ? '腾讯（智慧零售）' : 'Tencent (Smart Retail)'}</p>
+              <p className="text-base text-muted-foreground italic mb-2">{isCN ? '高级 UX 设计师' : 'Senior UX Designer'}</p>
+              <div className="space-y-2" style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}>
+                <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 负责 ToB 全链路营销平台的 UX 设计。' : '· Led UX design for a B2B full-funnel marketing platform for retail brands.'}</p>
+                <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 积累从商机洞察、AIPL 人群资产、客户留存、人群包分层到精准投放的全链路数字营销经验。' : '· Built end-to-end digital marketing knowledge, from opportunity insight and AIPL audience modelling to retention, audience segmentation, and targeted delivery.'}</p>
+                <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 开始思考以数据分析为核心的营销平台如何赋能零售行业。' : '· Began exploring how data-driven marketing platforms could create value for the retail industry.'}</p>
+              </div>
+            </ResumeEntry>
+            <ResumeEntry date={isCN ? '2017 年 8 月 – 2021' : 'Aug 2017 – 2021'} logoSrc={tencentLogo} logoAlt="Tencent">
               <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">{isCN ? '腾讯（医疗健康事业部）' : 'Tencent (Healthcare Department)'}</p>
               <p className="text-base text-muted-foreground italic mb-3">{isCN ? '高级产品设计师' : 'Senior Product Designer'}</p>
               <div className="space-y-2" style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}>
                 <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 主导智慧医院、医保与公共健康平台等医疗 SaaS 产品的 UX/UI。' : '· Led UX/UI for healthcare SaaS products — smart hospitals, medical insurance, and public-health platforms.'}</p>
-                <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 设计由 AI 与大数据驱动的数据可视化系统，支持医疗决策。' : '· Designed AI- and big-data-driven data visualization systems supporting medical decision-making.'}</p>
+                <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 设计医疗大数据可视化与多维预测分析系统，基于历史数据为医院运营和医疗决策提供前瞻洞察。' : '· Designed medical big-data visualization and multi-dimensional forecasting systems, using historical data to give hospitals forward-looking operational insight.'}</p>
                 <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 牵头腾讯觅决相关项目，落地 40+ 医院与政务机构项目。' : '· Spearheaded "Tencent Micision," delivering 40+ projects across hospitals and government institutions.'}</p>
                 <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 获得 5 项公司级奖项，包括医疗抗疫贡献奖。' : '· Recognized with 5 company awards, including a Medical Anti-Epidemic Contribution Award.'}</p>
               </div>
             </ResumeEntry>
-            <ResumeEntry date={isCN ? '2017 年 2–7 月' : 'Feb – Jul 2017'} logoSrc={tencentLogo} logoAlt="Tencent">
+            <ResumeEntry date={isCN ? '2017 年 1–4 月' : 'Jan – Apr 2017'} logoSrc={tencentLogo} logoAlt="Tencent">
               <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">{isCN ? '腾讯（医疗健康事业部）' : 'Tencent (Healthcare Department)'}</p>
               <p className="text-base text-muted-foreground italic mb-2">{isCN ? '视觉设计实习生' : 'Visual Design Intern'}</p>
               <div className="space-y-2" style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}>
@@ -206,23 +285,40 @@ export function AboutPage() {
           <motion.div className="w-full flex-shrink-0 md:w-48" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
             <h2 className="font-semibold font-['Work_Sans']" style={{ fontSize: '28px' }}>{isCN ? '技能与专长' : 'Skills & Expertise'}</h2>
           </motion.div>
-          <div className="flex-1">
-            <motion.div
-              className="grid grid-cols-2 gap-3 sm:grid-cols-2 md:ml-[12.5rem]"
-              variants={skillStagger}
-            >
-              {skillsLocalized.map((skill) => (
-                <motion.span
-                  key={skill}
-                  className="px-4 py-2 rounded-lg bg-card border border-border text-base"
-                  variants={fadeUp}
-                  transition={{ duration: 0.32, ease: 'easeOut' }}
-                  whileHover={{ y: -4 }}
+          <div className="flex-1 space-y-8 md:space-y-10">
+            {skillStages.map((stage) => (
+              <motion.div
+                key={stage.title}
+                className="grid grid-cols-1 gap-y-3 sm:grid-cols-[10rem_1fr] sm:gap-x-6"
+                variants={fadeUp}
+                transition={{ duration: 0.42, ease: 'easeOut' }}
+              >
+                <span
+                  className="text-sm text-muted-foreground sm:pt-0.5 sm:text-right sm:text-base"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
-                  {skill}
-                </motion.span>
-              ))}
-            </motion.div>
+                  {isCN ? stage.yearsCN ?? stage.years : stage.years}
+                </span>
+                <div>
+                  <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-3">
+                    {isCN ? stage.titleCN : stage.title}
+                  </p>
+                  <motion.div className="flex flex-wrap gap-2.5" variants={skillStagger}>
+                    {(isCN ? stage.skillsCN : stage.skills).map((skill) => (
+                      <motion.span
+                        key={skill}
+                        className="px-3.5 py-1.5 rounded-lg bg-card border border-border text-sm sm:text-base"
+                        variants={fadeUp}
+                        transition={{ duration: 0.32, ease: 'easeOut' }}
+                        whileHover={{ y: -4 }}
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </PageContainer>

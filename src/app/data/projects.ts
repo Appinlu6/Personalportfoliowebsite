@@ -1,9 +1,29 @@
+export const projectTagLabelsCN = {
+  'AI Product Design': 'AI 产品设计',
+  'Conversational AI': '对话式 AI',
+  'RAG & Knowledge Graph': 'RAG 与知识图谱',
+  'NLP & Text Mining': 'NLP 与文本挖掘',
+  'Human-AI Workflow': '人机协作工作流',
+  'Data Visualization': '数据可视化',
+  'Data Platform (0→1)': '数据平台（0→1）',
+  'Real-time Decision Support': '实时决策支持',
+  'UX Research': '用户研究',
+  'Service Design': '服务设计',
+  Healthcare: '医疗健康',
+  'Digital Humanities': '数字人文',
+  'Enterprise SaaS': '企业 SaaS',
+  'Immersive / XR': '沉浸式 / XR',
+} as const;
+
+export type ProjectTag = keyof typeof projectTagLabelsCN;
+
 export type Project = {
   slug: string;
   title: string;
   year: string;
   description: string;
-  tags: string[];
+  /** Up to three capability tags followed by one domain tag. */
+  tags: ProjectTag[];
   featured: boolean;
   image: string;
   hoverImage?: string;
@@ -18,7 +38,7 @@ export const projects: Project[] = [
     year: '2026 Jan – Apr',
     description:
       'An Empathic, Memory-Enabled AI Health Companion for Mainland Chinese Students in Hong Kong',
-    tags: ['Research', 'UX Research', 'Service Design', 'AI/ML', 'Digital Health'],
+    tags: ['AI Product Design', 'RAG & Knowledge Graph', 'Conversational AI', 'Healthcare'],
     featured: false,
     image: '/bauhinia-mind-cover-lastframe.jpg',
     hoverVideo: '/videos/bauhinia-logo.mp4',
@@ -29,43 +49,40 @@ export const projects: Project[] = [
     year: '2025 Oct - Nov',
     description:
       'A digital humanities study tracing the changing meanings of the orange across three thousand years of Chinese history through a curated corpus, NLP analysis, close reading, and interactive visualisation.',
-    tags: ['Research', 'Digital Humanities', 'NLP Research', 'Corpus Design', 'Data Visualisation'],
+    tags: ['NLP & Text Mining', 'Data Visualization', 'UX Research', 'Digital Humanities'],
     featured: false,
     image: '/cbs5504/mandarin-cover.webp',
     hoverVideo: '/cbs5504/mandarin-cover-hover.mp4',
   },
   {
     slug: 'tencent-micision-smart-hospital',
-    externalUrl: 'https://ziyk5uftl8.feishu.cn/docx/POpndicefoLGIbxgfdCcWQrtnkb?from=from_copylink',
     title: 'Tencent Micision — Smart Hospital',
     year: '2018 – 2021',
     description:
       'Led the 0-to-1 design of a medical big data visualization platform, piloted at a Shenzhen hospital, empowering administrators with data-driven insights to optimize hospital operations and management.',
-    tags: ['0-1 Product Design', 'Data Visualization', 'Healthcare UX', 'Design Leadership'],
+    tags: ['Data Platform (0→1)', 'Data Visualization', 'Real-time Decision Support', 'Healthcare'],
     featured: false,
     image: '/smart-hospital.png',
     hoverVideo: '/videos/smart-hospital-cover.mp4',
   },
   {
     slug: 'tencent-micision-smart-marathon',
-    externalUrl: 'https://ziyk5uftl8.feishu.cn/wiki/ZEQTw6ploiEHsCkXTSqccUeBnVd?from=from_copylink',
     title: 'Tencent Micision — Smart Marathon',
     year: '2019 Jan – Apr',
     description:
       "Spearheaded the 0-to-1 product management and design of Tencent's Smart Marathon Big Data Platform. Leveraging Unreal Engine for 3D city mapping and real-time biometric tracking, the system empowered cross-department command centers with instant emergency dispatch capabilities, successfully safeguarding the Yangzhou Marathon.",
-    tags: ['0-to-1 Product Management', 'Complex Data Visualization', '3D Technical Design (UE)', 'Requirement Translation'],
+    tags: ['Real-time Decision Support', 'Data Platform (0→1)', 'Data Visualization', 'Healthcare'],
     featured: false,
     image: '/smart-Marathon.png',
     hoverVideo: '/videos/smart-marathon-cover.mp4',
   },
   {
     slug: 'tencent-medical-cloud-o2o',
-    externalUrl: 'https://ziyk5uftl8.feishu.cn/docx/TZ8Vd3AZbod2USxuRXxc9MoinNx?from=from_copylink',
     title: 'Healthcare Service Design',
-    year: '2017 – 2018',
+    year: '2017 Aug – Oct',
     description:
       'Spearheaded an O2O service design solution for Tencent Medical Cloud to optimize the patient experience. By mapping complex medical journeys and integrating digital-physical touchpoints, the project successfully reduced average patient wait times by 4.5 hours.',
-    tags: ['Patient Experience', 'O2O Service Design', 'Journey Mapping', 'Field Research'],
+    tags: ['Service Design', 'UX Research', 'Healthcare'],
     featured: false,
     image: '/healthcare-service-design-cover.png',
     hoverVideo: '/videos/healthcare-service-design-cover.mp4',
@@ -76,7 +93,7 @@ export const projects: Project[] = [
     year: '2022 – 2023',
     description:
       'Responsible for the website design of Meego, the project management tool within Lark software, and the design of the Customer Stories section on the global marketing website. Also responsible for creative design, marketing solutions, and new media art support.',
-    tags: ['Web Design', 'Interface Design', 'Marketing Process Optimization', 'Front-end Implementation'],
+    tags: ['Human-AI Workflow', 'Service Design', 'Enterprise SaaS'],
     featured: false,
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
@@ -87,7 +104,7 @@ export const projects: Project[] = [
     year: '2026 Jan - Apr',
     description:
       'A VR mystery set in a Chinese high school. Players investigate Yi Linlan\'s past by speaking naturally with AI-powered MetaHuman characters and showing them objects found around the campus. I worked on project management, scene design, and VR interaction programming.',
-    tags: ['UE5 Engine', 'VR Development', 'AI-Driven Dialogue', 'MetaHuman'],
+    tags: ['Conversational AI', 'AI Product Design', 'Immersive / XR'],
     featured: false,
     image: '/before-evening/cover.webp',
     hoverVideo: '/videos/before-evening-cover.mp4',

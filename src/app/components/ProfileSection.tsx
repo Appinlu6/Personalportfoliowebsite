@@ -122,20 +122,18 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
 
   const interests = isCN
     ? [
-        '情感与信息支持的自适应编排',
-        '跨文化求医',
+        '智能体 AI 与智能工作流设计',
+        '面向健康与康复的多模态学习',
         '数字健康管理',
-        '智能硬件与运动康复',
-        '医院与企业协同研究',
-        '通过设计开展研究',
+        '跨文化就医导航',
+        '自适应的情感与信息支持',
       ]
     : [
-        'Adaptive Emotional and Informational Support',
-        'Cross-Cultural Care-Seeking',
+        'Agentic AI and Intelligent Workflow Design',
+        'Multimodal Learning for Health and Rehabilitation',
         'Digital Health Management',
-        'Smart Hardware for Sports Rehabilitation',
-        'Hospital and Industry Collaboration',
-        'Research through Design',
+        'Cross-Cultural Healthcare Navigation',
+        'Adaptive Emotional and Informational Support',
       ];
 
   return (
@@ -201,20 +199,29 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
           {/* Row 2: Block 3 + Block 4 */}
           <ProfileRow className="mt-[10px]">
             <ProfileBlock>
-              <InfoBlock
-                title={isCN ? '联合创始人' : 'Co-founder'}
-                subtitle={isCN ? '熠安可创 × 健康科技' : "Yi'an Kechuang × Health Technology"}
-                body={isCN
-                  ? '与医院及产业伙伴合作，主导健康管理、智能硬件与运动康复方向的 AI 产品化。'
-                  : 'Leading AI product development across health management, smart hardware, and sports rehabilitation with hospital and industry partners.'}
-              />
+              <BlockTitle>{isCN ? '联合创始人' : 'Co-founder'}</BlockTitle>
+              <BlockSubtitle>{isCN ? '现在 · AI 健康' : 'Now · AI Health'}</BlockSubtitle>
+              <BlockBody>
+                {isCN ? '负责 AI 算法与 AI 系统架构。' : 'Leading AI algorithms and AI system architecture.'}
+              </BlockBody>
+              <div className="mt-4">
+                <BlockSubtitle>{isCN ? '此前 · 文创 IP 品牌' : 'Previously · Cultural IP Brand'}</BlockSubtitle>
+              </div>
+              <BlockBody>
+                {isCN ? '负责产品、营销与运营。' : 'Led product, marketing, and operations.'}
+              </BlockBody>
             </ProfileBlock>
             <ProfileBlock>
-              <InfoBlock
-                title={isCN ? 'A+ 研究' : 'A+ Research'}
-                subtitle={isCN ? '紫荆心智' : 'Bauhinia-Mind'}
-                body={isCN ? '一个具备记忆能力的 AI 伙伴，探索数字健康、照护与人机关系。' : 'A memory-enabled AI companion exploring digital health, care, and human-AI relationships.'}
-              />
+              <BlockTitle>{isCN ? '研究方向' : 'Research Focus'}</BlockTitle>
+              <BlockSubtitle>{isCN ? '以人为中心的 AI 与智能系统' : 'Human-Centered AI and Intelligent Systems'}</BlockSubtitle>
+              <BlockList>
+                {interests.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="text-foreground">·</span>
+                    <span className="min-w-0">{item}</span>
+                  </li>
+                ))}
+              </BlockList>
             </ProfileBlock>
           </ProfileRow>
 
@@ -251,18 +258,14 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
                   </li>
                 ))}
               </BlockList>
-            </ProfileBlock>
-            <ProfileBlock>
-              <BlockTitle>{isCN ? '研究方向' : 'Research Focus'}</BlockTitle>
-              <BlockSubtitle>{isCN ? '医疗 AI、健康管理与运动康复' : 'Healthcare AI, Health Management, and Rehabilitation'}</BlockSubtitle>
-              <BlockList>
-                {interests.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="text-foreground">·</span>
-                    <span className="min-w-0">{item}</span>
-                  </li>
-                ))}
-              </BlockList>
+              <div className="mt-4">
+                <BlockSubtitle>{isCN ? 'A+ 毕业项目 · 香港理工大学硕士阶段' : 'A+ Capstone Project · MSc Study at PolyU'}</BlockSubtitle>
+              </div>
+              <BlockBody>
+                {isCN
+                  ? '紫荆心智：一个具备记忆能力的 AI 伙伴，探索数字健康、照护与人机关系。'
+                  : 'Bauhinia-Mind: a memory-enabled AI companion exploring digital health, care, and human-AI relationships.'}
+              </BlockBody>
             </ProfileBlock>
           </ProfileRow>
         </motion.div>

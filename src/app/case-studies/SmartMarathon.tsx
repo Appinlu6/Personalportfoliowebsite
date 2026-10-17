@@ -9,7 +9,7 @@ const NEWS_URL = 'https://baijiahao.baidu.com/s?id=1631502413485477426&wfr=spide
 
 const metadata = [
   { label: 'Type', value: 'Marathon command platform' },
-  { label: 'Duration', value: 'March-April 2019' },
+  { label: 'Duration', value: 'January-April 2019' },
   { label: 'Role', value: 'Product manager and design lead' },
   { label: 'Delivery', value: 'Yangzhou Marathon' },
   { label: 'Team', value: '3 people' },
@@ -26,8 +26,8 @@ const projectConstraints = [
     label: 'Partner organizations working across the event',
   },
   {
-    value: '< 1 month',
-    label: 'From exploration to live delivery',
+    value: '< 4 weeks',
+    label: 'Development sprint to live race day',
   },
   {
     value: '3',
@@ -95,10 +95,29 @@ const emergencyFlow = [
   },
 ];
 
+const fieldCalibration = [
+  {
+    title: 'Location accuracy',
+    copy: 'Checked whether the GIS positions reported by each wristband matched where runners actually were on the course.',
+  },
+  {
+    title: 'Sampling frequency',
+    copy: 'Tested how often wristbands should collect and send data so the command screen stayed current.',
+  },
+  {
+    title: 'Battery life',
+    copy: 'Measured whether the battery could last the full race at each collection and upload rate.',
+  },
+  {
+    title: 'Alert rules',
+    copy: 'Reviewed abnormal readings with the event team to separate false alarms from genuine health risks.',
+  },
+];
+
 const contributions = [
   {
     title: 'Product management',
-    items: ['Defined the product scope', 'Planned the delivery process', 'Balanced priorities within the four-week schedule'],
+    items: ['Defined the product scope', 'Planned the delivery process', 'Balanced priorities within a four-week development sprint'],
   },
   {
     title: 'Research and design',
@@ -110,7 +129,12 @@ const contributions = [
   },
   {
     title: 'Coordination and delivery',
-    items: ['Aligned six partner organizations', 'Integrated bracelet and location data', 'Supported the live event launch'],
+    items: [
+      'Aligned six partner organizations',
+      'Calibrated wristband and location data on site in Yangzhou',
+      'Defined abnormal-signal alert rules with the event team',
+      'Supported the live event launch',
+    ],
   },
 ];
 
@@ -264,8 +288,8 @@ export function SmartMarathon() {
 
         <section className="pb-12 md:pb-18">
           <Reveal>
-            <SectionHeading intro="The project began without a domestic reference case and moved from concept to live event in less than one month.">
-              Coordinating six partners in four weeks
+            <SectionHeading intro="The project began without a domestic reference case, and the race date could not move. After research and planning, the platform was built and delivered in a development sprint of under four weeks.">
+              Coordinating six partners in a four-week sprint
             </SectionHeading>
           </Reveal>
           <Reveal className="rounded-2xl bg-[var(--sm-text)] p-6 text-[#eff8f2] md:p-9">
@@ -433,6 +457,38 @@ export function SmartMarathon() {
           </div>
         </section>
 
+        <section className="pb-12 md:pb-18">
+          <Reveal>
+            <SectionHeading intro="This was my first project using smart-hardware data in a live event. Before race day, I worked in Yangzhou with the official wristband team to test the data feeding the command screen.">
+              Calibrating real hardware on site
+            </SectionHeading>
+          </Reveal>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {fieldCalibration.map((item) => (
+              <Reveal key={item.title}>
+                <article className="h-full rounded-2xl border border-[var(--sm-line)] bg-[var(--sm-surface)] p-6">
+                  <h3 className="text-lg font-medium tracking-[-0.015em] text-[var(--sm-text)]">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[var(--sm-muted)]">{item.copy}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-6 grid gap-5 md:grid-cols-2">
+            <div className="rounded-2xl bg-[var(--sm-accent)] p-7 text-[#f5fbf7] md:p-8">
+              <p className="text-sm font-medium text-[#cfe6d7]">Outcome</p>
+              <p className="mt-3 text-xl font-medium leading-snug tracking-[-0.02em]">
+                A collection and upload schedule that kept the data fresh while letting every wristband last the whole race.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[var(--sm-line)] bg-[var(--sm-surface)] p-7 md:p-8">
+              <p className="text-sm font-medium text-[var(--sm-accent)]">Alert logic</p>
+              <p className="mt-3 text-xl font-medium leading-snug tracking-[-0.02em] text-[var(--sm-text)]">
+                Only confirmed abnormal signals reached the command screen, so supervisors could tell the medical team at a given kilometre exactly which runner needed help.
+              </p>
+            </div>
+          </Reveal>
+        </section>
+
         <section className="border-t border-[var(--sm-line)] pt-10 md:pt-12">
           <Reveal>
             <SectionHeading intro="The platform launched at the Yangzhou Marathon in April 2019 and was used by the live event command team.">
@@ -462,7 +518,7 @@ export function SmartMarathon() {
                 note="4:3 photograph showing the platform installed at the Yangzhou Marathon"
                 className="aspect-[4/3]"
               />
-              <p className="mt-3 text-sm leading-6 text-[var(--sm-muted)]">The system moved from product exploration to live delivery in under four weeks.</p>
+              <p className="mt-3 text-sm leading-6 text-[var(--sm-muted)]">The platform went from development to live race-day use in under four weeks.</p>
             </Reveal>
             <Reveal>
               <MediaPlaceholder
@@ -470,9 +526,29 @@ export function SmartMarathon() {
                 note="4:3 photograph of the event operations review and platform demonstration"
                 className="aspect-[4/3]"
               />
-              <p className="mt-3 text-sm leading-6 text-[var(--sm-muted)]">The live platform was reviewed on site by event leadership and the Mayor of Yangzhou.</p>
+              <p className="mt-3 text-sm leading-6 text-[var(--sm-muted)]">The live platform was reviewed on site by event leadership and the Vice Mayor of Yangzhou.</p>
             </Reveal>
           </div>
+
+          <Reveal className="mt-6">
+            <figure className="rounded-2xl border border-[var(--sm-line)] bg-[var(--sm-surface)] p-7 md:p-9">
+              <p className="text-sm font-medium text-[var(--sm-accent)]">In the press</p>
+              <blockquote className="mt-4 max-w-[52rem] text-[clamp(1.35rem,2.3vw,2rem)] font-medium leading-[1.2] tracking-[-0.025em] text-[var(--sm-text)]">
+                “Through AI and big-data analysis, the platform identified runners whose heart rates were approaching dangerous levels and alerted managers before it became an emergency.”
+              </blockquote>
+              <figcaption className="mt-6 max-w-[52rem] text-sm leading-6 text-[var(--sm-muted)]">
+                China Daily, 22 April 2019, reporting on the 2019 Yangzhou Half Marathon, which drew more than 30,000 registered runners. The article described the platform as the first smart marathon management platform in China.
+              </figcaption>
+              <a
+                href={NEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--sm-accent)] transition-colors hover:text-[var(--sm-text)]"
+              >
+                Read the article (Chinese) <ArrowUpRight size={15} strokeWidth={1.7} />
+              </a>
+            </figure>
+          </Reveal>
 
           <Reveal className="mt-8 rounded-2xl border border-[var(--sm-line)] bg-[var(--sm-surface)] p-7 md:p-9">
             <h3 className="text-2xl font-medium tracking-[-0.025em] text-[var(--sm-text)]">My responsibilities</h3>
@@ -488,14 +564,6 @@ export function SmartMarathon() {
                 </div>
               ))}
             </div>
-            <a
-              href={NEWS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--sm-accent)] transition-colors hover:text-[var(--sm-text)]"
-            >
-              Read the event coverage <ArrowUpRight size={15} strokeWidth={1.7} />
-            </a>
           </Reveal>
         </section>
       </div>

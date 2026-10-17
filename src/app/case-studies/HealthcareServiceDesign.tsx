@@ -11,7 +11,7 @@ const NEWS_URL =
 const metadata = [
   { label: 'Type', value: 'Patient experience service design' },
   { label: 'Duration', value: 'August-October 2017' },
-  { label: 'Role', value: 'Product manager and service designer' },
+  { label: 'Role', value: 'Product experience designer' },
   { label: 'Hospitals', value: 'Fudan University Shanghai Cancer Center and Beijing 301 Hospital' },
   { label: 'Channels', value: 'WeChat official account and in-hospital service materials' },
   { label: 'Methods', value: 'Observation, interviews, journey mapping, prototyping, and field testing' },
@@ -89,7 +89,7 @@ const deliveryMoments = [
 
 const contributions = [
   {
-    title: 'Product direction',
+    title: 'Experience strategy',
     items: ['Defined the Phase 1 service scope', 'Connected research findings with delivery priorities', 'Coordinated the online and hospital experience'],
   },
   {
@@ -243,10 +243,10 @@ export function HealthcareServiceDesign() {
           <Reveal className="grid gap-6 md:grid-cols-12 md:items-stretch">
             <div className="rounded-2xl bg-[var(--hsd-accent)] p-7 text-[#f8f9ff] md:col-span-7 md:p-9">
               <p className="max-w-[34rem] text-[clamp(1.8rem,3.6vw,3.7rem)] font-medium leading-[1.02] tracking-[-0.045em]">
-                The service joined digital tasks and hospital guidance into one continuous visit.
+                Every touchpoint answered one question: what does the patient need to do next?
               </p>
               <p className="mt-10 max-w-[37rem] text-sm leading-6 text-[#e3e7f4]">
-                It addressed registration, waiting, examinations, payment, and document collection through the hospital account and on-site materials.
+                The service joined the hospital account and on-site guidance into one continuous visit, covering registration, waiting, examinations, payment, and document collection.
               </p>
             </div>
 
@@ -294,7 +294,7 @@ export function HealthcareServiceDesign() {
 
             <div className="flex flex-col justify-between rounded-2xl border border-[var(--hsd-line)] bg-[var(--hsd-surface)] p-7 lg:col-span-5 lg:p-9">
               <p className="text-[clamp(1.55rem,2.6vw,2.5rem)] font-medium leading-[1.12] tracking-[-0.035em] text-[var(--hsd-text)]">
-                This was the first product project I led. Entering the service as a patient made the friction visible in a way reports could not.
+                My first project after joining Tencent. Walking the journey as a patient showed friction that no report could capture, and shaped how I approached every data product that followed.
               </p>
               <p className="mt-10 text-sm leading-6 text-[var(--hsd-muted)]">
                 The team visited Fudan University Shanghai Cancer Center and studied communication among patients, doctors, and department leaders.
