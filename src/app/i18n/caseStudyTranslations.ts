@@ -160,13 +160,14 @@ export const beforeEveningTranslations: TranslationMap = {
 
 export const smartHospitalTranslations: TranslationMap = {
   ...common,
-  'Smart Hospital V2.0 demonstration at Nanshan Hospital': '南山医院智慧医院运营管理系统 V2.0 演示',
+  "Smart Hospital V2.0 demonstration at the People's Hospital of Nanshan District, Shenzhen (Huazhong University of Science and Technology Union Shenzhen Hospital)":
+    '深圳市南山区人民医院（华中科技大学协和深圳医院）智慧医院运营管理系统 V2.0 演示',
   'Download the project video': '下载项目视频',
-  'Smart Hospital V2.0, Nanshan Hospital. Product demonstration, 2 min 53 sec.': '南山医院智慧医院运营管理系统 V2.0 演示，时长 2 分 53 秒。',
+  'Smart Hospital V2.0, product demo at the pilot hospital (2:53).': '智慧医院运营管理系统 V2.0，试点医院产品演示（2 分 53 秒）。',
   'Tencent Micision': '腾讯觅决',
   'Smart Hospital': '智慧医院',
-  'A medical data platform that helps hospital leaders read operations across departments, regions, and time, and anticipate what comes next.':
-    '一套面向医院管理者的医疗数据平台，用同一视角查看跨科室、跨区域与不同时段的运营状况，并预判接下来的变化。',
+  'I led the 0-to-1 design of a platform that shows hospital leaders what happened and why across 140+ data dimensions, delivered to 23 hospitals.':
+    '我主导了这个平台从 0 到 1 的设计，让医院管理者在 140 多个数据维度上看清发生了什么、为什么发生，交付到 23 家医院。',
   'Project overview video': '项目概览视频',
   '16:9 video showing the product, navigation, and hospital scenarios': '16:9 视频，展示产品、浏览路径与医院应用场景',
   'Video will be added when the final source file is available.': '最终视频素材确认后补充。',
@@ -174,102 +175,122 @@ export const smartHospitalTranslations: TranslationMap = {
   '2018-2021': '2018–2021',
   'Product design lead': '产品设计负责人',
   Pilot: '试点',
-  'A hospital in Shenzhen': '深圳某医院',
-  'Field research, product framework, data analysis and forecasting, 3D visualization': '实地调研、产品框架、数据分析与预测、3D 可视化',
+  "The People's Hospital of Nanshan District, Shenzhen (Huazhong University of Science and Technology Union Shenzhen Hospital)":
+    '深圳市南山区人民医院（华中科技大学协和深圳医院）',
+  'Field research, product framework, multi-dimensional analysis, 3D visualization': '实地调研、产品框架、多维分析、3D 可视化',
   'Private cloud and cloud rendering': '私有云与云渲染',
-  'From traditional reports to a 3D decision-making platform': '从传统报表到立体决策平台',
-  'Hospital leaders had access to large amounts of operational data, but the reporting tools made comparison, prioritization, and early warning difficult.':
-    '医院管理者掌握大量运营数据，但传统报表很难支持横向比较、优先级判断和风险预警。',
-  'We set out to move hospital leaders from reading reports to anticipating change, by showing operational data across space and time as one connected system.':
-    '项目的目标，是让管理者从"看报表"走向"预判变化"：从空间和时间两个维度，把医院运营数据看成一个相互关联的整体。',
-  'The pilot brought departmental performance, patient distribution, medical resources, and regional context into one visual environment.':
-    '试点将科室运营、患者分布、医疗资源和区域信息放进同一个可视化环境。',
-  'Product overview image': '产品概览图',
-  '16:10 interface view showing the hospital operations platform': '16:10 界面图，展示医院运营平台全貌',
+  'The problem': '问题',
+  'Plenty of data, hard to act on': '数据很多，却难以用起来',
+  'The hospital had the data, but no way to compare it across departments or see what might come next.':
+    '医院有数据，却没法跨科室比较，也看不到接下来会发生什么。',
+  'The platform was planned in three layers, and the first two were delivered.': '平台按三层规划，前两层已交付。',
+  'Layer 01 · What happened': '第一层 · 发生了什么',
+  'Layer 02 · Why it happened': '第二层 · 为什么发生',
+  'Layer 03 · What happens next': '第三层 · 接下来会发生什么',
+  Research: '调研',
+  Outcome: '成果',
+  'The pilot brought departmental performance, patient distribution, medical resources, and regional context into one 3D view.':
+    '试点将科室运营、患者分布、医疗资源和区域信息放进同一个 3D 视图。',
+  'Platform screen reading from overview stats, to the core 3D view, to drill-down detail':
+    '平台界面从左到右：统计概览、核心 3D 视图、下钻详情',
   'Field research shaped the brief': '从医院现场确定问题',
-  'We visited hospitals, observed daily reporting routines, and interviewed decision makers and information teams.':
-    '我们走访医院，观察日常汇报流程，并访谈管理决策者和信息化团队。',
   'Fragmented indicators': '指标彼此割裂',
-  'Most reports showed isolated metrics, making relationships between departments difficult to see.':
-    '多数报表只呈现单项指标，科室之间的关系难以看清。',
-  'No shared analytical view': '缺少统一分析视角',
-  'Data lived across separate platforms, so administrators lacked one place for comparison and review.':
-    '数据分散在不同平台，管理者没有统一的比较与复盘入口。',
-  'Low practical use': '数据难以用于日常决策',
-  'The data existed, but its hierarchy and presentation made it difficult to use during daily decisions.':
-    '数据虽然存在，信息层级与呈现方式却不适合日常判断。',
+  'Reports showed metrics one at a time, so the links between departments were hard to see.':
+    '报表一次只呈现一项指标，科室之间的关联很难看出来。',
+  'No shared view': '缺少统一视图',
+  'Data sat in separate systems, with no single place to compare and review it.':
+    '数据分散在不同系统里，没有一个地方可以统一比较和复盘。',
+  'Hard to use day to day': '日常难以使用',
+  'The data existed, but the way it was organized and shown made it hard to use in daily decisions.':
+    '数据是有的，但组织和呈现方式让它很难用在日常决策里。',
   'Limited regional context': '缺少区域语境',
-  'Hospital data rarely connected with community and city data, reducing its value for planning.':
-    '医院数据很少与社区和城市数据关联，难以支撑更长期的规划。',
+  'Hospital data was rarely connected to community or city data, so it did little for planning.':
+    '医院数据很少与社区或城市数据打通，对规划帮助有限。',
   'Structuring 140+ data dimensions': '重组 140+ 个数据维度',
-  'The pilot dataset contained more than 140 dimensions. We used card sorting and scenario planning to turn those inputs into a coherent product structure.':
-    '试点数据超过 140 个维度。我们通过卡片分类与场景规划，把零散输入整理成清晰的产品结构。',
-  'Research and card sorting': '调研与卡片分类',
-  '4:3 image showing hospital visits, source data, and the grouping workshop': '4:3 图片，记录医院走访、原始数据与分类工作坊',
+  'Field visit at the hospital, a sample of the 140+ source data fields, and the card sorting wall':
+    '医院实地走访、140 多个原始数据字段示例，以及卡片分类墙',
+  'We visited hospitals and interviewed decision makers and information teams.': '我们走访医院，访谈了决策者和信息科团队。',
+  'We grouped the data by type (comparison, trend, distribution, and composition) and matched it to the six areas hospital leaders use to run the hospital. That gave us a first product architecture: the mind map below.':
+    '通过数据类型（对比、趋势、分布、构成）的归类分析，对应医院管理者对医院运营的六个主要分类，我们得出了初步的产品架构——脑图。',
+  'Each of the six modules can be drilled down, filtered, and compared in the same 3D view.': '六个模块都可以在同一个 3D 视图中下钻、筛选和对比。',
   'Visit hospitals': '走进医院',
-  'We observed daily reporting routines and interviewed hospital directors, department heads, and information teams.':
-    '观察日常汇报流程，并访谈院长、科室负责人和信息化团队。',
   'Collect the dataset': '收集数据',
-  'The pilot hospital provided more than 140 data dimensions for the first working demonstration.':
-    '试点医院为首个可运行版本提供了 140 多个数据维度。',
   'Group the indicators': '整理指标',
-  'Card sorting helped us find relationships, priorities, and gaps across the source data.':
-    '卡片分类帮助团队找出数据之间的关系、优先级与缺口。',
-  'Build the scenario': '串联场景',
-  'We connected the modules through a viewing path that moved from operations to regional planning.':
-    '以一条从院内运营延伸到区域规划的浏览路径串联各模块。',
-  'Product framework diagram': '产品框架图',
-  '16:9 diagram connecting the six product modules and their interaction paths': '16:9 图，呈现六个产品模块及其交互路径',
+  'Product architecture: the operations system and its six modules with their key indicators':
+    '产品架构：运营管理系统的六大模块及其关键指标',
+  Overview: '总览',
   Outpatient: '门诊',
   Inpatient: '住院',
   Patients: '患者',
   'Chronic disease': '慢病',
   Resources: '资源',
   'From hospital floor to city scale': '从院内楼层看到整座城市',
-  'The viewing path begins with in-hospital operations, expands to regional patient distribution, and ends with city-wide medical resources.':
-    '浏览路径从院内运营出发，逐步扩展到区域患者分布，最后看到全市医疗资源。',
   Point: '点',
   'Operational detail inside departments, wards, and beds.': '科室、病区与床位层面的运营细节。',
   Plane: '面',
   'Patient distribution and comparisons across administrative areas.': '行政区域间的患者分布与对比。',
   Volume: '体',
   'Medical resources viewed across the wider urban system.': '在城市系统中查看医疗资源。',
-  'Cross-scale experience path': '跨尺度体验路径',
-  '16:9 image showing the transition from hospital operations to regional and city views': '16:9 图片，展示从院内运营到区域、城市视角的过渡',
-  'A layered language for 3D data': '为 3D 数据建立层级',
-  'The 3D environment combines data with geographic context so administrators can compare locations without losing a sense of place.':
-    '3D 环境把数据与地理语境结合起来，让管理者比较不同位置时仍能保持空间感。',
+  "Hospital leader's view in three scales: hospital operations, patient tracking, and regional resources":
+    '医院管理者视角的三个尺度：院内管理、患者追踪、区域资源管理',
+  'Four layers in the 3D scene': '3D 场景的四个图层',
   '3D scene layer diagram': '3D 场景分层图',
-  '4:3 diagram showing data, infrastructure, administrative regions, and natural conditions': '4:3 图，展示数据、基础设施、行政区域与自然环境',
-  'Risk, distribution, magnitude, and change occupy the clearest visual position.': '风险、分布、规模与变化占据最清晰的视觉层。',
+  'Unreal Engine editor showing the 3D city scene with hospital buildings during development': '开发中的 Unreal Engine 编辑器，显示含医院建筑的 3D 城市场景',
+  'Building and tuning the 3D scene in Unreal Engine.': '在 Unreal Engine 中搭建和调试 3D 场景。',
+  "Risk, distribution, magnitude, and change sit on top, where they're easiest to see.": '风险、分布、规模与变化放在最上层，最容易看到。',
   Infrastructure: '基础设施',
   'Hospitals, landmarks, roads, and bridges make the scene recognizable.': '医院、地标、道路与桥梁帮助使用者辨认环境。',
   'Administrative regions': '行政区域',
-  'Boundaries and transport networks support comparison across locations.': '边界与交通网络支撑跨区域比较。',
+  'Boundaries and transport lines make it easy to compare locations.': '行政边界和交通线路方便在不同地点之间比较。',
   'Natural conditions': '自然环境',
-  'Terrain, rivers, and vegetation preserve geographic context.': '地形、河流与植被保留地理语境。',
-  'Turning scenes into reusable components': '把场景沉淀成可复用组件',
-  'A reusable chart library and three levels of spatial detail allowed the same product language to support different operational questions.':
-    '可复用图表库配合三层空间细节，让同一套产品语言适应不同运营问题。',
-  'Medical chart component library': '医疗图表组件库',
-  'Wide image showing the reusable charts prepared for common hospital scenarios': '宽幅图片，展示为常见医院场景准备的可复用图表',
-  'City resource view': '城市资源视图',
-  'GIS-based 3D scene with regional data and medical resource distribution': '基于 GIS 的 3D 场景，展示区域数据与医疗资源分布',
-  'City data can be compared by administrative area and connected with map POI data.':
-    '城市数据可按行政区域比较，并与地图 POI 数据关联。',
-  'Hospital operations view': '医院运营视图',
-  'Department, bed, and patient data shown inside the hospital scenario': '在医院场景中呈现科室、床位与患者数据',
-  'Drill-down views support staffing, bed use, critical patient monitoring, and inpatient analysis.':
-    '下钻视图支持人员配置、床位使用、危重患者监测和住院分析。',
-  'Time-based analysis': '时间维度分析',
-  '16:9 comparison showing how the timeline reveals change and supports forecasting': '16:9 对比图，展示时间轴如何呈现变化并支持预测',
-  'The sky and timeline system add time to the scene, helping users compare trends across different moments.':
-    '天空与时间轴系统把时间带入场景，便于比较不同时段的变化趋势。',
-  'Delivery and contribution': '交付与成果',
-  'The first implementation launched in 2019. By 2021, the team had delivered projects for more than 20 hospitals.':
-    '首个项目于 2019 年上线。到 2021 年，团队已为 20 多家医院完成交付。',
-  'Hospital delivery': '医院交付',
-  '16:9 photograph or deployment diagram showing the system in use': '16:9 现场照片或部署图，展示系统实际使用情况',
+  'Terrain, rivers, and vegetation keep the geography readable.': '地形、河流与植被让地理位置一目了然。',
+  'Comparing departments, floors, and beds': '跨科室、跨楼层、到床位的比较',
+  'Outpatient view expanding the 3D hospital floor by floor': '门诊视图：3D 医院按楼层逐层展开',
+  'Outpatient: floors open up so departments can be compared level by level.': '门诊：楼层逐层展开，按层比较各科室。',
+  'Inpatient view drilling down to individual beds in the 3D hospital': '住院视图：在 3D 医院中下钻到单个床位',
+  'Inpatient: drill down to single beds to check occupancy and critical patients.': '住院：下钻到单个床位，查看占用情况和重症患者。',
+  'Overview: census, revenue, and bed occupancy across the whole hospital.': '总览：全院的人次、收入与床位占用。',
+  'Patients: where patients come from, their age groups, and how they flow through the hospital.': '患者：患者来源、年龄构成，以及在院内的流动。',
+  'Chronic disease: follow-up status and risk levels for long-term patients.': '慢病：长期患者的随访情况与风险等级。',
+  'Resources: staff, equipment, and supplies set against demand.': '资源：人员、设备与物资相对需求的配置情况。',
+  'Emergency module · 2020': '紧急模块 · 2020',
+  'Monitoring COVID-19 in real time': '实时监控新冠疫情',
+  "The platform was already running when COVID-19 broke out just before Chinese New Year 2020. With the hospital's support, our team built a fever monitoring module and had it live within a week.":
+    '2020 年春节前新冠疫情爆发时，平台已在医院运行。在医院配合下，我们团队开发了发热人群监察模块，一周内上线。',
+  "TV interview with the hospital's Party Secretary in front of the platform on the video wall": '医院党委书记在大屏前接受电视采访',
+  'Real-time 3D street-level COVID-19 monitoring view, with fever patient density over the district around the hospital': '新冠疫情 3D 街景实时监控，显示医院周边街道的发热患者密度',
+  "Left: Shenzhen TV interviews the hospital's Party Secretary, Luo Xudong, in front of the platform on the video wall. Right: the real-time 3D street-level COVID-19 monitoring view. Both images from the HIT Expert Network report below.":
+    '左：深圳电视台都市频道在大屏前采访医院党委书记骆旭东。右：新冠疫情 3D 街景实时监控。两张图均来自下方 HIT 专家网的报道。',
+  'A real-time map of fever patients across Nanshan District.': '南山区发热患者实时分布图。',
+  'The platform mapped the distribution and density of fever patients across Nanshan District, next to fever clinic activity, inpatient buildings, and bed occupancy, so the hospital could read the situation in one view.':
+    '平台呈现南山区发热患者的分布与密度，并与发热门诊、住院楼和床位占用放在一起，让医院在一个画面里看清形势。',
+  'Syndrome distribution heat map across Nanshan District, centred on the hospital': '以医院为中心的南山区症候群分布热力图',
+  'Working from home during quarantine, with the Unreal Engine editor open on the monitor': '隔离期间居家工作，显示器上开着 Unreal Engine 编辑器',
+  'Built from home': '居家远程开发',
+  'I led the fever monitoring module': '我牵头发热人群监察模块',
+  'Everyone was in quarantine and working from home. As design lead I owned the module directly and split the work across the team. I built the UE4 3D scene myself and handled front-end debugging and the data interfaces.':
+    '所有人都在居家隔离、远程工作。作为设计负责人，我直接对接这个模块，把任务分工给团队，自己负责 UE4 3D 场景开发、前端调试和数据接口。',
+  'First delivered in 2019': '2019 年首次交付',
+  'In the press · March 2018': '媒体报道 · 2018 年 3 月',
+  'China News Service, 26 March 2018, on the strategic agreement between Tencent and the hospital to build a smart hospital. The cooperation covered pre-consultation, data analysis and visualization, and information security. Quote translated from Chinese.':
+    '中国新闻网，2018 年 3 月 26 日，报道腾讯与医院签署战略合作协议、共建“智慧医院”。合作从诊前优化、数据分析及可视化应用、信息安全等方面切入。',
+  '“Tencent will help the hospital make effective use of its own historical and temporal data … providing a scientific basis for clinical research, service quality, and hospital management decisions.”':
+    '“帮助医院有效利用自身的历史数据和时态数据等……为临床科研、医院服务质量、医院管理决策、卫生统计、提高医院服务质量等方面提供科学的依据。”',
+  'In the press · February 2020': '媒体报道 · 2020 年 2 月',
+  "HIT Expert Network, 21 February 2020. Contributed by the hospital's Network Technology Department, describing its IT response to COVID-19. Quote translated from Chinese.":
+    'HIT专家网，2020 年 2 月 21 日，华中科技大学协和深圳医院网络技术科供稿，介绍医院在新冠疫情期间的信息化应对。',
+  "“The hospital worked with Tencent, Dashu Yida, and other companies to build a big-data visualization system for epidemic monitoring. Using natural language processing and 3D rendering, it monitors patients with fever, diarrhea, cough, and other symptoms in real time, shows the hospital's current operating status and bed occupancy, and maps the distribution and density of fever patients, people in home quarantine, and confirmed and suspected cases across Nanshan District.”":
+    '“协和深圳医院联合腾讯、大数医达等公司，共同打造疫情监控大数据可视化系统。该系统通过自然语言处理、3D渲染等技术，可实现对新冠疫情、发热门诊、住院楼、发热、腹泻、咳嗽等各类症候群患者的实时监控，可以实时呈现医院当前的运营状态、床位占用情况，并能实施战线全区发热患者、居家隔离人员、确诊患者、疑似患者在南山区的分布及分布密度。”',
+  "Presenting the platform on the hospital's video wall to leaders and staff": '在医院大屏前向院领导和员工讲解平台',
+  'Hospital leaders reviewing the patient heat map on the video wall': '院领导在大屏前查看患者热力图',
+  'Group photo of hospital leaders and the team at the launch': '上线现场院领导与团队合影',
+  'Launch at the hospital: the platform presented on the video wall to hospital leaders and staff.':
+    '医院上线现场：在大屏上向院领导和员工展示平台。',
+  "Reviewing the map-based analysis design on screen with the hospital's IT department": '与医院信息科在屏幕前核对基于地图的分析方案',
+  "Working through the module list on a whiteboard with the hospital's IT department": '与医院信息科在白板上逐项梳理模块',
+  "With the data sorted into modules, I drafted the product and UI architecture and took it to the hospital's IT department to check against their systems and data, module by module. The layout prototype below grew out of these reviews.":
+    '数据完成分类后，我设计了产品与 UI 架构，带着方案到医院信息科，逐个模块对照他们的系统和数据进行核对。下方的布局原型就是从这些核对中形成的。',
+  'The layout prototype: overview stats, then the core 3D view, then drill-down detail.': '布局原型：先是总览数据，然后是核心 3D 视图，最后是下钻细节。',
   'Deployments combined on-site hardware, private cloud infrastructure, cloud rendering, and remote version updates.':
     '落地方案整合现场硬件、私有云基础设施、云渲染与远程版本更新。',
   'First hospital delivery': '首个医院项目交付',
@@ -280,29 +301,32 @@ export const smartHospitalTranslations: TranslationMap = {
   'Design and delivery': '设计与交付',
   'Designed the cross-scale viewing path': '设计跨尺度浏览路径',
   'Defined the 3D data presentation language': '定义 3D 数据呈现语言',
-  'Supported component reuse and hospital deployment': '推动组件复用与医院落地',
-  'Defined cross-department analysis and forecasting scenarios': '定义跨科室数据分析与预测场景',
-  'From reporting to foresight': '从数据报表到前瞻洞察',
-  'Beyond statistics and dashboards for each level of management, the platform analysed hospital operations across time and space, then used historical data to anticipate what was likely to happen next.':
-    '平台不止于数据统计和面向各级管理者的可视化看板，还从时间与空间维度分析医院运营，并基于历史数据预判接下来可能发生的情况。',
+  'Made components reusable across hospital deployments': '让组件可在各家医院部署中复用',
+  'Defined how departments are compared': '定义科室之间的比较方式',
+  'The next stage, planned but not built': '下一阶段：有方案，未落地',
+  'The next stage, planned with Tencent AI Lab, was a timeline in the 3D scene so administrators could compare one period with another, as a step toward forecasting.':
+    '下一阶段原计划与腾讯 AI Lab 合作：在 3D 场景中加入时间轴，让管理者在不同时段之间对比，作为走向预测的一步。',
+  'Sky system moving the 3D hospital scene from day to night': '天空系统让 3D 医院场景从白天过渡到夜晚',
+  'Built: the sky system moves the scene from day to night. Planned: a timeline that would replay the data itself.':
+    '已实现：天空系统让场景从白天变到夜晚。计划中：让数据本身随时间回放的时间轴。',
+  'Planned with Tencent AI Lab · not built': '与腾讯 AI Lab 规划 · 未落地',
+  Distribution: '分布',
+  'Where patients and cases sit across floors, districts, and the city, replayed over time.': '患者和病例在楼层、行政区和城市中的位置，随时间回放。',
+  Composition: '构成',
+  'How the mix of departments, symptoms, and patient groups shifts from one period to the next.': '科室、症状和患者群体的构成在不同时段之间如何变化。',
+  Trends: '趋势',
+  'How each indicator rises or falls across days, weeks, and seasons.': '各项指标在日、周和季节尺度上的升降。',
+  Comparison: '对比',
+  'One period set against another, to show what changed and where.': '把两个时段放在一起，看出哪里变了、变了多少。',
   Statistics: '数据统计',
-  'What happened': '发生了什么',
   'Core indicators summarised for directors, department heads, and operational staff, each at the level of detail their role needs.':
     '为院长、科室主任和运营人员汇总核心指标，每个角色看到与其职责相匹配的颗粒度。',
   'Multi-dimensional analysis': '多维数据分析',
-  'Why it happened': '为什么发生',
   'Data from separate departments compared across time and space to reveal patterns in patient flow, resource use, and operational load.':
     '打通各科室数据，从时间和空间维度比较，揭示患者流动、资源使用和运营负荷中的规律。',
-  Forecasting: '多维预测',
-  'What happens next': '接下来会发生什么',
-  'Historical hospital data used to forecast trends across several dimensions, so the hospital could plan ahead instead of reacting.':
-    '基于医院历史数据进行多维趋势预测，让医院提前规划，而不是被动应对。',
-  'COVID-19': '新冠疫情期间',
-  'Forecasting where fever patients would gather, before they arrived.': '在发热患者到来之前，预测他们会在哪里聚集。',
-  'During the pandemic, the platform tracked how clusters of fever patients were moving across the region and forecast where they were likely to concentrate next, giving the hospital time to prepare contingency plans in advance.':
-    '疫情期间，平台追踪区域内发热患者聚集的迁移，并预测下一步可能集中的位置，让医院有时间提前做好预案。',
-  'Fever patient forecasting': '发热患者迁移预测',
-  '16:9 map view showing fever patient movement and forecast clusters': '16:9 地图视图，展示发热患者迁移与预测聚集区域',
+  Forecasting: '预测',
+  'Planned with Tencent AI Lab: a timeline in the 3D scene, as a step toward forecasting.': '原计划与腾讯 AI Lab 合作：在 3D 场景中加入时间轴，作为走向预测的一步。',
+  'COVID-19': '新冠疫情',
 };
 
 export const smartMarathonTranslations: TranslationMap = {

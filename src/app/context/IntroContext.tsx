@@ -34,13 +34,19 @@ export function IntroProvider({ children }: { children: ReactNode }) {
   const isHome = pathname === '/';
 
   const [phase, setPhase] = useState<IntroPhase>(() => {
-    if (hasSeenIntro() || reducedMotion) return 'complete';
+    if (hasSeenIntro() || reducedMotion || !isHome) return 'complete';
     return 'idle';
   });
-  const [isHomeReady, setIsHomeReady] = useState(() => hasSeenIntro() || !!reducedMotion);
+  const [isHomeReady, setIsHomeReady] = useState(() => hasSeenIntro() || !!reducedMotion || !isHome);
 
   useEffect(() => {
-    if (!isHome) return;
+    if (!isHome) {
+      // The intro only greets visitors who enter on the home page, and never replays once interrupted.
+      markIntroSeen();
+      setPhase('complete');
+      setIsHomeReady(true);
+      return;
+    }
 
     if (hasSeenIntro() || reducedMotion) {
       setPhase('complete');

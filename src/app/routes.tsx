@@ -5,6 +5,7 @@ import { WorkPage } from './pages/WorkPage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { MountainLabPage } from './pages/MountainLabPage';
 
 function RedirectHome() {
   return <Navigate to="/" replace />;
@@ -15,6 +16,7 @@ export const router = createBrowserRouter(
     { path: '/index.html', Component: RedirectHome },
     { path: '/Portfolio', Component: RedirectHome },
     { path: '/portfolio', Component: RedirectHome },
+    { path: '/lab/mountain', Component: MountainLabPage },
     {
       path: '/',
       Component: Root,

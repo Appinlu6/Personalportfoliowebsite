@@ -8,6 +8,8 @@ import chillttooLogo from '@/assets/logos/chillttoo.png';
 import yianLogo from '@/assets/logos/yian.png';
 import { useLanguage } from '../context/LanguageContext';
 import { PageContainer } from '../components/PageContainer';
+import { SkillsStagesLegacy } from '../components/SkillsStagesLegacy';
+import { GrowthSkillsMap } from '../components/growth-mountain/GrowthSkillsMap';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -67,79 +69,11 @@ function ResumeEntry({
   );
 }
 
-const skillStages = [
-  {
-    years: '2025 – Now',
-    yearsCN: '2025 至今',
-    title: 'Building AI',
-    titleCN: '构建 AI',
-    skills: [
-      'Model Fine-tuning',
-      'Model Evaluation',
-      'Human Activity Recognition (HAR)',
-      'Agent Framework Design',
-      'AI Product Design',
-      'RAG & Knowledge Graph',
-      'Conversational AI',
-      'NLP & Text Mining',
-      'AI Safety',
-    ],
-    skillsCN: [
-      '模型微调',
-      '模型评估',
-      '人体活动识别（HAR）',
-      '智能体框架设计',
-      'AI 产品设计',
-      'RAG 与知识图谱',
-      '对话式 AI',
-      'NLP 与文本挖掘',
-      'AI 安全',
-    ],
-  },
-  {
-    years: '2022 – 2025',
-    title: 'Scaling systems and business',
-    titleCN: '规模化与经营',
-    skills: ['Design Systems', 'Low-code & Frontend Build', 'Brand & Content Strategy', 'Social Community Growth', 'Product & SKU Development'],
-    skillsCN: ['设计系统', '低代码与前端搭建', '品牌与内容策略', '社媒社群增长', '产品与 SKU 开发'],
-  },
-  {
-    years: '2017 – 2022',
-    title: 'Turning data into decisions',
-    titleCN: '用数据驱动决策',
-    skills: [
-      'Data Platform (0→1)',
-      'Data Visualization',
-      'Multi-dimensional Analysis & Forecasting',
-      'Real-time IoT Data',
-      'Digital Marketing (AIPL, Segmentation, Targeting)',
-    ],
-    skillsCN: ['数据平台（0→1）', '数据可视化', '多维分析与预测', '实时物联网数据', '数字营销（AIPL、人群分层、精准投放）'],
-  },
-  {
-    years: '2013 – 2017',
-    title: 'Understanding people',
-    titleCN: '理解人',
-    skills: ['Visual Design', 'UX Research', 'Field Research', 'Journey Mapping', 'Service Design'],
-    skillsCN: ['视觉设计', '用户研究', '田野调研', '旅程地图', '服务设计'],
-  },
-];
-
 const stagger = {
   hidden: {},
   visible: {
     transition: {
       staggerChildren: 0.05,
-      delayChildren: 0.01,
-    },
-  },
-};
-
-const skillStagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.03,
       delayChildren: 0.01,
     },
   },
@@ -174,8 +108,10 @@ export function AboutPage() {
             <h2 className="font-semibold font-['Work_Sans']" style={{ fontSize: '28px' }}>{isCN ? '工作经历' : 'Work Experience'}</h2>
           </motion.div>
           <div className="flex-1 space-y-4 md:space-y-5">
-            <ResumeEntry date={isCN ? '2026 年 10 月 至今' : 'Oct 2026 – Now'} logoSrc={yianLogo} logoAlt="深圳熠安可创智能技术有限公司">
-              <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">深圳熠安可创智能技术有限公司</p>
+            <ResumeEntry date={isCN ? '2026 年 10 月 至今' : 'Oct 2026 – Now'} logoSrc={yianLogo} logoAlt={isCN ? '深圳熠安可创智能技术有限公司' : "Shenzhen Yi'an Kechuang Intelligent Technology Co., Ltd."}>
+              <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">
+                {isCN ? '深圳熠安可创智能技术有限公司' : "Shenzhen Yi'an Kechuang Intelligent Technology Co., Ltd."}
+              </p>
               <p className="text-base text-muted-foreground italic mb-2">{isCN ? 'AI 算法工程师（实习）· 深圳 · 混合办公' : 'AI Algorithm Engineer (Intern) · Shenzhen · Hybrid'}</p>
               <div className="space-y-2" style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}>
                 <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 研究可穿戴传感器信号与大语言模型（LLM）结合的多模态学习，用于人体活动识别。' : '· Research multimodal learning with wearable sensor signals and large language models (LLMs) for human activity recognition.'}</p>
@@ -183,7 +119,7 @@ export function AboutPage() {
                 <p className="text-base text-muted-foreground leading-relaxed">{isCN ? '· 设计 AI 系统架构与应用框架。' : '· Design AI system architectures and application frameworks.'}</p>
               </div>
             </ResumeEntry>
-            <ResumeEntry date={isCN ? '2024 年 2 月 – 2025 年 7 月' : 'Feb 2024 – Jul 2025'} logoSrc={chillttooLogo} logoAlt="Chillttoo Market">
+            <ResumeEntry date={isCN ? '2023 – 2025 年 7 月' : '2023 – Jul 2025'} logoSrc={chillttooLogo} logoAlt="Chillttoo Market">
               <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-0.5">{isCN ? 'Chillttoo Market（汽车文创商品 · 自主创业）' : 'Chillttoo Market (Automotive Culture Merchandise · Self-employed)'}</p>
               <p className="text-base text-muted-foreground italic mb-2">{isCN ? '联合创始人兼营销总监' : 'Co-founder & Marketing Director'}</p>
               <div className="space-y-2" style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}>
@@ -276,7 +212,8 @@ export function AboutPage() {
 
         {/* Skills */}
         <motion.div
-          className="flex flex-col gap-6 mb-12 md:flex-row md:gap-16 md:mb-20"
+          id="skills"
+          className="flex flex-col gap-6 mb-12 scroll-mt-28 md:flex-row md:gap-16 md:mb-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
@@ -285,41 +222,12 @@ export function AboutPage() {
           <motion.div className="w-full flex-shrink-0 md:w-48" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
             <h2 className="font-semibold font-['Work_Sans']" style={{ fontSize: '28px' }}>{isCN ? '技能与专长' : 'Skills & Expertise'}</h2>
           </motion.div>
-          <div className="flex-1 space-y-8 md:space-y-10">
-            {skillStages.map((stage) => (
-              <motion.div
-                key={stage.title}
-                className="grid grid-cols-1 gap-y-3 sm:grid-cols-[10rem_1fr] sm:gap-x-6"
-                variants={fadeUp}
-                transition={{ duration: 0.42, ease: 'easeOut' }}
-              >
-                <span
-                  className="text-sm text-muted-foreground sm:pt-0.5 sm:text-right sm:text-base"
-                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-                >
-                  {isCN ? stage.yearsCN ?? stage.years : stage.years}
-                </span>
-                <div>
-                  <p style={{ fontSize: '1.1rem', fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }} className="mb-3">
-                    {isCN ? stage.titleCN : stage.title}
-                  </p>
-                  <motion.div className="flex flex-wrap gap-2.5" variants={skillStagger}>
-                    {(isCN ? stage.skillsCN : stage.skills).map((skill) => (
-                      <motion.span
-                        key={skill}
-                        className="px-3.5 py-1.5 rounded-lg bg-card border border-border text-sm sm:text-base"
-                        variants={fadeUp}
-                        transition={{ duration: 0.32, ease: 'easeOut' }}
-                        whileHover={{ y: -4 }}
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div className="min-w-0 flex-1" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
+            <GrowthSkillsMap
+              className="h-[min(580px,80svh)] rounded-2xl border border-border md:h-[680px]"
+              fallback={<SkillsStagesLegacy />}
+            />
+          </motion.div>
         </motion.div>
       </PageContainer>
     </section>

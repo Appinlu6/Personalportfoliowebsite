@@ -9,14 +9,16 @@ import { CinematicIntro } from './CinematicIntro';
 import { Navigation } from './Navigation';
 
 function RootLayout() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const { phase, isHome } = useIntro();
   const { isCN } = useLanguage();
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   useEffect(() => {
     const shouldLock = isHome && phase === 'playing';

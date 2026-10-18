@@ -110,6 +110,7 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
   const { isCN } = useLanguage();
   const reducedMotion = useReducedMotion();
   const [ready, setReady] = useState(false);
+  const [introDoneOnMount] = useState(() => phase === 'complete');
 
   const concealed = isHome && phase === 'playing';
 
@@ -118,7 +119,7 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
   }, [concealed]);
 
   const animateState = concealed ? 'hidden' : ready ? 'visible' : 'hidden';
-  const skipMotion = !!reducedMotion;
+  const skipMotion = !!reducedMotion || introDoneOnMount;
 
   const interests = isCN
     ? [

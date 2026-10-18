@@ -10,6 +10,7 @@ type ProjectSectionNavigatorProps = {
 type SectionItem = {
   id: string;
   title: string;
+  group?: string;
 };
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
@@ -45,7 +46,7 @@ export function ProjectSectionNavigator({
         const title = node.textContent?.trim() ?? '';
         if (!title) return null;
         if (!node.id) node.id = `project-section-${index + 1}`;
-        return { id: node.id, title };
+        return { id: node.id, title, group: node.dataset.navGroup || undefined };
       })
       .filter((item): item is SectionItem => Boolean(item));
 
@@ -187,9 +188,15 @@ export function ProjectSectionNavigator({
             <div className="max-h-full space-y-1 overflow-y-auto pr-1">
               {sections.map((section, index) => {
                 const isActive = index === activeIndex;
+                const startsGroup = Boolean(section.group) && section.group !== sections[index - 1]?.group;
                 return (
+                  <div key={section.id} className={section.group ? 'pl-2.5' : undefined}>
+                  {startsGroup && (
+                    <div className="-ml-2.5 mt-3 px-2.5 pb-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--project-accent,var(--bm-red))]">
+                      {section.group}
+                    </div>
+                  )}
                   <button
-                    key={section.id}
                     type="button"
                     onClick={() => {
                       const target = document.getElementById(section.id);
@@ -214,6 +221,7 @@ export function ProjectSectionNavigator({
                     </span>
                     <span className="line-clamp-2 text-xs leading-relaxed">{section.title}</span>
                   </button>
+                  </div>
                 );
               })}
             </div>
