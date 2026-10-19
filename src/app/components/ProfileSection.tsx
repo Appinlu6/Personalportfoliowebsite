@@ -1,5 +1,5 @@
 import { useEffect, useState, type ComponentProps, type ReactNode } from 'react';
-import image_20260523_1315046 from '@/imports/20260523-1315046.png';
+import profilePhoto from '@/assets/profile.webp';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { EASE_OUT_EXPO } from '../lib/motion';
@@ -141,7 +141,7 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
     <div className="mx-auto mb-8 flex max-w-[1200px] flex-col items-start gap-8 lg:flex-row">
       <motion.div className="flex-shrink-0 self-start" {...portraitReveal}>
         <img
-          src={image_20260523_1315046}
+          src={profilePhoto}
           alt="Lu Zhengping (Arvin)"
           className="h-[19rem] w-[19rem] rounded-2xl object-cover object-top"
         />

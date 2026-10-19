@@ -404,7 +404,7 @@ export function SmartHospital() {
               ))}
             </ol>
             <Figure
-              src="/smart-hospital/card-sorting-en.png"
+              src="/smart-hospital/card-sorting-en.webp"
               alt="Field visit at the hospital, a sample of the 140+ source data fields, and the card sorting wall"
               frameClassName="aspect-[1024/410]"
             />
@@ -414,7 +414,7 @@ export function SmartHospital() {
           </Reveal>
           <Reveal className="mt-6">
             <Figure
-              src="/smart-hospital/mindmap-en.png"
+              src="/smart-hospital/mindmap-en.webp"
               alt="Product architecture: the operations system and its six modules with their key indicators"
               frameClassName="aspect-video"
             />
@@ -457,14 +457,14 @@ export function SmartHospital() {
           </Reveal>
           <Reveal className="mt-6">
             <Figure
-              src="/smart-hospital/scale-path-en.png"
+              src="/smart-hospital/scale-path-en.webp"
               alt="Hospital leader's view in three scales: hospital operations, patient tracking, and regional resources"
               frameClassName="aspect-video"
             />
           </Reveal>
           <Reveal className="mt-6">
             <Figure
-              src="/smart-hospital/layout-en.png"
+              src="/smart-hospital/layout-en.webp"
               alt="Platform screen reading from overview stats, to the core 3D view, to drill-down detail"
               caption="The layout prototype: overview stats, then the core 3D view, then drill-down detail."
               frameClassName="aspect-video"
@@ -480,7 +480,7 @@ export function SmartHospital() {
             <Reveal className="space-y-6 lg:col-span-7">
               <div className="flex aspect-[2/1] items-center overflow-hidden rounded-2xl border border-[var(--sh-line)] bg-black">
                 <img
-                  src="/smart-hospital/scene-layers.gif"
+                  src="/smart-hospital/scene-layers.webp"
                   alt="3D scene layer diagram"
                   width={600}
                   height={300}
@@ -524,7 +524,7 @@ export function SmartHospital() {
             </Reveal>
             <Reveal>
               <Figure
-                src="/smart-hospital/outpatient-floors.gif"
+                src="/smart-hospital/outpatient-floors.webp"
                 alt="Outpatient view expanding the 3D hospital floor by floor"
                 caption="Outpatient: floors open up so departments can be compared level by level."
                 frameClassName="aspect-[340/259] bg-black"
@@ -532,7 +532,7 @@ export function SmartHospital() {
             </Reveal>
             <Reveal>
               <Figure
-                src="/smart-hospital/inpatient-beds.gif"
+                src="/smart-hospital/inpatient-beds.webp"
                 alt="Inpatient view drilling down to individual beds in the 3D hospital"
                 caption="Inpatient: drill down to single beds to check occupancy and critical patients."
                 frameClassName="aspect-[340/259] bg-black"
@@ -630,7 +630,7 @@ export function SmartHospital() {
               </p>
             </div>
             <Figure
-              src="/smart-hospital/syndrome-heatmap.gif"
+              src="/smart-hospital/syndrome-heatmap.webp"
               alt="Syndrome distribution heat map across Nanshan District, centred on the hospital"
               frameClassName="aspect-[360/203] border-white/14 bg-black"
             />
@@ -653,12 +653,12 @@ export function SmartHospital() {
           <Reveal className="mt-6">
             <div className="grid gap-4 md:grid-cols-[1140fr_2369fr]">
               <Figure
-                src="/smart-hospital/covid-tv-interview.png"
+                src="/smart-hospital/covid-tv-interview.webp"
                 alt="TV interview with the hospital's Party Secretary in front of the platform on the video wall"
                 frameClassName="aspect-[1140/667]"
               />
               <Figure
-                src="/smart-hospital/covid-3d-street-monitor.png"
+                src="/smart-hospital/covid-3d-street-monitor.webp"
                 alt="Real-time 3D street-level COVID-19 monitoring view, with fever patient density over the district around the hospital"
                 frameClassName="aspect-[1268/357] bg-black"
               />
@@ -691,7 +691,7 @@ export function SmartHospital() {
           <div className="grid gap-6 md:grid-cols-2 md:items-start">
             <Reveal>
               <Figure
-                src="/smart-hospital/sky-day-night.gif"
+                src="/smart-hospital/sky-day-night.webp"
                 alt="Sky system moving the 3D hospital scene from day to night"
                 caption="Built: the sky system moves the scene from day to night. Planned: a timeline that would replay the data itself."
                 frameClassName="aspect-[360/218] bg-black"

@@ -476,7 +476,7 @@ function BauhiniaMind() {
               </div>
               <div className="mb-8 overflow-hidden rounded-[0.625rem] bg-white/70">
                 <img
-                  src="/user-research-workflow.png"
+                  src="/user-research-workflow.webp"
                   alt="User research workflow"
                   className="block h-auto w-full"
                 />
@@ -489,14 +489,14 @@ function BauhiniaMind() {
                   id="M1"
                   label="Competitive landscape map"
                   ratio="4:3"
-                  imageSrc="/competitive-landscape-map.png"
+                  imageSrc="/competitive-landscape-map.webp"
                   fit="contain"
                 />
                 <FigPlaceholder
                   id="M2"
                   label="Service benchmark matrix"
                   ratio="4:3"
-                  imageSrc="/service-benchmark-matrix.png"
+                  imageSrc="/service-benchmark-matrix.webp"
                   fit="contain"
                 />
               </div>
@@ -651,7 +651,7 @@ function BauhiniaMind() {
                   vulnerability.
                 </p>
                 <img
-                  src="/related-iam.png"
+                  src="/related-iam.webp"
                   alt="Interactive Acculturation Model visual"
                   width={2501}
                   height={1383}
@@ -912,7 +912,7 @@ function BauhiniaMind() {
               </p>
               <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
                 <img
-                  src="/methodology-pipeline.png"
+                  src="/methodology-pipeline.webp"
                   alt="Methodology pipeline diagram"
                   className="h-full w-full object-cover"
                 />
@@ -982,7 +982,7 @@ function BauhiniaMind() {
             </div>
             <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
               <img
-                src="/design-process.png"
+                src="/design-process.webp"
                 alt="Bauhinia-Mind design process diagram"
                 className="block h-auto w-full"
               />
@@ -1040,7 +1040,7 @@ function BauhiniaMind() {
             </div>
             <div className="mb-8 overflow-hidden rounded-[0.625rem] bg-white/70">
               <img
-                src="/system-architecture-overview.png"
+                src="/system-architecture-overview.webp"
                 alt="Bauhinia-Mind system architecture overview"
                 className="block h-auto w-full"
               />
@@ -1082,7 +1082,7 @@ function BauhiniaMind() {
             </div>
             <div className="mb-8 overflow-hidden rounded-[0.625rem] bg-white/70">
               <img
-                src="/system-architecture-detail.png"
+                src="/system-architecture-detail.webp"
                 alt="Bauhinia-Mind system architecture detail"
                 className="block h-auto w-full"
               />
@@ -1147,7 +1147,7 @@ function BauhiniaMind() {
             </div>
             <div className="overflow-hidden rounded-[0.625rem] bg-white/70">
               <img
-                src="/system-architecture-flow.png"
+                src="/system-architecture-flow.webp"
                 alt="Bauhinia-Mind system architecture flow"
                 className="block h-auto w-full"
               />
@@ -1396,15 +1396,15 @@ function ImageZoomProvider({ children }: { children: ReactNode }) {
 function PrototypeJourneyInteractive() {
   // All offsets are percentages so cards stay locked to the base image on every viewport.
   const slots = [
-    { id: '01', src: '/prototype-slot-1.png', top: '10.821%', left: '50.212%', rotate: -2 },
-    { id: '02', src: '/prototype-slot-2.png', top: '25.362%', left: '72.8%', rotate: -2 },
-    { id: '03', src: '/prototype-slot-3.png', top: '43.31%', left: '15.837%' },
-    { id: '04', src: '/prototype-slot-4.png', top: '43.194%', left: '44.023%', rotate: -1 },
-    { id: '05', src: '/prototype-slot-5.png', top: '43.252%', left: '70.26%', rotate: -1 },
-    { id: '06', src: '/prototype-slot-6.png', top: '64.221%', left: '19.586%' },
-    { id: '07', src: '/prototype-slot-7.png', top: '65.379%', left: '51.055%' },
-    { id: '08', src: '/prototype-slot-8.png', top: '84.562%', left: '26.31%' },
-    { id: '09', src: '/prototype-slot-9.png', top: '85.431%', left: '59.394%' },
+    { id: '01', src: '/prototype-slot-1.webp', top: '10.821%', left: '50.212%', rotate: -2 },
+    { id: '02', src: '/prototype-slot-2.webp', top: '25.362%', left: '72.8%', rotate: -2 },
+    { id: '03', src: '/prototype-slot-3.webp', top: '43.31%', left: '15.837%' },
+    { id: '04', src: '/prototype-slot-4.webp', top: '43.194%', left: '44.023%', rotate: -1 },
+    { id: '05', src: '/prototype-slot-5.webp', top: '43.252%', left: '70.26%', rotate: -1 },
+    { id: '06', src: '/prototype-slot-6.webp', top: '64.221%', left: '19.586%' },
+    { id: '07', src: '/prototype-slot-7.webp', top: '65.379%', left: '51.055%' },
+    { id: '08', src: '/prototype-slot-8.webp', top: '84.562%', left: '26.31%' },
+    { id: '09', src: '/prototype-slot-9.webp', top: '85.431%', left: '59.394%' },
   ] as const;
 
   const slotRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -1456,7 +1456,7 @@ function PrototypeJourneyInteractive() {
   return (
     <div className="relative overflow-hidden rounded-[0.625rem] bg-white/70">
       <img
-        src="/prototype-journey.png"
+        src="/prototype-journey.webp"
         alt="Prototype journey"
         className="block h-auto w-full"
         data-no-zoom-mobile="true"

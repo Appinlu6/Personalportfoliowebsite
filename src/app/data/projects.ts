@@ -85,7 +85,7 @@ export const projects: Project[] = [
       "Led the 0-to-1 design of a hospital data platform that shows what happened and why. Piloted at the People's Hospital of Nanshan District, Shenzhen (Huazhong University of Science and Technology Union Shenzhen Hospital) and delivered to 23 hospitals by 2021.",
     tags: ['Analysis', 'Data Visualization', 'Big Data Platform Design', 'Healthcare'],
     featured: false,
-    image: '/smart-hospital.png',
+    image: '/smart-hospital.webp',
     hoverVideo: '/videos/smart-hospital-cover.mp4',
   },
   {
@@ -96,7 +96,7 @@ export const projects: Project[] = [
       "Spearheaded the 0-to-1 product management and design of Tencent's Smart Marathon Big Data Platform. Leveraging Unreal Engine for 3D city mapping and real-time biometric tracking, the system empowered cross-department command centers with instant emergency dispatch capabilities, successfully safeguarding the Yangzhou Marathon.",
     tags: ['Real-time Decision Support', 'Big Data Platform Design', 'Data Visualization', 'Healthcare'],
     featured: false,
-    image: '/smart-Marathon.png',
+    image: '/smart-Marathon.webp',
     hoverVideo: '/videos/smart-marathon-cover.mp4',
   },
   {
@@ -107,7 +107,7 @@ export const projects: Project[] = [
       'Spearheaded an O2O service design solution for Tencent Medical Cloud to optimize the patient experience. By mapping complex medical journeys and integrating digital-physical touchpoints, the project successfully reduced average patient wait times by 4.5 hours.',
     tags: ['Service Design', 'UX Research', 'Healthcare'],
     featured: false,
-    image: '/healthcare-service-design-cover.png',
+    image: '/healthcare-service-design-cover.webp',
     hoverVideo: '/videos/healthcare-service-design-cover.mp4',
   },
 ];

@@ -1,4 +1,4 @@
-import image_20260523_1315046 from '@/imports/20260523-1315046.png';
+import profilePhoto from '@/assets/profile.webp';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useIntro } from '../context/IntroContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -13,7 +13,7 @@ export function HomePage() {
   const { isCN } = useLanguage();
   const reducedMotion = useReducedMotion();
 
-  useHomeContentReady(image_20260523_1315046);
+  useHomeContentReady(profilePhoto);
 
   const concealDuringIntro = isHome && phase === 'playing';
   const animateReveal = isHome && phase === 'exiting';
