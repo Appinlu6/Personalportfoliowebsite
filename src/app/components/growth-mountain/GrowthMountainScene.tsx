@@ -453,7 +453,7 @@ function DashedLinks() {
   );
 }
 
-const PARTICLE_COUNT = 40;
+const PARTICLE_COUNT = 60;
 
 /** The unfinished summit: a pulsing growth point with particles drifting upward. */
 function GrowthPoint() {
@@ -477,7 +477,7 @@ function GrowthPoint() {
   const positions = useMemo(() => new Float32Array(PARTICLE_COUNT * 3), []);
 
   useFadeMaterial(() => core.current?.material as Material, visible);
-  useFadeMaterial(() => particles.current?.material as Material, visible * 0.45);
+  useFadeMaterial(() => particles.current?.material as Material, visible * 0.85);
 
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
@@ -511,7 +511,7 @@ function GrowthPoint() {
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
-        <pointsMaterial color="#111111" size={0.035} transparent opacity={0.45} depthWrite={false} />
+        <pointsMaterial color="#111111" size={0.07} transparent opacity={0.85} depthWrite={false} />
       </points>
     </group>
   );
@@ -995,7 +995,7 @@ export default function GrowthMountainScene({ embedded = false, active = true }:
       <color attach="background" args={['#ffffff']} />
       <ambientLight intensity={0.9} />
       <directionalLight position={[6, 10, 8]} intensity={1.4} />
-      <CameraFit margin={embedded ? 1.14 : 1} />
+      <CameraFit margin={embedded ? 1.3 : 1} />
       <UnfoldController />
       <CameraDirector />
       <Mountain />

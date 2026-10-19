@@ -259,9 +259,12 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
                   </li>
                 ))}
               </BlockList>
-              <div className="mt-4">
-                <BlockSubtitle>{isCN ? 'A+ 毕业项目 · 香港理工大学硕士阶段' : 'A+ Capstone Project · MSc Study at PolyU'}</BlockSubtitle>
+            </ProfileBlock>
+            <ProfileBlock>
+              <div aria-hidden="true" className="hidden md:block" style={{ fontSize: '19px', lineHeight: 1.45, marginBottom: '6px' }}>
+                &nbsp;
               </div>
+              <BlockSubtitle>{isCN ? 'A+ 毕业项目 · 香港理工大学硕士阶段' : 'A+ Capstone Project · MSc Study at PolyU'}</BlockSubtitle>
               <BlockBody>
                 {isCN
                   ? '紫荆心智：一个具备记忆能力的 AI 伙伴，探索数字健康、照护与人机关系。'

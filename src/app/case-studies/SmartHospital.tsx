@@ -84,7 +84,7 @@ const layerLabels = ['Layer 01 · What happened', 'Layer 02 · Why it happened',
 const insightLevels = [
   {
     title: 'Statistics',
-    copy: 'Core indicators summarised for directors, department heads, and operational staff, each at the level of detail their role needs.',
+    copy: 'Core indicators summarized for directors, department heads, and operational staff, each at the level of detail their role needs.',
   },
   {
     title: 'Multi-dimensional analysis',
@@ -673,7 +673,7 @@ export function SmartHospital() {
               label="In the press · February 2020"
               caption="HIT Expert Network, 21 February 2020. Contributed by the hospital's Network Technology Department, describing its IT response to COVID-19. Quote translated from Chinese."
             >
-              “The hospital worked with Tencent, Dashu Yida, and other companies to build a big-data visualization system for epidemic monitoring. Using natural language processing and 3D rendering, it monitors patients with fever, diarrhea, cough, and other symptoms in real time, shows the hospital's current operating status and bed occupancy, and maps the distribution and density of fever patients, people in home quarantine, and confirmed and suspected cases across Nanshan District.”
+              “The hospital worked with Tencent, Dashu Yida, and other companies to build a big-data visualization system for epidemic monitoring … It maps the distribution and density of fever patients across Nanshan District.”
             </PressQuote>
           </Reveal>
         </section>

@@ -45,15 +45,37 @@ export const projects: Project[] = [
     hoverVideo: '/videos/bauhinia-logo.mp4',
   },
   {
+    slug: 'before-evening-vr',
+    title: 'Before Evening: VR Narrative Game',
+    year: '2026 Jan - Apr',
+    description:
+      'A VR mystery set in a Chinese high school. Players investigate Yi Linlan\'s past by speaking naturally with AI-powered MetaHuman characters and showing them objects found around the campus. I worked on project management, scene design, and VR interaction programming.',
+    tags: ['Conversational AI', 'AI Product Design', 'Immersive / XR'],
+    featured: false,
+    image: '/before-evening/cover.webp',
+    hoverVideo: '/videos/before-evening-cover.mp4',
+  },
+  {
     slug: 'cbs5504-mandarin-cultural-evolution',
     title: 'Mandarin: A Cultural Evolution',
     year: '2025 Oct - Nov',
     description:
-      'A digital humanities study tracing the changing meanings of the orange across three thousand years of Chinese history through a curated corpus, NLP analysis, close reading, and interactive visualisation.',
-    tags: ['NLP & Text Mining', 'Data Visualization', 'UX Research', 'Digital Humanities'],
+      'A digital humanities study tracing the changing meanings of the orange across three thousand years of Chinese history through a curated corpus, NLP analysis, close reading, and interactive visualization.',
+    tags: ['NLP & Text Mining', 'Data Visualization', 'Digital Humanities'],
     featured: false,
     image: '/cbs5504/mandarin-cover.webp',
     hoverVideo: '/cbs5504/mandarin-cover-hover.mp4',
+  },
+  {
+    slug: 'lark-global-marketing-website',
+    title: 'Lark Global Marketing Website',
+    year: '2022 – 2023',
+    description:
+      'Responsible for the website design of Meego, the project management tool within Lark software, and the design of the Customer Stories section on the global marketing website. Also responsible for creative design, marketing solutions, and new media art support.',
+    tags: ['Human-AI Workflow', 'Service Design', 'Enterprise SaaS'],
+    featured: false,
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
   {
     slug: 'tencent-micision-smart-hospital',
@@ -87,27 +109,5 @@ export const projects: Project[] = [
     featured: false,
     image: '/healthcare-service-design-cover.png',
     hoverVideo: '/videos/healthcare-service-design-cover.mp4',
-  },
-  {
-    slug: 'lark-global-marketing-website',
-    title: 'Lark Global Marketing Website',
-    year: '2022 – 2023',
-    description:
-      'Responsible for the website design of Meego, the project management tool within Lark software, and the design of the Customer Stories section on the global marketing website. Also responsible for creative design, marketing solutions, and new media art support.',
-    tags: ['Human-AI Workflow', 'Service Design', 'Enterprise SaaS'],
-    featured: false,
-    image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-  },
-  {
-    slug: 'before-evening-vr',
-    title: 'Before Evening: VR Narrative Game',
-    year: '2026 Jan - Apr',
-    description:
-      'A VR mystery set in a Chinese high school. Players investigate Yi Linlan\'s past by speaking naturally with AI-powered MetaHuman characters and showing them objects found around the campus. I worked on project management, scene design, and VR interaction programming.',
-    tags: ['Conversational AI', 'AI Product Design', 'Immersive / XR'],
-    featured: false,
-    image: '/before-evening/cover.webp',
-    hoverVideo: '/videos/before-evening-cover.mp4',
   },
 ];

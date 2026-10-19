@@ -224,7 +224,7 @@ export function AboutPage() {
           </motion.div>
           <motion.div className="min-w-0 flex-1" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
             <GrowthSkillsMap
-              className="h-[min(580px,80svh)] rounded-2xl border border-border md:h-[680px]"
+              className="h-[min(580px,80svh)] rounded-2xl border border-border md:h-[720px]"
               fallback={<SkillsStagesLegacy />}
             />
           </motion.div>

@@ -90,7 +90,7 @@ function Legend() {
               <span className="h-2 w-2 flex-shrink-0 rounded-full sm:mt-1.5" style={{ backgroundColor: line.color }} />
               <span>
                 <span className="block text-xs font-medium text-neutral-900 sm:text-sm">{isCN ? line.labelCN : line.label}</span>
-                <span className="hidden text-xs leading-5 text-neutral-500 lg:block">
+                <span className="hidden max-w-[13rem] text-balance text-xs leading-5 text-neutral-500 xl:block">
                   {isCN ? line.taglineCN : line.tagline}
                 </span>
               </span>

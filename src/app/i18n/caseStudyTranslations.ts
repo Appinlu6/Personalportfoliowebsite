@@ -279,8 +279,8 @@ export const smartHospitalTranslations: TranslationMap = {
   'In the press · February 2020': '媒体报道 · 2020 年 2 月',
   "HIT Expert Network, 21 February 2020. Contributed by the hospital's Network Technology Department, describing its IT response to COVID-19. Quote translated from Chinese.":
     'HIT专家网，2020 年 2 月 21 日，华中科技大学协和深圳医院网络技术科供稿，介绍医院在新冠疫情期间的信息化应对。',
-  "“The hospital worked with Tencent, Dashu Yida, and other companies to build a big-data visualization system for epidemic monitoring. Using natural language processing and 3D rendering, it monitors patients with fever, diarrhea, cough, and other symptoms in real time, shows the hospital's current operating status and bed occupancy, and maps the distribution and density of fever patients, people in home quarantine, and confirmed and suspected cases across Nanshan District.”":
-    '“协和深圳医院联合腾讯、大数医达等公司，共同打造疫情监控大数据可视化系统。该系统通过自然语言处理、3D渲染等技术，可实现对新冠疫情、发热门诊、住院楼、发热、腹泻、咳嗽等各类症候群患者的实时监控，可以实时呈现医院当前的运营状态、床位占用情况，并能实施战线全区发热患者、居家隔离人员、确诊患者、疑似患者在南山区的分布及分布密度。”',
+  '“The hospital worked with Tencent, Dashu Yida, and other companies to build a big-data visualization system for epidemic monitoring … It maps the distribution and density of fever patients across Nanshan District.”':
+    '“协和深圳医院联合腾讯、大数医达等公司，共同打造疫情监控大数据可视化系统……并能实施战线全区发热患者、居家隔离人员、确诊患者、疑似患者在南山区的分布及分布密度。”',
   "Presenting the platform on the hospital's video wall to leaders and staff": '在医院大屏前向院领导和员工讲解平台',
   'Hospital leaders reviewing the patient heat map on the video wall': '院领导在大屏前查看患者热力图',
   'Group photo of hospital leaders and the team at the launch': '上线现场院领导与团队合影',
@@ -319,7 +319,7 @@ export const smartHospitalTranslations: TranslationMap = {
   Comparison: '对比',
   'One period set against another, to show what changed and where.': '把两个时段放在一起，看出哪里变了、变了多少。',
   Statistics: '数据统计',
-  'Core indicators summarised for directors, department heads, and operational staff, each at the level of detail their role needs.':
+  'Core indicators summarized for directors, department heads, and operational staff, each at the level of detail their role needs.':
     '为院长、科室主任和运营人员汇总核心指标，每个角色看到与其职责相匹配的颗粒度。',
   'Multi-dimensional analysis': '多维数据分析',
   'Data from separate departments compared across time and space to reveal patterns in patient flow, resource use, and operational load.':
@@ -802,6 +802,337 @@ export const larkGlobalTranslations: TranslationMap = {
   'Mapped repeatable work for AI assistance': '梳理适合 AI 辅助的重复工作',
   'Defined source and review requirements': '明确内容来源与审核要求',
   'Separated research hypotheses from shipped results': '区分研究假设与已交付成果',
+};
+
+export const mandarinTranslations: TranslationMap = {
+  ...common,
+  'PolyU MSc · CBS5504': '香港理工大学硕士 · CBS5504',
+  Mandarin: '橘',
+  'A semantic evolution spanning three thousand years': '跨越三千年的语义演变',
+  'Project lead · corpus, NLP analysis, website': '项目负责人 · 语料库、NLP 分析、网站',
+  '4 people': '4 人',
+  Corpus: '语料库',
+  '470 records · 8 eras': '470 条记录 · 8 个时代',
+  'Oct–Nov 2025 · 6 weeks': '2025 年 10–11 月 · 6 周',
+  'The question': '研究问题',
+  'How does one fruit pick up new meanings over 3,000 years?': '一种水果，如何在三千年里获得新的意义？',
+  'The data': '数据',
+  'Analysis, era by era': '分析：逐个时代',
+  'From patterns to insights': '从规律到洞见',
+  '470 records across eight eras': '八个时代，470 条记录',
+  'Where the records come from': '记录从哪里来',
+  'Classical literature': '古典文学',
+  'Moral and aesthetic symbolism': '道德与审美象征',
+  'Official histories and geography': '正史与地理志',
+  'Tribute, governance, economic geography': '贡赋、治理、经济地理',
+  'Agricultural monographs': '农书',
+  'Cultivation, varieties, storage': '栽培、品种、贮藏',
+  'Medical compendia': '本草医书',
+  'Chenpi and medical use': '陈皮与药用',
+  'Modern scholarship': '现代研究',
+  'Trade, health research, festival customs': '贸易、健康研究、节庆习俗',
+  Prehistoric: '史前',
+  'Pre-Qin': '先秦',
+  'Qin–Han': '秦汉',
+  'Wei–Jin': '魏晋南北朝',
+  'Sui–Tang': '隋唐',
+  'Song–Yuan': '宋元',
+  'Ming–Qing': '明清',
+  Modern: '近现代',
+  'Pre-Qin & Qin–Han': '先秦 & 秦汉',
+  'Sui–Tang & Song–Yuan': '隋唐 & 宋元',
+  'Culture and symbolism': '文化与象征',
+  'Economy and trade': '经济与商业',
+  'Medicine and practical use': '医疗与实用',
+  'Physical form': '物性与形态',
+  Geography: '地理与分布',
+  'A data dictionary first': '先定数据字典',
+  Field: '字段',
+  'What it holds': '内容',
+  'Unique record ID': '记录的唯一编号',
+  'The passage as quoted': '引用的原文段落',
+  'Book and chapter': '书名与篇章',
+  'A short note in modern Chinese on what the passage says': '用现代汉语简要说明这段原文讲了什么',
+  'Keywords extracted with Jieba': '用 Jieba 提取的关键词',
+  'From raw table to clean corpus': '从原始表格到干净语料',
+  Collect: '采集',
+  'Proofread and relabel': '人工校对与重新标注',
+  Standardize: '标准化',
+  'Normalize eras': '时代归一',
+  'I renamed the Chinese headers to the dictionary fields, regenerated missing or duplicate IDs, converted traditional characters to simplified, and collapsed whitespace.':
+    '我把中文列名改成数据字典里的字段名，为缺失或重复的记录重新编号，把繁体转为简体，并合并多余的空白。',
+  'A word cloud for each era': '每个时代一张词云',
+  records: ' 条记录',
+  'Then grouped by category': '再按类别收拢',
+  'Only after the era pass did I pool records by their five category labels and rank terms inside each.':
+    '逐个时代分析完之后，我才按五个类别标签把记录合并，在每个类别内部给词排名。',
+  'records ·': ' 条记录 · ',
+  'TF-IDF on Symbolism': '基于象征字段的 TF-IDF',
+  'TF-IDF on Keyword': '基于关键词字段的 TF-IDF',
+  'Place names in Text, by count': '原文中的地名，按出现次数',
+  'Phrases in Text, by count': '原文中的短语，按出现次数',
+  'A keyword network for each era': '每个时代一张关键词网络',
+  'Choose an era': '选择时代',
+  'Jieba on the original line': '只对原文分词',
+  'Jieba is trained on modern Chinese, so it cuts classical lines into fragments. Three tokens, none of them a word.':
+    'Jieba 用现代汉语训练，切古文时会切成碎片：三个词元，没有一个是完整的词。',
+  'Jieba on the fused record': '对融合后的记录分词',
+  'Tokenizer and model settings, from my Colab notebook': '分词函数与模型参数，摘自我的 Colab notebook',
+  'One word instead of four': '四个字并成一个词',
+  'Place names matched against a gazetteer I wrote, counted per era over the fused records.': '用我编写的地名词典匹配融合后的记录，按时代计数。',
+  'Theme words by era': '各时代的主题词',
+  'Keywords matched against three theme dictionaries, as a share of each era\'s hits.': '用三组主题词典匹配关键词，显示各主题在每个时代命中数中的占比。',
+  Virtue: '德行',
+  Tribute: '贡赐',
+  Medicine: '医药',
+  'Three phases, read across methods': '跨方法读出的三个阶段',
+  'Word cloud': '词云',
+  Network: '网络',
+  Places: '地理',
+  Themes: '主题',
+  'A moral mirror': '道德镜像',
+  'Chu accounts for 17 of 30 place mentions in Pre-Qin records.': '先秦记录的 30 次地区提及中，楚地占 17 次。',
+  'Virtue words are 77% of Pre-Qin theme hits and fall to 29% in Qin–Han.': '德行类词占先秦主题命中的 77%，到秦汉降至 29%。',
+  'A political token': '政治符号',
+  'Wenzhou rises from 0 Pre-Qin mentions to 26 in Song–Yuan, half of that era’s total.': '温州从先秦的 0 次升到宋元的 26 次，占宋元总提及的一半。',
+  'Tribute words reach 65% of Sui–Tang theme hits, their highest share in any era, and stay at 57% in Song–Yuan.':
+    '贡赐类词在隋唐占主题命中的 65%，是所有时代中最高的；宋元仍有 57%。',
+  'A practical resource': '实用资源',
+  'The research website': '研究网站',
+  'Research website landing screen with the eight-era timeline': '研究网站首屏，带八个时代的时间轴',
+  'Research website Pre-Qin page with a reading, evidence list, and word cloud': '研究网站的先秦页面，包含解读、证据清单和词云',
+  'Left: landing screen with the era timeline. Right: the Pre-Qin page, with the TF-IDF word cloud next to the reading.':
+    '左：首屏与时代时间轴。右：先秦页面，TF-IDF 词云放在解读旁边。',
+  'Visit the website': '访问网站',
+  'What this can\'t claim': '这项研究不能说明什么',
+  'The corpus is small and uneven: 4 prehistoric records against 118 from Ming–Qing.': '语料规模小且分布不均：史前只有 4 条，明清有 118 条。',
+  'Fusing annotations helps Jieba but also carries our own reading into the data, along with glued tokens like 服兮橘.':
+    '融合注释能帮助 Jieba，但也把我们自己的解读带进了数据，还会产生“服兮橘”这样的粘连词。',
+  'Per-era Word2Vec models on a few dozen records are noisy. I used neighbors as pointers to passages, not as proof.':
+    '每个时代只有几十条记录，单独训练的 Word2Vec 模型噪声很大。我只把近邻当作找原文的线索，而不是证据。',
+  'Team and outputs': '团队与产出',
+  'Project lead': '项目负责人',
+  'Designed the corpus schema and drew the category themes': '设计语料库结构，归纳类别主题',
+  'Led raw-record collection, source review, and literature synthesis': '主导原始记录收集、史料核对与文献综述',
+  'Proofread and relabeled the whole corpus': '校对并重新标注全部语料',
+  'Ran all of the NLP analysis': '完成全部 NLP 分析',
+  'Built the research website and presented the project': '搭建研究网站，负责项目汇报',
+  'Collected and labeled raw records; academic report, source review, and literature synthesis.': '收集并初步标注原始记录；学术报告、史料核对与文献综述。',
+  'Collected raw records; literature synthesis.': '收集原始记录；文献综述。',
+  'Collected raw records; source review.': '收集原始记录；史料核对。',
+  'Final report': '完整报告',
+  '17-page research paper': '17 页研究论文',
+  'Read PDF': '阅读 PDF',
+  'Final presentation': '结项汇报',
+  '28 slides': '28 页幻灯片',
+  'View slides': '查看幻灯片',
+  'Research website': '研究网站',
+  'Interactive timeline of eight eras': '八个时代的交互时间轴',
+  'Visit site': '访问网站',
+  'CBS5504 AI-Driven Cross-Cultural Linguistic Exploration · MSc in Generative AI and the Humanities, The Hong Kong Polytechnic University':
+    'CBS5504 AI 驱动的跨文化语言探索 · 香港理工大学生成式 AI 与人文学硕士',
+  'Mandarin trees in a mountain orchard': '山间果园里的橘树',
+  'I led a four-person digital humanities project and built its NLP analysis and website, tracing how 470 Chinese texts describe the Mandarin over 3,000 years.':
+    '我带领一个四人数字人文项目，完成了其中的 NLP 分析和研究网站，追溯 470 条中文文本在三千年间如何书写橘。',
+  'Studies of the Mandarin usually stay inside one field: poetry, farming, medicine, or trade. We read all of them as one record and asked whether the shifts show up in the words.':
+    '关于橘的研究通常只停留在一个领域：诗歌、农学、医药或贸易。我们把这些文献当作一份连续的记录来读，看词语里能不能看出变化。',
+  'Bar chart of records per era, from Prehistoric to Modern': '各时代记录数柱状图，从史前到近现代',
+  'Records per era, from my notebook. Ming–Qing (118) and Modern (102) carry the most; Prehistoric has only 4.':
+    '各时代的记录数，直接取自我的 Colab 笔记本。明清（118 条）和近现代（102 条）最多，史前只有 4 条。',
+  'I cut the corpus by era first and read each era on its own. Within an era every record is a document; I dropped the Mandarin\'s own names and function words, summed each term\'s TF-IDF weight, and drew the cloud and the top-20 ranking from those weights.':
+    '我先按时代切分语料，逐个时代单独分析。在一个时代内部，每条记录算作一篇文档；我去掉橘的各种名称和虚词，把每个词的 TF-IDF 权重相加，再按这些权重画出词云和前 20 排名。',
+  'Word clouds': '词云',
+  'TF-IDF top 20': 'TF-IDF 前 20',
+  'Choose a chart': '选择图表',
+  'Choose a category': '选择类别',
+  Antiquity: '远古',
+  'Before 221 BCE': '公元前 221 年以前',
+  '221 BCE – 220 CE': '公元前 221 – 公元 220 年',
+  '1912 – today': '1912 年至今',
+  'Charts as they came out of my Colab notebook; click any chart to open it at full size. Generic words such as 记载 (recorded) and era names such as 唐宋 still rank high in some eras; I read past them rather than tune the stopword list for each chart.':
+    '图表都是 Colab 笔记本的原始输出，点击任意图表可查看原尺寸。有些时代里，“记载”这类通用词和“唐宋”这类朝代名仍然排得很靠前；我读图时直接跳过它们，没有为每张图单独调整停用词表。',
+  'Top 20 terms': '前 20 关键词',
+  'For each era, Mandarin sits at the center and links to the five categories; each category links to its eight most frequent terms from Keyword and Symbolism.':
+    '每个时代一张图：“橘”居中，连向五个类别；每个类别再连向它在关键词和象征字段中出现最多的八个词。',
+  'Keyword network, centered on Mandarin': '以“橘”为中心的关键词网络',
+  'Built with NetworkX. The legend inside each chart is in Chinese; the row under it gives the same five colors in English.':
+    '用 NetworkX 绘制。图下方一行对应图中五种颜色代表的类别。',
+  'Word2Vec: what sits next to Mandarin': 'Word2Vec：哪些词离“橘”最近',
+  'I trained a separate Skip-gram model for each era and listed the five words closest to Mandarin. This is the one method that needed Jieba, and Jieba needed help.':
+    '我为每个时代单独训练一个 Skip-gram 模型，列出离“橘”最近的五个词。只有这个方法用到 Jieba，而 Jieba 需要帮忙。',
+  'Five nearest neighbors of Mandarin in each era\'s Word2Vec model': '各时代 Word2Vec 模型中离“橘”最近的五个词',
+  'Where the Mandarin is written about': '橘在哪里被书写',
+  'Stacked bars of virtue, tribute, and medicine word shares by era': '各时代德、贡、药三类主题词占比堆叠柱状图',
+  Personification: '人格化',
+  Institutionalization: '制度化',
+  'Medicine and commodity': '药与商',
+  'From disenchantment to reconstruction': '从祛魅到重构',
+  Conclusion: '结论',
+  Disenchantment: '祛魅',
+  'The descent from the altar': '走下神坛',
+  'Every method points to the same long trend: over 3,000 years the Mandarin loses its aura.': '所有方法都指向同一条长期趋势：三千年间，橘逐渐褪去了神圣的光环。',
+  'Re-contextualization': '再语境化',
+  'Distant reading': '远读',
+  Abstract: '摘要',
+  Keywords: '关键词',
+  'Mandarin · Digital humanities · Semantic evolution · Word2Vec · Distant reading': '橘 · 数字人文 · 语义演变 · Word2Vec · 远读',
+  'Studies of the Mandarin in Chinese culture are split across literature, art, agriculture, and medicine, and most rest on close reading of a few famous texts. We built a corpus of 470 passages from eight eras and read it with NLP: TF-IDF keywords, keyword networks, and Word2Vec. The words trace a process we call cultural disenchantment. The Mandarin is a moral mirror in Pre-Qin texts, a political token under the Tang and Song, and a practical resource for medicine and trade from Ming–Qing to today. Reading at this distance shows patterns that close reading alone would miss.':
+    '关于橘在中国文化中的研究，分散在文学、艺术、农学和医学几个领域，大多依靠对少数名篇的细读。我们构建了一个覆盖八个时代、470 条文本的语料库，用 NLP 方法阅读：TF-IDF 关键词、关键词网络和 Word2Vec。词语呈现出一个我们称为“文化祛魅”的过程：先秦文本里，橘是道德的镜像；唐宋时期，它是政治符号；从明清到今天，它成了医药和贸易的实用资源。这种远距离阅读，能看到单靠细读看不到的规律。',
+  'Literary imagery': '文学意象研究',
+  'Art history': '艺术史研究',
+  'Agricultural history': '农业史研究',
+  'Medical and economic history': '医药与经济史研究',
+  'Reads Qu Yuan’s *In Praise of the Orange-Tree* (橘颂) as the gentleman’s virtue, but rarely follows that image into later dynasties.':
+    '把屈原《橘颂》读作君子之德，但很少追踪这一意象在后世的变化。',
+  'Treats Wang Xizhi’s *FengJuTie* (奉橘帖), a letter sent with a gift of Mandarins, as aristocratic exchange, apart from the economy around it.':
+    '把王羲之《奉橘帖》（随橘附上的一封短笺）看作贵族间的礼物往来，与其背后的经济脱节。',
+  'Documents the *Monograph of the Oranges of Wenchou* (橘录) as the first citrus monograph, with little link to culture.':
+    '把《橘录》记为世界上第一部柑橘专著，但很少和文化联系起来。',
+  'Follows chenpi (陈皮) and medicine-food homology (药食同源) in Ming–Qing as a purely practical story.': '把明清的陈皮与“药食同源”当作纯粹的实用史来讲。',
+  'Three gaps follow. The fields rarely meet, most studies cover one golden age rather than the long run, and conclusions rest on close reading with no counts behind them.':
+    '由此有三个空白：各领域很少交汇；多数研究只看某个鼎盛时期，而不是长时段；结论依赖细读，缺少计数支撑。',
+  'Classical passages were collected from the Chinese Text Project (Ctext); modern papers and references came from CNKI. Every record keeps its quotation and source, so any chart can be traced back to a passage.':
+    '古代文本段落采集自 Ctext（中国哲学书电子化计划），现代论文和资料来自中国知网（CNKI）。每条记录都保留原文和出处，任何一张图都能追溯到具体段落。',
+  '*Songs of the South* (楚辞), Tang and Song poetry': '《楚辞》、唐宋诗词',
+  '*Records of the Grand Historian* (史记), *New Book of Tang* (新唐书), local gazetteers': '《史记》《新唐书》、地方志',
+  'Han Yanzhi’s *Monograph of the Oranges of Wenchou* (橘录, 1178)': '韩彦直《橘录》（1178）',
+  'Li Shizhen’s *Compendium of Materia Medica* (本草纲目, 1578)': '李时珍《本草纲目》（1578）',
+  'Papers and references from China National Knowledge Infrastructure (CNKI)': '来自中国知网（CNKI）的论文和资料',
+  'We agreed on the fields before collecting anything, so four people could fill one table. Two of them, Category and Era, needed rules of their own.':
+    '我们在收集之前先定好字段，这样四个人才能填同一张表。其中类别和时代两个字段，还需要各自的规则。',
+  'Original header': '原始表头',
+  'Example · record A328': '示例 · 记录 A328',
+  'Dynasty as the source gives it': '文献里给出的朝代',
+  'Author, or period if unknown': '作者；作者不详时写时期',
+  'Theme label, assigned by hand (see below)': '主题标签，人工标注（见下）',
+  'Terms revised by hand, mostly what the passage stands for': '人工修订的词，多为这段文字的象征意义',
+  'Planned as a Neo4j node type; in practice it records the genre': '原计划作为 Neo4j 节点类型，实际记录的是体裁',
+  'One of eight eras, added during cleaning (see below)': '八个时代之一，清洗时新增（见下）',
+  'Category: five labels, assigned by hand': '类别：五个标签，人工标注',
+  'No model picked these. From the first batch of records I drew four themes, practical use, commerce, medicine, and culture, and kept time and place as separate axes. All four of us labeled records as we collected them, which left the raw table with 169 free-form labels that mixed themes with genres, such as literature (文学) and literature/poetry (文学/诗歌). I then went through every record myself and collapsed them into five, with geography and physical form as labels of their own.':
+    '这些类别不是模型找出来的。我从第一批记录中归纳出四个主题：实用、商业、医疗、文化，时间和地理则作为单独的维度。四个人边收集边标注，原始表格因此积累了 169 种自由填写的标签，主题和体裁混在一起，比如“文学”“文学/诗歌”。之后我逐条过了一遍所有记录，把标签收拢为五个，地理和物性各自成为一类。',
+  Label: '标签',
+  Covers: '涵盖内容',
+  Records: '记录数',
+  'Virtue, poetry, festivals, gifts, omens': '品德、诗文、节庆、礼品、祥瑞',
+  'Tribute, tax, markets, spread, export': '贡品、赋税、市场、传播、出口',
+  'Peel, prescriptions, food as medicine': '果皮、方剂、药食同源',
+  'Varieties, look, taste, storage': '品种、外观、味道、贮藏',
+  'Growing regions and place names': '产区和地名',
+  'Era: eight periods, by rule': '时代：按规则分为八个时期',
+  'A regular expression maps each dynasty label to an era: any label containing one of the listed characters goes there, so Warring States (战国) lands in Pre-Qin.':
+    '用正则表达式把每个朝代标签归入一个时代：标签里含有表中任一字，就归到对应时代，所以“战国”归入先秦。',
+  Era: '时代',
+  Years: '年代',
+  Matches: '匹配字',
+  'Every file in the pipeline is linked; click a file name to open it.': '流程中的每个文件都附上了链接，点击文件名即可查看。',
+  '532 rows': '532 行',
+  '470 records': '470 条记录',
+  'All four of us pulled passages that mention the Mandarin, the trifoliate orange (枳), or chenpi (陈皮) from the Chinese Text Project in batches, added modern papers from CNKI, and gave each record a first label.':
+    '我们四个人从 Ctext 批量提取含有橘、枳或陈皮的段落，从中国知网补充现代论文，并给每条记录打上初步标签。',
+  'I checked every record by hand, removed blank rows and duplicates to leave 470 records, added a description to each, settled the category labels, and revised the keywords.':
+    '我逐条人工校对，删掉空行和重复记录，留下 470 条；再为每条记录补写描述，统一类别标签，并修订关键词。',
+  'The era rules above filled in Era_clean. The 31 records they could not place were assigned by hand, leaving no unknowns.':
+    '用上面的时代规则填出 Era_clean 字段。规则无法归类的 31 条记录由人工判定，最终没有未知时代。',
+  'Fuse and tokenize': '融合与分词',
+  'Each method reads one fused context per record: Text, Keyword, and Symbolism, plus Description for Word2Vec. A custom stopword list drops classical particles such as 之, 乎, 者, 也 and generic research words. Variant names are merged into one Mandarin token, and that single-character token is kept so it can sit at the center of the networks.':
+    '每种方法读取的都是每条记录融合后的上下文：原文、关键词和象征字段，Word2Vec 另外加入描述字段。自定义停用词表去掉之、乎、者、也等文言虚词和泛泛的研究用语。橘的各种异名合并为一个“橘”词元，并保留这个单字词元，让它能处在网络的中心。',
+  'This view set the research direction. Culture and symbolism came out rich and complete; the other four labels were thin and patchy. So culture became the main thread, and the other four serve as evidence at its turning points.':
+    '这张图决定了研究方向。“文化与象征”的结果丰富完整，其余四个标签数量少、有断层。所以以文化为主线，其他四类在主线的拐点处作为证据。',
+  'Adding the description, keywords, and symbolism gives the model words it can use: loyalty (忠贞), gentleman (君子), moral character (品德). Dashed tokens are fields glued together after punctuation was stripped, a cost of the fusion step.':
+    '加入释义、关键词和象征字段后，模型才拿到能用的词：忠贞、君子、品德。虚线框里的词是去掉标点后几个字段粘在一起造成的，这是融合这一步的代价。',
+  'Mapping *Ju* (桔), *Gan* (柑), *Cheng* (橙), and *You* (柚) to a single Mandarin token lets a small corpus train one word instead of four. It also erases the line between Mandarin, sweet orange, and pomelo, which a citrus historian would want kept.':
+    '把桔、柑、橙、柚合并成“橘”，小语料只需要训练一个词，而不是四个。代价是抹掉了橘、橙、柚之间的区别，研究柑橘史的人会希望保留这种区别。',
+  'How to read it': '怎么读这张图',
+  'Each row is one era’s model; the boxes are the five words closest to Mandarin in it. Most are noise. The ones I could trace to a passage:':
+    '每一行是一个时代的模型，方框里是该模型中离“橘”最近的五个词。大多数是噪声。能对应到原文的有：',
+  'Pre-Qin: place of origin (产地) and *YanLing* (延陵), a fief in the state of Wu.': '先秦：产地、延陵（吴国封邑）。',
+  'Qin–Han: *JiaoFu* (交甫) and the Han River (汉水), from the legend of Zheng Jiaofu.': '秦汉：交甫、汉水，出自郑交甫的传说。',
+  'Sui–Tang: *YiDi* (一蒂), twin fruit on one stem, read as an omen.': '隋唐：一蒂（一蒂双果，被视为祥瑞）。',
+  'Song–Yuan: Yongjia County (永嘉县), annual revenue (岁入), tribute title (贡号).': '宋元：永嘉县、岁入、贡号。',
+  'Ming–Qing: Li Shizhen (李时珍), peel and leaves (皮叶).': '明清：李时珍、皮叶。',
+  'Mandarin never appears as a token in the four prehistoric records, so that era has no model. The modern row is all generic words.':
+    '“橘”在 4 条史前记录里从未作为独立词元出现，所以史前没有模型。近现代一行全是通用词。',
+  'Heatmap of region shares by era': '各时代地区占比热力图',
+  'Rows are eras. Columns, left to right: Chu, Huainan, Dongting, Wenzhou, Wu, Quzhou, Guangdong, Fujian, Sichuan, Jiangxi, Japan, Europe & US, trade ports. Each cell is that region’s share of the era’s place mentions.':
+    '每一行是一个时代，每一列是一个地区；每格表示该地区在这个时代地名提及中的占比。',
+  'Chu holds 17 of 30 mentions in Pre-Qin.': '先秦 30 次地名提及中，楚地占 17 次。',
+  'Wenzhou takes over from Wei–Jin on and peaks at 26 mentions in Song–Yuan.': '魏晋以后温州成为重心，宋元达到 26 次的高峰。',
+  'Fujian and Guangdong grow in Ming–Qing; Europe & US and trade ports appear in modern records.': '明清时福建、广东上升；近现代出现欧美和出口口岸。',
+  'Each bar splits one era’s hits across three hand-built keyword dictionaries:': '每根柱子把一个时代的命中次数，分到三个手工构建的关键词词典里：',
+  'Virtue words are 77% of Pre-Qin hits.': '先秦命中中，德类词占 77%。',
+  'Tribute peaks at 65% in Sui–Tang and stays at 57% in Song–Yuan.': '贡类词在隋唐达到 65% 的高峰，宋元仍有 57%。',
+  'Medicine jumps to 84% in Ming–Qing, 128 of 152 hits.': '药类词在明清跃升到 84%（152 次中的 128 次）。',
+  'Virtue climbs back to 36% in modern records.': '近现代德类词回升到 36%。',
+  'The chart title in my notebook says LDA. I tried an LDA topic model first and dropped it, so these bars show where my themes appear, not topics the data found on its own.':
+    '笔记本里这张图的标题写着 LDA。我先试过 LDA 主题模型，后来放弃了；所以这些柱子显示的是我设定的主题出现在哪里，而不是数据自己找出的主题。',
+  Evidence: '证据',
+  'Ming–Qing & Modern': '明清与近现代',
+  'I expected virtue (德) to lead the Pre-Qin word cloud. *JiangPu* (江浦), the riverbanks of Chu, came first. Back in the passages, the moral image is tied to place: the tree is “commanded not to move” in Qu Yuan’s poem, and Yanzi says that planted north of the Huai the Mandarin turns into the bitter trifoliate orange (枳). By Qin–Han the picture is already mixed: the *Records of the Grand Historian* (史记) counts a thousand Mandarin trees as wealth equal to a marquis.':
+    '我原以为先秦词云里排第一的会是“德”，结果是“江浦”，也就是楚地的江边。回到原文才发现，道德形象和地方绑在一起：屈原笔下的橘树“受命不迁”，晏子则说橘移到淮北就成了苦涩的枳。到了秦汉，情况已经开始变化：《史记》把“千树橘”算作可与千户侯相比的财富。',
+  '*JiangPu* (江浦), loyalty (忠贞), and receiving the mandate (受命) lead Pre-Qin. Qin–Han turns to the *Records of the Grand Historian*, a marquis of a thousand households (千户侯), and regional economy (区域经济).':
+    '先秦排在前面的是江浦、忠贞和受命。秦汉转向史记、千户侯和区域经济。',
+  'The Pre-Qin culture node gathers loyalty (忠贞), moral character (品德), fine tree (嘉树), and Qu Yuan’s poem itself.':
+    '先秦的文化节点聚集了忠贞、品德、嘉树和《橘颂》本身。',
+  'Place of origin (产地) and *YanLing* (延陵) sit next to Mandarin in Pre-Qin; the Han River (汉水) legend of *JiaoFu* (交甫) does in Qin–Han.':
+    '先秦时“橘”的近邻有产地和延陵；秦汉时是交甫与汉水的传说。',
+  'Pre-Qin TF-IDF top 20': '先秦 TF-IDF 前 20',
+  'Pre-Qin keyword network': '先秦关键词网络',
+  'The Mandarin moves into court and tax records. Twin fruit on one stem was read as an auspicious sign, and Wenzhou Mandarins became tribute. In 1178 Han Yanzhi wrote the *Monograph of the Oranges of Wenchou* (橘录), a whole book on Wenzhou varieties, cultivation, and storage.':
+    '橘进入了宫廷和赋税的记录。一蒂双果被视为祥瑞，温州柑橘成为贡品。1178 年，韩彦直写成《橘录》，专门记录温州柑橘的品种、栽培和贮藏。',
+  'Sui–Tang ranks local tribute (土贡), tribute goods (贡品), and auspicious omen (瑞应) high. Song–Yuan opens with tribute goods, *HaiHong* (海红), a Wenzhou variety known today as Ougan, and Wenzhou itself.':
+    '隋唐的土贡、贡品和瑞应排名靠前。宋元排在最前的是贡品、海红（温州品种，即今天的瓯柑）和温州。',
+  'The Song–Yuan network links the *Monograph* (橘录), Wenzhou tribute Mandarins, and grafting.': '宋元网络把《橘录》、温州贡柑和柑橘嫁接连在一起。',
+  'Neighbors of Mandarin include *YiDi* (一蒂), twin fruit on one stem, in Sui–Tang, then Yongjia County (永嘉县), annual revenue (岁入), and tribute title (贡号) in Song–Yuan.':
+    '隋唐时“橘”的近邻有一蒂；宋元时有永嘉县（温州）、岁入和贡号。',
+  'Song–Yuan keyword network': '宋元关键词网络',
+  'Region shares by era': '各时代地区占比',
+  'Li Shizhen’s *Compendium of Materia Medica* (本草纲目) describes the fruit part by part: peel, pith, seeds, leaves. Writing shifts from what the Mandarin means to what it does, and Fujian and Guangdong gain ground as growing regions. In modern records it becomes a product that is traded and lab-tested, though the old symbolism has not gone away.':
+    '李时珍在《本草纲目》中把橘分开记述：果皮、橘络、种子、叶。书写的重点从橘意味着什么，转向橘能做什么；福建、广东作为产区的分量也在上升。到了近现代，橘成为被交易、被化验的产品，但旧的象征意义并没有消失。',
+  'Chenpi (陈皮) weighs 7.38 in Ming–Qing, the heaviest term in any era, ahead of qingpi (青皮), prescriptions (方剂), and medicine-food homology (药食同源). Modern records add antioxidant (抗氧化), flavonoids (黄酮), and export (出口).':
+    '明清的陈皮权重为 7.38，是所有时代中最高的词，排在青皮、方剂和药食同源之前。近现代又多了抗氧化、黄酮和出口。',
+  'The Ming–Qing medicine node carries chenpi, qingpi, prescriptions, medicinal properties (药性), and external treatment (外治法).':
+    '明清的医药节点连着陈皮、青皮、方剂、药性和外治法。',
+  'Li Shizhen (李时珍) and peel and leaves (皮叶) are among the closest neighbors of Mandarin in Ming–Qing.': '明清时，李时珍和皮叶都在“橘”最近的近邻之中。',
+  'Fujian rises to 5 mentions and Guangdong to 3 in Ming–Qing; modern records add Europe & US (6) and trade ports (4).':
+    '明清时福建升到 5 次、广东升到 3 次；近现代又出现欧美（6 次）和出口口岸（4 次）。',
+  'Medicine words are 84% of Ming–Qing theme hits. In modern records virtue words climb back to 36%, and auspicious (吉祥) leads the modern word cloud.':
+    '明清主题词命中中，药类词占 84%。近现代德类词回升到 36%，“吉祥”排在近现代词云的首位。',
+  'Ming–Qing TF-IDF top 20': '明清 TF-IDF 前 20',
+  'Modern word cloud': '近现代词云',
+  'Read together, the three phases support three claims. Each one sits next to the chart it rests on.':
+    '把三个阶段放在一起看，可以得出三个判断。每个判断旁边都放着支撑它的图。',
+  'In Pre-Qin it is sacred, Qu Yuan’s emblem of moral character. Virtue words are 77% of theme hits.':
+    '先秦时，它是神圣的，是屈原笔下的人格象征。德类词占主题词命中的 77%。',
+  'Under the Tang and Song it turns political, an imperial omen and a tribute good. Tribute words peak at 65%.':
+    '唐宋时，它变得政治化，成为祥瑞和贡品。贡类词达到 65% 的高峰。',
+  'By Ming–Qing it is material, taken apart into peel, pith, and other drugs. Medicine words reach 84%.':
+    '到明清，它成了物质，被拆解为果皮、橘络等药材。药类词达到 84%。',
+  'Theme shares by era': '各时代主题占比',
+  'In the *Songs of the South*, the Mandarin is a gentleman.': '在《楚辞》里，橘是君子。',
+  'In the *Compendium of Materia Medica*, it is a drug.': '在《本草纲目》里，它是药材。',
+  'Eight separately trained Word2Vec models show Mandarin’s neighbors drifting from places and legends (产地, 汉水) to tribute titles (贡号) to Li Shizhen and peel (皮叶).':
+    '八个分别训练的 Word2Vec 模型显示，“橘”的近邻从地名和传说（产地、汉水）漂移到贡号，再到李时珍和皮叶。',
+  'Theme counts date the medical turn: medicine words stay at 5 hits or fewer per era until Ming–Qing, then jump to 128.':
+    '主题词计数给医疗转向标出了时间：明清之前，药类词每个时代最多 5 次，到明清跃升到 128 次。',
+  'Word2Vec neighbors by era': '各时代 Word2Vec 近邻词',
+  'The report closes with a plan to turn the analysis into a public teaching tool. I designed and built that site: a timeline of eight eras, each with its word cloud, a short reading, and the evidence behind it.':
+    '报告最后提出，要把分析做成面向公众的教育工具。我设计并搭建了这个网站：一条八个时代的时间轴，每个时代都有词云、简短解读和背后的证据。',
+  'Famous lines repeat. The opening of *In Praise of the Orange-Tree* appears in five records, which lifts its words in the Pre-Qin rankings.':
+    '名句会重复出现。《橘颂》的开篇在五条记录里都有，这会抬高这些词在先秦排名中的位置。',
+  'In modern trade papers, it is an export.': '在现代贸易文献里，它是出口商品。',
+  'The symbol lasts because each new setting finds a use for it.': '这个符号能延续下来，是因为每个新语境都给它找到了用处。',
+  'Humanities research is good at close reading. Reading every record together made both shifts below visible.':
+    '人文研究擅长细读。把所有记录放在一起读，下面两种变化才显现出来。',
+  'Each claim about the Mandarin’s history now has a count behind it that anyone can check.': '关于橘的历史，每个判断背后现在都有任何人都能核查的计数。',
+  'Meaning follows context': '意义随语境而变',
+  'Reading all 470 records at once': '一次读完全部 470 条记录',
+  'Grouped by category, the corpus splits three ways: culture settles on auspicious (吉祥), medicine on chenpi (陈皮), economy on spread (传播) and export (出口).':
+    '按类别分组后，语料分成三路：文化类落在“吉祥”，医药类落在“陈皮”，经济类落在“传播”和“出口”。',
+  'I counted a phase only when several methods pointed the same way in the same eras, then went back to the passages to read why.':
+    '只有当几种方法在同样的时代指向同一方向时，我才把它算作一个阶段，然后回到原文去读原因。',
+  'In the report we read this arc as a small version of a wider shift in Chinese culture, from elite ideals to everyday use.':
+    '报告把这条轨迹看作中国文化更大转变的一个缩影：从精英理想走向日常实用。',
 };
 
 export const bauhiniaMindTranslations: TranslationMap = {
