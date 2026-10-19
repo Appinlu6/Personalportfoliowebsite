@@ -1,11 +1,20 @@
+# Lu Zhengping
 
-  # Personal Portfolio Website
+Personal portfolio: product and interaction design across healthcare, AI, and consumer tech.
 
-  This is a code bundle for Personal Portfolio Website. The original project is available at https://www.figma.com/design/sFi1kj7172AfD08U9C4H32/Personal-Portfolio-Website.
+## Pages
 
-  ## Running the code
+- `/` Home
+- `/about` Resume
+- `/work` Projects
+- `/work/:slug` Case studies
 
-  Run `npm i` to install the dependencies.
+`/projects` and `/projects/:slug` redirect to `/work`.
 
-  Run `npm run dev` to start the development server.
-  
+## Local
+
+```sh
+npm i
+npm run dev
+npm run build
+```

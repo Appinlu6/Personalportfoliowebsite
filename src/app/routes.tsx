@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from 'react-router';
+import { createBrowserRouter, Navigate, useParams } from 'react-router';
 import { Root } from './components/Root';
 import { HomePage } from './pages/HomePage';
 import { WorkPage } from './pages/WorkPage';
@@ -9,6 +9,11 @@ import { MountainLabPage } from './pages/MountainLabPage';
 
 function RedirectHome() {
   return <Navigate to="/" replace />;
+}
+
+function RedirectProject() {
+  const { slug } = useParams();
+  return <Navigate to={slug ? `/work/${slug}` : '/work'} replace />;
 }
 
 export const router = createBrowserRouter(
@@ -24,6 +29,8 @@ export const router = createBrowserRouter(
         { index: true, Component: HomePage },
         { path: 'work', Component: WorkPage },
         { path: 'work/:slug', Component: ProjectDetailPage },
+        { path: 'projects', Component: RedirectProject },
+        { path: 'projects/:slug', Component: RedirectProject },
         { path: 'about', Component: AboutPage },
         { path: '*', Component: NotFoundPage },
       ],
