@@ -3,14 +3,13 @@
 Page: `src/app/case-studies/BeforeEveningVR.tsx` (`/work/before-evening-vr`).
 Drop each finished file at the path listed. The page picks it up automatically; until then the slot shows a dashed placeholder in dev and nothing in production.
 
-Figures 1, 2, 5 and 7 are built as HTML in `docs/before-evening-figures/`. After editing a label, re-export with:
+Figures 1, 2 and 5 are built as HTML in `docs/before-evening-figures/`. After editing a label, re-export with:
 
 ```sh
 docs/before-evening-figures/render.sh \
   fig1-mcp-workflow:diagram-mcp-workflow:1200x540 \
   fig2-agent-anatomy:diagram-agent-anatomy:1200x880 \
-  fig5-voice-pipeline:diagram-voice-pipeline:1200x470 \
-  fig7-exterior-layers:diagram-exterior-layers:1200x460
+  fig5-voice-pipeline:diagram-voice-pipeline:1200x490
 ```
 
 ## Shared style
@@ -31,7 +30,7 @@ Nodes on the main path (accent):
 
 1. `Me`
 2. `PowerShell (Windows)`
-3. `Claude (via API)`
+3. `AI agent (via API)`
 4. `UE5 MCP server`
 5. `Unreal Editor`
 6. `Test in Quest 3 headset`
@@ -75,8 +74,8 @@ Flow B, memory (bottom right):
 ## Figure 5 · From voice to MetaHuman (03 · Interaction)
 
 - File: `public/before-evening/diagram-voice-pipeline.webp`
-- Size: 2400 × 1000 (12:5)
-- Shape: one horizontal chain, left to right.
+- Size: 2400 × 980
+- Shape: one horizontal chain, left to right. Each card has a gold line-art illustration on top (headset and A button, waveform to text, agent fed by prompt/memory/story, speaker, face mesh, speaking bust with gaze), with the title and sub-label below. Replaces the old 01–04 text list on the page.
 
 Chain (accent):
 
@@ -95,20 +94,9 @@ Annotations in secondary text:
 
 Do not show per-step timings; there is no data for them.
 
-## Figure 7 · Three exterior layers (Testing, round two)
+## Three exterior layers (Testing, round two)
 
-- File: `public/before-evening/diagram-exterior-layers.webp`
-- Size: 2400 × 1000 (12:5)
-- Shape: a side section, the school on the left, layers stepping away to the right, a horizon line across.
-
-Layers, left to right:
-
-1. `School`
-2. `Neighbouring school` with distance mark `within 15 m`
-3. `Housing and trees` with distance mark `up to 30 m`
-4. `Painted skyline cards` with mark `beyond`
-
-Optional: a small eye at a classroom window on the left with a dashed sightline, labelled `Player at the window`.
+Real screenshots from the process book (section 5.4), not a generated figure: `exterior-near.webp`, `exterior-mid.webp`, `exterior-far.webp`.
 
 ## Real screenshots (do not generate)
 
@@ -118,8 +106,8 @@ These slots prove the work happened, so they must be captures from the actual pr
 |---|---|---|
 | `convai-narrative-design.webp` | The story tree in Convai Narrative Design. A knowledge bank or memory settings page can be added beside it in the same image. | 16:10 |
 | `memory-note.webp` | One saved conversation note, opened in Obsidian, with the timestamp visible. | about 7:6 |
-| `mcp-session.webp` | PowerShell with Claude working through the UE5 MCP server. Blur API keys, user names, and local paths. | 16:10 |
-| `mcp-blueprint.webp` | A Blueprint Claude edited through MCP, for example the VRPawn input event graph, captured at full resolution. | 16:10 |
+| `mcp-session.webp` | PowerShell with the AI agent working through the UE5 MCP server. Blur API keys, user names, and local paths. | 16:10 |
+| `mcp-blueprint.webp` | A Blueprint edited through MCP, for example the VRPawn input event graph, captured at full resolution. | 16:10 |
 | `floor-plan.webp` | The school floor plan drawn from the reference photos. | 4:3 |
 
 ## Frames 6a and 6b · Same character, two prompts (03 · Interaction, real screenshots)

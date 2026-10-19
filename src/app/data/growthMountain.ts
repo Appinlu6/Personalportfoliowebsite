@@ -44,9 +44,6 @@ export type Project = {
   skillIds: string[];
   parentId?: string;
   caseStudySlug?: string;
-  /** How this project leads to the next one on its ridge. Shown at the end of the case study. */
-  bridge?: string;
-  bridgeCN?: string;
 };
 
 export type Skill = {
@@ -125,6 +122,9 @@ export const skills: Skill[] = [
   { id: 'fine-tuning', label: 'Model Fine-tuning', labelCN: '模型微调' },
   { id: 'har', label: 'Human Activity Recognition (HAR)', labelCN: '人体活动识别（HAR）' },
   { id: 'agent-framework', label: 'Agent Framework Design', labelCN: '智能体框架设计' },
+  { id: 'unreal-engine', label: 'Unreal Engine Development', labelCN: 'Unreal Engine 开发' },
+  { id: 'mcp-dev', label: 'AI-assisted Development (MCP)', labelCN: 'MCP 与 AI 辅助开发' },
+  { id: 'vr-interaction', label: 'VR Interaction Design', labelCN: 'VR 交互设计' },
 ];
 
 /** Bottom to top, in the order they appear on the axis. */
@@ -280,11 +280,9 @@ export const projects: Project[] = [
     periodCN: '2018 – 2021',
     summary: 'Started with field research in hospitals, then led the 0-to-1 design of a data platform that shows what happened and why. During COVID-19 it mapped fever patients across Nanshan in real time. A forecasting stage with Tencent AI Lab was planned but not built.',
     summaryCN: '从走访医院开始，主导数据平台从 0 到 1 的设计，呈现发生了什么、为什么发生。新冠期间用于实时呈现南山区发热患者分布。与腾讯 AI Lab 规划的预测阶段没有落地。',
-    skillIds: ['field-research', 'ux-research', 'forecasting', 'data-viz', 'data-platform'],
+    skillIds: ['field-research', 'ux-research', 'forecasting', 'data-viz', 'data-platform', 'unreal-engine'],
     parentId: 'micision',
     caseStudySlug: 'tencent-micision-smart-hospital',
-    bridge: 'On the same platform, Smart Marathon moved from historical hospital records to live signals from wearables.',
-    bridgeCN: '在同一个平台上，智慧马拉松从医院的历史数据走向了可穿戴设备的实时信号。',
   },
   {
     id: 'smart-marathon',
@@ -299,7 +297,7 @@ export const projects: Project[] = [
     periodCN: '2019 年 1–4 月',
     summary: 'First time using smart wristbands to collect live race data. On site in Yangzhou, I calibrated sampling frequency, battery life, and abnormal-signal alert rules within a sprint of under four weeks.',
     summaryCN: '第一次用智能手环采集真实赛事数据。在扬州现场联调采集频率、续航和异常预警规则，开发冲刺不到 4 周。',
-    skillIds: ['iot-data', 'data-viz', 'data-platform', 'field-research'],
+    skillIds: ['iot-data', 'data-viz', 'data-platform', 'field-research', 'unreal-engine'],
     parentId: 'micision',
     caseStudySlug: 'tencent-micision-smart-marathon',
   },
@@ -316,7 +314,7 @@ export const projects: Project[] = [
     periodCN: '2017 – 2021',
     summary: 'Healthcare data platform: 40+ projects across 23 hospitals and 5 government departments, 5 company awards including an Anti-Epidemic Contribution Award. Covers smart hospitals, the smart marathon, medical-insurance supervision, and epidemic public-opinion monitoring.',
     summaryCN: '医疗数据平台：40+ 项目、23 家医院、5 个政府部门，5 项公司奖项（含抗疫贡献奖）。包含智慧医院、智慧马拉松、医保监管、疫情舆情监控等方向。',
-    skillIds: ['data-platform', 'data-viz', 'forecasting', 'design-systems'],
+    skillIds: ['data-platform', 'data-viz', 'forecasting', 'design-systems', 'unreal-engine'],
   },
   {
     id: 'marketing-cloud',
@@ -408,7 +406,7 @@ export const projects: Project[] = [
     periodCN: '2026 年 1–4 月',
     summary: 'A VR mystery where players question AI characters out loud. I designed the agent structure, connected Convai to MetaHuman, and developed it in Unreal Engine 5 through MCP.',
     summaryCN: 'VR 悬疑叙事游戏，玩家直接开口向 AI 角色提问。我设计了智能体结构，把 Convai 接入 MetaHuman，并通过 MCP 在 Unreal Engine 5 里完成开发。',
-    skillIds: ['conversational-ai', 'agent-framework', 'ai-product'],
+    skillIds: ['conversational-ai', 'ai-product', 'unreal-engine', 'mcp-dev', 'vr-interaction', 'ux-research'],
     caseStudySlug: 'before-evening-vr',
   },
   {

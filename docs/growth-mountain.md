@@ -52,7 +52,7 @@
 
 - **中轴（经历）**：8 段工作 / 学习经历，沿山的中心竖直排成一条时间轴，从下到上。每段经历是轴上的一截线段，起点有刻度和标签。
 - **一级节点（项目）**：14 个项目，分布在三条主线的山脊上。每个项目都属于一段经历，用一条细线连回中轴上对应的那一截。
-- **二级节点（能力）**：24 个能力标签，也就是现在 Resume 页 Skills & Expertise 里的标签。每个能力连到它所来自的项目。
+- **二级节点（能力）**：27 个能力标签，也就是现在 Resume 页 Skills & Expertise 里的标签。每个能力连到它所来自的项目。
 
 **被多个项目共享的能力，就是山上的「支线」**：比如「数字营销」同时连着腾讯营销云和用户社群，hover 时两个项目通过它一起亮起来。跨年连接不用手工画，由数据自然长出来。
 
@@ -103,7 +103,7 @@ P3、P4 用一条「归属」虚线连到 P5。
 | 能力 | 中文 | 连到的项目 | 共享（成为支线） |
 |---|---|---|---|
 | Visual Design | 视觉设计 | P1、P7、P8 | ✓ 地基横跨三条主线 |
-| UX Research | 用户研究 | P2、P3、P6、P12 | ✓ |
+| UX Research | 用户研究 | P2、P3、P6、P11、P12 | ✓ |
 | Field Research | 田野调研 | P2、P3、P4 | ✓ |
 | Journey Mapping | 旅程地图 | P2 | |
 | Service Design | 服务设计 | P2、P12 | ✓ 医疗服务设计 → 紫荆心智 |
@@ -126,6 +126,9 @@ P3、P4 用一条「归属」虚线连到 P5。
 | Model Fine-tuning | 模型微调 | P13 | |
 | Human Activity Recognition (HAR) | 人体活动识别 | P13、P14 | ✓ 熠安实践 ↔ 博士研究方向 |
 | Agent Framework Design | 智能体框架设计 | P7、P13、P14 | ✓ 飞书自助发布工作流 → Agent 框架 |
+| Unreal Engine Development | Unreal Engine 开发 | P3、P4、P5、P11 | ✓ |
+| AI-assisted Development (MCP) | MCP 与 AI 辅助开发 | P11 | |
+| VR Interaction Design | VR 交互设计 | P11 | |
 
 ### 3.4 支线说明（hover 或点击连线时显示）
 

@@ -97,14 +97,25 @@ const cues = [
   },
 ];
 
-const pipeline = [
-  { title: 'Speech to text', copy: 'The microphone streams to Convai, which transcribes what the player says.' },
+const exteriorLayers = [
   {
-    title: 'Response and voice',
-    copy: "The character's agent answers from its prompt, its memory, and the story so far. Text-to-speech reads the answer in a voice cloned from a team member.",
+    title: 'Near layer, 5–15 m',
+    copy: 'A neighbouring school with window frames, brickwork, and a few shapes inside.',
+    image: '/before-evening/exterior-near.webp',
+    alt: 'The neighbouring school seen through an office window',
   },
-  { title: 'Audio to face', copy: 'The audio stream drives MetaHuman Audio2Face, which turns it into facial blendshapes.' },
-  { title: 'Playback', copy: 'Lip-sync, gaze, and gesture play back together on the character.' },
+  {
+    title: 'Mid layer, 15–30 m',
+    copy: 'Lower-detail housing, trees, and a car park that give the view depth.',
+    image: '/before-evening/exterior-mid.webp',
+    alt: 'Housing and trees around the school at dusk',
+  },
+  {
+    title: 'Far layer, beyond 30 m',
+    copy: 'Painted skyline cards and the dusk skybox, with no real geometry.',
+    image: '/before-evening/exterior-far.webp',
+    alt: 'Skyline cards and the dusk skybox behind the school',
+  },
 ];
 
 const claudeUses = [
@@ -432,6 +443,7 @@ export function BeforeEveningVR() {
                   />
                 </div>
                 <p className="mt-3 text-sm text-[var(--eve-muted)]">Gameplay and narrative showcase, June 2026</p>
+                <p className="mt-1 text-sm text-[var(--eve-muted)]">To keep the video short, the NPC replies play at 2× speed.</p>
               </div>
 
               <div className="rounded-2xl border border-white/12 bg-[var(--eve-surface)] p-6 md:col-span-4 md:p-7">
@@ -537,38 +549,6 @@ export function BeforeEveningVR() {
               <SectionHeading
                 label={partLabels[1]}
                 group={partLabels[1]}
-                intro="What the player learns in one space changes what they can ask in the next."
-              >
-                Four characters, four spaces
-              </SectionHeading>
-            </Reveal>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {narrativeBeats.map((beat) => (
-                <Reveal key={beat.scene}>
-                  <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-[var(--eve-surface)]">
-                    <img
-                      src={beat.image}
-                      alt={beat.alt}
-                      className="aspect-[4/3] w-full object-cover"
-                      style={{ objectPosition: beat.position }}
-                      loading="lazy"
-                    />
-                    <div className="p-6">
-                      <p className="text-sm font-medium text-[var(--eve-accent)]">{beat.scene}</p>
-                      <h3 className="mt-2 text-xl font-medium tracking-[-0.02em] text-[var(--eve-text)]">{beat.title}</h3>
-                      <p className="mt-3 text-pretty text-sm leading-6 text-[var(--eve-muted)]">{beat.copy}</p>
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
-            <p className="mt-4 text-pretty text-sm leading-6 text-[var(--eve-muted)]">The subtitles show each character's spoken reply.</p>
-          </section>
-
-          <section className="pb-12 md:pb-18">
-            <Reveal>
-              <SectionHeading
-                group={partLabels[1]}
                 intro="Gong Shengao wrote who the characters are. I designed the rest of each agent in Convai."
               >
                 What a character is made of
@@ -605,7 +585,39 @@ export function BeforeEveningVR() {
                 className="mt-6 lg:col-span-5"
               />
             </Reveal>
-            <Reveal className="mt-6 rounded-2xl border border-white/12 bg-[var(--eve-surface)] p-7 md:p-9">
+          </section>
+
+          <section className="pb-12 md:pb-18">
+            <Reveal>
+              <SectionHeading
+                group={partLabels[1]}
+                intro="What the player learns in one space changes what they can ask in the next."
+              >
+                Four characters, four spaces
+              </SectionHeading>
+            </Reveal>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {narrativeBeats.map((beat) => (
+                <Reveal key={beat.scene}>
+                  <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-[var(--eve-surface)]">
+                    <img
+                      src={beat.image}
+                      alt={beat.alt}
+                      className="aspect-[4/3] w-full object-cover"
+                      style={{ objectPosition: beat.position }}
+                      loading="lazy"
+                    />
+                    <div className="p-6">
+                      <p className="text-sm font-medium text-[var(--eve-accent)]">{beat.scene}</p>
+                      <h3 className="mt-2 text-xl font-medium tracking-[-0.02em] text-[var(--eve-text)]">{beat.title}</h3>
+                      <p className="mt-3 text-pretty text-sm leading-6 text-[var(--eve-muted)]">{beat.copy}</p>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+            <p className="mt-4 text-pretty text-sm leading-6 text-[var(--eve-muted)]">The subtitles show each character's spoken reply.</p>
+            <Reveal className="mt-10 rounded-2xl border border-white/12 bg-[var(--eve-surface)] p-7 md:p-9">
               <div className="grid gap-4 lg:grid-cols-12 lg:items-end lg:gap-12">
                 <h3 className="text-xl font-medium tracking-[-0.02em] lg:col-span-5">Four clues that move the story</h3>
                 <p className="text-pretty text-sm leading-6 text-[var(--eve-muted)] lg:col-span-7">
@@ -632,7 +644,7 @@ export function BeforeEveningVR() {
               <SectionHeading
                 label={partLabels[2]}
                 group={partLabels[2]}
-                intro="Each reply passes through four steps, and each step adds delay. Together they left a 3–4 second gap that testers noticed in round three."
+                intro="Each reply passes through a chain of steps, and each one adds delay. Together they left a 3–4 second gap that testers noticed in round three."
               >
                 Talking to a MetaHuman
               </SectionHeading>
@@ -650,31 +662,18 @@ export function BeforeEveningVR() {
               <PendingFigure
                 src="/before-evening/diagram-voice-pipeline.webp"
                 alt="From the player's voice to a MetaHuman reply in Unreal Engine 5"
-                brief="示意图 5 · 语音到 MetaHuman：Hold A → Speech to text → Agent answers → Text-to-speech → Audio2Face → Lip-sync, gaze, gesture，标注两处修复和 3–4 s 总延迟"
-                aspect="12 / 5"
+                brief="示意图 5 · 语音到 MetaHuman：Hold A → Speech to text → Agent answers → Text-to-speech → Audio2Face → Lip-sync, gaze, gesture，每步配线稿插画，标注两处修复和 3–4 s 总延迟"
+                aspect="120 / 49"
                 className="mt-8"
               />
             </Reveal>
-            <Reveal className="mt-8 grid gap-8 rounded-2xl bg-[var(--eve-surface-soft)] p-6 md:p-10 lg:grid-cols-12">
-              <div className="lg:col-span-5">
-                <p className="text-pretty text-base leading-7 text-[var(--eve-muted)]">
-                  I connected Convai to the MetaHuman characters in Unreal Engine 5 and fixed two problems on the way. A mid-project engine update broke the Convai plugin, so I locked the engine version. On long replies, the voice and the face drifted out of sync, so I split replies into shorter segments.
-                </p>
-                <p className="mt-6 text-pretty text-base leading-7 text-[var(--eve-muted)]">
-                  The prompts Gong wrote shaped movement as well as words. Audio2Face takes gesture intensity from the energy of the speech, so "You are tired and resigned" gives softer speech and smaller gestures, while "You are nervous and have something to hide" gives faster speech and a shifting gaze.
-                </p>
-              </div>
-              <ol className="lg:col-span-7">
-                {pipeline.map((step, index) => (
-                  <li key={step.title} className="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-white/12 py-5 first:border-t-0 first:pt-0 last:pb-0">
-                    <span className="text-sm font-medium text-[var(--eve-accent)]">{`0${index + 1}`}</span>
-                    <div>
-                      <h3 className="text-lg font-medium tracking-[-0.02em]">{step.title}</h3>
-                      <p className="mt-1.5 text-pretty text-sm leading-6 text-[var(--eve-muted)]">{step.copy}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+            <Reveal className="mt-8 grid gap-6 rounded-2xl bg-[var(--eve-surface-soft)] p-6 md:grid-cols-2 md:gap-10 md:p-10">
+              <p className="text-pretty text-base leading-7 text-[var(--eve-muted)]">
+                I connected Convai to the MetaHuman characters in Unreal Engine 5 and fixed two problems on the way. A mid-project engine update broke the Convai plugin, so I locked the engine version. On long replies, the voice and the face drifted out of sync, so I split replies into shorter segments.
+              </p>
+              <p className="text-pretty text-base leading-7 text-[var(--eve-muted)]">
+                The prompts Gong wrote shaped movement as well as words. Audio2Face takes gesture intensity from the energy of the speech, so "You are tired and resigned" gives softer speech and smaller gestures, while "You are nervous and have something to hide" gives faster speech and a shifting gaze.
+              </p>
             </Reveal>
             <Reveal className="grid gap-x-4 md:grid-cols-2">
               <PendingFigure
@@ -708,9 +707,9 @@ export function BeforeEveningVR() {
             </Reveal>
             <Reveal>
               <Figure
-                src="/before-evening/school-exterior.webp"
-                alt="School exterior at dusk in the game"
-                caption="A low western sun and a custom dusk skybox cast long shadows through the corridor windows."
+                src="/before-evening/school-entrance.webp"
+                alt="The school entrance at dusk in the game"
+                caption="The entrance at dusk, lit by a low western sun and a custom skybox."
                 className="[&>div]:aspect-[16/10] md:[&>div]:aspect-[2/1]"
               />
             </Reveal>
@@ -755,15 +754,24 @@ export function BeforeEveningVR() {
                 </Reveal>
               ))}
             </div>
-            <Reveal>
-              <PendingFigure
-                src="/before-evening/diagram-exterior-layers.webp"
-                alt="Section through the three exterior layers around the school"
-                caption="The three exterior layers added after round two."
-                brief="示意图 7 · 三层外景剖面：学校 → 15 m 内邻校 → 30 m 内住宅和树 → 远处天际线剪影"
-                aspect="12 / 5"
-                className="mt-8"
-              />
+            <Reveal className="mt-8">
+              <h3 className="text-xl font-medium tracking-[-0.02em]">The three exterior layers added after round two</h3>
+              <div className="mt-6 grid gap-5 md:grid-cols-3">
+                {exteriorLayers.map((layer) => (
+                  <figure key={layer.title}>
+                    <img
+                      src={layer.image}
+                      alt={layer.alt}
+                      className="aspect-[3/2] w-full rounded-2xl bg-[var(--eve-surface)] object-cover"
+                      loading="lazy"
+                    />
+                    <figcaption className="mt-4">
+                      <p className="text-base font-medium text-[var(--eve-text)]">{layer.title}</p>
+                      <p className="mt-1.5 text-pretty text-sm leading-6 text-[var(--eve-muted)]">{layer.copy}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
             </Reveal>
           </section>
 
