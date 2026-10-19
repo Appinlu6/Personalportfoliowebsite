@@ -4,6 +4,7 @@ export const projectTagLabelsCN = {
   'RAG & Knowledge Graph': 'RAG 与知识图谱',
   'NLP & Text Mining': 'NLP 与文本挖掘',
   'Human-AI Workflow': '人机协作工作流',
+  'Agent Framework Design': '智能体框架设计',
   'Data Visualization': '数据可视化',
   'Big Data Platform Design': '大数据平台设计',
   'Real-time Decision Support': '实时决策支持',
@@ -46,11 +47,11 @@ export const projects: Project[] = [
   },
   {
     slug: 'before-evening-vr',
-    title: 'Before Evening: VR Narrative Game',
+    title: 'MetaHuman Agents in a VR Mystery',
     year: '2026 Jan - Apr',
     description:
-      'A VR mystery set in a Chinese high school. Players investigate Yi Linlan\'s past by speaking naturally with AI-powered MetaHuman characters and showing them objects found around the campus. I worked on project management, scene design, and VR interaction programming.',
-    tags: ['Conversational AI', 'AI Product Design', 'Immersive / XR'],
+      'A VR mystery set in a Chinese high school. Players question AI characters out loud and show them clues found around the campus. I designed the agent structure, connected Convai to MetaHuman, and developed it in Unreal Engine 5 through MCP.',
+    tags: ['Conversational AI', 'Agent Framework Design', 'AI Product Design', 'Immersive / XR'],
     featured: false,
     image: '/before-evening/cover.webp',
     hoverVideo: '/videos/before-evening-cover.mp4',

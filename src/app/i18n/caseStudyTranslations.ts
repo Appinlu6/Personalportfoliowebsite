@@ -36,126 +36,216 @@ const common: TranslationMap = {
 export const beforeEveningTranslations: TranslationMap = {
   ...common,
   'VR narrative game': 'VR 叙事游戏',
-  'A psychological mystery set in a Chinese high school, built around live voice conversations with AI characters.':
-    '一场发生在中国高中的心理悬疑故事，玩家通过实时语音与 AI 角色对话，逐步拼回被掩埋的往事。',
+  'PolyU SD5975 Virtual and Augmented Reality': '香港理工大学 SD5975 虚拟与增强现实',
+  'VR mystery gameplay demo': 'VR 悬疑游戏玩法演示',
+  'MetaHuman agents in a VR mystery': 'VR 悬疑游戏里的 MetaHuman 智能体',
+  'Each character pairs a MetaHuman face with a Convai agent, and I developed them in Unreal Engine 5 through MCP. Players solve the mystery just by talking to them.': '每个角色都由 MetaHuman 的面孔和 Convai 智能体组成，我通过 MCP 在 Unreal Engine 5 里把它们开发出来。玩家只靠对话就能解开这桩悬疑。',
+  'The story: Yi Linlan returns to her old school as a teacher and finds that He Qinyue, the girl she once bullied, now works there as the school psychologist. Each of the four characters remembers that time differently.': '故事：伊林岚以教师身份回到母校，却发现当年被她欺负的何沁月，如今成了这所学校的心理老师。四位角色对那段往事的记忆各不相同。',
   'Gameplay and narrative showcase, June 2026': '玩法与叙事演示，2026 年 6 月',
-  'Spring 2026': '2026 年春季',
-  'Project manager, scene designer, VR interaction programmer': '项目管理、场景设计与 VR 交互开发',
+  'Jan – Apr 2026': '2026 年 1–4 月',
+  'Three people': '三人',
   Platform: '平台',
-  Stack: '技术栈',
-  'A school visit that turns personal': '一次逐渐失控的返校',
-  'The player takes the role of Yi Linlan, a teacher returning to the school she once attended. Familiar rooms begin to bring back the part of her past she has avoided.':
-    '玩家扮演教师易林岚，回到自己曾经就读的学校。熟悉的房间一点点唤回她始终回避的过去。',
-  'Most of the 15 to 20 minute experience takes place on the campus at dusk.':
-    '整段体验约 15 至 20 分钟，故事发生在临近夜晚的校园里。',
-  "Yi Linlan arrives expecting a routine visit. She soon learns that He Qinyue, a student she once bullied, now works at the school as a psychologist.":
-    '易林岚原以为这只是一次普通到访，却发现自己当年欺负过的学生何沁玥，如今成了学校的心理老师。',
-  'The player pieces together what happened by talking to staff and examining files, photographs, and objects. Characters remember what has already been discussed and react to evidence shown later.':
-    '玩家需要与教职工交谈，查看档案、照片和物件，拼出当年的真相。角色会记住此前的对话，也会对之后出示的证据作出回应。',
-  'The story moves through five school spaces': '故事沿着五个校园场景展开',
-  'Information found in one scene changes what the player can ask in the next.':
-    '在前一个场景找到的信息，会改变玩家在下一个场景能问的问题。',
+  'Project manager, AI agent design, Convai and MetaHuman integration, VR interaction, scene': '项目管理、AI 智能体设计、Convai 与 MetaHuman 接入、VR 交互、场景',
+  'Unreal Engine 5.7.4, Convai.AI, MetaHuman, Quixel Bridge, Claude via UE5 MCP': 'Unreal Engine 5.7.4、Convai.AI、MetaHuman、Quixel Bridge、Claude（通过 UE5 MCP）',
+  'As project manager of a three-person team, I designed what the AI characters in this 15–20 minute Quest 3 mystery know, remember, and react to, and connected them to MetaHuman in Unreal Engine 5 through Convai. The project won a Commendation Award at PolyU.':
+    '作为三人团队的项目经理，我设计了这款 15–20 分钟 Quest 3 悬疑游戏中 AI 角色知道什么、记得什么、对什么作出反应，并通过 Convai 把它们接到 Unreal Engine 5 的 MetaHuman 上。项目获得了香港理工大学优异奖。',
+
+  'The idea': '项目设想',
+  'A mystery where the witnesses are agents': '证人都是智能体的悬疑游戏',
+  '01 · The workflow': '01 · 开发流程',
+  '02 · NPC agents': '02 · NPC 智能体',
+  '03 · Interaction': '03 · 交互',
+  'Hold up a clue': '举起线索',
+  'What each character knows': '每个角色知道什么',
+  'From voice to MetaHuman': '从声音到 MetaHuman',
+  'Developed with UE5 through MCP': '通过 MCP 在 UE5 中开发',
+  'Runs in Convai': '运行在 Convai 中',
+  'A MetaHuman VR narrative platform': 'MetaHuman VR 叙事体验平台',
+  'On each MetaHuman in Unreal Engine 5': '运行在 Unreal Engine 5 的每个 MetaHuman 上',
+  'During development': '开发阶段',
+  'Agent reply': '智能体回答',
+  'Text-to-speech': '文字转语音',
+  'Lip-sync, gaze, gesture': '口型、视线、手势',
+  'In play, it is a simple loop: explore the school, find a character, ask in your own words, and show them what you found.': '实际玩起来是一个简单的循环：在学校里探索，找到角色，用自己的话提问，再把找到的东西拿给对方看。',
+
+  'What the player learns in one space changes what they can ask in the next.':
+    '玩家在一个空间里得知的事，会改变他在下一个空间能问的问题。',
+  'Four characters, four spaces': '四个角色，四个空间',
   'School Gate': '校门',
-  Arrival: '抵达',
-  'Yi Linlan returns to the school where she once studied, this time as a teacher. The opening gives players a few quiet minutes to settle into the space.':
-    '易林岚以教师身份回到母校。开场留出几分钟的安静探索，让玩家先熟悉空间。',
-  Office: '办公室',
-  'The old file': '旧档案',
-  "A file in the office conflicts with Yi Linlan's account of the past. It gives the player a reason to keep looking.":
-    '办公室里的一份档案与易林岚的说法互相矛盾，也让玩家有了继续追查的理由。',
+  'Principal Zhao': '赵校长',
   Classroom: '教室',
   'Teacher Zhou': '周老师',
-  "Teacher Zhou remembers more than Yi Linlan expects. Their conversation brings the old classroom incident back into focus.":
-    '周老师记得的细节比易林岚预想得更多。两人的谈话让当年的教室事件重新浮出水面。',
   Archive: '档案室',
-  'The school record': '校方记录',
-  'In the archive, names, dates, and disciplinary records show what happened to He Qinyue.':
-    '档案中的姓名、日期和处分记录，逐渐交代了何沁玥当年的遭遇。',
+  'The archive administrator': '档案管理员',
   'Medical Room': '医务室',
-  'He Qinyue': '何沁玥',
-  'He Qinyue, now the school psychologist, speaks with Yi Linlan directly. Her responses draw on what the player has found and said earlier.':
-    '已经成为学校心理老师的何沁玥与易林岚正面交谈。她的回答会结合玩家此前找到的线索和说过的话。',
-  'Hold A to talk': '按住 A 键交谈',
-  'Hold the button, ask a question, then release it. Convai generates the response and sends it through the MetaHuman character in real time.':
-    '按住按钮说出问题，松开后，Convai 会实时生成回答并由 MetaHuman 角色说出。',
-  'Simple input': '简单直接的输入',
-  'Hold-to-talk keeps conversation separate from movement and object handling.':
-    '按住说话的方式让对话、移动和物件操作互不干扰。',
-  'Showing evidence': '出示证据',
-  'Characters react when the player brings an object from an earlier scene into the conversation.':
-    '当玩家把之前场景中的物件带入对话时，角色会作出相应反应。',
-  'The Quest 3 controls keep talking separate from movement and object handling.':
-    'Quest 3 的操作把交谈、移动和物件处理清楚区分开。',
-  'Building a believable school': '搭建可信的校园',
-  'We modelled the campus from scratch, using the scale and layout of a Chinese senior secondary school as our reference.':
-    '校园从零开始建模，尺度和布局参考了中国普通高中。',
-  'Low evening light and a custom skybox place the story close to nightfall.':
-    '低角度的傍晚光线与定制天空盒，把故事放在将要入夜的时刻。',
-  'The corridors stay cooler and darker, with rain at the windows and repeated sightlines helping players find their way.':
-    '走廊的色温更冷、光线更暗。窗外的雨景与重复出现的视线线索，帮助玩家辨认方向。',
-  'Early tests showed that the world felt empty outside the windows. We added buildings, trees, skyline cards, and fog at three depths. In the next test, players stopped to look outside.':
-    '早期测试中，窗外的世界显得空。我们在三个景深层次加入建筑、树木、城市剪影与雾效。下一轮测试时，玩家开始停在窗边向外看。',
-  'Connecting voice to MetaHuman': '让语音驱动 MetaHuman',
-  'The conversation system links Convai with generated speech, facial animation, and MetaHuman playback.':
-    '对话系统把 Convai、语音生成、面部动画与 MetaHuman 播放串联起来。',
-  'We built the interaction logic in Blueprints so we could test changes on the headset quickly.':
-    '交互逻辑使用蓝图搭建，便于直接在头显中快速测试修改。',
-  'What the player says': '玩家说话',
-  "Convai transcribes the player's speech and sends it to the agent written for that character.":
-    'Convai 将玩家语音转成文字，再交给为该角色设定的智能体。',
-  'How the character answers': '角色回答',
-  'The agent writes a response using the character prompt and current story context. Text-to-speech then produces the voice.':
-    '智能体根据角色提示词和当前剧情生成回答，再通过文字转语音输出。',
-  'Animating the reply': '让回答动起来',
-  'The audio drives lip movement and facial blendshapes. Gaze and small body movements continue while the character speaks.':
-    '音频驱动口型与面部混合形状；角色说话时，视线和细微肢体动作也会持续。',
-  'What changed after testing': '测试后改了什么',
-  'We ran three rounds on the Quest 3. Each round focused on the issue that interrupted play most.':
-    '我们在 Quest 3 上进行了三轮测试，每一轮都先处理最影响体验的问题。',
+  'He Qinyue': '何沁月',
+  'Medical Room in-game environment': '游戏中的医务室场景',
+  'Yi Linlan returns as a teacher and is welcomed by Principal Zhao, whose calm, official welcome sets the tone for the opening.': '伊林岚以教师身份回到母校，赵校长前来迎接。他沉稳、官方的欢迎为开场定下了基调。',
+  'Teacher Zhou remembers more than Yi Linlan expects. Their conversation brings back what happened in that classroom.': '周老师记得的细节比伊林岚预想得更多。两人的谈话让当年教室里发生的事重新浮现。',
+  'The administrator keeps strictly to the rules of the numbered files. The records here turn suspicion into evidence of what happened to He Qinyue.': '档案管理员严格按编号档案的规矩办事。这里的记录把怀疑变成证据，指向何沁月当年的遭遇。',
+  'He Qinyue, now the school psychologist, speaks with Yi Linlan directly. Her responses draw on what the player has found and said earlier.': '已经成为学校心理老师的何沁月与伊林岚正面交谈。她的回答会结合玩家此前找到的线索和说过的话。',
+  'Principal Zhao speaking in the game': '游戏中正在说话的赵校长',
+  'Teacher Zhou speaking in the game': '游戏中正在说话的周老师',
+  'The archive administrator speaking in the game': '游戏中正在说话的档案管理员',
+  "The subtitles show each character's spoken reply.": '字幕是角色说出的回答。',
+
+  'Gong Shengao wrote who the characters are. I designed the rest of each agent in Convai.':
+    '龚圣奥写的是角色是谁；每个智能体的其余部分，是我在 Convai 里设计的。',
+  'What a character is made of': '一个角色由什么组成',
+  Persona: '人设',
+  'The six parts of a character agent around a MetaHuman': '围绕一个 MetaHuman 的角色智能体六个组成部分',
+  "The story tree in Convai's Narrative Design": 'Convai Narrative Design 里的故事树',
+  'A conversation saved as a timestamped local note': '一段对话被存成带时间戳的本地笔记',
+  "Each character's background and persona prompt.":
+    '每个角色的背景和人设提示词。',
+  'Story tree': '主线树',
+  "I set up a main story tree in Convai's Narrative Design. Each section gives the character one objective, and the character moves to the next section when the player brings up the right clue.":
+    '我在 Convai 的 Narrative Design 里搭了一棵主线树。每一节给角色一个目标，玩家提到对应的线索时，角色才进入下一节。',
+  Knowledge: '知识',
+  "Each character's knowledge bank holds only what that person would know about the school and the incident.": '每个角色的知识库里，只放这个人对学校和当年那件事本该知道的内容。',
+  Memory: '记忆',
+  "Convai's long-term memory keeps what the player has said. Five minutes after the player leaves a character, I also save the conversation as a timestamped local note, the way an Obsidian vault stores pages.": 'Convai 的长期记忆会保留玩家说过的话。玩家离开一个角色五分钟后，我还会把这段对话存成一条带时间戳的本地笔记，就像 Obsidian 存放页面那样。',
+  Sight: '视觉',
+  'Every object the player can pick up carries a text tag. When the player holds one up, the character reads the tag, which stands in for sight.': '玩家能拿起的每件物品都带一个文字标签。玩家把它举起来时，角色读到的是这个标签，以此代替视觉。',
+  Actions: '动作',
+  'Convai actions let a character nod, turn, or look at an object the player holds out, as well as speak.': '借助 Convai 的动作功能，角色除了说话，还会点头、转身，或看向玩家递过来的物品。',
+  'Four clues that move the story': '推动剧情的四件线索',
+  'Mentioning a clue to the right character moves the story on. Holding one up lets the character read its tag and react.':
+    '向对应的角色提起一件线索，剧情就会往下走。把线索举到角色面前，角色会读到它的标签并作出反应。',
+  'Mental-health poster': '心理健康海报',
+  "The school's official message about student wellbeing.": '学校关于学生心理健康的官方宣传。',
+  'Injury observation record': '伤情观察记录',
+  'A document that makes the bullying concrete.': '一份让霸凌变得具体的记录。',
+  'Newspaper message': '报纸上的留言',
+  'A crumpled newspaper with a message in red that calls the player to the corridor.': '一张写着红字留言的皱报纸，把玩家引向走廊。',
+  'Future Campus poster': '「未来校园」海报',
+  "A magazine cover of Principal Zhao and the school's renovation plan.": '一期以赵校长和学校改造计划为封面的校刊。',
+  'The in-game text is in Chinese because the story is set in a Chinese school.': '故事设定在中国的学校，所以游戏内文字是中文。',
+
+  'Talking to a MetaHuman': '与 MetaHuman 对话',
+  'Hold A to talk': '按住 A 键说话',
+  "From the player's voice to a MetaHuman reply in Unreal Engine 5": '从玩家的语音到 Unreal Engine 5 里 MetaHuman 的回答',
+  'A character answering with the tired, resigned prompt': '角色在「疲惫认命」提示词下作答',
+  'A character answering with the nervous prompt': '角色在「紧张」提示词下作答',
+  '"You are tired and resigned"': '「你疲惫而认命」',
+  '"You are nervous and have something to hide"': '「你很紧张，有事瞒着」',
+  'Characters listen only while A is held, so side conversations in the room are not picked up. The other buttons handle movement, which the first round of testing reshaped.':
+    '只有按住 A 键时角色才会听，房间里的闲聊不会被录进去。其余按键负责移动，这部分在第一轮测试后重新调整过。',
+  'Each reply passes through four steps, and each step adds delay. Together they left a 3–4 second gap that testers noticed in round three.': '每一次回答都要经过四步，每一步都会增加延迟。加在一起，就是测试者在第三轮注意到的 3–4 秒空档。',
+  'I connected Convai to the MetaHuman characters in Unreal Engine 5 and fixed two problems on the way. A mid-project engine update broke the Convai plugin, so I locked the engine version. On long replies, the voice and the face drifted out of sync, so I split replies into shorter segments.':
+    '我把 Convai 接到了 Unreal Engine 5 里的 MetaHuman 角色上，过程中解决了两个问题。项目中途一次引擎更新弄坏了 Convai 插件，于是我锁定了引擎版本。回答一长，声音和面部就会对不上，于是我把回答切成更短的段落。',
+  'The prompts Gong wrote shaped movement as well as words. Audio2Face takes gesture intensity from the energy of the speech, so "You are tired and resigned" gives softer speech and smaller gestures, while "You are nervous and have something to hide" gives faster speech and a shifting gaze.':
+    '龚圣奥写的提示词影响的不只是台词，还有动作。Audio2Face 根据语音的能量决定手势幅度，所以「你疲惫而认命」会带来更轻的语气和更小的手势，「你很紧张，有事瞒着」则让语速变快、眼神游移。',
+  'Speech to text': '语音转文字',
+  'The microphone streams to Convai, which transcribes what the player says.': '麦克风把声音流式传给 Convai，转写成文字。',
+  'Response and voice': '回答与配音',
+  "The character's agent answers from its prompt, its memory, and the story so far. Text-to-speech reads the answer in a voice cloned from a team member.": '角色的智能体根据提示词、记忆和当前剧情作答，再由文字转语音，用克隆自组员的声音读出来。',
+  'Audio to face': '音频驱动面部',
+  'The audio stream drives MetaHuman Audio2Face, which turns it into facial blendshapes.': '音频流驱动 MetaHuman Audio2Face，生成面部混合形状。',
+  Playback: '播放',
+  'Lip-sync, gaze, and gesture play back together on the character.': '口型、视线和手势在角色身上同步播放。',
+
+  'Working inside the engine through MCP': '通过 MCP 在引擎里开发',
+  'Developing in Unreal Engine 5 through an MCP server, with each change tested in the headset':
+    '通过 MCP 服务在 Unreal Engine 5 里开发，每处改动都先在头显里测试',
+  'An AI agent working through the UE5 MCP server in PowerShell': 'AI 智能体在 PowerShell 里通过 UE5 MCP 服务工作',
+  'A Blueprint edited through MCP': '通过 MCP 修改过的蓝图',
+  'I ran an AI agent from PowerShell on Windows, connected to Unreal Engine 5 through an MCP server, where it could edit Blueprints, change input mappings, read logs, and change plugin settings. The NPC agents and the interaction below were both built this way.':
+    '我在 Windows 的 PowerShell 里运行一个 AI 智能体，通过 MCP 服务接入 Unreal Engine 5。在引擎里，它能改蓝图、改输入映射、读日志、改插件设置。后面的 NPC 智能体和交互，都是这样做出来的。',
+  'What I used it for': '我用它做了什么',
+  'Quest 3 controller bindings': 'Quest 3 手柄绑定',
+  'Movement, snap turn, grabbing, and hold-to-talk on the Quest 3 controllers.': 'Quest 3 手柄上的移动、分段转向、抓取和按住说话。',
+  'First-person comfort': '第一人称舒适度',
+  'Tuning strafe, snap turns, and the comfort vignette that came out of the first test.': '微调第一轮测试后加入的平移、分段转向和舒适度遮罩。',
+  'Convai plugin': 'Convai 插件',
+  'Setting up and debugging the plugin on each character.': '在每个角色上配置并调试插件。',
+  'Bugs it helped fix': '它帮忙修掉的 bug',
+  'Characters not recognising an object the player had picked up': '角色认不出玩家拿起的物品',
+  'Replies that took too long': '回答等得太久',
+  'Objects clipping through other geometry': '物体穿模',
+  'I tested every change made through MCP in the headset before keeping it.':
+    '通过 MCP 做的每一处改动，我都先在头显里验证过才保留。',
+
+  'The world': '场景',
+  'I built the school myself, from scratch, so that anyone who went to a Chinese high school would recognise it: the proportions, the corridors, the windows set a little too high to see out of.': '学校场景由我一个人从零搭建，目标是让上过中国高中的人一眼认出来：这里的尺度、走廊，还有那排高得不太方便往外看的窗户。',
+  'A school players recognise': '一所让人认得出的学校',
+  'School exterior at dusk in the game': '游戏中黄昏时的校舍外景',
+  'A low western sun and a custom dusk skybox cast long shadows through the corridor windows.': '低垂的西晒和定制的黄昏天空盒，透过走廊窗户投下长长的影子。',
+  'From reference photos to a floor plan': '从参考照片到平面图',
+  'The floor plan I drew for the school': '我为学校画的平面图',
+  'I spent two weeks collecting photos of Chinese senior secondary schools: floor plans, ceiling heights, window placement, and staff offices. The floor plan I drew from them can be crossed in under five minutes, but it folds back on itself so the school feels larger.': '我花了两周收集中国普通高中的照片，包括平面布局、层高、窗户位置和教师办公室。据此画出的平面图五分钟内就能走完，但路线会折返，让学校显得更大。',
+  'Guidance without UI': '不靠 UI 的引导',
+  'We left out UI markers, quest arrows, and waypoints, and used the building to guide players instead.': '我们去掉了 UI 标记、任务箭头和路径点，改用建筑本身来引导玩家。',
+  Architecture: '建筑',
+  'Lit corridors lead to the next destination, and unlit stairwells and rooms steer players back toward them.': '亮着的走廊通往下一个目的地，没有灯的楼梯间和房间会把玩家引回亮处。',
+  Light: '光线',
+  'Warm interior light marks the rooms that matter. Cooler tones mark the spaces in between.': '暖色室内光标出关键房间，冷色调留给过渡空间。',
+  Sound: '声音',
+  'Rain is louder near windows and outside doors, which helps players orient themselves.': '靠近窗户和外门时雨声更大，帮助玩家辨认方位。',
+  Characters: '角色',
+  'Characters can tell the player where to go or whom to find next.': '角色会告诉玩家该去哪里、下一个该找谁。',
+  'Meta Quest 3 controller mapping for the game': '游戏的 Meta Quest 3 手柄键位',
+
+  Testing: '测试',
+  'Each round tested a fuller build on the Quest 3.': '每一轮都在 Quest 3 上测试更完整的版本。',
+  'Three rounds on the headset': '头显上的三轮测试',
+  'Section through the three exterior layers around the school': '学校周围三层外景的剖面示意',
+  'The three exterior layers added after round two.': '第二轮之后加上的三层外景。',
+  'Round 1 · Greybox, no characters': '第 1 轮 · 白模，没有角色',
+  'Round 2 · Interior nearly complete': '第 2 轮 · 室内基本完成',
+  'Round 3 · Full build': '第 3 轮 · 完整版本',
   'Movement comfort': '移动舒适度',
-  'Two testers removed the headset within ten minutes.': '两位测试者在十分钟内摘下了头显。',
-  'We added strafe and snap rotation, then tuned the comfort vignette.':
-    '随后加入平移与分段转向，并调整了舒适度遮罩。',
-  'The next group completed the section without similar reports of motion sickness.':
-    '下一组测试者顺利完成该段体验，没有再出现类似的晕动反馈。',
-  'World continuity': '环境连续性',
-  'The empty exterior broke immersion whenever players looked through a window.':
-    '玩家一看向窗外，空旷的外部环境就会打断沉浸感。',
-  'We filled the view with buildings, trees, skyline cards, and fog arranged at three depths.':
-    '我们用建筑、树木、城市剪影和雾效补足三个景深层次。',
-  'During the next test, players stopped at the windows to look outside.':
-    '下一轮测试中，玩家会主动停在窗边观察外部环境。',
+  'Two testers took the headset off within ten minutes. Smooth turning on the right stick fought with natural head movement.': '两位测试者在十分钟内摘下了头显。右摇杆的平滑转向和玩家自然转头互相冲突。',
+  'I added strafe to the left stick, replaced smooth turning with snap turns, and added a comfort vignette.': '我给左摇杆加上平移，把平滑转向换成分段转向，并加入舒适度遮罩。',
+  'Testers in round two reported no comparable motion sickness.': '第二轮测试者没有再出现类似的晕动反馈。',
+  'The view outside': '窗外的景色',
+  '"Everything inside feels real, but when I look out the window, it ruins it." Outside the windows there was only empty space.': '「室内一切都很真实，可一看窗外就全毁了。」窗外只有一片空白。',
+  'I built the exterior in three layers: a neighbouring school within 15 m, housing and trees up to 30 m, and painted skyline cards beyond.': '我把外景分成三层：15 米内是隔壁的教学楼，30 米内是住宅和树木，再往外是手绘的城市天际线。',
+  'In round three, several testers spent time just looking outside.': '第三轮中，好几位测试者会停下来专门看窗外。',
   'Conversation timing': '对话等待时间',
-  'A five-second response gap made the AI feel less present.': '五秒的等待让 AI 角色失去了在场感。',
-  'We shortened the prompts, tested streaming responses, and added a small thinking animation.':
-    '我们压缩提示词、测试流式响应，并加入简短的思考动画。',
-  'Latency fell to about three seconds, but remains the clearest priority for a second version.':
-    '延迟降到约三秒，但它仍是下一版本最需要继续解决的问题。',
-  'What still needs work': '仍需改进',
-  'Reviewers responded well to the MetaHuman characters and the open-ended dialogue. They also wanted the central conflict to arrive sooner. Spoken responses need to be shorter, players should be able to interrupt, and emotional delivery needs more control.':
-    '评审认可 MetaHuman 角色和开放式对话，同时希望核心冲突更早出现。角色回答还可以更短，并支持玩家打断；情绪表达也需要更细致的控制。',
-  'For the next version, I would work on response time and ambient sound first. More scenes can wait until the conversations feel quicker and more believable.':
-    '下一版会优先处理响应速度和环境声音。等对话更快、更自然之后，再扩展更多场景。',
-  'We used posters, records, photographs, and handwritten messages to carry clues between scenes.':
-    '海报、档案、照片和手写留言承担了跨场景传递线索的作用。',
-  'Team and Award': '团队与奖项',
-  'Gong Shengao (Left)': '龚圣淏（左）',
-  'Gong Shengao': '龚圣淏',
-  '(Left)': '（左）',
-  'AI prompting, atmospheric effects, and narrative design': 'AI 提示词、氛围特效与叙事设计',
-  'Lu Zhengping (Middle)': '陆正平（中）',
-  'Lu Zhengping': '陆正平',
-  '(Middle)': '（中）',
-  'Project management, scene and environment design, asset production, VR interaction programming, and MetaHuman integration with Convai.AI':
-    '项目管理、场景与环境设计、资产制作、VR 交互开发，以及 MetaHuman 与 Convai.AI 接入',
-  'Lin Yang (Right)': '林洋（右）',
+  'Testers noticed a 3–4 second gap between finishing a question and hearing the answer.': '测试者发现，从说完问题到听到回答，中间有 3–4 秒的空档。',
+  'I tested streaming responses, added a thinking animation to fill the pause, and tuned the prompts for shorter replies.': '我测试了流式响应，加入思考动画填补停顿，并调整提示词让回答更短。',
+  'The gap got shorter but did not go away. It is the first thing to fix in a second version.': '空档缩短了，但没有消失。这是第二版要最先解决的问题。',
+
+  Outcome: '成果',
+  'Presented in April, commended in July': '4 月展示，7 月获奖',
+  'We presented the project on 21 April 2026 with slides, a talk, and a showcase video instead of a live headset demo that could fail on the day. Reviewers singled out the AI dialogue and the MetaHuman characters, and one faculty reviewer said the pipeline could carry a longer narrative game.': '我们在 2026 年 4 月 21 日做了展示，用幻灯片、讲解和演示视频代替现场头显演示，避免当天出状况。评审特别肯定了 AI 对话和 MetaHuman 角色，一位老师认为这条管线可以支撑更长篇的叙事游戏。',
+  'The team during project development': '项目开发期间的团队',
+  'Left to right: Gong Shengao, Lu Zhengping, Lin Yang.': '左起：龚圣奥、陆正平、林洋。',
+  'Gong Shengao': '龚圣奥',
   'Lin Yang': '林洋',
-  '(Right)': '（右）',
-  '3D assets, texturing, level design, player flow, and Blueprint logic': '3D 资产、材质、关卡设计、玩家动线与蓝图逻辑',
-  'Process book': '过程文档',
-  'Before Evening received a Commendation Award in the 2025/26 Metaverse + AI Contest at PolyU on 21 July 2026.':
-    'Before Evening 于 2026 年 7 月 21 日获得香港理工大学 2025/26「Metaverse + AI Contest」优异奖。',
+  'Lu Zhengping': '陆正平',
+  ': narrative text, character prompts, atmospheric effects, and the showcase video': '：叙事文本、角色提示词、氛围特效与演示视频',
+  ': 3D props, texturing, level design, player flow, and Blueprint logic': '：3D 道具、材质、关卡设计、玩家动线与蓝图逻辑',
+  "Lu Zhengping's Commendation Award certificate from the 2025/26 Metaverse and AI Contest": '陆正平的 2025/26 Metaverse + AI Contest 优异奖证书',
+  'The project received a Commendation Award in the 2025/26 Metaverse + AI Contest at PolyU on 21 July 2026.': '项目于 2026 年 7 月 21 日获得香港理工大学 2025/26「Metaverse + AI Contest」优异奖。',
   'Contest details': '查看比赛详情',
+  '15–20 min': '15–20 分钟',
+  'Playable experience on Quest 3': 'Quest 3 上的可玩体验',
+  '4 AI characters': '4 个 AI 角色',
+  'Each a Convai agent on a MetaHuman': '每个都是驱动 MetaHuman 的 Convai 智能体',
+  '3 rounds': '3 轮',
+  'Headset tests': '头显测试',
+  Commendation: '优异奖',
+  'Metaverse + AI Contest 2025/26': 'Metaverse + AI Contest 2025/26',
+  'AI and interaction': 'AI 与交互',
+  'Designed the agent structure: story tree, knowledge, memory, and sight': '设计智能体结构：主线树、知识、记忆与视觉',
+  'Connected Convai to the MetaHuman characters in UE5': '在 UE5 中把 Convai 接入 MetaHuman 角色',
+  'Used an AI agent through UE5 MCP for controller bindings, comfort tuning, and Convai debugging':
+    '通过 UE5 MCP 借助 AI 智能体完成手柄绑定、舒适度调整和 Convai 调试',
+  'Built locomotion, grabbing, triggers, and hold-to-talk in Blueprints': '用蓝图实现移动、抓取、触发器与按住说话',
+  'Fixed motion comfort, the exterior, and response delay after each test round': '每轮测试后修复晕动、外景和响应延迟问题',
+  'Project and scene': '项目与场景',
+  'Project manager for the team of three': '担任三人团队的项目经理',
+  'Researched Chinese senior secondary schools and drew the floor plan': '调研中国普通高中并绘制平面图',
+  'Built the school environment, the three-layer exterior, and the dusk skybox': '搭建学校场景、三层外景与黄昏天空盒',
+  'Produced 3D assets': '制作 3D 资产',
+
+  Next: '下一步',
+  'What still needs work': '仍需改进',
+  'Reviewers wanted the central conflict to arrive sooner. Spoken responses need to be shorter, players should be able to interrupt, and emotional delivery needs more control. They also felt the video read more like a trailer than a gameplay demo.': '评审希望核心冲突更早出现。角色的回答要更短，要能被玩家打断，情绪表达也需要更多控制。他们还觉得演示视频更像预告片，而不是玩法演示。',
+  'For the next version, I would work on response time and ambient sound first, then add the passing of time, starting with characters that read the device clock. More scenes can wait until the conversations feel quicker and more believable.':
+    '下一版会优先处理响应速度和环境声音，再加入时间流逝的概念，先从让角色读取本机时间开始。等对话更快、更自然之后，再扩展更多场景。',
 };
 
 export const smartHospitalTranslations: TranslationMap = {

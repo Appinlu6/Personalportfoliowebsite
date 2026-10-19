@@ -44,7 +44,7 @@ const ANGLE_OFFSET: Record<string, number> = {
   lark: deg(10),
   'chillttoo-products': deg(-6),
   'chillttoo-community': deg(8),
-  'before-evening': deg(-10),
+  'before-evening': deg(-34),
   'bauhinia-mind': deg(8),
 };
 

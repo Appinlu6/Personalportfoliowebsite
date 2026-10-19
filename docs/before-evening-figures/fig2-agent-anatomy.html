@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="figure.css" />
+    <style>
+      .canvas { width: 1200px; height: 880px; }
+      .node.ic { padding-left: 76px; }
+      .node .sub, .panel .chip { text-wrap: balance; }
+      .node .icon {
+        position: absolute; left: 18px; top: 50%; width: 42px; height: 42px; margin-top: -21px;
+        display: flex; align-items: center; justify-content: center;
+        border: 1.5px solid rgba(210, 169, 52, 0.45); border-radius: 11px; background: #2c2820;
+      }
+      .icon svg, .chip svg {
+        fill: none; stroke: #d2a934; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+      }
+      .node .icon svg { width: 22px; height: 22px; }
+      .panel {
+        position: absolute; top: 450px; width: 510px; height: 400px;
+        border: 1.5px solid rgba(243, 239, 229, 0.12); border-radius: 16px; background: #201d18;
+      }
+      .panel .label { position: absolute; left: 24px; top: 20px; }
+      .panel .chip {
+        position: absolute; width: 210px; display: flex; align-items: center; gap: 9px;
+      }
+      .panel .chip svg { width: 17px; height: 17px; flex-shrink: 0; }
+      .panel .chip.dashed svg { stroke: #b8b09f; }
+      .panel.memory .chip { width: 140px; }
+      .panel.memory .chip.wide { width: 170px; }
+      .panel.memory .chip.narrow { width: 130px; }
+      .planned { position: absolute; font-size: 12px; color: #b8b09f; letter-spacing: 0.04em; }
+      .thumb {
+        position: absolute; top: 52px; width: 64px; height: 110px; overflow: hidden;
+        border: 1.5px solid rgba(210, 169, 52, 0.6); border-radius: 9px; background: #2c2820;
+      }
+      .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    </style>
+  </head>
+  <body>
+    <div class="canvas">
+      <svg class="wires" width="1200" height="450">
+        <defs>
+          <linearGradient id="fade" x1="0" y1="0" x2="0" y2="450" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff" />
+            <stop offset="0.7" stop-color="#fff" />
+            <stop offset="0.87" stop-color="#000" />
+          </linearGradient>
+          <mask id="bust-fade" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="450">
+            <rect x="0" y="0" width="1200" height="450" fill="url(#fade)" />
+          </mask>
+          <marker id="spin" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#d2a934" />
+          </marker>
+        </defs>
+
+        <circle cx="600" cy="232" r="176" fill="#201d18" stroke="rgba(243,239,229,0.08)" stroke-width="1.5" />
+
+        <g stroke="rgba(243,239,229,0.26)" stroke-width="1.5" fill="none">
+          <path d="M380 103 L566 106" />
+          <path d="M380 223 L490 246" />
+          <path d="M380 343 L566 336" />
+          <path d="M820 103 L634 106" />
+          <path d="M820 223 L762 219" />
+          <path d="M820 343 L650 254" />
+        </g>
+
+        <g mask="url(#bust-fade)" stroke="#d2a934" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="600" cy="152" rx="66" ry="82" />
+          <path d="M535 142 C526 146 526 170 538 174" />
+          <path d="M665 142 C674 146 674 170 662 174" />
+          <path d="M582 230 L580 266 M618 230 L620 266" />
+          <path d="M580 266 C570 290 520 288 490 300 C462 311 452 340 448 420" />
+          <path d="M620 266 C630 290 680 288 710 300 C738 311 748 340 752 420" />
+          <path d="M580 266 Q600 292 620 266" />
+
+          <g transform="translate(600 108) scale(0.86) translate(-600 -108)" stroke-width="2">
+            <path d="M597 84 C589 78 575 78 569 87 C557 87 551 98 555 108 C547 114 551 129 564 130 C570 136 586 136 597 130 Z" />
+            <path d="M603 84 C611 78 625 78 631 87 C643 87 649 98 645 108 C653 114 649 129 636 130 C630 136 614 136 603 130 Z" />
+            <path d="M566 100 C574 98 580 104 586 102 M570 118 C578 114 584 120 590 116" stroke-width="1.6" />
+            <path d="M634 100 C626 98 620 104 614 102 M630 118 C622 114 616 120 610 116" stroke-width="1.6" />
+          </g>
+
+          <circle cx="578" cy="162" r="4.5" />
+          <circle cx="622" cy="162" r="4.5" />
+          <path d="M600 170 L596 187 L603 189" stroke-width="1.8" />
+          <path d="M588 206 Q600 212 612 206" stroke-width="1.8" />
+
+          <path d="M578 349 C566 341 561 333 565 327 C569 320 576 322 578 328 C580 322 587 320 591 327 C595 333 590 341 578 349 Z" stroke-width="1.8" />
+        </g>
+
+        <g stroke="#d2a934" stroke-width="1.6" fill="none" stroke-dasharray="4 5" opacity="0.75">
+          <path d="M627 160 L742 196 M627 164 L742 244" />
+        </g>
+        <g transform="translate(742 207)" stroke="#d2a934" stroke-width="1.8" fill="#2c2820" stroke-linejoin="round">
+          <path d="M0 4 Q0 0 4 0 L16 0 L28 12 L16 24 L4 24 Q0 24 0 20 Z" />
+          <circle cx="7" cy="12" r="2" fill="#d2a934" stroke="none" />
+        </g>
+
+        <path d="M560 256 A40 9 0 0 0 640 256" stroke="#d2a934" stroke-width="1.8" fill="none" marker-end="url(#spin)" />
+        <path d="M560 252 A40 9 0 0 1 640 252" stroke="#d2a934" stroke-width="1.4" fill="none" stroke-dasharray="3 4" opacity="0.6" />
+
+        <g stroke="#d2a934" stroke-width="1.6" fill="none" stroke-linecap="round">
+          <path d="M490 246 V222 M490 222 L470 200 M490 222 L510 200" />
+          <path d="M470 200 L461 178 M470 200 L479 178" stroke-dasharray="3 4" opacity="0.6" />
+          <path d="M510 200 L501 178 M510 200 L519 178" />
+        </g>
+        <g fill="#d2a934">
+          <circle cx="490" cy="222" r="3.5" />
+          <circle cx="470" cy="200" r="3" opacity="0.6" />
+          <circle cx="510" cy="200" r="3.5" />
+          <circle cx="461" cy="178" r="3" opacity="0.6" />
+          <circle cx="479" cy="178" r="3" opacity="0.6" />
+          <circle cx="501" cy="178" r="3" opacity="0.6" />
+          <circle cx="519" cy="178" r="4.5" />
+        </g>
+
+        <g fill="#f3efe5">
+          <circle cx="566" cy="106" r="3.5" />
+          <circle cx="634" cy="106" r="3.5" />
+          <circle cx="490" cy="246" r="3.5" />
+          <circle cx="566" cy="336" r="3.5" />
+          <circle cx="650" cy="254" r="3.5" />
+        </g>
+      </svg>
+
+      <div class="node ic" style="left:70px; top:60px; width:310px; height:86px">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg></div>
+        <div class="title">Knowledge</div>
+        <div class="sub">A knowledge bank for each character</div>
+      </div>
+      <div class="node ic" style="left:70px; top:180px; width:310px; height:86px">
+        <div class="icon"><svg viewBox="0 0 24 24"><line x1="6" x2="6" y1="3" y2="15" /><circle cx="18" cy="6" r="3" /><circle cx="6" cy="18" r="3" /><path d="M18 9a9 9 0 0 1-9 9" /></svg></div>
+        <div class="title">Story tree</div>
+        <div class="sub">Narrative Design, one objective per section</div>
+      </div>
+      <div class="node ic" style="left:70px; top:300px; width:310px; height:86px">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5" /><path d="M20 21a8 8 0 0 0-16 0" /></svg></div>
+        <div class="title">Persona</div>
+        <div class="sub">Background and prompt, written by Gong</div>
+      </div>
+      <div class="node ic" style="left:820px; top:60px; width:310px; height:86px">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path d="M3 3v5h5" /><path d="M12 7v5l4 2" /></svg></div>
+        <div class="title">Memory</div>
+        <div class="sub">Convai long-term memory, plus a local note</div>
+      </div>
+      <div class="node ic" style="left:820px; top:180px; width:310px; height:86px">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg></div>
+        <div class="title">Sight</div>
+        <div class="sub">Text tags on the objects players hold</div>
+      </div>
+      <div class="node ic" style="left:820px; top:300px; width:310px; height:86px">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" /><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /><path d="M8 16H3v5" /></svg></div>
+        <div class="title">Actions</div>
+        <div class="sub">Nod, turn, look at an object</div>
+      </div>
+
+      <div class="panel" style="left:70px">
+        <svg class="wires" width="510" height="400">
+          <defs>
+            <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#d2a934" />
+            </marker>
+          </defs>
+          <g stroke="#d2a934" stroke-width="2" fill="none">
+            <path d="M255 162 V178 M135 178 H375" />
+            <path d="M135 178 V194" marker-end="url(#a)" />
+            <path d="M375 178 V194" marker-end="url(#a)" />
+            <path d="M135 238 V258" marker-end="url(#a)" />
+            <path d="M375 238 V258" marker-end="url(#a)" />
+            <path d="M375 304 V324" marker-end="url(#a)" />
+          </g>
+        </svg>
+        <div class="label">CLUES</div>
+        <div class="thumb" style="left:106px"><img src="../../public/before-evening/cue-poster.webp" /></div>
+        <div class="thumb" style="left:184px"><img src="../../public/before-evening/cue-record.webp" /></div>
+        <div class="thumb" style="left:262px"><img src="../../public/before-evening/cue-newspaper.webp" /></div>
+        <div class="thumb" style="left:340px"><img src="../../public/before-evening/cue-future-campus.webp" /></div>
+        <div class="chip" style="left:30px; top:198px; height:40px">
+          <svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>Mention it to a character
+        </div>
+        <div class="chip" style="left:30px; top:262px; height:58px">
+          <svg viewBox="0 0 24 24"><line x1="6" x2="6" y1="3" y2="15" /><circle cx="18" cy="6" r="3" /><circle cx="6" cy="18" r="3" /><path d="M18 9a9 9 0 0 1-9 9" /></svg>Story tree moves to the next section
+        </div>
+        <div class="chip" style="left:270px; top:198px; height:40px">
+          <svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0" /><path d="M14 10V4a2 2 0 0 0-4 0v2" /><path d="M10 10.5V6a2 2 0 0 0-4 0v8" /><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" /></svg>Hold it up to a character
+        </div>
+        <div class="chip" style="left:270px; top:262px; height:42px">
+          <svg viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /><circle cx="7.5" cy="7.5" r="1" /></svg>Character reads the text tag
+        </div>
+        <div class="chip" style="left:270px; top:328px; height:42px">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" /><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /><path d="M8 16H3v5" /></svg>Reacts with a Convai action
+        </div>
+      </div>
+
+      <div class="panel memory" style="left:620px">
+        <svg class="wires" width="510" height="400">
+          <defs>
+            <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#d2a934" />
+            </marker>
+            <marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#b8b09f" />
+            </marker>
+          </defs>
+          <g stroke="#d2a934" stroke-width="2" fill="none" marker-end="url(#b)">
+            <path d="M90 152 V172" />
+            <path d="M260 152 V172" />
+            <path d="M260 218 V238" />
+          </g>
+          <path d="M425 152 V172" stroke="#b8b09f" stroke-width="2" stroke-dasharray="4 4" fill="none" marker-end="url(#c)" />
+        </svg>
+        <div class="label">MEMORY</div>
+        <div class="chip" style="left:20px; top:94px; height:58px">
+          <svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>Each conversation
+        </div>
+        <div class="chip" style="left:20px; top:176px; height:58px">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5V19A9 3 0 0 0 21 19V5" /><path d="M3 12A9 3 0 0 0 21 12" /></svg>Convai long-term memory
+        </div>
+        <div class="chip wide" style="left:175px; top:94px; height:58px">
+          <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" x2="9" y1="12" y2="12" /></svg>Player leaves the character
+        </div>
+        <div class="chip wide" style="left:175px; top:176px; height:42px">
+          <svg viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2" /><line x1="12" x2="15" y1="14" y2="11" /><circle cx="12" cy="14" r="8" /></svg>After 5 minutes
+        </div>
+        <div class="chip wide" style="left:175px; top:242px; height:58px">
+          <svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>Timestamped local note, Obsidian-style
+        </div>
+        <div class="planned" style="left:360px; top:72px">PLANNED</div>
+        <div class="chip dashed narrow" style="left:360px; top:94px; height:58px">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>Device clock
+        </div>
+        <div class="chip dashed narrow" style="left:360px; top:176px; height:58px">
+          <svg viewBox="0 0 24 24"><path d="M5 22h14" /><path d="M5 2h14" /><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" /><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" /></svg>Passing of time
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

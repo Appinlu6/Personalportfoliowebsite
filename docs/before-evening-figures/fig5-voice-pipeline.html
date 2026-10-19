@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="figure.css" />
+    <style>
+      .canvas { width: 1200px; height: 470px; }
+      .node { width: 160px; height: 124px; top: 140px; justify-content: flex-start; padding: 16px 14px; }
+      .node .title { font-size: 17px; white-space: nowrap; }
+      .node .sub { font-size: 13.5px; }
+      .group, .fix, .total { position: absolute; text-align: center; }
+      .group { top: 84px; }
+      .fix { top: 300px; }
+      .total { top: 402px; font-size: 15px; color: #f3efe5; }
+    </style>
+  </head>
+  <body>
+    <div class="canvas">
+      <svg class="wires" width="1200" height="470">
+        <defs>
+          <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#d2a934" />
+          </marker>
+        </defs>
+        <g stroke="#d2a934" stroke-width="2" fill="none" marker-end="url(#a)">
+          <path d="M210 202 H234" />
+          <path d="M398 202 H422" />
+          <path d="M586 202 H610" />
+          <path d="M774 202 H798" />
+          <path d="M962 202 H986" />
+        </g>
+        <g stroke="rgba(243,239,229,0.3)" stroke-width="1.5" fill="none">
+          <path d="M238 128 V116 H774 V128" />
+          <path d="M802 128 V116 H1150 V128" />
+          <path d="M506 276 V292" stroke-dasharray="3 4" />
+          <path d="M882 276 V292" stroke-dasharray="3 4" />
+          <path d="M50 382 V394 H1150 V382" stroke="#d2a934" />
+        </g>
+      </svg>
+
+      <div class="label group" style="left:238px; width:536px">CONVAI</div>
+      <div class="label group" style="left:802px; width:348px">METAHUMAN IN UNREAL ENGINE 5</div>
+
+      <div class="node accent" style="left:50px">
+        <div class="title">Hold A</div>
+        <div class="sub">The player speaks</div>
+      </div>
+      <div class="node" style="left:238px">
+        <div class="title">Speech to text</div>
+        <div class="sub">Transcribes the question</div>
+      </div>
+      <div class="node" style="left:426px">
+        <div class="title">Agent answers</div>
+        <div class="sub">From its prompt, memory, and the story so far</div>
+      </div>
+      <div class="node" style="left:614px">
+        <div class="title">Text-to-speech</div>
+        <div class="sub">Voice cloned from a team member</div>
+      </div>
+      <div class="node" style="left:802px">
+        <div class="title">Audio2Face</div>
+        <div class="sub">Speech becomes facial blendshapes</div>
+      </div>
+      <div class="node accent" style="left:990px">
+        <div class="title">Playback</div>
+        <div class="sub">Lip-sync, gaze, and gesture</div>
+      </div>
+
+      <div class="note fix" style="left:306px; width:400px">Fix: engine version locked after<br />an update broke the Convai plugin</div>
+      <div class="note fix" style="left:712px; width:340px">Fix: long replies split into<br />segments to keep lip-sync</div>
+
+      <div class="total" style="left:50px; width:1100px; top:410px">3–4 s between finishing a question and hearing the answer</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="figure.css" />
+    <style>
+      .canvas { width: 1200px; height: 540px; }
+      .ops { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+    </style>
+  </head>
+  <body>
+    <div class="canvas">
+      <svg class="wires" width="1200" height="540">
+        <defs>
+          <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#d2a934" />
+          </marker>
+        </defs>
+        <g stroke="#d2a934" stroke-width="2" fill="none" marker-end="url(#a)">
+          <path d="M300 135 H354" />
+          <path d="M570 135 H624" />
+          <path d="M840 135 H894" />
+          <path d="M1005 180 V284" />
+          <path d="M630 380 H576" />
+          <path d="M360 380 H306" />
+          <path d="M195 335 V186" />
+        </g>
+      </svg>
+
+      <div class="node accent" style="left:90px; top:90px; width:210px; height:90px">
+        <div class="title">Me</div>
+        <div class="sub">Describe the change</div>
+      </div>
+      <div class="node" style="left:360px; top:90px; width:210px; height:90px">
+        <div class="title">PowerShell</div>
+        <div class="sub">On Windows</div>
+      </div>
+      <div class="node" style="left:630px; top:90px; width:210px; height:90px">
+        <div class="title">AI agent</div>
+        <div class="sub">Through the API</div>
+      </div>
+      <div class="node" style="left:900px; top:90px; width:210px; height:90px">
+        <div class="title">UE5 MCP server</div>
+        <div class="sub">Gives the agent the editor</div>
+      </div>
+
+      <div class="node" style="left:630px; top:290px; width:480px; height:180px; justify-content:flex-start; padding:22px 24px">
+        <div class="title">Unreal Engine 5 editor</div>
+        <div class="ops">
+          <div class="chip">Edit Blueprints</div>
+          <div class="chip">Change input mappings</div>
+          <div class="chip">Read logs</div>
+          <div class="chip">Change plugin settings</div>
+        </div>
+      </div>
+
+      <div class="node accent" style="left:360px; top:335px; width:210px; height:90px">
+        <div class="title">Test in the headset</div>
+        <div class="sub">Meta Quest 3</div>
+      </div>
+      <div class="node" style="left:90px; top:335px; width:210px; height:90px">
+        <div class="title">Keep or revert</div>
+        <div class="sub">Then the next change</div>
+      </div>
+    </div>
+  </body>
+</html>

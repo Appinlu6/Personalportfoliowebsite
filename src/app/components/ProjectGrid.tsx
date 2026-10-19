@@ -51,7 +51,7 @@ const projectCopyCN: Record<string, { title: string; year: string }> = {
     year: '2022 – 2023',
   },
   'before-evening-vr': {
-    title: 'Before Evening：VR 叙事游戏',
+    title: 'VR 悬疑游戏里的 MetaHuman 智能体',
     year: '2026 年 1 月 - 4 月',
   },
 };

@@ -81,7 +81,7 @@ export function CaseStudyThread({ slug }: { slug: string }) {
       </h2>
 
       <div className="mt-8 grid gap-6 md:mt-10 lg:grid-cols-12">
-        <div className="rounded-2xl border bg-white/60 p-6 md:p-7 lg:col-span-5" style={{ borderColor: border }}>
+        <div className="rounded-2xl border bg-[var(--project-thread-surface,rgba(255,255,255,0.6))] p-6 md:p-7 lg:col-span-5" style={{ borderColor: border }}>
           <p className="flex items-center gap-2 text-sm font-medium">
             <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: line.color }} aria-hidden="true" />
             {isCN ? line.labelCN : line.label}
@@ -102,7 +102,7 @@ export function CaseStudyThread({ slug }: { slug: string }) {
                   )}
                   <span
                     className="relative mt-1.5 h-[11px] w-[11px] flex-shrink-0 rounded-full border-2"
-                    style={{ borderColor: line.color, backgroundColor: current ? line.color : 'white' }}
+                    style={{ borderColor: line.color, backgroundColor: current ? line.color : 'var(--project-thread-dot, white)' }}
                     aria-hidden="true"
                   />
                   <div className="min-w-0">
@@ -119,7 +119,7 @@ export function CaseStudyThread({ slug }: { slug: string }) {
 
         <div className="grid content-start gap-5 lg:col-span-7">
           {next && (
-            <article className="rounded-2xl border bg-white/60 p-6 md:p-7" style={{ borderColor: border }}>
+            <article className="rounded-2xl border bg-[var(--project-thread-surface,rgba(255,255,255,0.6))] p-6 md:p-7" style={{ borderColor: border }}>
               <p className="text-sm font-medium text-[var(--project-accent)]">{isCN ? '这条线的下一站' : 'Next on this line'}</p>
               <h3 className="mt-3 text-xl font-medium tracking-[-0.02em]">
                 <ProjectLink project={next}>{label(next)}</ProjectLink>
@@ -133,7 +133,7 @@ export function CaseStudyThread({ slug }: { slug: string }) {
           {connections.map(({ link, other, outgoing }) => {
             const skill = link.skillId ? skillById.get(link.skillId) : undefined;
             return (
-              <article key={`${link.from}-${link.to}`} className="rounded-2xl border bg-white/60 p-6 md:p-7" style={{ borderColor: border }}>
+              <article key={`${link.from}-${link.to}`} className="rounded-2xl border bg-[var(--project-thread-surface,rgba(255,255,255,0.6))] p-6 md:p-7" style={{ borderColor: border }}>
                 <p className="text-sm font-medium text-[var(--project-accent)]">
                   {outgoing ? (isCN ? '延续到' : 'Carried forward to') : isCN ? '源自' : 'Built on'}
                 </p>
@@ -150,7 +150,7 @@ export function CaseStudyThread({ slug }: { slug: string }) {
             );
           })}
 
-          <div className="rounded-2xl border bg-white/60 p-6 md:p-7" style={{ borderColor: border }}>
+          <div className="rounded-2xl border bg-[var(--project-thread-surface,rgba(255,255,255,0.6))] p-6 md:p-7" style={{ borderColor: border }}>
             <p className="text-sm font-medium text-[var(--project-accent)]">{isCN ? '这个项目沉淀的能力' : 'Skills from this project'}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.skillIds.map((id) => {

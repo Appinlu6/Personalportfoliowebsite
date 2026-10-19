@@ -397,18 +397,18 @@ export const projects: Project[] = [
   },
   {
     id: 'before-evening',
-    label: 'Before Evening VR',
-    labelCN: 'Before Evening VR',
+    label: 'MetaHuman Agents',
+    labelCN: 'MetaHuman 智能体',
     roleId: 'polyu-msc',
     anchor: 2026.05,
-    line: 'human',
-    title: 'Before Evening: VR Narrative Game',
-    titleCN: 'Before Evening：VR 叙事游戏',
+    line: 'data',
+    title: 'MetaHuman Agents in a VR Mystery',
+    titleCN: 'VR 悬疑游戏里的 MetaHuman 智能体',
     period: 'Jan – Apr 2026',
     periodCN: '2026 年 1–4 月',
-    summary: 'A VR mystery where players speak naturally with AI-powered MetaHuman characters. I worked on project management, scene design, and VR interaction programming.',
-    summaryCN: 'VR 悬疑叙事游戏，玩家用自然语言与 AI 驱动的 MetaHuman 角色对话。我负责项目管理、场景设计与 VR 交互开发。',
-    skillIds: ['conversational-ai', 'ai-product'],
+    summary: 'A VR mystery where players question AI characters out loud. I designed the agent structure, connected Convai to MetaHuman, and developed it in Unreal Engine 5 through MCP.',
+    summaryCN: 'VR 悬疑叙事游戏，玩家直接开口向 AI 角色提问。我设计了智能体结构，把 Convai 接入 MetaHuman，并通过 MCP 在 Unreal Engine 5 里完成开发。',
+    skillIds: ['conversational-ai', 'agent-framework', 'ai-product'],
     caseStudySlug: 'before-evening-vr',
   },
   {
@@ -461,8 +461,8 @@ export const projects: Project[] = [
 
 /** Ordered ridge of each main line, bottom to top. Growth & Business ends at Yi'an, where the business side meets AI health. */
 export const ridges: Record<MountainLineId, string[]> = {
-  human: ['healthcare-service-design', 'before-evening', 'bauhinia-mind', 'phd-research'],
-  data: ['smart-hospital', 'smart-marathon', 'micision', 'mandarin', 'multimodal-har', 'phd-research'],
+  human: ['healthcare-service-design', 'bauhinia-mind', 'phd-research'],
+  data: ['smart-hospital', 'smart-marathon', 'micision', 'mandarin', 'before-evening', 'multimodal-har', 'phd-research'],
   growth: ['marketing-cloud', 'lark', 'chillttoo-products', 'chillttoo-community', 'multimodal-har'],
 };
 

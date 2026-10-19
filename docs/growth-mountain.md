@@ -87,7 +87,7 @@ Growth & Business 这条线的终点是熠安可创（多模态活动识别）�
 | P8 | 2023–2025 | IP 文创产品（含产品设计） | R5 | Growth & Business | 汽车文化 IP 文创：磁吸贴、贴纸、汽车挂件，从概念到产品设计；60+ SKU，5 个爆款单款破万 |
 | P9 | 2023–2025 | 用户社群 | R5 | Growth & Business | 小红书 12,000+ 粉丝，淘宝双皇冠店铺近 1 万粉丝 |
 | P10 | 2025.10–11 | Mandarin 文化演变 | R6 | Data → Intelligence | 语料库 + NLP + 交互可视化 |
-| P11 | 2026.01–04 | Before Evening VR | R6 | Human-Centered | 与 AI 驱动的 MetaHuman 角色自然对话的 VR 叙事游戏 |
+| P11 | 2026.01–04 | MetaHuman Agents | R6 | Data → Intelligence | 与 AI 驱动的 MetaHuman 角色自然对话的 VR 叙事游戏 |
 | P12 | 2026.01–04 | 紫荆心智（A+ 毕业项目） | R6 | Human-Centered | 面向在港内地学生、具备共情与记忆的 AI 健康伙伴 |
 | P13 | 2026.10 至今 | 多模态活动识别 | R8 | Data → Intelligence | 可穿戴传感器 × 大模型的人体活动识别；微调与评估；AI 系统架构 |
 | P14 | 2026 至今 | 博士研究 | R7 | 三线汇聚（山顶） | Agentic AI、健康与康复多模态学习、数字健康管理、跨文化就医导航、自适应情感与信息支持 |
