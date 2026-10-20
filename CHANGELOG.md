@@ -4,6 +4,13 @@
 
 ## 2026-10-20
 
+### Bauhinia-Mind 补上验证、成绩评语，以及毕业设计之后的研究计划（`/work/bauhinia-mind`）
+
+- **聚类：** 五个维度收成三个的那句，放在 Pattern Clustering 图下面。Information 与 Decision 收成 Information，Culture 仍是 Culture，Emotion 与 Support 收成 Emotion。问卷图换成高清版。
+- **Validation：** 准确率测试按结题报告写 30 题，Hybrid GraphRAG + Neo4j 86.7%，纯向量 RAG 80.0%，柱状图紧跟在这段下面。三条个案标题改为 User Cases。王筱雨配她自己的手机视角视频，刘依然、赵明泽各一张文字卡。
+- **Impact：** 去掉 Core Discovery、Data and Validation Snapshot 和 Next plan。A+ 独占一张通栏卡片，两位评委的金句放在成绩下面，署名对齐。
+- **Reflections & Future Work：** 写成从这份毕业设计延伸出的研究计划 CuraBridge。文化东道主还在，研究对象扩到大陆背景的患者和接诊他们的医护。
+
 ### Bauhinia-Mind 案例页 User Research 重做（`/work/bauhinia-mind`）
 
 - **调研说明：** Research Approach 补一句调研方式：2026 年 1 月飞书匿名问卷，15 位在港内地学生（本硕博，19–28 岁，均不会粤语）。

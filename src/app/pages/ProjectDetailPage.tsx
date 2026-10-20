@@ -106,24 +106,6 @@ const methodologyMapping = [
   },
 ];
 
-const researchInsights = [
-  {
-    label: 'Fragmented but Authoritative Support',
-    value:
-      'Hospital Authority and university channels are reliable but fragmented and non-conversational, making urgent decisions difficult to execute in real time.',
-  },
-  {
-    label: 'Cross-Cultural Pathway Mismatch',
-    value:
-      "Mainland-to-Hong Kong differences in GP-first triage, public/private routing, and insurance logic increase cognitive load when students are already unwell.",
-  },
-  {
-    label: 'Design Imperative',
-    value:
-      'A trustworthy companion must combine emotional reassurance with executable medical next steps, rather than providing one without the other.',
-  },
-];
-
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const { isCN } = useLanguage();
@@ -239,8 +221,6 @@ function CaseStudyLoading() {
 }
 
 function BauhiniaMind() {
-  const { isCN } = useLanguage();
-
   return (
     <LocalizedContent translations={bauhiniaMindTranslations}>
       <article
@@ -405,12 +385,6 @@ function BauhiniaMind() {
                   Mainland Chinese students in Hong Kong face a dual challenge: practical uncertainty in navigating
                   an unfamiliar healthcare system and emotional stress caused by cross-cultural transition.
                 </p>
-                <p>
-                  Through qualitative profiling of 15 students, the research identified a recurring systemic gap:
-                  when health issues emerge, users are forced to choose between fragmented institutional information
-                  and generic emotional reassurance, with no integrated pathway that combines empathy and executable
-                  next steps.
-                </p>
               </div>
             </div>
             <div className="mb-6 overflow-hidden rounded-[0.625rem] bg-white/70">
@@ -494,7 +468,7 @@ function BauhiniaMind() {
                   label="Response overview: 15 valid answers"
                   caption="Response overview"
                   ratio="4:3"
-                  imageSrc="/research-survey-overview.webp"
+                  imageSrc="/research-survey-overview-hd.png"
                   fit="contain"
                 />
                 <FigPlaceholder
@@ -502,7 +476,7 @@ function BauhiniaMind() {
                   label="Scale and multiple-choice results"
                   caption="Scale and multiple choice"
                   ratio="4:3"
-                  imageSrc="/research-survey-stats.webp"
+                  imageSrc="/research-survey-stats-hd.png"
                   fit="contain"
                 />
                 <FigPlaceholder
@@ -510,18 +484,25 @@ function BauhiniaMind() {
                   label="Open-ended answers and recurring themes"
                   caption="Open-ended answers"
                   ratio="4:3"
-                  imageSrc="/research-survey-open-ended.webp"
+                  imageSrc="/research-survey-open-ended-hd.png"
                   fit="contain"
                 />
               </div>
               <FigPlaceholder
                 id="R4"
                 label="Pattern clustering of survey responses into information, cultural and emotional gaps"
-                ratio="4:3"
-                imageSrc="/research-synthesis.webp"
+                ratio="3:2"
+                imageSrc="/research-pattern-clustering-hd.png"
                 fit="contain"
-                className="mb-8"
+                className="mb-4"
               />
+              <p
+                className="mb-8 text-[15px] leading-[1.75] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                Clustering the survey responses folded the five dimensions into three. Information and Decision
+                became Information. Culture stayed Culture. Emotion and Support became Emotion.
+              </p>
               <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                 Market Research & Benchmark Matrix
               </p>
@@ -567,16 +548,10 @@ function BauhiniaMind() {
                     className="text-[15px] leading-[1.75] text-foreground"
                     style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                   >
-                    Bauhinia-Mind addresses this gap by acting as a non-clinical cultural host, connecting reliable
-                    local information with emotional understanding and clear next steps.
+                    The opportunity I am exploring is a non-clinical cultural host: reliable local information,
+                    emotional understanding, and a clear next step, in one place.
                   </p>
                 </div>
-                <p
-                  className="text-[15px] leading-[1.75] text-foreground"
-                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
-                >
-                  From fragmented support → to an integrated, grounded, empathetic, and actionable pathway.
-                </p>
               </div>
             </div>
             <div className="bg-text hidden not-prose rounded-[1rem] border border-white/65 bg-white/68 p-8 md:p-10">
@@ -593,10 +568,7 @@ function BauhiniaMind() {
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
                   Mainland Chinese students in Hong Kong face a dual challenge: practical uncertainty in navigating
-                  an unfamiliar healthcare system and emotional stress caused by cross-cultural transition. Through
-                  qualitative profiling of 15 students, the research identified a recurring systemic gap: when health
-                  issues emerge, users are forced to choose between fragmented institutional information and generic
-                  emotional reassurance, with no integrated pathway that combines empathy and executable next steps.
+                  an unfamiliar healthcare system and emotional stress caused by cross-cultural transition.
                 </p>
 
                 <div className="mt-4 flex flex-col gap-3">
@@ -1195,129 +1167,34 @@ function BauhiniaMind() {
           </CaseSection>
 
           <CaseSection title="Validation">
-            <p className="mb-6 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
-              User journeys are used as validation narratives to test whether the system can connect emotional
-              reassurance, localized medical navigation, and safety-aware decision support in realistic situations.
+            <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+              Accuracy test
             </p>
-            <div className="space-y-12">
-              {/* journey 1 — image left */}
-              <div className="grid items-center gap-8 md:grid-cols-[0.7fr_1fr]">
-                <FigPlaceholder
-                  id="Fig 10A"
-                  label="Journey UI · onboarding flow"
-                  ratio="9:16"
-                  caption="Fig 10A — Onboarding journey (placeholder)"
-                />
-                <CopySlot label="Journey A · onboarding narrative · what the newcomer sees in the first 60 seconds · 1–2 paragraphs" />
-              </div>
-              {/* journey 2 — image right */}
-              <div className="grid items-center gap-8 md:grid-cols-[1fr_0.7fr]">
-                <CopySlot label="Journey B · in-moment help narrative · the late-night symptom check flow · 1–2 paragraphs" />
-                <FigPlaceholder
-                  id="Fig 10B"
-                  label="Journey UI · symptom-check flow"
-                  ratio="9:16"
-                  caption="Fig 10B — Symptom-check journey (placeholder)"
-                />
-              </div>
+            <div className="mb-6 space-y-4">
+              <p
+                className="text-[15px] leading-[1.75] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                A formal accuracy test used 30 realistic queries covering common symptoms, triage, campus health
+                services, medication guidance, and emotional support.
+              </p>
+              <p
+                className="text-[15px] leading-[1.75] text-foreground"
+                style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+              >
+                Hybrid GraphRAG + Neo4j reached 86.7% pathway correctness. Vector-only RAG reached 80.0%. The
+                hybrid result was 6.7 points higher. The report attributes that gap to structured reasoning in
+                Neo4j together with semantic retrieval in Supabase pgvector.
+              </p>
             </div>
-          </CaseSection>
-
-          <CaseSection title="Impact & Outcomes">
-            <p className="mb-12 w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
-              Preliminary pilot testing with 45 students over 4 weeks showed statistically significant
-              improvements in self-reported anxiety and depression symptoms. The platform received a System
-              Usability Scale score of 82.5, indicating excellent usability. The project received Grade A+
-              for the MSc capstone and is currently under consideration for implementation at partner universities.
-            </p>
-
-            <motion.div
-              className="mb-12 grid gap-8 md:grid-cols-[1.15fr_0.85fr]"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 'some', margin: '0px 0px 28% 0px' }}
-              variants={stagger}
-            >
-              <motion.div variants={fadeUp} className="rounded-[1rem] border border-white/65 bg-white/44 p-8">
-                <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                  Core Discovery
-                </p>
-                <div className="divide-y divide-[rgba(122,16,35,0.14)]">
-                  {researchInsights.map((insight) => (
-                    <div key={insight.label} className="grid gap-3 py-5 md:grid-cols-[0.35fr_0.65fr]">
-                      <p className="text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">{insight.label}</p>
-                      <p className="text-sm leading-relaxed text-foreground">{insight.value}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div variants={fadeUp} className="rounded-[1rem] bg-white/60 p-8">
-                <p className="mb-3 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
-                  Data and Validation Snapshot
-                </p>
-                <div className="space-y-4 text-sm leading-relaxed text-foreground">
-                  <p>
-                    {isCN ? (
-                      <>已处理 <strong>30</strong> 份香港本地医疗资料，并基于 1,592 个三元组构建包含 <strong>1,188 个节点</strong>、<strong>1,733 条关系</strong>的 Neo4j 图谱。</>
-                    ) : (
-                      <>Processed <strong>30</strong> localized medical documents and constructed a Neo4j graph with <strong>1,188 nodes</strong> and <strong>1,733 relations</strong> (from 1,592 extracted triples).</>
-                    )}
-                  </p>
-                  <p>
-                    {isCN ? (
-                      <>混合 GraphRAG 的路径正确率为 <strong>86.7%</strong>，高于纯向量检索的 <strong>80.0%</strong>；端到端平均延迟低于 <strong>2.5 秒</strong>。</>
-                    ) : (
-                      <>Hybrid GraphRAG achieved <strong>86.7%</strong> pathway correctness versus <strong>80.0%</strong> for vector-only retrieval, with average end-to-end latency under <strong>2.5s</strong>.</>
-                    )}
-                  </p>
-                  <p className="text-[var(--bm-slate)]">
-                    These findings directly informed the later system architecture, safety design, and output formatting.
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* big stat blocks */}
-            <div className="mb-12 grid gap-6 md:grid-cols-3">
-              <div className="rounded-[0.75rem] bg-white/60 p-6">
-                <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-                  Pilot sample
-                </p>
-                <p className="text-[var(--bm-red)]" style={{ fontSize: '3rem', lineHeight: '1.05' }}>
-                  45
-                </p>
-                <p className="mt-1 text-sm text-[var(--bm-slate)]">students · 4 weeks</p>
-              </div>
-              <div className="rounded-[0.75rem] bg-white/60 p-6">
-                <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-                  SUS score
-                </p>
-                <p className="text-[var(--bm-red)]" style={{ fontSize: '3rem', lineHeight: '1.05' }}>
-                  82.5
-                </p>
-                <p className="mt-1 text-sm text-[var(--bm-slate)]">excellent usability</p>
-              </div>
-              <div className="rounded-[0.75rem] bg-white/60 p-6">
-                <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-                  Capstone grade
-                </p>
-                <p className="text-[var(--bm-red)]" style={{ fontSize: '3rem', lineHeight: '1.05' }}>
-                  A+
-                </p>
-                <p className="mt-1 text-sm text-[var(--bm-slate)]">MScGAH · PolyU</p>
-              </div>
-            </div>
-
-            {/* 86.7 vs 80 comparison bar */}
-            <div className="rounded-[1rem] bg-white/55 p-8">
+            <div className="mb-10 rounded-[1rem] bg-white/55 p-8">
               <p className="mb-6 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-                [ Metric label · what 86.7% vs 80% measures · TBD ]
+                Pathway correctness on 30 queries
               </p>
               <div className="space-y-5">
                 <div>
                   <div className="mb-2 flex items-baseline justify-between">
-                    <span className="text-sm text-foreground">Bauhinia-Mind</span>
+                    <span className="text-sm text-foreground">Hybrid GraphRAG + Neo4j</span>
                     <span className="text-xl italic text-[var(--bm-red)]">86.7%</span>
                   </div>
                   <div className="h-3 overflow-hidden rounded-full bg-white/70">
@@ -1326,27 +1203,119 @@ function BauhiniaMind() {
                 </div>
                 <div>
                   <div className="mb-2 flex items-baseline justify-between">
-                    <span className="text-sm text-[var(--bm-slate)]">Baseline</span>
-                    <span className="text-xl italic text-[var(--bm-slate)]">80%</span>
+                    <span className="text-sm text-[var(--bm-slate)]">Vector-only RAG</span>
+                    <span className="text-xl italic text-[var(--bm-slate)]">80.0%</span>
                   </div>
                   <div className="h-3 overflow-hidden rounded-full bg-white/70">
                     <div className="h-full rounded-full bg-[var(--bm-slate)]/70" style={{ width: '80%' }} />
                   </div>
                 </div>
               </div>
-              <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-                Fig 09 — Bauhinia-Mind vs baseline (placeholder metric)
-              </figcaption>
+            </div>
+            <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
+              User Cases
+            </p>
+            <div className="mb-6 grid items-start gap-6 lg:grid-cols-[1.45fr_0.75fr]">
+              <figure>
+                <div className="aspect-[16/9] overflow-hidden rounded-[0.625rem] bg-black/5">
+                  <video
+                    className="h-full w-full"
+                    controls
+                    preload="metadata"
+                    poster="/videos/bauhinia-wang-xiaoyu-cover.jpg"
+                  >
+                    <source src="/videos/bauhinia-wang-xiaoyu.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <figcaption className="mt-3 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+                  Wang Xiaoyu's view, on her phone at the desk
+                </figcaption>
+              </figure>
+              <div className="rounded-[1rem] bg-white/60 p-6">
+                <p className="mb-3 text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">Wang Xiaoyu · 19</p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  A first-year student who had just arrived in Hong Kong woke at night with severe stomach pain.
+                  The system returned a triage pathway and an action card. The next day she bought 胃仙 U and did
+                  not go to A&E overnight.
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="rounded-[1rem] bg-white/60 p-6">
+                <p className="mb-3 text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">Liu Yiran · 23</p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  A first-year postgraduate was dealing with homesickness and academic pressure. On her second
+                  login, the system greeted her from memory.
+                </p>
+              </div>
+              <div className="rounded-[1rem] bg-white/60 p-6">
+                <p className="mb-3 text-xs uppercase tracking-[0.16em] text-[var(--bm-slate)]">Zhao Mingze · 21</p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  A second-year undergraduate came back with recurring allergic rhinitis. The system remembered a
+                  consultation from two weeks earlier.
+                </p>
+              </div>
             </div>
           </CaseSection>
 
+          <CaseSection title="Impact & Outcomes">
+            <div className="mb-12 rounded-[0.75rem] bg-white/60 p-6 md:p-8">
+              <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
+                Capstone grade
+              </p>
+              <p className="text-[var(--bm-red)]" style={{ fontSize: '3rem', lineHeight: '1.05' }}>
+                A+
+              </p>
+              <p className="mt-1 text-sm text-[var(--bm-slate)]">MScGAH · PolyU</p>
+              <div className="mt-6 grid items-stretch gap-6 border-t border-[rgba(122,16,35,0.14)] pt-6 md:grid-cols-2 md:gap-8">
+                <figure className="flex h-full flex-col">
+                  <blockquote className="text-[13px] leading-[1.65] text-[var(--bm-wine)]">
+                    “This is an impressive and impactful piece of work that demonstrates a thoughtful balance
+                    between advanced AI technologies and deep humanistic understanding.”
+                  </blockquote>
+                  <figcaption className="mt-auto pt-3 text-[10px] uppercase tracking-[0.18em] text-[var(--bm-slate)]">
+                    First marker
+                  </figcaption>
+                </figure>
+                <figure className="flex h-full flex-col border-t border-[rgba(122,16,35,0.14)] pt-5 md:border-t-0 md:border-l md:pl-8 md:pt-0">
+                  <blockquote className="text-[13px] leading-[1.65] text-[var(--bm-wine)]">
+                    “The design does not treat AI as a generic chatbot, but builds a structured, safety-aware
+                    companion grounded in local Hong Kong healthcare resources and realistic student needs.”
+                  </blockquote>
+                  <figcaption className="mt-auto pt-3 text-[10px] uppercase tracking-[0.18em] text-[var(--bm-slate)]">
+                    Second marker
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+          </CaseSection>
+
           <CaseSection title="Reflections & Future Work">
-            <p className="w-full max-w-none leading-relaxed text-[var(--bm-slate)]">
-              This project reinforced the importance of co-design with clinical stakeholders and the necessity
-              of rigorous ethical frameworks when designing AI-driven health interventions. Future iterations
-              will explore peer support features, integration with wearable devices for passive symptom monitoring,
-              and expanded culturally-adapted content for diverse student populations across Asia.
-            </p>
+            <div className="w-full max-w-none space-y-4 leading-relaxed text-[var(--bm-slate)]">
+              <p>
+                Bauhinia-Mind asked whether conversational AI can act as a cultural host for Mainland Chinese students
+                seeking care in Hong Kong. The system only sat on the student's side.
+              </p>
+              <p>
+                The plan that extends from this is called CuraBridge. The cultural-host role stays, and the research
+                subjects expand to Mainland-background patients and the clinicians who see them. The platform would
+                offer culturally sensitive navigation and emotional company, remember a person across visits, and take
+                feedback from both sides back into retrieval and reply. From that loop I want three things: an
+                explainable model of cross-cultural care, a Living Prototype that keeps revising itself, and a dataset
+                drawn from both sides.
+              </p>
+            </div>
           </CaseSection>
         </div>
 
@@ -1610,17 +1579,5 @@ function FigPlaceholder({
         </figcaption>
       ) : null}
     </figure>
-  );
-}
-
-function CopySlot({ label }: { label: string }) {
-  const { isCN } = useLanguage();
-
-  return (
-    <div className="rounded-[0.75rem] border border-dashed border-[rgba(122,16,35,0.18)] bg-white/30 p-6">
-      <p className="text-xs uppercase tracking-[0.22em] text-[var(--bm-slate)]">
-        [ {isCN ? '文案占位' : 'Copy slot'} · {label} ]
-      </p>
-    </div>
   );
 }

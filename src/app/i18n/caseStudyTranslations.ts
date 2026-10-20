@@ -1262,6 +1262,8 @@ export const bauhiniaMindTranslations: TranslationMap = {
     '问卷围绕完整的求医旅程展开。',
   'The framework examines each stage through five UX dimensions—Information, Decision, Culture, Emotion, and Support—to identify where uncertainty, friction, and emotional stress emerge.':
     '研究从信息、决策、文化、情绪和支持五个体验维度审视每个阶段，寻找不确定、阻碍与情绪压力出现的位置。',
+  'Clustering the survey responses folded the five dimensions into three. Information and Decision became Information. Culture stayed Culture. Emotion and Support became Emotion.':
+    '问卷回答聚类之后，五个维度收成三个。信息和决策收成信息，文化仍是文化，情绪和支持收成情绪。',
   "I ran it as an anonymous survey on Lark Forms in January 2026. Fifteen Mainland students in Hong Kong responded: undergraduate, master's and PhD students aged 19 to 28, none of whom speak Cantonese.":
     '2026 年 1 月，我用飞书问卷发起了匿名调研，共收到 15 位在港内地学生的回答，覆盖本科、硕士和博士，年龄 19–28 岁，没有人会说粤语。',
   'Survey Results': '问卷结果',
@@ -1278,8 +1280,8 @@ export const bauhiniaMindTranslations: TranslationMap = {
   'Market Research & Benchmark Matrix': '市场研究与竞品矩阵',
   'Across the four reviewed services, public documentation covers each dimension somewhere, but none documents HK care navigation and ongoing conversational support together. Bauhinia-Mind is designed for that combination; the positioning is a design target, not a validated result.':
     '在评估的四项服务中，每个维度都有服务在公开文档里覆盖到，但没有一项同时记录了香港本地就医导航和持续的对话支持。紫荆心智针对的正是这种组合；图中的定位是设计目标，尚未经过验证。',
-  'Bauhinia-Mind addresses this gap by acting as a non-clinical cultural host, connecting reliable local information with emotional understanding and clear next steps.':
-    '紫荆心智以非临床文化向导的角色，将可靠的本地信息、情绪理解与清晰的下一步连接起来。',
+  'The opportunity I am exploring is a non-clinical cultural host: reliable local information, emotional understanding, and a clear next step, in one place.':
+    '我在探索的机会是一个非临床的文化东道主：把可靠的本地信息、情绪理解和清晰的下一步放在同一个地方。',
   'From fragmented support → to an integrated, grounded, empathetic, and actionable pathway.':
     '最终形成一条有依据、能共情、可行动的完整支持路径。',
   'Related work': '相关研究',
@@ -1386,27 +1388,28 @@ export const bauhiniaMindTranslations: TranslationMap = {
   'Non-diagnostic boundaries, high-risk escalation, PII redaction, and audit logging keep the system appropriate for healthcare-adjacent use.':
     '非诊断边界、高风险升级、个人信息脱敏与审计日志，让系统适合用于健康相关场景。',
   Validation: '验证',
-  'User journeys are used as validation narratives to test whether the system can connect emotional reassurance, localized medical navigation, and safety-aware decision support in realistic situations.':
-    '我们以用户旅程作为验证叙事，测试系统能否在真实情境中连接情绪支持、本地就医导航与具备安全意识的决策支持。',
-  '[ Fig 10A · Journey UI · onboarding flow · 9:16 ]': '[ 图 10A · 旅程界面 · 新用户引导 · 9:16 ]',
-  'Journey UI · onboarding flow': '旅程界面 · 新用户引导',
-  'Fig 10A — Onboarding journey (placeholder)': '图 10A — 新用户引导旅程（占位）',
-  'FIG 10A — ONBOARDING JOURNEY (PLACEHOLDER)': '图 10A — 新用户引导旅程（占位）',
-  '[ COPY SLOT · JOURNEY A · ONBOARDING NARRATIVE · WHAT THE NEWCOMER SEES IN THE FIRST 60 SECONDS · 1–2 PARAGRAPHS ]':
-    '[ 文案占位 · 旅程 A · 新用户引导叙事 · 初次使用的 60 秒 · 1–2 段 ]',
-  'Journey A · onboarding narrative · what the newcomer sees in the first 60 seconds · 1–2 paragraphs':
-    '旅程 A · 新用户引导叙事 · 初次使用的 60 秒 · 1–2 段',
-  '[ COPY SLOT · JOURNEY B · IN-MOMENT HELP NARRATIVE · THE LATE-NIGHT SYMPTOM CHECK FLOW · 1–2 PARAGRAPHS ]':
-    '[ 文案占位 · 旅程 B · 即时帮助叙事 · 深夜症状查询流程 · 1–2 段 ]',
-  'Journey B · in-moment help narrative · the late-night symptom check flow · 1–2 paragraphs':
-    '旅程 B · 即时帮助叙事 · 深夜症状查询流程 · 1–2 段',
-  '[ Fig 10B · Journey UI · symptom-check flow · 9:16 ]': '[ 图 10B · 旅程界面 · 症状查询流程 · 9:16 ]',
-  'Journey UI · symptom-check flow': '旅程界面 · 症状查询流程',
-  'Fig 10B — Symptom-check journey (placeholder)': '图 10B — 症状查询旅程（占位）',
-  'FIG 10B — SYMPTOM-CHECK JOURNEY (PLACEHOLDER)': '图 10B — 症状查询旅程（占位）',
+  'Accuracy test': '准确率测试',
+  'A formal accuracy test used 30 realistic queries covering common symptoms, triage, campus health services, medication guidance, and emotional support.':
+    '准确率测试用了 30 条贴近真实情况的问题，覆盖常见症状、分诊、校内医疗服务、用药指引和情绪支持。',
+  'Hybrid GraphRAG + Neo4j reached 86.7% pathway correctness. Vector-only RAG reached 80.0%. The hybrid result was 6.7 points higher. The report attributes that gap to structured reasoning in Neo4j together with semantic retrieval in Supabase pgvector.':
+    'Hybrid GraphRAG + Neo4j 的路径正确率是 86.7%，纯向量 RAG 是 80.0%，混合方案高 6.7 个百分点。报告把这个差距归因于 Neo4j 的结构化推理，加上 Supabase pgvector 的语义检索。',
+  'User testing': '用户测试',
+  Cases: '案例',
+  'User Cases': '用户案例',
+  "Wang Xiaoyu's view, on her phone at the desk": '王筱雨的视角，她在桌前用手机查看',
+  'Wang Xiaoyu · 19': '王筱雨 · 19 岁',
+  'A first-year student who had just arrived in Hong Kong woke at night with severe stomach pain. The system returned a triage pathway and an action card. The next day she bought 胃仙 U and did not go to A&E overnight.':
+    '刚到港的一年级学生，半夜胃痛。系统给出分诊路径和行动卡。第二天她买了胃仙 U，没有去深夜急症室。',
+  'Liu Yiran · 23': '刘依然 · 23 岁',
+  'A first-year postgraduate was dealing with homesickness and academic pressure. On her second login, the system greeted her from memory.':
+    '研一，面对想家和学业压力。第二次登录时，系统凭记忆主动问候。',
+  'Zhao Mingze · 21': '赵明泽 · 21 岁',
+  'A second-year undergraduate came back with recurring allergic rhinitis. The system remembered a consultation from two weeks earlier.':
+    '大二，过敏性鼻炎复发后又来咨询。系统记得两周前的那次对话。',
   'Impact & Outcomes': '影响与成果',
-  'Preliminary pilot testing with 45 students over 4 weeks showed statistically significant improvements in self-reported anxiety and depression symptoms. The platform received a System Usability Scale score of 82.5, indicating excellent usability. The project received Grade A+ for the MSc capstone and is currently under consideration for implementation at partner universities.':
-    '为期四周、共 45 名学生参与的初步试点显示，参与者自述的焦虑与抑郁症状有统计显著改善。平台的系统可用性量表得分为 82.5，达到优秀水平。项目获得硕士毕业项目 A+，并正在与合作院校讨论落地可能。',
+  'Next plan': '下一步计划',
+  'Usability testing with 50 Mainland Chinese students at PolyU, then Hit@K, pathway correctness, hallucination rate, latency, and a perceived empathy score. After that, a richer memory layer and a public web deployment.':
+    '下一轮先在理大做 50 名内地学生的可用性测试，再测 Hit@K、路径正确率、幻觉率、延迟和主观共情感。之后扩展记忆层，并做成公开网页。',
   'Core Discovery': '核心发现',
   'FRAGMENTED BUT AUTHORITATIVE SUPPORT': '可靠但碎片化的支持',
   'Fragmented but Authoritative Support': '可靠但碎片化的支持',
@@ -1425,24 +1428,43 @@ export const bauhiniaMindTranslations: TranslationMap = {
     '处理 30 份香港本地医疗资料，并基于 1,592 个抽取三元组构建包含 1,188 个节点、1,733 条关系的 Neo4j 图谱。',
   'Hybrid GraphRAG achieved 86.7% pathway correctness versus 80.0% for vector-only retrieval, with average end-to-end latency under 2.5s.':
     '混合 GraphRAG 的路径正确率为 86.7%，高于纯向量检索的 80.0%；端到端平均延迟低于 2.5 秒。',
-  'These findings directly informed the later system architecture, safety design, and output formatting.':
-    '这些结果直接影响了后续系统架构、安全设计与输出格式。',
+  'The architecture came first. I then collected 30 localized Hong Kong medical documents and ran them through GraphRAG and Neo4j, which produced 1,592 triples, 1,188 nodes, and 1,733 relations. Average end-to-end latency stayed under 2.5 seconds.':
+    '架构先定下来。然后收集了 30 份香港本地医疗资料，再跑 GraphRAG 和 Neo4j，得到 1,592 个三元组、1,188 个节点和 1,733 条关系。端到端平均延迟低于 2.5 秒。',
   'PILOT SAMPLE': '试点样本',
-  'Pilot sample': '试点样本',
-  'students · 4 weeks': '名学生 · 4 周',
+  'Planned pilot': '计划中的试点',
+  'students · 4 weeks · not yet run': '名学生 · 4 周 · 尚未开始',
   'SUS SCORE': 'SUS 得分',
-  'SUS score': 'SUS 得分',
-  'excellent usability': '可用性优秀',
+  'SUS target': 'SUS 目标',
+  'planned, not yet measured': '计划目标，尚未测量',
   'CAPSTONE GRADE': '毕业项目成绩',
   'Capstone grade': '毕业项目成绩',
   'MScGAH · PolyU': '生成式 AI 与人文学硕士 · 香港理工大学',
+  '“This is an impressive and impactful piece of work that demonstrates a thoughtful balance between advanced AI technologies and deep humanistic understanding.”':
+    '“这是一份令人印象深刻、也有实际影响的作品，在先进的 AI 技术与深厚的人文理解之间取得了审慎的平衡。”',
+  'First marker': '第一评阅人',
+  '“The design does not treat AI as a generic chatbot, but builds a structured, safety-aware companion grounded in local Hong Kong healthcare resources and realistic student needs.”':
+    '“设计没有把 AI 当成通用聊天机器人，而是做成了一个有结构、有安全意识的陪伴者，立足香港本地医疗资源，也贴合学生的真实需要。”',
+  'Second marker': '第二评阅人',
   '[ METRIC LABEL · WHAT 86.7% VS 80% MEASURES · TBD ]': '[ 指标说明 · 86.7% 与 80% 的比较维度 · 待补充 ]',
+  'Pathway correctness on 30 queries': '30 条问题上的路径正确率',
+  'Hybrid GraphRAG + Neo4j': '混合 GraphRAG + Neo4j',
+  'Vector-only RAG': '纯向量 RAG',
   '[ Metric label · what 86.7% vs 80% measures · TBD ]': '[ 指标说明 · 86.7% 与 80% 的比较维度 · 待补充 ]',
-  'Metric label · what 86.7% vs 80% measures · TBD': '指标说明 · 86.7% 与 80% 的比较维度 · 待补充',
   Baseline: '基线',
   'FIG 09 — BAUHINIA-MIND VS BASELINE (PLACEHOLDER METRIC)': '图 09 — 紫荆心智与基线比较（指标占位）',
+  'Hybrid GraphRAG against vector-only retrieval': '混合 GraphRAG 与纯向量检索的比较',
   'Fig 09 — Bauhinia-Mind vs baseline (placeholder metric)': '图 09 — 紫荆心智与基线比较（指标占位）',
   'Reflections & Future Work': '反思与下一步',
-  'This project reinforced the importance of co-design with clinical stakeholders and the necessity of rigorous ethical frameworks when designing AI-driven health interventions. Future iterations will explore peer support features, integration with wearable devices for passive symptom monitoring, and expanded culturally-adapted content for diverse student populations across Asia.':
-    '这个项目让我更确认，与临床相关方共同设计以及建立严格伦理框架，是 AI 健康干预不可省略的部分。后续将探索同伴支持、可穿戴设备的被动症状监测，并为亚洲不同学生群体扩展更贴近其文化背景的内容。',
+  'This project pointed me toward a research question: whether conversational AI can act as a cultural host in cross-cultural healthcare, and whether that role can narrow the cultural distance.':
+    '这个项目给我的启发，是一个研究方向：对话式 AI 在跨文化就医里能否扮演文化东道主，并由此缩小文化隔阂。',
+  'This capstone opened a question I have since written up as a research proposal. Bauhinia-Mind asked whether conversational AI can act as a cultural host for Mainland Chinese students in Hong Kong: reliable local information, emotional understanding, and a clear next step. The system only ever sat with the student.':
+    '这份毕业设计引出了一个问题，我后来把它写成了研究计划。Bauhinia-Mind 问的是，对话式 AI 能不能在香港就医里做内地学生的文化东道主：可靠的本地信息、情绪上的理解，以及一个清楚的下一步。系统当时只坐在学生这一侧。',
+  'This capstone left me with a question: whether conversational AI can act as a cultural host for Mainland Chinese students finding care in Hong Kong. CuraBridge, the research proposal that grew out of it, keeps that role and opens it to both sides, the Mainland-background patient and the clinician who sees them.':
+    '这份毕业设计留下一个问题：对话式 AI 能不能在香港就医里，做内地学生的文化东道主。由此写出的研究计划 CuraBridge 保留这个角色，并把它打开到两端：大陆背景的患者，以及接诊他们的医护。',
+  "Bauhinia-Mind asked whether conversational AI can act as a cultural host for Mainland Chinese students seeking care in Hong Kong. The system only sat on the student's side.":
+    'Bauhinia-Mind 问的是，对话式 AI 能不能做内地学生在香港就医时的文化东道主。系统当时只坐在学生这一侧。',
+  'The plan that extends from this is called CuraBridge. The cultural-host role stays, and the research subjects expand to Mainland-background patients and the clinicians who see them. The platform would offer culturally sensitive navigation and emotional company, remember a person across visits, and take feedback from both sides back into retrieval and reply. From that loop I want three things: an explainable model of cross-cultural care, a Living Prototype that keeps revising itself, and a dataset drawn from both sides.':
+    '延伸出来的计划叫 CuraBridge。文化东道主还在，研究对象扩展到大陆背景的患者和接诊他们的医护。平台做文化敏感的导航和情感陪伴，记住跨次就诊，再把两端的反馈收回来调整检索和回复。想从这条闭环里得到三样东西：可解释的跨文化就医模型、会持续修订的 Living Prototype、一份来自两端的数据集。',
+  'The proposal is called CuraBridge. It keeps the cultural-host role. The people on the other end are no longer only students: Mainland-background patients, and the clinicians who see them. The platform would offer culturally sensitive navigation and emotional company through a care journey, remember a person across visits, and take feedback from both sides back into retrieval and reply. What I want from that loop is an explainable model of cross-cultural care, a Living Prototype that keeps revising itself, and a dataset drawn from both sides.':
+    '这份计划叫 CuraBridge。文化东道主这个角色还在。对面不再只是学生，而是大陆背景的患者，以及接诊他们的医护。平台会在就医过程中提供文化敏感的导航和情感陪伴，记住一个人跨次就诊的连续性，再把医患两端的反馈收回来，调整检索和回复。我想从这条闭环里得到三样东西：一个可解释的跨文化就医模型、一个会持续修订自己的 Living Prototype，以及一份来自两端的数据集。',
 };
