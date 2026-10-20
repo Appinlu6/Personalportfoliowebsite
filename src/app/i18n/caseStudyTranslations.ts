@@ -1262,10 +1262,22 @@ export const bauhiniaMindTranslations: TranslationMap = {
     '问卷围绕完整的求医旅程展开。',
   'The framework examines each stage through five UX dimensions—Information, Decision, Culture, Emotion, and Support—to identify where uncertainty, friction, and emotional stress emerge.':
     '研究从信息、决策、文化、情绪和支持五个体验维度审视每个阶段，寻找不确定、阻碍与情绪压力出现的位置。',
+  "I ran it as an anonymous survey on Lark Forms in January 2026. Fifteen Mainland students in Hong Kong responded: undergraduate, master's and PhD students aged 19 to 28, none of whom speak Cantonese.":
+    '2026 年 1 月，我用飞书问卷发起了匿名调研，共收到 15 位在港内地学生的回答，覆盖本科、硕士和博士，年龄 19–28 岁，没有人会说粤语。',
+  'Survey Results': '问卷结果',
+  'Response overview': '答卷总览',
+  'Scale and multiple choice': '量表题与多选题',
+  'Open-ended answers': '开放题',
+  'Response overview: 15 valid answers': '答卷总览：15 份有效问卷',
+  'Scale and multiple-choice results': '量表题与多选题统计',
+  'Open-ended answers and recurring themes': '开放题原话与主题归纳',
+  'Pattern clustering of survey responses into information, cultural and emotional gaps': '将问卷回答归类为信息、文化与情绪三类缺口',
+  'Research positioning diagram of four services by documented capabilities': '研究定位图：按公开文档中的能力定位四项服务',
+  'Service benchmark matrix of evidence-coded public features': '服务对标矩阵：按公开证据编码的功能对比',
   'CONCLUSION': '结论',
   'Market Research & Benchmark Matrix': '市场研究与竞品矩阵',
-  'The competitive landscape and service benchmark reveal a consistent gap: existing solutions are strong in isolated areas, but no single service integrates localized healthcare grounding, cross-cultural adaptation, empathetic support, continuity, and actionable navigation across the full user journey.':
-    '竞品与服务基准分析发现了一个持续存在的空缺：现有方案往往只擅长单一环节，没有一项服务能在完整旅程中同时覆盖本地医疗依据、跨文化适应、共情支持、连续性与可执行导航。',
+  'Across the four reviewed services, public documentation covers each dimension somewhere, but none documents HK care navigation and ongoing conversational support together. Bauhinia-Mind is designed for that combination; the positioning is a design target, not a validated result.':
+    '在评估的四项服务中，每个维度都有服务在公开文档里覆盖到，但没有一项同时记录了香港本地就医导航和持续的对话支持。紫荆心智针对的正是这种组合；图中的定位是设计目标，尚未经过验证。',
   'Bauhinia-Mind addresses this gap by acting as a non-clinical cultural host, connecting reliable local information with emotional understanding and clear next steps.':
     '紫荆心智以非临床文化向导的角色，将可靠的本地信息、情绪理解与清晰的下一步连接起来。',
   'From fragmented support → to an integrated, grounded, empathetic, and actionable pathway.':

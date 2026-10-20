@@ -452,6 +452,14 @@ function BauhiniaMind() {
                   The framework examines each stage through five UX dimensions—Information, Decision, Culture,
                   Emotion, and Support—to identify where uncertainty, friction, and emotional stress emerge.
                 </p>
+                <p
+                  className="text-[15px] leading-[1.75] text-foreground"
+                  style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
+                >
+                  I ran it as an anonymous survey on Lark Forms in January 2026. Fifteen Mainland students in Hong
+                  Kong responded: undergraduate, master's and PhD students aged 19 to 28, none of whom speak
+                  Cantonese.
+                </p>
                 </div>
               </div>
               <div className="mb-8 grid gap-6 md:grid-cols-3">
@@ -474,27 +482,60 @@ function BauhiniaMind() {
                   imageSrc="/research-r3-group-discussion.png"
                 />
               </div>
-              <div className="mb-8 overflow-hidden rounded-[0.625rem] bg-white/70">
-                <img
-                  src="/user-research-workflow.webp"
-                  alt="User research workflow"
-                  className="block h-auto w-full"
+              <p
+                className="mb-3 text-[14px] uppercase tracking-widest text-black"
+                style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 600 }}
+              >
+                Survey Results
+              </p>
+              <div className="mb-8 grid gap-6 md:grid-cols-3">
+                <FigPlaceholder
+                  id="S1"
+                  label="Response overview: 15 valid answers"
+                  caption="Response overview"
+                  ratio="4:3"
+                  imageSrc="/research-survey-overview.webp"
+                  fit="contain"
+                />
+                <FigPlaceholder
+                  id="S2"
+                  label="Scale and multiple-choice results"
+                  caption="Scale and multiple choice"
+                  ratio="4:3"
+                  imageSrc="/research-survey-stats.webp"
+                  fit="contain"
+                />
+                <FigPlaceholder
+                  id="S3"
+                  label="Open-ended answers and recurring themes"
+                  caption="Open-ended answers"
+                  ratio="4:3"
+                  imageSrc="/research-survey-open-ended.webp"
+                  fit="contain"
                 />
               </div>
+              <FigPlaceholder
+                id="R4"
+                label="Pattern clustering of survey responses into information, cultural and emotional gaps"
+                ratio="4:3"
+                imageSrc="/research-synthesis.webp"
+                fit="contain"
+                className="mb-8"
+              />
               <p className="mb-4 border-l-4 border-[var(--bm-orange)] pl-4 text-lg italic text-[var(--bm-wine)]">
                 Market Research & Benchmark Matrix
               </p>
               <div className="grid gap-6 md:grid-cols-2">
                 <FigPlaceholder
                   id="M1"
-                  label="Competitive landscape map"
+                  label="Research positioning diagram of four services by documented capabilities"
                   ratio="4:3"
-                  imageSrc="/competitive-landscape-map.webp"
+                  imageSrc="/research-positioning.webp"
                   fit="contain"
                 />
                 <FigPlaceholder
                   id="M2"
-                  label="Service benchmark matrix"
+                  label="Service benchmark matrix of evidence-coded public features"
                   ratio="4:3"
                   imageSrc="/service-benchmark-matrix.webp"
                   fit="contain"
@@ -511,10 +552,9 @@ function BauhiniaMind() {
                   className="text-[15px] leading-[1.75] text-foreground"
                   style={{ fontFamily: "'Avenir', 'Nunito', sans-serif", fontWeight: 300 }}
                 >
-                  The competitive landscape and service benchmark reveal a consistent gap: existing solutions are
-                  strong in isolated areas, but no single service integrates localized healthcare grounding,
-                  cross-cultural adaptation, empathetic support, continuity, and actionable navigation across the
-                  full user journey.
+                  Across the four reviewed services, public documentation covers each dimension somewhere, but none
+                  documents HK care navigation and ongoing conversational support together. Bauhinia-Mind is
+                  designed for that combination; the positioning is a design target, not a validated result.
                 </p>
                 <div>
                   <p

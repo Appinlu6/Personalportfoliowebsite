@@ -4,6 +4,15 @@
 
 ## 2026-10-20
 
+### Bauhinia-Mind 案例页 User Research 重做（`/work/bauhinia-mind`）
+
+- **调研说明：** Research Approach 补一句调研方式：2026 年 1 月飞书匿名问卷，15 位在港内地学生（本硕博，19–28 岁，均不会粤语）。
+- **现场照片：** 三张访谈照片保留，放在问卷截图前面。
+- **问卷截图：** 新增 Survey Results，并排放三张飞书问卷截图（答卷总览、量表与多选统计、开放题），可点开放大。
+- **归纳图：** 新图 `research-synthesis.webp` 取代旧长图，上半部分是 Pattern Clustering（Information / Culture / Emotion 三类），下半部分是三类 Gap 和 Integrated Support Gap。
+- **市场研究两张图：** Competitive landscape map 换成 Research Positioning Diagram（`research-positioning.webp`，旧的 `competitive-landscape-map.webp` 删除），Service Benchmark Matrix 换成按公开证据编码的新版。下方 Conclusion 改为与图中注释一致的表述：四项服务各自覆盖部分维度，没有一项同时覆盖本地就医导航和持续对话支持，Bauhinia-Mind 的定位是设计目标、尚未验证。
+- **旧长图：** 从 `public/` 移到 `docs/bauhinia-figures/style-reference-old-research.webp`，只当画风参考。
+
 ### 隐藏 MetaHuman agents 案例
 
 和垂直领域、目标技能关系不大，先下架，内容和资源全部保留。
