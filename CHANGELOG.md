@@ -2,6 +2,22 @@
 
 按日期倒序。每条写清改了什么、影响哪些页面，括号里是对应的提交。
 
+## 2026-10-20
+
+### 隐藏 MetaHuman agents 案例
+
+和垂直领域、目标技能关系不大，先下架，内容和资源全部保留。
+
+- **项目列表：** 首页和 Work 页不再显示这张卡片（`projects.ts` 里加 `hidden: true`）。
+- **案例页链接：** `/work/before-evening-vr` 仍可直接打开，方便单独发给别人；页底的「Where this leads」区块不再显示。
+- **技能地图：** 这个项目不再出现，Data → Intelligence 线从 7 站变成 6 站；只连着它的 AI-assisted Development (MCP)、VR Interaction Design 两个标签也一起隐藏。Unreal Engine Development 还连着医院、马拉松、觅决，保留。
+- **其他案例页：** 智慧医院、Mandarin 页底部的时间线里不再有这一站。
+- **恢复方法：** 删掉 `src/app/data/projects.ts` 和 `src/app/data/growthMountain.ts` 里这个项目的 `hidden: true` 即可。
+
+### 开屏动画文案
+
+- 第三行从「Designing for human wellbeing. / 为人的福祉而设计。」改为「Building for human wellbeing. / 为人的福祉而创造。」，和上一行「Researching AI.」形成研究与动手的对照。（`CinematicIntro.tsx`）
+
 ## 2026-10-19
 
 ### MetaHuman agents VR 案例页（`/work/before-evening-vr`）重做

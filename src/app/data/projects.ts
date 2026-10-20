@@ -31,6 +31,8 @@ export type Project = {
   hoverImage?: string;
   hoverVideo?: string;
   externalUrl?: string;
+  /** Left out of the project grids; the case study URL still works. */
+  hidden?: boolean;
 };
 
 export const projects: Project[] = [
@@ -55,6 +57,7 @@ export const projects: Project[] = [
     featured: false,
     image: '/before-evening/cover.webp',
     hoverVideo: '/videos/before-evening-cover.mp4',
+    hidden: true,
   },
   {
     slug: 'cbs5504-mandarin-cultural-evolution',

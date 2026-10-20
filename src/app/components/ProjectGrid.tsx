@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { projects, projectTagLabelsCN } from '../data/projects';
 
+const visibleProjects = projects.filter((project) => !project.hidden);
+
 type ProjectGridProps = {
   columns?: 2 | 3;
   className?: string;
@@ -216,7 +218,7 @@ export function ProjectGrid({ columns = 3, className = '', animated = true }: Pr
   if (!animated) {
     return (
       <div className={`${gridClass} ${className}`.trim()}>
-        {projects.map((project) => (
+        {visibleProjects.map((project) => (
           <ProjectCard key={project.slug} project={project} isCN={isCN} />
         ))}
       </div>
@@ -231,7 +233,7 @@ export function ProjectGrid({ columns = 3, className = '', animated = true }: Pr
       viewport={{ once: true, amount: 0.1 }}
       variants={cardStagger}
     >
-      {projects.map((project) => (
+      {visibleProjects.map((project) => (
         <motion.div
           key={project.slug}
           variants={cardFadeUp}

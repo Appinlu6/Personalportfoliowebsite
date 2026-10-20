@@ -202,7 +202,7 @@ export function CinematicIntro() {
               ease: EASE_OUT_EXPO,
             }}
           >
-            {isCN ? '为人的福祉而设计。' : 'Designing for human wellbeing.'}
+            {isCN ? '为人的福祉而创造。' : 'Building for human wellbeing.'}
           </motion.p>
         </motion.div>
       </motion.div>

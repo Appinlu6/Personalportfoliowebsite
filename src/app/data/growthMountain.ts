@@ -44,6 +44,8 @@ export type Project = {
   skillIds: string[];
   parentId?: string;
   caseStudySlug?: string;
+  /** Hidden projects stay in the data but are left out of the map, the timelines, and their own skills. */
+  hidden?: boolean;
 };
 
 export type Skill = {
@@ -97,7 +99,7 @@ export const FOUNDATION_COLOR = '#8C8C8C';
 export const CONVERGE_COLOR = '#111111';
 export const AXIS_COLOR = '#2A2A2A';
 
-export const skills: Skill[] = [
+const allSkills: Skill[] = [
   { id: 'visual-design', label: 'Visual Design', labelCN: '视觉设计' },
   { id: 'ux-research', label: 'UX Research', labelCN: '用户研究' },
   { id: 'field-research', label: 'Field Research', labelCN: '田野调研' },
@@ -235,7 +237,7 @@ export const roles: Role[] = [
   },
 ];
 
-export const projects: Project[] = [
+const allProjects: Project[] = [
   {
     id: 'health-hardware',
     label: 'Health Hardware UI',
@@ -408,6 +410,7 @@ export const projects: Project[] = [
     summaryCN: 'VR 悬疑叙事游戏，玩家直接开口向 AI 角色提问。我设计了智能体结构，把 Convai 接入 MetaHuman，并通过 MCP 在 Unreal Engine 5 里完成开发。',
     skillIds: ['conversational-ai', 'ai-product', 'unreal-engine', 'mcp-dev', 'vr-interaction', 'ux-research'],
     caseStudySlug: 'before-evening-vr',
+    hidden: true,
   },
   {
     id: 'bauhinia-mind',
@@ -458,13 +461,13 @@ export const projects: Project[] = [
 ];
 
 /** Ordered ridge of each main line, bottom to top. Growth & Business ends at Yi'an, where the business side meets AI health. */
-export const ridges: Record<MountainLineId, string[]> = {
+const allRidges: Record<MountainLineId, string[]> = {
   human: ['healthcare-service-design', 'bauhinia-mind', 'phd-research'],
   data: ['smart-hospital', 'smart-marathon', 'micision', 'mandarin', 'before-evening', 'multimodal-har', 'phd-research'],
   growth: ['marketing-cloud', 'lark', 'chillttoo-products', 'chillttoo-community', 'multimodal-har'],
 };
 
-export const storyLinks: StoryLink[] = [
+const allStoryLinks: StoryLink[] = [
   {
     from: 'health-hardware',
     to: 'smart-marathon',
@@ -507,3 +510,15 @@ export const storyLinks: StoryLink[] = [
     noteCN: '医疗这条线让我始终以人为本，一直延续到现在。',
   },
 ];
+
+export const projects = allProjects.filter((project) => !project.hidden);
+
+const visibleProjectIds = new Set(projects.map((project) => project.id));
+
+export const skills = allSkills.filter((skill) => projects.some((project) => project.skillIds.includes(skill.id)));
+
+export const ridges = Object.fromEntries(
+  Object.entries(allRidges).map(([line, ids]) => [line, ids.filter((id) => visibleProjectIds.has(id))]),
+) as Record<MountainLineId, string[]>;
+
+export const storyLinks = allStoryLinks.filter((link) => visibleProjectIds.has(link.from) && visibleProjectIds.has(link.to));
