@@ -108,7 +108,7 @@ export const projects: Project[] = [
     title: 'Healthcare Service Design',
     year: '2017 Aug – Oct',
     description:
-      'Spearheaded an O2O service design solution for Tencent Medical Cloud to optimize the patient experience. By mapping complex medical journeys and integrating digital-physical touchpoints, the project successfully reduced average patient wait times by 4.5 hours.',
+      'In August 2017 I joined Tencent Healthcare and worked on my first project with a hospital, improving how patients get through a visit.',
     tags: ['Service Design', 'UX Research', 'Healthcare'],
     featured: false,
     image: '/healthcare-service-design-cover.webp',

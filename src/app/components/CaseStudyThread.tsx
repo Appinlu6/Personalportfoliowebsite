@@ -58,7 +58,7 @@ function ProjectLink({ project, children }: { project: Project; children: string
 }
 
 /** Closing section of a case study: where the project sits on the Growth & Skills Map and what it connects to. */
-export function CaseStudyThread({ slug }: { slug: string }) {
+export function CaseStudyThread({ slug, showConnections = true }: { slug: string; showConnections?: boolean }) {
   const { isCN } = useLanguage();
   const project = findProject(slug);
   const line = findLine(project);
@@ -67,7 +67,7 @@ export function CaseStudyThread({ slug }: { slug: string }) {
   const ridge = ridges[project.line as MountainLineId].map((id) => projectById.get(id)).filter((p): p is Project => Boolean(p));
   const step = ridge.findIndex((p) => p.id === project.id);
 
-  const connections = storyLinks
+  const connections = (showConnections ? storyLinks : [])
     .filter((link) => link.from === project.id || link.to === project.id)
     .map((link) => ({
       link,

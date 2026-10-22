@@ -166,7 +166,7 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
               className="font-['Work_Sans'] font-semibold"
               style={{ color: PRIMARY, fontSize: '14px', lineHeight: 1.45, marginBottom: '12px' }}
             >
-              {isCN ? '跨学科 AI 研究者与产品设计师' : 'Interdisciplinary AI Researcher & Product Designer'}
+              {isCN ? '跨学科 AI 研究者与产品架构师' : 'Interdisciplinary AI Researcher & Product Architect'}
             </p>
             <BlockBody>
               {isCN

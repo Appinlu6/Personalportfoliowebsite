@@ -1220,7 +1220,10 @@ function BauhiniaMind() {
                 <div className="aspect-[16/9] overflow-hidden rounded-[0.625rem] bg-black/5">
                   <video
                     className="h-full w-full"
-                    controls
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     preload="metadata"
                     poster="/videos/bauhinia-wang-xiaoyu-cover.jpg"
                   >

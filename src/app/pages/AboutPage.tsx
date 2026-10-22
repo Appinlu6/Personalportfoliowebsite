@@ -10,6 +10,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { PageContainer } from '../components/PageContainer';
 import { SkillsStagesLegacy } from '../components/SkillsStagesLegacy';
 import { GrowthSkillsMap } from '../components/growth-mountain/GrowthSkillsMap';
+import { SkillsWordCloud } from '../components/growth-mountain/SkillsWordCloud';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -223,10 +224,15 @@ export function AboutPage() {
             <h2 className="font-semibold font-['Work_Sans']" style={{ fontSize: '28px' }}>{isCN ? '技能与专长' : 'Skills & Expertise'}</h2>
           </motion.div>
           <motion.div className="min-w-0 flex-1" variants={fadeUp} transition={{ duration: 0.42, ease: 'easeOut' }}>
-            <GrowthSkillsMap
-              className="h-[min(580px,80svh)] rounded-2xl border border-border md:h-[720px]"
-              fallback={<SkillsStagesLegacy />}
-            />
+            <div className="grid gap-6 xl:grid-cols-2">
+              <div className="relative min-w-0 xl:min-h-[680px]">
+                <GrowthSkillsMap
+                  className="h-[min(580px,80svh)] rounded-2xl border border-border md:h-[720px] xl:absolute xl:inset-0 xl:h-full"
+                  fallback={<SkillsStagesLegacy />}
+                />
+              </div>
+              <SkillsWordCloud className="min-w-0 rounded-2xl border border-border" />
+            </div>
           </motion.div>
         </motion.div>
       </PageContainer>

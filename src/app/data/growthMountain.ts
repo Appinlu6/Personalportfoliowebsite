@@ -264,8 +264,10 @@ const allProjects: Project[] = [
     titleCN: '医疗服务设计',
     period: 'Aug – Oct 2017',
     periodCN: '2017 年 8–10 月',
-    summary: 'My first project after joining Tencent. Every touchpoint answered one question: what does the patient need to do next? Average hospital time fell by 4.5 hours.',
-    summaryCN: '入职腾讯后的第一个项目。每个触点都回答一个问题：病人下一步该做什么。患者在院时间平均减少 4.5 小时。',
+    summary:
+      'In August 2017 I joined Tencent Healthcare and worked on my first project with a hospital, improving how patients get through a visit.',
+    summaryCN:
+      '2017 年 8 月，我正式入职腾讯医疗健康部门，并参与了第一个和医院合作，升级就医服务体验的项目。',
     skillIds: ['service-design', 'journey-mapping', 'field-research', 'ux-research'],
     caseStudySlug: 'tencent-medical-cloud-o2o',
   },
@@ -501,13 +503,6 @@ const allStoryLinks: StoryLink[] = [
     skillId: 'agent-framework',
     note: 'Designing a workflow that lets people finish a task on their own became the basis for agent architecture.',
     noteCN: '第一次把「让别人自己能完成一件事」设计成工作流，拆流程、定角色、定交接的思路，成为 Agent 架构设计的基础。',
-  },
-  {
-    from: 'healthcare-service-design',
-    to: 'bauhinia-mind',
-    skillId: 'service-design',
-    note: 'Healthcare kept me human-centered, all the way to now.',
-    noteCN: '医疗这条线让我始终以人为本，一直延续到现在。',
   },
 ];
 

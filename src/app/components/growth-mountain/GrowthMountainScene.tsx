@@ -52,7 +52,7 @@ const BASE_DISTANCE = 22;
 const OVERVIEW_ELEVATION = 3.5 / BASE_DISTANCE;
 const UNFOLD_SECONDS = 0.9;
 /** Half the width the overview must keep in frame: the base ring plus its year labels. */
-const FIT_HALF_WIDTH = 7.8;
+const FIT_HALF_WIDTH = 8.4;
 
 /** Lower nodes fade towards the background; higher nodes keep their full colour. */
 function fadeByHeight(hex: string, t: number) {

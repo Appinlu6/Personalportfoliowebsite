@@ -575,8 +575,212 @@ export const smartMarathonTranslations: TranslationMap = {
   'A collection and upload schedule that kept the data fresh while letting every wristband last the whole race.':
     '得出最佳的数据采集与回传频率方案：既保证数据及时，又让每只手环的续航撑完整场赛事。',
   'Alert logic': '预警逻辑',
-  'Only confirmed abnormal signals reached the command screen, so supervisors could tell the medical team at a given kilometre exactly which runner needed help.':
+  'Only confirmed abnormal signals reached the command screen, so supervisors could tell the medical team at a given kilometer exactly which runner needed help.':
     '只有确认的异常信号才会推送到指挥大屏，监管人员可以直接通知对应公里处的急救人员，去援助具体编号的参赛者。',
+  'I led product and design for a race command platform that put runners, ambulances, and first-aid stations on one 3D map of Yangzhou, used live at the 2019 Yangzhou International Half Marathon.':
+    '我负责一套赛事指挥平台的产品与设计，把跑者、救护车和急救站放进同一张扬州 3D 地图，在 2019 扬州国际半程马拉松现场投入使用。',
+  'Smart Marathon V2.0 demo on the Yangzhou 3D map': '智慧马拉松 V2.0 在扬州 3D 地图上的演示',
+  'Download the project video': '下载项目视频',
+  'Smart Marathon V2.0 demo, recorded on 20 May 2020 (1:07).': '智慧马拉松 V2.0 演示，录制于 2020 年 5 月 20 日（1:07）。',
+  'Race command platform': '马拉松赛事管理平台',
+  '2019 Yangzhou International Half Marathon': '2019 扬州国际半程马拉松',
+  'The problem': '问题',
+  'When a runner gets into trouble, the command room has to find them on the big screen and send the nearest first-aid team.':
+    '当选手发生紧急状况时，监管人员要能在大屏上快速定位，并调派最近的急救人员。',
+  'Falls, cardiac arrest, heatstroke, wrong turns, and runners too tired to reach the finish are all race-day risks. A race relies on a large crew of security staff, referees, ambulances, first-aid stations, and medics.':
+    '摔倒、心脏骤停、中暑，选手拐错弯跑错赛道，或因体力不支掉队回不到终点，都是比赛中的风险。一场马拉松需要大量安保人员、裁判员、救护车、急救站和医护人员。',
+  'Six partners, under a month': '六方对接，不足一个月',
+  'Case of its kind in China, with no earlier research to draw on': '国内首个案例，没有前期调研可参考',
+  'Partner organizations': '对接方',
+  '< 1 month': '不足 1 个月',
+  'To deliver': '交付周期',
+  'People, with two other projects running at the same time': '项目人力，同时还有两个项目并行',
+  'The partners were the Yangzhou sports organizing committee, the traffic police, the emergency command center, the Shanghai wristband maker Lingling Zhineng (零零智能), Yangzhou Telecom, and Shenzhen Pingzi Technology.':
+    '对接方包括扬州体育组委会、公安交通部、急救指挥部、上海零零智能手环、扬州电信和深圳瓶子科技。',
+  'Besides design, I also handled project management, product management, and development.':
+    '除了设计，我还身兼项目管理、产品经理、开发多个角色。',
+  'We interviewed the people running the command center: sports bureau administrators, emergency commanders, and security commanders.':
+    '我们选取了赛事中心的指挥人员进行调研：体育局行政人员、急救指挥员和安保指挥员。',
+  'Which data do they need, and in which situation?': '在什么情况下需要什么数据？',
+  'What does the content have to include?': '数据的内容需求是什么？',
+  'How fast does it have to respond?': '响应速度要多快？',
+  'How much data is there?': '数据量有多大？',
+  'We then looked at who receives the information next, filled in the missing dimensions, and wrote the requirements list.':
+    '之后我们分析了二级接收者，补全了各个维度，整理出需求清单。',
+  'Requirements list for the Yangzhou race': '觅决扬州马拉松需求清单',
+  'The requirements list from the interviews. It is in Chinese, and groups problems and new needs under the map, vehicles, people, and the system.':
+    '调研后整理的需求清单，原文为中文，按地图、车辆、人员、系统四个维度列出问题点和新需求。',
+  'Requirements for the Yangzhou race': '觅决扬州马拉松需求清单',
+  'Problem or need': '问题点 / 新需求',
+  Need: '新需求',
+  'Landmark models along the route are too coarse': '沿途代表性建筑点模型细化',
+  'Mark hospitals where ambulances are based': '地图加入救护车常驻医院标识',
+  'Show those hospitals on the map': '地图显示指定医院区域或模型',
+  'Scenic spots need more detail': '沿途景点细化',
+  'Finer buildings; separate scenic scenes, people as models, cameras':
+    '加入建筑物模型细化，可考虑分开赛道地图场景和重要景点场景，人员在该场景下以模型形态出现，接入监控摄像等',
+  'Locations are given in kilometers': '使用者以公里数为单位传达位置，加入线路里程标识',
+  'Add distance markers': '地图增加里程标识',
+  'Ambulances and lead cars look alike': '未能分清救护车和引导车',
+  'Separate models and names': '区分车辆模型和名字',
+  'Finer vehicle types': '车辆分类细化',
+  'Models and IDs for ambulance, lead, sweep, and patrol': '增加救护车、引导车、收容车、巡逻车模型和编号信息',
+  'Idle vehicles stay at a hospital': '闲时车辆常驻医院',
+  "Mark each ambulance's base hospital": '地图加入救护车常驻医院的标识',
+  'Ambulance status': '新增车辆运行状态（主要是救护车）',
+  'Standby, en route, treating, returning': '救护车状态细化：待命、前往救护、救护中、回程，使用效果或文本区分',
+  'The rescue itself': '细化救护车救护过程',
+  'Destination, route, and camera after pickup': '救护伤员后显示目的地和建议线路，并加入救护车监控画面',
+  'People are hard to see': '地图上人员效果不够明显',
+  'Stronger colors, or different effects': '人员类别颜色做更大的差异或使用不同的效果',
+  'Find one group and what they are doing': '希望可以快速识别某种人员及其工作状况',
+  "One view per group, plus that person's details": '增加查看单种人员功能，当前人员详细显示',
+  'New emergencies do not show': '平台互动性不足，未能显示新增急救人员信息',
+  'Count them, grade the severity, keep a rescue history':
+    '准确评估异常人员数目，对异常等级进行分类，考虑加入救援历史列表以便跟踪和指挥救援进度',
+  'Hard to aim the view or find a place': '查看某一位置角度和定位操作不便',
+  'Pan the map, or drag a filter to a kilometer': '加入地图平移功能，或加入筛选器，拖动快速定位至当前里程所在地',
+  'Stronger live coverage': '赛事直播功能加强',
+  'Commentary, aerial shots, orbiting views': '加入赛事语音字幕、航拍场景、特殊场景环绕场景',
+  'Command vehicle screen': '指挥车屏幕端的加入',
+  'Adapt the layout': '指挥车端适配',
+  'Shared data': '数据共享',
+  "Yangzhou's cloud: GIS, road cameras, police heat map, emergency command":
+    '按照云上扬州共享数据要求，对接 GIS 地图、公安道路监控、公安热力图、急救中心指挥系统等',
+  Area: '维度',
+  'Problem or new need': '问题点 / 新需求',
+  Solution: '解决方案',
+  Map: '地图',
+  Vehicles: '车辆',
+  People: '人员',
+  System: '系统',
+  Problem: '问题',
+  'New need': '新需求',
+  'Landmark buildings along the route need more detailed models': '沿途代表性建筑点模型细化',
+  'Refine the models': '模型细化',
+  'Mark the hospitals where ambulances are based': '地图加入救护车常驻医院标识',
+  'Show the designated hospitals as areas or models on the map': '地图显示指定医院区域或模型',
+  'More detail for scenic spots along the route': '沿途景点细化',
+  'Add detailed building models. Consider separating the course map from key scenic spots, show people as models there, and connect surveillance cameras':
+    '加入建筑物模型细化，可考虑分开赛道地图场景和重要景点场景，人员在该场景下以模型形态出现，接入监控摄像等',
+  'Staff give locations in kilometers, so the route needs distance markers': '使用者以公里数为单位传达位置，加入线路里程标识',
+  'Add distance markers to the map': '地图增加里程标识',
+  'Ambulances and lead cars look the same': '未能分清救护车和引导车',
+  'Give each vehicle type its own model and name': '区分车辆模型和名字',
+  'Finer vehicle categories': '车辆分类细化',
+  'Add models and ID numbers for ambulances, lead cars, sweep vehicles, and patrol cars': '增加救护车、引导车、收容车、巡逻车模型和编号信息',
+  'Idle vehicles wait at their base hospital': '闲时车辆常驻医院',
+  "Mark each ambulance's base hospital on the map": '地图加入救护车常驻医院的标识',
+  'Show vehicle status, mainly for ambulances': '新增车辆运行状态（主要是救护车）',
+  'Split ambulance status into standby, on the way, treating, and returning, shown by visual effect or text':
+    '救护车状态细化：待命、前往救护、救护中、回程，使用效果区分或文本提示区分',
+  'Show the rescue in more detail': '细化救护车救护过程',
+  "After pickup, show the destination and a suggested route, and add the ambulance's camera feed":
+    '救护车救护伤员后，送往目的地及建议提示线路，加入救护车监控画面等',
+  'People are hard to see on the map': '地图上人员显示效果不够明显',
+  'Make the colors for each group more distinct, or use different effects': '人员类别颜色做更大的差异或使用不同的效果',
+  'Quickly pick out one group and see what they are doing': '希望可以快速识别某种人员及其工作状况',
+  'Add a view for each group and show details for the selected person': '增加查看单种人员功能，当前人员详细显示',
+  'Not interactive enough, and new emergency cases do not show': '平台互动性不足，未能显示新增急救人员信息',
+  'Count abnormal runners accurately, grade them by severity, and consider a rescue history list to track and direct each rescue':
+    '准确评估异常人员数目，对异常等级进行分类，考虑加入救援历史列表以方便跟踪和指挥救援进度',
+  'Hard to change the view angle or find a location': '查看某一位置角度和定位操作不便',
+  'Add map panning, or a filter you drag to jump to a given kilometer': '加入地图平移功能，或加入筛选器，拖动快速定位至当前里程所在地',
+  'Stronger live coverage of the race': '赛事直播功能加强',
+  'Add live commentary subtitles, aerial views, and orbiting views of key scenes': '加入赛事语音字幕、航拍场景、特殊场景环绕场景',
+  'A race clock': '加入赛事计时器',
+  'Add a race clock': '加入赛事计时器',
+  'A screen in the command vehicle': '指挥车屏幕端的加入',
+  'Adapt the platform for the command vehicle screen': '指挥车端适配',
+  'Data sharing': '数据共享',
+  "Follow Yangzhou's government cloud data-sharing rules and connect to GIS maps, police road cameras, police heat maps, and the emergency center's command system":
+    '按照云上扬州共享数据要求，对接 GIS 地图、公安道路监控、公安热力图、急救中心指挥系统等',
+  'I sorted the race data by how each set relates: composition, distribution, comparison, or trend. Each relationship points to a set of chart forms.':
+    '我对赛事的可视化数据库进行整理，按数据的关系分为构成、分布、比较、趋势四种，每种关系匹配对应的图表形式。',
+  'Static share': '静态比例',
+  'Concentric chart': '同心图',
+  'Changing, few periods: relative difference': '动态 · 少期态：相对差异',
+  '100% stacked bar': '100% 堆积条图',
+  'Changing, few periods: absolute difference': '动态 · 少期态：绝对差异',
+  'Stacked bar': '堆积条图',
+  'Changing, many periods': '动态 · 多期态',
+  'Area chart': '面积图',
+  'Geographic location': '地理位置',
+  'Outdoor map': '室外地图',
+  'Indoor map': '室内地图',
+  'Numeric, one dimension': '数值型 · 1 维',
+  'Column map': '柱状图',
+  Landmark: '地标',
+  'Numeric, two dimensions': '数值型 · 2 维',
+  'Scatter map': '散点图',
+  'Heat map': '热力图',
+  'Numeric, many dimensions': '数值型 · 多维',
+  'Arc map': '对攻图',
+  'Radial map': '辐射图',
+  'Many items': '多种类别 · 多个项目',
+  Table: '表格',
+  'One category': '多种分类态 · 1 种分类',
+  'Horizontal bar': '横向柱状图',
+  'Several categories': '多种分类态 · 多种分类',
+  'Many dates': '多日期',
+  'Line chart': '单线图',
+  'Few dates, many categories': '少日期 · 分类多',
+  'Multi-line chart': '多线图',
+  'Few dates, few categories': '少日期 · 分类少',
+  'Column chart': '柱状图',
+  'I used the GIS data to build a workflow in UE4 that generates the city automatically. I then designed the markers for landmarks, hospitals, and distance along the course.':
+    '我用 GIS 数据，在 UE4 里搭建工作流，让它自动生成。再为地标、医院和赛程公里数设计标识。',
+  'Building Yangzhou in 3D': '搭建扬州 3D 场景',
+  'The 3D model of Yangzhou': '扬州城市 3D 模型',
+  'The 3D Yangzhou scene lit for the big screen': '大屏上的扬州 3D 场景',
+  'Landmark marker': '地标标识',
+  'Hospital marker': '医院标识',
+  'Distance and station marker': '赛程公里数与站点标识',
+  'Left to right: landmark, hospital, and distance markers. The labels are placeholders for the landmark name, hospital name, race distance, and station name.':
+    '从左到右：地标、医院、赛程公里数标识。图中文字为占位，对应地标名称、医院名称、赛程公里数和站点名称。',
+  'Runners shown as colored particles along the course': '赛道上以彩色粒子显示的人员',
+  'Five particle colors': '5 种粒子颜色',
+  'I gave each group on the course its own particle color. Ordinary runners are blue, the strongest contrast with the course. The particles pulse at the same rate the wristbands refresh, so people can tell the data is live.':
+    '我为赛道上的不同人员设计了 5 种粒子颜色，普通跑者使用蓝色，与赛道的对比最强。粒子的呼吸频率与手环刷新频率同步，让人感知数据是实时变化的。',
+  Referees: '裁判员',
+  'Security staff': '安保人员',
+  Pacers: '兔子选手',
+  Runners: '普通选手',
+  'Medical runners': '医护跑者',
+  'Ambulances and medical stations along the route': '沿途的救护车与医疗站',
+  'Ambulance marker': '救护车标识',
+  'Left: ambulances and medical stations along the route. Right: the ambulance marker. Clicking an ambulance shows its driver, phone number, and plate.':
+    '左：沿途的救护车与医疗站。右：救护车标识。点击救护车可查看司机、联系方式和车牌。',
+  'A wristband reports an abnormal reading.': '手环上报异常数据。',
+  "An alarm spreads out from the runner's position on the map.": '地图上以选手位置为中心扩散报警。',
+  "Click the alarm to see the runner's details.": '点击报警查看选手详情。',
+  'Send help from the nearest first-aid station or ambulance.': '调派最近的急救站或救护车。',
+  'An alarm spreading from a runner on the course': '赛道上从选手位置扩散的报警',
+  'Runner details and nearby medical resources during an alarm': '报警时的选手详情与附近医疗资源',
+  "The alarm spreads out from the runner. From there, the commander opens the runner's details and dispatches the nearest station or ambulance on the map.":
+    '报警从选手位置扩散开来，指挥人员点击即可查看选手详情，并调派地图上最近的急救站或救护车。',
+  'Set priorities for a delivery of under a month': '在不足一个月的交付周期内排定优先级',
+  'Turned their scenarios into the requirements list': '把调研场景整理成需求清单',
+  'Designed the chart framework and interactions': '设计图表框架与交互',
+  'Designed the markers, particles, and alarms': '设计标识、粒子与报警效果',
+  'Supported the Unreal Engine build': '支持 Unreal Engine 落地',
+  'Supported the race-day launch': '支持比赛当天上线',
+  'The platform went live in the race command center at the Yangzhou International Half Marathon on 21 April 2019.':
+    '2019 年 4 月 21 日，平台在扬州国际半程马拉松的赛事指挥中心正式上线。',
+  'Race day, April 2019': '2019 年 4 月，比赛当天',
+  'Staff in the race command room watching the platform on the video wall': '赛事指挥室里，工作人员看着大屏上的平台',
+  'The race supervision room on race day.': '比赛当天的赛事监管现场。',
+  'A staff member on the phone at the command desk': '指挥席上正在打电话的工作人员',
+  'During the race, the platform flagged a runner at 8 km with an abnormal heart rate. Staff called a nearby ambulance to help.':
+    '赛事中，可视化平台上报八公里处一名选手心率异常，工作人员联系附近的救护车进行救援。',
+  'Officials and the team in front of the video wall in the command room': '指挥室大屏前的领导与团队',
+  'Yu Ting, Vice Mayor of Yangzhou, visited the command room during the race, praised the big screen as innovative, and asked for specific improvements.':
+    '扬州市副市长余珽在赛事期间视察了智慧管理现场，对可视化智慧大屏的创新性表示了肯定，并对后续改进提出了具体要求。',
+  'In the press · April 2019': '媒体报道 · 2019 年 4 月',
+  "China Daily's official Baidu account, 22 April 2019, on the Yangzhou International Half Marathon the day before, which drew more than 30,000 registered runners. The article called the platform China's first smart marathon management platform and credited Tencent's big data, maps, visual design, and medical cloud teams, with partners Yanrui Wangke (晏锐网科) and Lingling Zhineng (零零智能). Quote translated from Chinese.":
+    '中国日报网百家号，2019 年 4 月 22 日，报道前一天开跑的扬州国际半程马拉松，赛事吸引超过 3 万名选手报名。文中称该平台是国内首创的智慧马拉松体育赛事管理平台，融合了腾讯大数据团队、腾讯地图、视觉设计团队和腾讯医疗云等团队，以及晏锐网科、零零智能等合作伙伴。',
+  '“Through AI and big-data analysis, the decision-support platform can spot runners whose heart rate is nearing a dangerous level the moment it happens and warn managers, heading off trouble before it starts.”':
+    '“通过人工智能与大数据分析，辅助决策平台能第一时间发现心率数据接近危险水平的选手，并向管理者发出预警，防范于未然。”',
 };
 
 export const healthcareServiceTranslations: TranslationMap = {
@@ -622,7 +826,11 @@ export const healthcareServiceTranslations: TranslationMap = {
   Observe: '观察',
   'Followed the complete visit and recorded where patients slowed down, waited, or asked for help.':
     '跟随完整就医流程，记录患者停顿、等待和寻求帮助的节点。',
-  Listen: '倾听',
+  Listen: '闻',
+  Look: '望',
+  Ask: '问',
+  'Points, paths, and places': '点、线、面',
+  'WeChat official account and in-hospital materials': '微信公众号和院内物料',
   'Sat in on conversations between patients and doctors to understand missing information and uncertainty.':
     '旁听医患沟通，理解信息缺口和不确定感来自哪里。',
   Interview: '访谈',
@@ -671,7 +879,7 @@ export const healthcareServiceTranslations: TranslationMap = {
   Paths: '线',
   'Connect the hospital account, check-in, consultation, examination, payment, and medicine collection into one journey.':
     '把公众号、签到、就诊、检查、缴费和取药连接成完整旅程。',
-  Places: '场',
+  Places: '面',
   'Use floor decals, posters, standing signs, and stickers to make destinations clear throughout the hospital.':
     '通过地贴、海报、立式标牌和贴纸，让院内目的地更容易辨认。',
   'Connecting digital and physical guidance': '连接数字服务与实体引导',
@@ -717,6 +925,259 @@ export const healthcareServiceTranslations: TranslationMap = {
   'Supported the hospital launch': '支持医院现场上线',
   'Collected post-launch feedback': '收集上线后反馈',
   'Read the hospital case report': '查看医院案例报道',
+  'I led my first product at Tencent Medical Cloud: the hospital account and in-hospital guidance at Fudan University Shanghai Cancer Center, which cut average time at the hospital by 4.5 hours.':
+    '我在腾讯医疗云负责的第一个产品：复旦大学附属肿瘤医院的公众号和院内指引，患者平均在院时间减少 4.5 小时。',
+  'August–October 2017': '2017 年 8–10 月',
+  Hospital: '医院',
+  'Fudan University Shanghai Cancer Center': '复旦大学附属肿瘤医院',
+  'Look, ask, listen, and walking the visit': '望、问、闻、切',
+  'Inside the cancer center': '在肿瘤医院里',
+  'This was the first product project I led. I went with the team to Fudan University Shanghai Cancer Center.':
+    '这是我负责的第一个产品项目。我和团队去了复旦大学附属肿瘤医院。',
+  'I watched registration, consultation, tests, and report collection, and noted where people stalled.':
+    '我看挂号、就诊、检查、取报告，记下人卡在哪里。',
+  'I asked patients, doctors, and department heads what was hard in the visit.':
+    '我问患者、医生和主任，就医里哪里难。',
+  'I sat in on how patients and doctors passed information across the visit.':
+    '我旁听患者和医生在流程里怎么交接信息。',
+  Walk: '切',
+  'I registered and walked the visit myself, as a patient would.': '我自己挂号，把肿瘤患者的流程走了一遍。',
+  'Drawing the visit': '把就医流程画出来',
+  'I drew the visit, listed the pain points, opportunities, and touchpoints, and merged the ones that repeated. After one round of interviews and tests, phase 1 was registration, tests and reports, and medicine collection.':
+    '我把流程画出来，把痛点、机会点和接触点列上，合并重复的项。做了一轮访谈和测试之后，第一期定为挂号、检查拿报告、取药。',
+  'Find the hospital': '找医院',
+  Enquire: '问询',
+  'Get a card': '办卡',
+  'Find the department': '找科室',
+  'See the doctor': '看诊',
+  Book: '预约',
+  'Tests and reports': '检查拿报告',
+  'Return visit': '重复看诊',
+  'Highlighted steps are phase 1.': '高亮的是第一期。',
+  Guide: '引导',
+  'The whole visit, in the patient’s words: where they are, what comes next, how long the wait is, and what the payment covers.':
+    '全流程用患者的话说清楚：人在哪一步、下一步是什么、要等多久、缴费明细是什么。',
+  Connect: '联接',
+  'Payment led into booking a test, and a test led into the next registration. A repeat visit could be suggested from the record.':
+    '缴费接到预约检查，检查接到下一次挂号。周期性的挂号可以从记录里推荐。',
+  Group: '归类',
+  'Notices, registrations, and payments each used one template. Several tests could sit in one list, and several registrations could be done together.':
+    '通知、挂号、缴费各自用同一套模板。多项检查可以合成一张单，多次挂号可以一起办。',
+  Convert: '转化',
+  'Waiting time carried a short note on the condition, a form to fill in before the consultation, and instructions after a test or procedure.':
+    '候诊时推送相关疾病的短说明和诊前要填的表，检查或手术之后给须知。',
+  'I designed the visit as points, paths, and places. We built the account.':
+    '我按点、线、面设计这段就医。公众号是我们一起搭的。',
+  'From arrival through registration, waiting, the consultation, and tests, both the account and the hospital floor had a place to point to the next step.':
+    '从到院、挂号、等待、就医到检查，线上和线下都有能指向下一步的触点。',
+  'We built the hospital account along the visit. The first release was check-in while waiting, and collection at the pharmacy window. We tested the QR code and the barcode at the scanner until the size was one people could scan.':
+    '我们按就医路径搭了公众号。第一期落在候诊签到和窗口取药。二维码和条形码在扫码枪上反复试，直到大小能扫上。',
+  'Floor decals, posters, roll-up banners, and stickers covered those points, so a person could see where to go next.':
+    '地贴、海报、易拉宝和贴纸铺在这些触点上，让人知道下一站往哪走。',
+  'Live on 16 October 2017': '2017 年 10 月 16 日上线',
+  'The account and the materials went live on 16 October 2017. I guided people on the floor with the medical guides. A week later we went back.':
+    '公众号和线下物料在 2017 年 10 月 16 日上线。我和导医在现场一起引导。一周后回访。',
+  'Outside the outpatient entrance. The screen asked people to open WeChat and follow the account.':
+    '门诊楼外。屏幕让人打开微信、关注公众号。',
+  'The outpatient building with a screen showing a WeChat follow step and a QR code':
+    '门诊楼外的屏幕，显示关注公众号的步骤和二维码',
+  'Close view of the outdoor screen: open WeChat, scan, and follow the account':
+    '户外屏幕近景：打开微信、扫一扫、关注公众号',
+  'In the lobby: how to book, where to enter, and paying on WeChat or Alipay without a queue.':
+    '大厅里：怎么预约、从哪进、微信或支付宝缴费不用排队。',
+  'Four roll-up banners for booking, the entrance, WeChat payment, and Alipay payment':
+    '四块易拉宝：预约、进入诊疗区、微信支付、支付宝支付',
+  'In the hall, a column poster for scanning to pay, and a medical guide at the desk.':
+    '大厅里，柱子上是扫码支付的海报，导医台边站着导医。',
+  'A blue poster on a column in the self-service hall: scan WeChat to pay and skip the queue':
+    '自助服务区的柱子上，蓝色海报写着微信扫一扫、支付不排队',
+  'A medical guide standing at the guide desk beside the account banner': '导医站在导医台边，旁边是公众号物料',
+  'On the floor. The banner walked through the WeChat steps, and people stopped to follow them.':
+    '现场。易拉宝把微信支付的步骤写了出来，有人停下来照着做。',
+  'A crowded corridor with the visit-flow sign and the WeChat payment banner': '拥挤的走廊里，一边是就诊流程，一边是微信支付易拉宝',
+  'The WeChat payment banner listing the steps to get an electronic visit card and pay':
+    '微信支付易拉宝，列出办理电子就诊卡和扫码支付的步骤',
+  'A guide with a headset beside the WeChat payment banner while people photograph the steps':
+    '戴耳麦的引导员站在微信支付易拉宝旁，有人在拍步骤',
+  'Account cards at the counter.': '窗口上的公众号卡片。',
+  'On the floor. The banner walked through the WeChat steps, people stopped to follow them, and account cards waited at the counter.':
+    '现场。易拉宝把微信支付的步骤写了出来，有人停下来照着做；窗口上放着公众号卡片。',
+  'A blue poster on a column in the hall: scan WeChat to pay and skip the queue': '大厅柱子上的蓝色海报：微信扫一扫，支付不排队',
+  'A stack of account cards on the counter, with someone holding a handful of them': '窗口上叠着公众号卡片，有人拿着一沓',
+  'Patients spent 4.5 fewer hours at the hospital, on average.': '患者平均在院时间少了 4.5 小时。',
+  'Doctors spent 3 fewer hours collecting materials, on average.': '医生收材料的时间平均少了 3 小时。',
+  'Doctors and patients thanked the team in person.': '医生和患者当面道了谢。',
+  'A crowded counter at Fudan University Shanghai Cancer Center before the service launched':
+    '上线前，复旦大学附属肿瘤医院拥挤的窗口',
+  'Before launch. The counter.': '上线前。窗口。',
+  'Patients reading a consultation notice in the hospital corridor': '患者在走廊里看会诊告知',
+  'Before launch. A consultation notice in the corridor.': '上线前。走廊里的会诊告知。',
+  'Patients at the counter a week after launch, with the account materials on the wall':
+    '上线一周后，窗口墙面上有了公众号物料',
+  'A week after launch. The account materials are on the wall.': '上线一周后。墙面上是公众号物料。',
+  'Patients reading the new process poster for the pathology consultation': '患者在看新的病理会诊流程海报',
+  'A week after launch. The process poster.': '上线一周后。流程海报。',
+  'What I did': '我做的',
+  'Looked, asked, listened, and walked the visit at the cancer center': '在肿瘤医院望、问、闻、切',
+  'Drew the visit and merged the pain points, opportunities, and touchpoints that repeated':
+    '画出就医流程，把重复的痛点、机会点和接触点合并',
+  'Set phase 1 as registration, tests and reports, and medicine collection': '把第一期定为挂号、检查拿报告、取药',
+  'Framed the service as points, paths, and places': '用点、线、面搭这套服务',
+  'What we did': '我们做的',
+  'Built the hospital account along the visit': '按就医路径搭建医院公众号',
+  'Tested the check-in QR code and the pharmacy barcode for a scannable size': '把候诊签到二维码和窗口取药条形码测到能扫的大小',
+  'Stood with the medical guides on launch day, 16 October 2017': '2017 年 10 月 16 日和导医一起在现场',
+  'Went back a week later for the follow-up': '一周后回去回访',
+  'In the press · July 2018': '报道 · 2018 年 7 月',
+  'CN-Healthcare, 8 July 2018.': '健康界，2018 年 7 月 8 日。',
+  'Read the article (Chinese)': '阅读原文',
+  'Before launch, 24 August 2017.': '上线前，2017 年 8 月 24 日。',
+  '19 October 2017, three days after launch.': '2017 年 10 月 19 日，上线后三天。',
+  'Hospital floor before the materials went in, 24 August 2017': '2017 年 8 月 24 日，物料铺设前的医院现场',
+  'Hospital floor three days after launch, 19 October 2017': '2017 年 10 月 19 日，上线后三天的医院现场',
+  'Fieldwork board in four parts: look, ask, listen, and walking the visit': '调研板，分望、问、闻、切四块',
+  'The board from the visit: look, ask, listen, and walk.': '走访时的那张板：望、问、闻、切。',
+  'Journey design across twelve stages, with guide, connect, group, and convert':
+    '就医流程设计，十二个阶段，下面是引导、联接、归类、转化',
+  'The visit, drawn left to right, and the four moves under it: guide, connect, group, convert.':
+    '就医流程从左到右，下面四步：引导、联接、归类、转化。',
+  'Online and offline scheme: account screens, codes tested at the window, and materials in the hospital':
+    '线上线下方案：公众号界面、在窗口测过的码、院内物料',
+  'Points on the account, the check-in code and the pharmacy barcode, and the materials on the floor.':
+    '点是公众号上的功能，线是候诊签到和窗口取药的码，面是铺在现场的物料。',
+  'The outpatient building': '门诊楼',
+  'People at pre-check': '预检处的人',
+  'A self-service booking kiosk': '自助预约机',
+  'The waiting area': '候诊区',
+  'The sign for building 2': '2 号楼的指示',
+  'The counter window': '窗口',
+  'People waiting to be called': '等着被叫号的人',
+  'A crowd waiting to be seen': '等着就诊的人群',
+  'Seats filling the waiting hall': '候诊大厅里坐满的座位',
+  'I walked these myself.': '这些是我自己走的。',
+  'Photos from looking, listening, and asking.': '望、闻、问时拍的。',
+  'Filled dots are phase 1.': '实心点是第一期。',
+  'Where the four moves sit between how present a capability is and how satisfied people are':
+    '四步落在「具备程度」和「满意度」上的位置',
+  'Convert · attractive': '转化 · 魅力',
+  'Connect · expected': '联接 · 期望',
+  'Guide · must-have': '引导 · 必备',
+  'Group · indifferent': '归类 · 无差异',
+  'Mismatch · reverse': '信息不对称 · 反向',
+  Satisfaction: '满意度',
+  'How present': '具备程度',
+  'Twelve stages, and where the four moves sit.': '十二个阶段，以及四步落在哪里。',
+  'People waiting at a door': '在门口等待的人',
+  'A doctor working at a desk': '医生在桌前忙碌',
+  'A person waiting with no result on the screen': '查询没有结果',
+  'A person at a desk with a confirmation': '挂号成功',
+  'Patient waiting': '患者等待',
+  'Doctor busy': '医生忙碌',
+  'No result': '查询无结果',
+  Registered: '挂号成功',
+  'Register, pay, and reports, on the account.': '公众号上的挂号、缴费和查报告。',
+  'Check-in while waiting': '候诊签到',
+  'Collect at the window': '窗口取药',
+  'A poster by the elevator': '电梯旁的海报',
+  'Elevator poster': '电梯海报',
+  'A roll-up banner in the corridor': '走廊里的易拉宝',
+  'Corridor banner': '走廊易拉宝',
+  'A large process poster in the waiting room': '候诊区的流程大海报',
+  'Waiting-room poster': '候诊海报',
+  'A sticker on the counter window': '窗口上的操作贴纸',
+  'Sticker at the window': '窗口贴纸',
+  'A floor decal pointing the way': '地面上的地点引导',
+  'Floor decal': '地贴',
+  'The account, the two codes, and the materials on the floor.': '公众号、两种码，和铺在现场的物料。',
+  'Tencent Healthcare': '腾讯医疗健康',
+  'Online visit platform and in-hospital materials': '线上就医平台和院内物料',
+  'Look, listen, ask, and walking the visit': '望、闻、问、切',
+  'In August 2017 I joined Tencent Healthcare. This was the first project I did with a hospital, to make the visit easier to get through.':
+    '2017 年 8 月，我正式入职腾讯医疗健康部门，并参与了第一个和医院合作，升级就医服务体验的项目。',
+  'We built the hospital an online platform for the visit. Registration, payment, and reports. Patients were losing the day in three long waits, and the time with the doctor was the short one: registering took long, paying took long, and waiting for the report took long.':
+    '我们帮医院搭建了线上就医服务平台，主要是挂号、缴费、查报告，用来缓解「三长一短」：挂号长、缴费长、等报告长、看病短。',
+  'Offline, we walked the hospital and followed patients. We looked for the points where people got lost between steps, and drew that as their journey. At the triage desk, the lifts, the payment windows, and the stairs, we put roll-up banners, floor decals, and acrylic boards, so a person could see where to go next.':
+    '线下导引：我们去医院实地勘察，并随访病人，找到他们在各个环节找不到地方的点，总结成用户旅程。在分诊台、电梯、缴费窗口、楼梯这些位置，做了易拉宝、地贴、亚克力板，指引看病的去处。',
+  'I went with the team to Fudan University Shanghai Cancer Center.': '为此我随团队来到上海复旦肿瘤医院。',
+  'While I was designing the payment step, I borrowed a scanner from the hospital. I set it at the distance of a real payment window and kept changing the size of the QR code, until staff could scan it from a comfortable distance, and a failed scan did not have to be repeated. It was a small piece of a large service.':
+    '我在设计线上就医缴费模块的时候，从医院借了一个扫码枪，模拟真实缴费窗口的距离，反复调整二维码的大小，直到工作人员能在最舒适的距离扫上，少一次扫不上再扫一次。这只是整个服务设计里很小的一个环节。',
+  'After the materials were produced, we stayed for two weeks. We walked the path from the moment a patient came in, and kept moving the materials, so that at each point on the journey the guidance was clear.':
+    '物料做好之后，我们驻场两周，从患者进医院开始走路径、步线，反复调整物料的位置，让人走到就医地图的每一个点，都能看到清楚的指引。',
+  'It was tiring. It also planted a seed. For me, this is where the work became truly on the side of people.':
+    '虽然很累，但这个设计项目在我心里种下了种子，是真正的以人为本。',
+  'Look, listen, ask, walk': '望、闻、问、切',
+  'On the floor, I watched how people moved through the visit, and where it snagged.':
+    '在一线就医环境里，我观察就医行为与痛点。',
+  'I sat in on patients and doctors talking their way through the visit.': '我旁听患者和医生在就医流程中的沟通。',
+  'I asked patients and the clinical staff how the visit felt.': '我询问患者和医护人员的感受。',
+  'I went through the whole visit myself.': '我切身把完整的就医流程走了一遍。',
+  'We interviewed patients, nurses, doctors, and the other clinical staff. That gave us an experience map, and the pain points that were real. The online registration flow, and the materials in the hospital, were designed from there.':
+    '总的来说，我们对病患、护士、医生，以及其他医护人员做了访谈，得出体验地图和真实的痛点。线上挂号流程和线下物料，是从这里开始设计的。',
+  'Points, the line, and the place': '点、线、面',
+  'A full visit, in time and in space, comes apart into points. Design is the line that joins one point to the next. The place is the real room, where those points, joined by the line, have to hold together.':
+    '一次完整的就医，要在时间和空间上拆成不同的点。设计就是线，把每个点连起来。面是真实的空间，点和线要在那里串起来。',
+  'The line': '线',
+  'The place': '面',
+  'In August 2017 I joined Tencent Healthcare and worked on my first project with a hospital, improving how patients get through a visit.':
+    '2017 年 8 月，我正式入职腾讯医疗健康部门，并参与了第一个和医院合作，升级就医服务体验的项目。',
+  'We built the hospital an online platform for registration, payment, and reports. It went after the "three longs and one short": long waits to register, to pay, and for reports, and a short time with the doctor.':
+    '我们帮医院搭建线上就医服务平台，主要功能是挂号、缴费、查报告，解决「三长一短」：挂号长、缴费长、等报告长、看病短。',
+  'Offline, we walked the hospital and followed patients. We looked for the points where people got confused or lost at each step, and mapped their journey. At the triage desk, the lifts, the payment windows, and the stairs, we put roll-up banners, floor decals, and acrylic boards, so a person could see where to go next.':
+    '线下导引服务：我们去医院实地勘察，并随访病人，找到他们在医院内会疑惑、在各个就医环节找不到地方的点，并总结他们的用户旅程。在分诊台、电梯、缴费窗口、楼梯等位置，制作易拉宝、地贴、亚克力板，指引病人看病的去处。',
+  'While I was designing the payment step, I borrowed a scanner from the hospital. I set it at the distance of a real payment window and kept changing the size of the QR code, until staff could scan it from a comfortable distance on the first try. It was a small piece of a large service.':
+    '我在设计线上就医缴费模块时，从医院借了一个扫码枪，模拟真实缴费窗口的距离，反复测试调整缴费二维码的面积，直到工作人员能在最舒适的距离一次扫码成功。这只是整个庞大服务设计里很小的一个环节。',
+  'After the materials were produced, we stayed on site for two weeks. We walked the route a patient takes from the entrance and kept moving the materials until every point on the visit map had clear guidance.':
+    '物料设计并生产好后，我们驻场 2 周，测试患者从进医院开始的路径、步线，反复调整物料位置，确保病人到达每一个就医地图的点都能看到清晰的物料指引。',
+  'It was tiring, but the project planted a seed in me. It was human-centered design in the real sense.':
+    '虽然很累，但这个设计项目在我心里种下了种子，是真正的「以人为本」。',
+  'In the hospital, I watched how patients moved through the visit and where they got stuck.': '在一线就医环境观察就医行为与痛点。',
+  'We interviewed patients, nurses, doctors, and other hospital staff, and turned what we heard into an experience map of the real pain points. We designed the online registration flow and the in-hospital materials from that map.':
+    '总的来说，我们对病患、护士、医生以及其他医护人员进行用户访谈，得出体验地图和真实的痛点。基于此开展线上挂号流程和线下物料的设计。',
+  'We split a full visit, in time and in space, into points. The line is the design that connects one point to the next. The place is the real hospital, where those points and lines have to work for a patient walking through.':
+    '一次完整就医体验，在时间、空间上拆成不同的点；线是设计，把每个点连接起来；面是真实空间，把每个点用线在真实场景串联起来。',
+  'Registration, payment, and reports in the account, with illustrations for the moments in between: a patient waiting, a busy doctor, no result yet, and registration done.':
+    '公众号里的挂号、缴费、查报告，以及中间环节的情感化插画：患者等待、医生忙碌、查询无结果、挂号成功。',
+  'Check-in while waiting and collecting medicine at the window carry the patient from the phone to the counter. I tested the QR code and barcode on a payment-window scanner until I found the best size.':
+    '候诊签到和窗口取药，把患者从手机带到窗口。我用医院缴费窗口的扫码枪反复测试，直到测出最佳的二维码和条形码大小。',
+  'Posters by the lifts, roll-up banners in the corridors, a large process poster in the waiting area, stickers at the windows, and decals on the floor, so a patient could see where to go at each point.':
+    '电梯旁的宣传海报、走廊里的流程指引易拉宝、候诊区的流程说明大海报、窗口的操作指引贴纸、地面的地点引导地贴，让患者在每个点都知道往哪走。',
+  'The account and the materials went live on 16 October 2017. We worked with the medical guides in the halls, helping patients find their next step, and followed up a week later.':
+    '公众号和线下物料在 2017 年 10 月 16 日上线。我们和导医们在现场引导患者，一周后回访。',
+  'Patients were spending 4.5 fewer hours in the hospital on average, and doctors 3 fewer hours collecting materials. Doctors and patients thanked us in person.':
+    '患者平均在院时间减少 4.5 小时，医生收集材料的时间平均减少 3 小时。医生和患者当面向我们道谢。',
+  'CN-Healthcare, 8 July 2018: "Fudan University Shanghai Cancer Center: a precise patient service platform built on the electronic visit card."':
+    '健康界，2018 年 7 月 8 日：《复旦大学附属肿瘤医院：基于电子就诊卡的患者精准服务平台》',
+  'In the lobby, banners showed how to book, where to enter, and how to pay on WeChat or Alipay without queuing.':
+    '大厅里的易拉宝写着怎么预约、从哪进，以及怎么用微信或支付宝缴费不排队。',
+  'The WeChat payment banner listed the steps, and people stopped to follow them. Account cards were stacked at the counter.':
+    '微信支付易拉宝列出了步骤，有人停下来照着做。窗口上叠着公众号卡片。',
+  'The 2017 fieldwork board, recolored for this page. The prescription in the last panel is blurred.':
+    '2017 年的调研板，为这个页面改了配色。最后一格里的处方单做了模糊。',
+  'The 2017 design board, recolored for this page. Names on the mock screens are blurred.':
+    '2017 年的方案板，为这个页面改了配色。界面上的姓名做了模糊。',
+  'User research and interviews': '用户调研与访谈',
+  'Design method and direction': '设计方法与方向',
+  'Before launch · 24 August 2017': '上线前 · 2017 年 8 月 24 日',
+  'Three days after launch · 19 October 2017': '上线后三天 · 2017 年 10 月 19 日',
+  'Four fieldwork panels marked 望, 闻, 问, and 切 over slides of the outpatient visit, the pathology consultation, patient interviews, and the visit I went through':
+    '四格调研板：望、闻、问、切，底下是门诊流程、病理会诊、患者采访和切身体验的幻灯片',
+  'The fieldwork board from 2017, redrawn light. The prescription in the last panel is blurred.':
+    '2017 年的调研板，改成了浅色版。最后一格里的处方单做了模糊。',
+  'The service design board: account screens for registration, payment, and reports with four illustrations; check-in and pharmacy collection codes; and the posters, banners, stickers, and floor decals placed around the hospital':
+    '服务设计方案板：挂号、缴费、查报告的公众号页面和四张情感化插画；候诊签到和窗口取药的码；以及院内的海报、易拉宝、贴纸和地贴',
+  'The design board from 2017, redrawn light. Names on the mock screens are blurred.':
+    '2017 年的方案板，改成了浅色版。界面上的姓名做了模糊。',
+  'From arriving, to registering, waiting, seeing the doctor, and tests, the account and the floor both had places where a person needed a next step.':
+    '从到院、挂号、等待、就医到检查，线上和线下都有需要指引下一步的触点。',
+  'We built the hospital account along that path. The first release was check-in while waiting, and collection at the pharmacy window. The QR code and the barcode were sized until a scanner could read them.':
+    '我们按就医路径搭了医院公众号。第一期是候诊签到和窗口取药。二维码和条形码调到扫码枪能扫上的大小。',
+  'Floor decals, posters, roll-up banners, and stickers covered those points, so a person could see where to go.':
+    '地贴、海报、易拉宝和贴纸铺在这些点上，让人知道往哪走。',
+  'After it went live': '上线后效果',
+  'The account and the materials went live on 16 October 2017. We were on the floor with the medical guides, helping people find the next step. A week later we went back.':
+    '公众号和线下物料在 2017 年 10 月 16 日上线。我们和导医在现场帮患者指引。一周后回访。',
+  'Patients were spending 4.5 fewer hours at the hospital, on average. Doctors were spending 3 fewer hours collecting materials. They thanked us in person.':
+    '患者平均在院时间少了 4.5 小时，医生收材料的时间平均少了 3 小时。医生和患者当面道了谢。',
 };
 
 export const larkGlobalTranslations: TranslationMap = {
