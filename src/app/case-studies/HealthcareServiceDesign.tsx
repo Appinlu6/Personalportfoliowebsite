@@ -2,6 +2,7 @@ import { type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 import { LocalizedContent } from '../i18n/LocalizedContent';
 import { healthcareServiceTranslations } from '../i18n/caseStudyTranslations';
 import { CaseStudyThread, MainLineTag } from '../components/CaseStudyThread';
@@ -191,6 +192,7 @@ function Board({ src, alt, caption }: { src: string; alt: string; caption: strin
 }
 
 export function HealthcareServiceDesign() {
+  const { isCN } = useLanguage();
   return (
     <LocalizedContent translations={healthcareServiceTranslations}>
       <article
@@ -257,7 +259,8 @@ export function HealthcareServiceDesign() {
               {senses.map((item, index) => (
                 <li key={item.mark} className="rounded-2xl border border-[var(--hsd-line)] bg-[var(--hsd-surface)] p-6">
                   <p className="text-sm font-medium text-[var(--hsd-accent)]">
-                    {index + 1} · {item.mark} {item.title}
+                    {index + 1} · {item.mark}
+                    {!isCN && ` ${item.title}`}
                   </p>
                   <p className="mt-3 text-pretty text-base leading-7 text-[var(--hsd-muted)]">{item.copy}</p>
                 </li>
@@ -284,7 +287,8 @@ export function HealthcareServiceDesign() {
               {layers.map((item) => (
                 <div key={item.mark} className="rounded-2xl border border-[var(--hsd-line)] bg-[var(--hsd-surface)] p-6 md:p-7">
                   <p className="text-sm font-medium text-[var(--hsd-accent)]">
-                    {item.mark} {item.title}
+                    {item.mark}
+                    {!isCN && ` ${item.title}`}
                   </p>
                   <p className="mt-3 text-pretty text-base leading-7 text-[var(--hsd-muted)]">{item.copy}</p>
                 </div>

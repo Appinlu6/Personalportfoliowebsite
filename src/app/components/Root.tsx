@@ -79,7 +79,7 @@ function RootLayout() {
             </div>
             <div className="ml-auto flex flex-shrink-0 flex-col items-end gap-1 text-muted-foreground" style={{ fontSize: '16px' }}>
               <span className="whitespace-nowrap">© 2026 Lu Zhengping.</span>
-              <span className="whitespace-nowrap">{isCN ? '以 AI 重构。' : 'Reimagined with AI.'}</span>
+              <span className="whitespace-nowrap">Reimagined with AI.</span>
             </div>
           </div>
         </div>

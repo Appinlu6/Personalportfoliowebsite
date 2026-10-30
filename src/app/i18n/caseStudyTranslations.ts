@@ -252,19 +252,19 @@ export const beforeEveningTranslations: TranslationMap = {
 
 export const smartHospitalTranslations: TranslationMap = {
   ...common,
-  "Smart Hospital V2.0 demonstration at the People's Hospital of Nanshan District, Shenzhen (Huazhong University of Science and Technology Union Shenzhen Hospital)":
-    '深圳市南山区人民医院（华中科技大学协和深圳医院）智慧医院运营管理系统 V2.0 演示',
+  "Smart Hospital V1.0 demonstration at the People's Hospital of Nanshan District, Shenzhen (Huazhong University of Science and Technology Union Shenzhen Hospital)":
+    '深圳市南山区人民医院（华中科技大学协和深圳医院）智慧医院运营管理系统 V1.0 演示',
   'Download the project video': '下载项目视频',
-  'Smart Hospital V2.0, product demo at the pilot hospital (2:53).': '智慧医院运营管理系统 V2.0，试点医院产品演示（2 分 53 秒）。',
+  'Smart Hospital V1.0, product demo at the pilot hospital (2:53).': '智慧医院运营管理系统 V1.0，试点医院产品演示（2 分 53 秒）。',
   'Tencent Micision': '腾讯觅决',
   'Smart Hospital': '智慧医院',
-  'I led the 0-to-1 design of a platform that shows hospital leaders what happened and why across 140+ data dimensions, delivered to 23 hospitals.':
-    '我主导了这个平台从 0 到 1 的设计，让医院管理者在 140 多个数据维度上看清发生了什么、为什么发生，交付到 23 家医院。',
+  'I led this platform from 0 to 1: hospital interviews, product architecture, interaction design, the build in Unreal Engine and front-end code, then private deployment, maintenance documentation, and the delivery process. It lets hospital leaders see what is happening in the hospital in real time, and why, across 140+ data dimensions.':
+    '在这个项目中，我从院内访谈、产品架构搭建，到交互设计，用 UE 引擎+前端开发，再到私有化部署、设定维护文档和交付流程。完整主导了这个平台从 0 到 1 的实现，让医院管理者在 140 多个数据维度上看清医院实时发生了什么、为什么发生。',
   'Project overview video': '项目概览视频',
   '16:9 video showing the product, navigation, and hospital scenarios': '16:9 视频，展示产品、浏览路径与医院应用场景',
   'Video will be added when the final source file is available.': '最终视频素材确认后补充。',
   'Hospital operations platform': '医院运营管理平台',
-  '2018-2021': '2018–2021',
+  '2018-2019': '2018–2019',
   'Product design lead': '产品设计负责人',
   Pilot: '试点',
   "The People's Hospital of Nanshan District, Shenzhen (Huazhong University of Science and Technology Union Shenzhen Hospital)":
@@ -341,10 +341,16 @@ export const smartHospitalTranslations: TranslationMap = {
   'Outpatient: floors open up so departments can be compared level by level.': '门诊：楼层逐层展开，按层比较各科室。',
   'Inpatient view drilling down to individual beds in the 3D hospital': '住院视图：在 3D 医院中下钻到单个床位',
   'Inpatient: drill down to single beds to check occupancy and critical patients.': '住院：下钻到单个床位，查看占用情况和重症患者。',
-  'Overview: census, revenue, and bed occupancy across the whole hospital.': '总览：全院的人次、收入与床位占用。',
-  'Patients: where patients come from, their age groups, and how they flow through the hospital.': '患者：患者来源、年龄构成，以及在院内的流动。',
-  'Chronic disease: follow-up status and risk levels for long-term patients.': '慢病：长期患者的随访情况与风险等级。',
-  'Resources: staff, equipment, and supplies set against demand.': '资源：人员、设备与物资相对需求的配置情况。',
+  'Overview: hospital-wide census, outpatient departments, and bed occupancy.': '总览：全院的人次、门诊科室与床位占用。',
+  'Overview: the 3D hospital drilling from outpatient departments floor by floor to inpatient beds': '总览：3D 医院从门诊科室逐层下钻到住院床位',
+  'Patients module: the camera pulls out from the inpatient building to patient distribution across the districts':
+    '患者模块：镜头从住院楼拉远，展示各行政区的患者分布',
+  'Heat map of chronic disease patients across the district': '慢病患者分布热力图',
+  'Medical resources compared across administrative districts on the 3D city map': '在 3D 城市地图上比较各行政区的医疗资源',
+  'Patients: where patients across the hospital come from, their age groups, and how they spread across districts.':
+    '患者：全院患者来源、年龄构成、地区分布。',
+  'Chronic disease: where chronic disease patients live across the region, by age and gender.': '慢病：慢性病患者的区域分布、年龄性别构成。',
+  "Resources: today's examination status, and resources compared across districts.": '资源：今日检查状况和各行政区资源对比。',
   'Emergency module · 2020': '紧急模块 · 2020',
   'Monitoring COVID-19 in real time': '实时监控新冠疫情',
   "The platform was already running when COVID-19 broke out just before Chinese New Year 2020. With the hospital's support, our team built a fever monitoring module and had it live within a week.":
@@ -385,8 +391,6 @@ export const smartHospitalTranslations: TranslationMap = {
   'The layout prototype: overview stats, then the core 3D view, then drill-down detail.': '布局原型：先是总览数据，然后是核心 3D 视图，最后是下钻细节。',
   'Deployments combined on-site hardware, private cloud infrastructure, cloud rendering, and remote version updates.':
     '落地方案整合现场硬件、私有云基础设施、云渲染与远程版本更新。',
-  'First hospital delivery': '首个医院项目交付',
-  'Hospitals delivered by 2021': '截至 2021 年完成交付的医院',
   'Led the 0-to-1 product definition': '主导产品从 0 到 1 的定义',
   'Translated field findings into a product framework': '把实地发现转化为产品框架',
   'Structured the six operational modules': '梳理六个运营模块',
@@ -1183,21 +1187,24 @@ export const healthcareServiceTranslations: TranslationMap = {
 export const larkGlobalTranslations: TranslationMap = {
   ...common,
   'Lark and Feishu': 'Lark 与飞书',
-  'Global Marketing Design': '全球营销设计',
+  'Marketing Design and DesignOps': '营销设计与设计效能',
+  'The Customer Stories landing page on larksuite.com, with a story detail page beside it': 'larksuite.com 上的客户故事落地页，旁边是一篇故事详情页',
+  'A Customer Story page with the CMS template fields highlighted in orange': '客户故事页面，橙色标出的是 CMS 模板字段',
+  'The Feishu Project homepage on project.feishu.cn': 'project.feishu.cn 上的飞书项目首页',
+  'The interface component library, with abstract interfaces grouped by product': '界面组件库，抽象界面按产品分组',
+  'The Feishu brand asset platform: the home page and asset category pages': '飞书品牌资产库：首页与素材分类页',
   'Web experiences and reusable systems that helped marketing teams publish, test, and sell faster.':
     '通过网站体验与可复用系统，帮助营销团队更快发布、验证并支持销售。',
-  'Global marketing design reel': '全球营销设计合集',
-  '16:9 video showing Customer Stories, product pages, 3D work, and design operation systems':
-    '16:9 视频，展示客户案例、产品页面、3D 视觉与设计运营系统',
-  'Final project media will replace this placeholder.': '最终项目素材确认后替换此占位内容。',
+  'The live Customer Stories page on larksuite.com': 'larksuite.com 上线中的客户故事页面',
+  'The Customer Stories site is still live.': '客户故事网站至今仍在线上运行。',
+  'Visit larksuite.com': '访问 larksuite.com',
   'Global marketing website and design operations': '全球营销网站与设计运营',
   'Creative Designer, Global Marketing': '创意设计师（全球营销）',
   Responsibilities: '具体职责',
   'Web design, visual design, and frontend build': '网页设计、视觉设计与前端搭建',
   'PMM, Sales, Product, UX, and Creative Design': 'PMM、销售、产品、UX 与创意设计',
-  'Customer Stories, product pages, 3D campaigns, component library, and brand assets':
-    '客户案例、产品页面、3D 营销视觉、组件库与品牌资产',
-  'Framer, CMS, Spline, Lark aPaaS, and low-code workflows': 'Framer、CMS、Spline、飞书 aPaaS 与低代码工作流',
+  'Customer Stories, product pages, component library, and brand assets': '客户案例、产品页面、组件库与品牌资产',
+  'Framer, CMS, Lark aPaaS, and low-code workflows': 'Framer、CMS、飞书 aPaaS 与低代码工作流',
   'Designing for the marketing loop': '围绕营销闭环开展设计',
   'The work connected brand quality with the practical needs of PMM, Sales, Product, and Creative Design.':
     '这项工作把品牌品质与 PMM、销售、产品和创意设计团队的实际需求连接起来。',
@@ -1206,8 +1213,7 @@ export const larkGlobalTranslations: TranslationMap = {
   'The design scope expanded from page craft to content systems, tools, shared assets, and team operating models.':
     '设计范围也因此从单个页面，扩展到内容系统、工具、共享资产与团队协作方式。',
   'Customer-facing work': '面向客户的设计',
-  'Customer Stories, product websites, campaign visuals, motion, and 3D product storytelling.':
-    '客户案例、产品网站、营销视觉、动效与 3D 产品叙事。',
+  'Customer Stories, product websites, campaign visuals, and motion.': '客户案例、产品网站、营销视觉与动效。',
   'Internal systems': '内部系统',
   'CMS templates, interface components, asset retrieval, SOPs, training, and ongoing operations.':
     'CMS 模板、界面组件、资产检索、SOP、培训与持续运营。',
@@ -1258,25 +1264,13 @@ export const larkGlobalTranslations: TranslationMap = {
   'Wide before-and-after workflow showing the handoff change from repeated design support to PMM self-service':
     '宽幅前后对比流程，展示从反复依赖设计支持到 PMM 自助发布的变化',
   'Extending the product visual language': '扩展产品视觉语言',
-  'The same approach continued across product websites, motion studies, and 3D commerce visuals.':
-    '同一思路延伸到产品网站、动效探索与 3D 商业视觉。',
+  'The same approach continued into product websites.': '同一思路延伸到产品网站。',
   'Feishu Project homepage': '飞书项目首页',
   'Wide product page showing the five core benefits, clearer hierarchy, and product interface views':
     '宽幅产品页，展示五项核心价值、更清晰的信息层级与产品界面',
   'Feishu Project website': '飞书项目网站',
-  'Refined the product homepage around five core benefits, clearer information hierarchy, and 3D visual concepts.':
-    '围绕五项核心价值重构产品首页，改善信息层级，并探索 3D 视觉概念。',
-  'Attendance device renders': '考勤设备渲染',
-  'Portrait composition showing the product, feature details, exploded view, and commerce page':
-    '竖幅组合图，展示产品、功能细节、爆炸图与电商页面',
-  'Lark attendance device': 'Lark 考勤设备',
-  'Reworked supplier material, rebuilt the product renders, and aligned the commerce page with the Lark visual language.':
-    '重新整理供应商素材与产品渲染，并让电商页面与 Lark 的视觉语言保持一致。',
-  'Spline motion study': 'Spline 动效探索',
-  '16:9 video showing an interactive 3D concept for the Feishu Project homepage': '16:9 视频，展示飞书项目首页的交互式 3D 概念',
-  'Design review': '设计取舍',
-  'The 3D direction improved visual communication and received positive feedback. The final homepage used static 3D to stay consistent with related product pages and control development cost.':
-    '3D 方向改善了视觉表达，也获得了积极反馈。最终首页采用静态 3D，以保持相关产品页面的一致性，并控制开发成本。',
+  'Refined the product homepage around five core benefits and a clearer information hierarchy.':
+    '围绕五项核心价值重构产品首页，并改善信息层级。',
   'Creating a shared interface library': '建立共享界面组件库',
   'Repeated interface recreation created delays, inconsistent visuals, and avoidable review cycles across teams.':
     '各团队反复重做界面，带来了延误、视觉不一致和本可避免的审核成本。',
@@ -1342,7 +1336,6 @@ export const larkGlobalTranslations: TranslationMap = {
   'Marketing experience': '营销体验',
   'Designed Customer Stories and product pages': '设计客户案例与产品页面',
   'Translated product benefits into web narratives': '把产品价值转化为网页叙事',
-  'Built motion and 3D visual directions': '建立动效与 3D 视觉方向',
   'Frontend and tooling': '前端与工具',
   'Built reusable pages in Framer': '使用 Framer 搭建可复用页面',
   'Created CMS modules and content rules': '建立 CMS 模块与内容规则',
@@ -1711,6 +1704,17 @@ export const bauhiniaMindTranslations: TranslationMap = {
   'The current prototype has processed 30 localized Hong Kong medical documents, built a knowledge graph with 1,188 nodes and 1,733 relations, and maintains average response latency under 2.5 seconds while preserving strict non-diagnostic boundaries.':
     '当前原型已处理 30 份香港本地医疗资料，建立包含 1,188 个节点和 1,733 条关系的知识图谱；在严格遵守非诊断边界的前提下，平均响应时间低于 2.5 秒。',
   'Target problem': '目标问题',
+  'Authoritative resources (Hospital Authority, university health services) are reliable but fragmented and non-conversational, making urgent decisions hard to execute.':
+    '医管局、高校健康服务这些权威渠道可靠，但彼此分散，也不能对话，紧急时很难据此做出决定并付诸行动。',
+  'Mainland-to-Hong Kong system mismatch—GP-first triage, public/private pathways, insurance differences, and language habits—creates persistent cross-cultural friction.':
+    '内地与香港的体系错位，包括全科医生首诊、公私营分流、保险差异和语言习惯，带来持续的跨文化摩擦。',
+  'Students often receive either cold information without empathy or generic comfort without action, amplifying anxiety during moments of physical vulnerability.':
+    '学生拿到的，要么是没有共情的冷冰冰信息，要么是没有行动指引的泛泛安慰。身体不适时，这会放大焦虑。',
+  'What this project aims': '项目目标',
+  'Bauhinia-Mind translates cross-cultural healthcare barriers and acculturative stress among mainland Chinese students in Hong Kong into a concrete system objective: combining conversational emotional support with automated action cards for medical navigation to form a closed-loop, real-time support workflow.':
+    '紫荆心智把在港内地学生面对的跨文化就医障碍和文化适应压力，转化为一个具体的系统目标：把对话式情绪支持和自动生成的就医导航行动卡片结合起来，形成闭环、实时的支持流程。',
+  'The system operates strictly within non-clinical boundaries and is positioned as a “cultural host” that supports cross-cultural healthcare access and local adaptation, rather than providing diagnosis or treatment.':
+    '系统严格守在非临床边界之内，定位为支持跨文化就医和本地适应的“文化东道主”，不做诊断，也不提供治疗。',
   'Mainland Chinese students in Hong Kong face a dual challenge: practical uncertainty in navigating an unfamiliar healthcare system and emotional stress caused by cross-cultural transition.':
     '在港内地学生面对两重挑战：一方面，他们不熟悉香港医疗体系，不确定该如何求医；另一方面，跨文化适应也带来了持续的情绪压力。',
   'Through qualitative profiling of 15 students, the research identified a recurring systemic gap: when health issues emerge, users are forced to choose between fragmented institutional information and generic emotional reassurance, with no integrated pathway that combines empathy and executable next steps.':

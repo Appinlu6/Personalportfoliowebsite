@@ -1,6 +1,6 @@
 import { type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { LocalizedContent } from '../i18n/LocalizedContent';
 import { larkGlobalTranslations } from '../i18n/caseStudyTranslations';
@@ -11,8 +11,8 @@ const metadata = [
   { label: 'Role', value: 'Creative Designer, Global Marketing' },
   { label: 'Responsibilities', value: 'Web design, visual design, and frontend build' },
   { label: 'Partners', value: 'PMM, Sales, Product, UX, and Creative Design' },
-  { label: 'Scope', value: 'Customer Stories, product pages, 3D campaigns, component library, and brand assets' },
-  { label: 'Tools', value: 'Framer, CMS, Spline, Lark aPaaS, and low-code workflows' },
+  { label: 'Scope', value: 'Customer Stories, product pages, component library, and brand assets' },
+  { label: 'Tools', value: 'Framer, CMS, Lark aPaaS, and low-code workflows' },
 ];
 
 const publishingNeeds = [
@@ -37,17 +37,6 @@ const cmsElements = [
   'Article content blocks',
   'Typography rules',
   'Motion behavior',
-];
-
-const productWork = [
-  {
-    title: 'Feishu Project website',
-    copy: 'Refined the product homepage around five core benefits, clearer information hierarchy, and 3D visual concepts.',
-  },
-  {
-    title: 'Lark attendance device',
-    copy: 'Reworked supplier material, rebuilt the product renders, and aligned the commerce page with the Lark visual language.',
-  },
 ];
 
 const libraryCoverage = [
@@ -100,7 +89,7 @@ const aiWorkflow = ['Approved context', 'Brief and intent', 'AI-assisted draft',
 const contributions = [
   {
     title: 'Marketing experience',
-    items: ['Designed Customer Stories and product pages', 'Translated product benefits into web narratives', 'Built motion and 3D visual directions'],
+    items: ['Designed Customer Stories and product pages', 'Translated product benefits into web narratives'],
   },
   {
     title: 'Frontend and tooling',
@@ -166,6 +155,14 @@ function MediaPlaceholder({
   );
 }
 
+function Media({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
+  return (
+    <div className={`overflow-hidden rounded-2xl border border-[var(--lark-line)] bg-[var(--lark-surface)] ${className}`}>
+      <img src={src} alt={alt} loading="lazy" decoding="async" className="block h-full w-full object-cover object-top" />
+    </div>
+  );
+}
+
 export function LarkGlobalMarketing() {
   return (
     <LocalizedContent translations={larkGlobalTranslations}>
@@ -206,7 +203,7 @@ export function LarkGlobalMarketing() {
           >
             <p className="mb-4 text-sm font-medium tracking-[0.08em] text-[var(--lark-accent)]">Lark and Feishu</p>
             <h1 className="max-w-[66rem] text-[clamp(3.3rem,6.4vw,6.1rem)] font-semibold leading-[0.92] tracking-[-0.058em] text-[var(--lark-text)]">
-              Global Marketing Design
+              Marketing Design and DesignOps
             </h1>
             <p className="mt-6 max-w-[48rem] text-lg leading-8 text-[var(--lark-muted)]">
               Web experiences and reusable systems that helped marketing teams publish, test, and sell faster.
@@ -220,12 +217,26 @@ export function LarkGlobalMarketing() {
             transition={{ duration: 0.72, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex flex-col md:col-span-8">
-              <MediaPlaceholder
-                title="Global marketing design reel"
-                note="16:9 video showing Customer Stories, product pages, 3D work, and design operation systems"
-                className="aspect-video w-full shadow-[0_28px_70px_rgba(49,91,232,0.13)]"
-              />
-              <p className="mt-3 text-sm leading-6 text-[var(--lark-muted)]">Final project media will replace this placeholder.</p>
+              <div className="aspect-video w-full overflow-hidden rounded-2xl border border-[var(--lark-line)] bg-[var(--lark-surface)] shadow-[0_28px_70px_rgba(49,91,232,0.13)]">
+                <img
+                  src="/lark/customer-stories-live.webp"
+                  alt="The live Customer Stories page on larksuite.com"
+                  decoding="async"
+                  className="block h-full w-full object-cover object-top"
+                />
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[var(--lark-muted)]">
+                The Customer Stories site is still live.{' '}
+                <a
+                  href="https://www.larksuite.com/en_us/customers"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 font-medium text-[var(--lark-accent)] underline-offset-4 hover:underline"
+                >
+                  Visit larksuite.com
+                  <ArrowUpRight size={14} strokeWidth={1.8} />
+                </a>
+              </p>
             </div>
 
             <div className="rounded-2xl border border-[var(--lark-line)] bg-[var(--lark-surface)] p-6 md:col-span-4 md:p-7">
@@ -261,7 +272,7 @@ export function LarkGlobalMarketing() {
             <div className="grid gap-4 sm:grid-cols-2 md:col-span-5 md:grid-cols-1">
               <div className="rounded-2xl border border-[var(--lark-line)] bg-[var(--lark-surface)] p-7">
                 <p className="text-xl font-medium tracking-[-0.025em]">Customer-facing work</p>
-                <p className="mt-3 text-sm leading-6 text-[var(--lark-muted)]">Customer Stories, product websites, campaign visuals, motion, and 3D product storytelling.</p>
+                <p className="mt-3 text-sm leading-6 text-[var(--lark-muted)]">Customer Stories, product websites, campaign visuals, and motion.</p>
               </div>
               <div className="rounded-2xl bg-[var(--lark-accent-soft)] p-7">
                 <p className="text-xl font-medium tracking-[-0.025em]">Internal systems</p>
@@ -279,10 +290,10 @@ export function LarkGlobalMarketing() {
           </Reveal>
 
           <Reveal>
-            <MediaPlaceholder
-              title="Customer Stories landing page"
-              note="Wide desktop view showing regional filters, featured stories, story cards, and lead capture"
-              className="aspect-[16/8]"
+            <Media
+              src="/lark/customer-stories.webp"
+              alt="The Customer Stories landing page on larksuite.com, with a story detail page beside it"
+              className="aspect-[2/1]"
             />
           </Reveal>
 
@@ -340,10 +351,10 @@ export function LarkGlobalMarketing() {
           </Reveal>
 
           <Reveal className="grid gap-6 lg:grid-cols-12">
-            <MediaPlaceholder
-              title="CMS template system"
-              note="Tall image showing editable CMS fields, module rules, and reusable story layouts"
-              className="aspect-[4/5] lg:col-span-5"
+            <Media
+              src="/lark/cms-template.webp"
+              alt="A Customer Story page with the CMS template fields highlighted in orange"
+              className="aspect-square lg:col-span-5"
             />
 
             <div className="rounded-2xl border border-[var(--lark-line)] bg-[var(--lark-surface)] p-7 lg:col-span-7 lg:p-9">
@@ -377,47 +388,17 @@ export function LarkGlobalMarketing() {
 
         <section className="pb-12 md:pb-18">
           <Reveal>
-            <SectionHeading intro="The same approach continued across product websites, motion studies, and 3D commerce visuals.">
+            <SectionHeading intro="The same approach continued into product websites.">
               Extending the product visual language
             </SectionHeading>
           </Reveal>
 
           <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-stretch">
-            <div className="flex flex-col lg:col-span-7">
-              <MediaPlaceholder
-                title="Feishu Project homepage"
-                note="Wide product page showing the five core benefits, clearer hierarchy, and product interface views"
-                className="aspect-[16/10]"
-              />
-              <div className="mt-5 rounded-2xl border border-[var(--lark-line)] bg-[var(--lark-surface)] p-6">
-                <p className="text-xl font-medium tracking-[-0.025em]">{productWork[0].title}</p>
-                <p className="mt-3 text-sm leading-6 text-[var(--lark-muted)]">{productWork[0].copy}</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col lg:col-span-5">
-              <MediaPlaceholder
-                title="Attendance device renders"
-                note="Portrait composition showing the product, feature details, exploded view, and commerce page"
-                className="aspect-[4/5]"
-              />
-              <div className="mt-5 rounded-2xl bg-[var(--lark-accent-soft)] p-6">
-                <p className="text-xl font-medium tracking-[-0.025em]">{productWork[1].title}</p>
-                <p className="mt-3 text-sm leading-6 text-[var(--lark-muted)]">{productWork[1].copy}</p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal className="mt-6 grid gap-6 md:grid-cols-2">
-            <MediaPlaceholder
-              title="Spline motion study"
-              note="16:9 video showing an interactive 3D concept for the Feishu Project homepage"
-              className="aspect-video"
-            />
-            <div className="rounded-2xl border border-[var(--lark-line)] bg-[var(--lark-surface)] p-7 md:p-9">
-              <p className="text-2xl font-medium tracking-[-0.03em]">Design review</p>
+            <Media src="/lark/feishu-project.webp" alt="The Feishu Project homepage on project.feishu.cn" className="aspect-[16/10] lg:col-span-8" />
+            <div className="rounded-2xl bg-[var(--lark-accent-soft)] p-7 lg:col-span-4 lg:p-9">
+              <p className="text-2xl font-medium tracking-[-0.03em]">Feishu Project website</p>
               <p className="mt-4 text-base leading-7 text-[var(--lark-muted)]">
-                The 3D direction improved visual communication and received positive feedback. The final homepage used static 3D to stay consistent with related product pages and control development cost.
+                Refined the product homepage around five core benefits and a clearer information hierarchy.
               </p>
             </div>
           </Reveal>
@@ -443,9 +424,9 @@ export function LarkGlobalMarketing() {
               ))}
             </div>
 
-            <MediaPlaceholder
-              title="Multilingual interface component library"
-              note="Wide view showing standard and abstract interface components across product groups and languages"
+            <Media
+              src="/lark/component-library.webp"
+              alt="The interface component library, with abstract interfaces grouped by product"
               className="aspect-[16/10] md:col-span-7"
             />
           </Reveal>
@@ -477,10 +458,10 @@ export function LarkGlobalMarketing() {
               </p>
             </div>
 
-            <MediaPlaceholder
-              title="Lark brand asset platform"
-              note="16:10 platform view showing categories, asset cards, upload, download, and format information"
-              className="aspect-[16/10] lg:col-span-7"
+            <Media
+              src="/lark/asset-platform.webp"
+              alt="The Feishu brand asset platform: the home page and asset category pages"
+              className="aspect-[1364/884] lg:col-span-7"
             />
           </Reveal>
 

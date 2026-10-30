@@ -38,7 +38,7 @@ const projectCopyCN: Record<string, { title: string; year: string }> = {
   },
   'tencent-micision-smart-hospital': {
     title: '腾讯觅决 · 智慧医院',
-    year: '2018 – 2021',
+    year: '2018 – 2019',
   },
   'tencent-medical-cloud-o2o': {
     title: '医疗服务设计',
@@ -49,7 +49,7 @@ const projectCopyCN: Record<string, { title: string; year: string }> = {
     year: '2019 年 1 月 – 4 月',
   },
   'lark-global-marketing-website': {
-    title: 'Lark 全球营销官网',
+    title: 'Lark 营销设计与设计效能',
     year: '2022 – 2023',
   },
   'before-evening-vr': {

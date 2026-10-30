@@ -5,6 +5,9 @@ export const projectTagLabelsCN = {
   'NLP & Text Mining': 'NLP 与文本挖掘',
   'Human-AI Workflow': '人机协作工作流',
   'Agent Framework Design': '智能体框架设计',
+  'Design Systems': '设计系统',
+  'Low-code & Frontend Build': '低代码与前端搭建',
+  'Brand & Content Strategy': '品牌与内容策略',
   'Data Visualization': '数据可视化',
   'Big Data Platform Design': '大数据平台设计',
   'Real-time Decision Support': '实时决策支持',
@@ -72,19 +75,19 @@ export const projects: Project[] = [
   },
   {
     slug: 'lark-global-marketing-website',
-    title: 'Lark Global Marketing Website',
+    title: 'Lark & Feishu: Marketing Design and DesignOps',
     year: '2022 – 2023',
     description:
       'Responsible for the website design of Meego, the project management tool within Lark software, and the design of the Customer Stories section on the global marketing website. Also responsible for creative design, marketing solutions, and new media art support.',
-    tags: ['Human-AI Workflow', 'Service Design', 'Enterprise SaaS'],
+    tags: ['Human-AI Workflow', 'Design Systems', 'Brand & Content Strategy'],
     featured: false,
-    image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/lark/cover.webp',
+    hoverImage: '/lark/cover-hover.webp',
   },
   {
     slug: 'tencent-micision-smart-hospital',
     title: 'Tencent Micision — Smart Hospital',
-    year: '2018 – 2021',
+    year: '2018 – 2019',
     description:
       "Led the 0-to-1 design of a hospital data platform that shows what happened and why. Piloted at the People's Hospital of Nanshan District, Shenzhen (Huazhong University of Science and Technology Union Shenzhen Hospital) and delivered to 23 hospitals by 2021.",
     tags: ['Analysis', 'Data Visualization', 'Big Data Platform Design', 'Healthcare'],

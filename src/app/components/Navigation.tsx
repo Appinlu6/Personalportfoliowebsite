@@ -40,32 +40,18 @@ export function Navigation() {
               </li>
             ))}
             </ul>
-          {LANGUAGE_SWITCH_ENABLED && <div
-            className="flex shrink-0 items-center gap-1 whitespace-nowrap"
-            role="group"
-            aria-label={isCN ? '语言选择' : 'Language selection'}
-          >
-            {(['en', 'cn'] as const).map((option) => {
-              const isActive = language === option;
-              return (
-                <span key={option} className="flex items-center gap-1">
-                  {option === 'cn' && <span aria-hidden="true" className="text-[11px] text-[#a0a0a0]">/</span>}
-                  <button
-                  type="button"
-                  lang={option === 'cn' ? 'zh-Hans' : 'en'}
-                  aria-pressed={isActive}
-                  aria-label={option === 'cn' ? '切换为中文' : 'Switch to English'}
-                  onClick={() => setLanguage(option)}
-                  className={`min-h-8 cursor-pointer rounded-sm px-1 text-[12px] leading-none transition-colors hover:text-[#404040] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#666666] ${
-                    isActive ? 'font-medium text-[#5f5f5f]' : 'font-normal text-[#777777]'
-                  }`}
-                >
-                  {option === 'cn' ? '中' : 'EN'}
-                  </button>
-                </span>
-              );
-            })}
-          </div>}
+          {LANGUAGE_SWITCH_ENABLED && (
+            <button
+              type="button"
+              aria-label={isCN ? 'Switch to English' : '切换为中文'}
+              onClick={() => setLanguage(language === 'cn' ? 'en' : 'cn')}
+              className="inline-flex h-7 shrink-0 cursor-pointer items-center gap-0.5 whitespace-nowrap rounded-full px-1.5 text-[10px] leading-none transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#666666]"
+            >
+              <span lang="zh-Hans" className={isCN ? 'font-medium text-[#404040]' : 'text-[#9a9a9a]'}>中</span>
+              <span aria-hidden="true" className="text-[#c4c4c4]">/</span>
+              <span lang="en" className={isCN ? 'text-[#9a9a9a]' : 'font-medium text-[#404040]'}>EN</span>
+            </button>
+          )}
           </div>
         </div>
       </div>

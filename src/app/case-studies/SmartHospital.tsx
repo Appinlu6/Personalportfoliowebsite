@@ -14,7 +14,7 @@ const PRESS_2020_URL = 'https://www.hit180.com/42665.html';
 
 const metadata = [
   { label: 'Type', value: 'Hospital operations platform' },
-  { label: 'Duration', value: '2018-2021' },
+  { label: 'Duration', value: '2018-2019' },
   { label: 'Role', value: 'Product design lead' },
   { label: 'Pilot', value: HOSPITAL },
   { label: 'Scope', value: 'Field research, product framework, multi-dimensional analysis, 3D visualization' },
@@ -115,6 +115,39 @@ const timelinePlan = [
   },
 ];
 
+const moduleClips = [
+  {
+    src: '/smart-hospital/overview-hospital.webp',
+    alt: 'Overview: the 3D hospital drilling from outpatient departments floor by floor to inpatient beds',
+    caption: 'Overview: hospital-wide census, outpatient departments, and bed occupancy.',
+  },
+  {
+    src: '/smart-hospital/outpatient-floors.webp',
+    alt: 'Outpatient view expanding the 3D hospital floor by floor',
+    caption: 'Outpatient: floors open up so departments can be compared level by level.',
+  },
+  {
+    src: '/smart-hospital/inpatient-beds.webp',
+    alt: 'Inpatient view drilling down to individual beds in the 3D hospital',
+    caption: 'Inpatient: drill down to single beds to check occupancy and critical patients.',
+  },
+  {
+    src: '/smart-hospital/patients-districts.webp',
+    alt: 'Patients module: the camera pulls out from the inpatient building to patient distribution across the districts',
+    caption: 'Patients: where patients across the hospital come from, their age groups, and how they spread across districts.',
+  },
+  {
+    src: '/smart-hospital/chronic-heatmap.webp',
+    alt: 'Heat map of chronic disease patients across the district',
+    caption: 'Chronic disease: where chronic disease patients live across the region, by age and gender.',
+  },
+  {
+    src: '/smart-hospital/resources-districts.webp',
+    alt: 'Medical resources compared across administrative districts on the 3D city map',
+    caption: "Resources: today's examination status, and resources compared across districts.",
+  },
+];
+
 const contributions = [
   {
     title: 'Product direction',
@@ -198,20 +231,6 @@ function Figure({
   );
 }
 
-function ModulePlaceholder({ title, caption }: { title: string; caption: string }) {
-  const { isCN } = useLanguage();
-
-  return (
-    <figure>
-      <div className="flex aspect-[340/259] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--sh-line)] bg-[var(--sh-accent-soft)]/40 p-6 text-center">
-        <p className="text-lg font-medium text-[var(--sh-text)]">{title}</p>
-        <p className="text-sm text-[var(--sh-muted)]">{isCN ? '演示录屏待补充' : 'Screen recording to come'}</p>
-      </div>
-      <figcaption className="mt-3 text-sm leading-6 text-[var(--sh-muted)]">{caption}</figcaption>
-    </figure>
-  );
-}
-
 function PressQuote({ href, label, caption, children }: { href: string; label: string; caption: string; children: ReactNode }) {
   const { isCN } = useLanguage();
 
@@ -280,7 +299,7 @@ export function SmartHospital() {
               Smart Hospital
             </h1>
             <p className="mt-6 text-pretty text-lg leading-8 text-[var(--sh-muted)]">
-              I led the 0-to-1 design of a platform that shows hospital leaders what happened and why across 140+ data dimensions, delivered to 23 hospitals.
+              I led this platform from 0 to 1: hospital interviews, product architecture, interaction design, the build in Unreal Engine and front-end code, then private deployment, maintenance documentation, and the delivery process. It lets hospital leaders see what is happening in the hospital in real time, and why, across 140+ data dimensions.
             </p>
           </motion.div>
 
@@ -298,13 +317,13 @@ export function SmartHospital() {
                   playsInline
                   preload="metadata"
                   poster="/videos/smart-hospital-nanshan-poster.jpg"
-                  aria-label="Smart Hospital V2.0 demonstration at the People's Hospital of Nanshan District, Shenzhen (Huazhong University of Science and Technology Union Shenzhen Hospital)"
+                  aria-label="Smart Hospital V1.0 demonstration at the People's Hospital of Nanshan District, Shenzhen (Huazhong University of Science and Technology Union Shenzhen Hospital)"
                 >
                   <source src="/videos/smart-hospital-nanshan-demo.mp4" type="video/mp4" />
                   <a href="/videos/smart-hospital-nanshan-demo.mp4">Download the project video</a>
                 </video>
               </div>
-              <p className="mt-3 text-sm leading-6 text-[var(--sh-muted)]">Smart Hospital V2.0, product demo at the pilot hospital (2:53).</p>
+              <p className="mt-3 text-sm leading-6 text-[var(--sh-muted)]">Smart Hospital V1.0, product demo at the pilot hospital (2:53).</p>
             </div>
 
             <div className="rounded-2xl border border-[var(--sh-line)] bg-[var(--sh-surface)] p-6 md:col-span-4 md:p-7">
@@ -519,34 +538,11 @@ export function SmartHospital() {
             </SectionHeading>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Reveal>
-              <ModulePlaceholder title="Overview" caption="Overview: census, revenue, and bed occupancy across the whole hospital." />
-            </Reveal>
-            <Reveal>
-              <Figure
-                src="/smart-hospital/outpatient-floors.webp"
-                alt="Outpatient view expanding the 3D hospital floor by floor"
-                caption="Outpatient: floors open up so departments can be compared level by level."
-                frameClassName="aspect-[340/259] bg-black"
-              />
-            </Reveal>
-            <Reveal>
-              <Figure
-                src="/smart-hospital/inpatient-beds.webp"
-                alt="Inpatient view drilling down to individual beds in the 3D hospital"
-                caption="Inpatient: drill down to single beds to check occupancy and critical patients."
-                frameClassName="aspect-[340/259] bg-black"
-              />
-            </Reveal>
-            <Reveal>
-              <ModulePlaceholder title="Patients" caption="Patients: where patients come from, their age groups, and how they flow through the hospital." />
-            </Reveal>
-            <Reveal>
-              <ModulePlaceholder title="Chronic disease" caption="Chronic disease: follow-up status and risk levels for long-term patients." />
-            </Reveal>
-            <Reveal>
-              <ModulePlaceholder title="Resources" caption="Resources: staff, equipment, and supplies set against demand." />
-            </Reveal>
+            {moduleClips.map((clip) => (
+              <Reveal key={clip.src}>
+                <Figure src={clip.src} alt={clip.alt} caption={clip.caption} frameClassName="aspect-video bg-black" />
+              </Reveal>
+            ))}
           </div>
         </section>
 
@@ -580,19 +576,6 @@ export function SmartHospital() {
               Deployments combined on-site hardware, private cloud infrastructure, cloud rendering, and remote version updates.
             </p>
           </Reveal>
-          <Reveal>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl bg-[var(--sh-accent-soft)] p-6">
-                <p className="text-3xl font-medium tracking-[-0.04em] text-[var(--sh-text)]">2019</p>
-                <p className="mt-2 text-sm leading-6 text-[var(--sh-muted)]">First hospital delivery</p>
-              </div>
-              <div className="rounded-2xl bg-[var(--sh-text)] p-6 text-[#edf5fc]">
-                <p className="text-3xl font-medium tracking-[-0.04em]">23</p>
-                <p className="mt-2 text-sm leading-6 text-[#c5d8e9]">Hospitals delivered by 2021</p>
-              </div>
-            </div>
-          </Reveal>
-
           <Reveal className="mt-6 rounded-2xl border border-[var(--sh-line)] bg-[var(--sh-surface)] p-7 md:p-8">
             <h3 className="text-2xl font-medium tracking-[-0.025em] text-[var(--sh-text)]">My responsibilities</h3>
             <div className="mt-7 grid gap-7 md:grid-cols-2 md:gap-10">

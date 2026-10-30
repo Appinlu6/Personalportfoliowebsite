@@ -1,6 +1,7 @@
 import { useEffect, useState, type ComponentProps, type ReactNode } from 'react';
-import profilePhoto from '@/assets/profile.webp';
 import { motion, useReducedMotion } from 'framer-motion';
+
+const PROFILE_PHOTO = '/profile.jpg';
 import { useLanguage } from '../context/LanguageContext';
 import { EASE_OUT_EXPO } from '../lib/motion';
 import { useIntro } from '../context/IntroContext';
@@ -141,9 +142,12 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
     <div className="mx-auto mb-8 flex max-w-[1200px] flex-col items-start gap-8 lg:flex-row">
       <motion.div className="flex-shrink-0 self-start" {...portraitReveal}>
         <img
-          src={profilePhoto}
+          src={PROFILE_PHOTO}
           alt="Lu Zhengping (Arvin)"
-          className="h-[19rem] w-[19rem] rounded-2xl object-cover object-top"
+          width={654}
+          height={599}
+          decoding="async"
+          className="h-[19rem] w-[19rem] rounded-full object-cover object-center"
         />
       </motion.div>
 
@@ -166,12 +170,12 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
               className="font-['Work_Sans'] font-semibold"
               style={{ color: PRIMARY, fontSize: '14px', lineHeight: 1.45, marginBottom: '12px' }}
             >
-              {isCN ? '跨学科 AI 研究者与产品架构师' : 'Interdisciplinary AI Researcher & Product Architect'}
+              {isCN ? '跨学科 AI 研究者与产品构建者' : 'Interdisciplinary AI Researcher & Product Builder'}
             </p>
             <BlockBody>
               {isCN
-                ? '九年的 UX、医疗科技、AI 与创业实践，构成了我研究 AI 如何支持人的健康与福祉的跨学科视角。'
-                : 'Nine years across UX, healthcare technology, AI, and entrepreneurship shape my interdisciplinary research on how AI can support human wellbeing.'}
+                ? '九年的 UX、医疗科技、AI 与创业实践，构成了我研究 AI 如何支持人的健康与福祉的跨学科视角。正在香港理工大学攻读人工智能博士学位。'
+                : 'Nine years across UX, healthcare technology, AI, and entrepreneurship shape my interdisciplinary research on how AI can support human wellbeing. I am currently pursuing a Doctor of AI at The Hong Kong Polytechnic University.'}
             </BlockBody>
           </ProfileBlock>
 
@@ -244,14 +248,14 @@ export function ProfileSection({ portraitReveal }: ProfileSectionProps) {
               <BlockList>
                 {(isCN
                   ? [
-                      '2 项业务突破奖',
-                      '2 项产品创新奖',
-                      '1 项抗疫贡献奖',
+                      '2 项腾讯业务突破奖',
+                      '2 项腾讯产品创新奖',
+                      '1 项腾讯抗疫贡献奖',
                     ]
                   : [
-                      '2 Business Breakthrough Awards',
-                      '2 Product Innovation Awards',
-                      '1 Anti-Epidemic Contribution Award',
+                      '2 Tencent Business Breakthrough Awards',
+                      '2 Tencent Product Innovation Awards',
+                      '1 Tencent Anti-Epidemic Contribution Award',
                     ]).map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="text-foreground">·</span>

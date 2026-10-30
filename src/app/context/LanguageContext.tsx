@@ -10,8 +10,7 @@ import {
 export type Language = 'en' | 'cn';
 
 const LANGUAGE_STORAGE_KEY = 'portfolio-language';
-// Keep translations available while the public site is English-only.
-export const LANGUAGE_SWITCH_ENABLED = false;
+export const LANGUAGE_SWITCH_ENABLED = true;
 
 type LanguageContextValue = {
   language: Language;

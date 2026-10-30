@@ -1,4 +1,4 @@
-import profilePhoto from '@/assets/profile.webp';
+const profilePhoto = '/profile.jpg';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useIntro } from '../context/IntroContext';
 import { useLanguage } from '../context/LanguageContext';

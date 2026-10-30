@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
+import { useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router';
 import { useLanguage } from '../../context/LanguageContext';
 import { AXIS_COLOR, mountainLines, projects, skills, type MountainLineId, type Project } from '../../data/growthMountain';
@@ -223,6 +224,66 @@ export function SkillsWordCloud({ className = '' }: { className?: string }) {
   const togglePin = (next: NonNullable<Active>) =>
     setPinned((current) => (current?.kind === next.kind && current.id === next.id ? null : next));
 
+  const reduceMotion = useReducedMotion();
+  const [offsets, setOffsets] = useState<Record<string, { x: number; y: number }>>({});
+  const [draggingId, setDraggingId] = useState<string | null>(null);
+  const drag = useRef<{ id: string; startX: number; startY: number; baseX: number; baseY: number; moved: boolean } | null>(null);
+  const suppressClick = useRef(false);
+
+  useEffect(() => setOffsets({}), [layout]);
+
+  const positions = useMemo(() => {
+    const map = new Map<string, { x: number; y: number }>();
+    for (const word of layout?.placed ?? []) {
+      const offset = offsets[word.id];
+      map.set(word.id, { x: word.x + (offset?.x ?? 0), y: word.y + (offset?.y ?? 0) });
+    }
+    return map;
+  }, [layout, offsets]);
+
+  const links = useMemo(() => {
+    if (!layout || !activeWord) return [];
+    const from = positions.get(activeWord.id);
+    if (!from) return [];
+    return layout.placed
+      .filter((word) => word.id !== activeWord.id && isRelated(word, active, activeWord))
+      .map((word) => ({ id: word.id, from, to: positions.get(word.id)! }));
+  }, [layout, activeWord, active, positions]);
+
+  // Touch keeps page scrolling, so only mouse and pen can drag words.
+  const startDrag = (event: PointerEvent<HTMLButtonElement>, word: Placed) => {
+    if (event.pointerType === 'touch' || event.button !== 0) return;
+    const offset = offsets[word.id] ?? { x: 0, y: 0 };
+    drag.current = { id: word.id, startX: event.clientX, startY: event.clientY, baseX: offset.x, baseY: offset.y, moved: false };
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const moveDrag = (event: PointerEvent<HTMLButtonElement>, word: Placed) => {
+    const current = drag.current;
+    if (!current || current.id !== word.id || !layout) return;
+    const dx = event.clientX - current.startX;
+    const dy = event.clientY - current.startY;
+    if (!current.moved) {
+      if (Math.hypot(dx, dy) < 4) return;
+      current.moved = true;
+      setDraggingId(word.id);
+    }
+    const x = Math.min(Math.max(current.baseX + dx, word.w / 2 - word.x), width - word.w / 2 - word.x);
+    const y = Math.min(Math.max(current.baseY + dy, word.h / 2 - word.y), layout.height - word.h / 2 - word.y);
+    setOffsets((previous) => ({ ...previous, [word.id]: { x, y } }));
+  };
+
+  const endDrag = (event: PointerEvent<HTMLButtonElement>) => {
+    const current = drag.current;
+    if (!current) return;
+    if (current.moved) suppressClick.current = true;
+    drag.current = null;
+    setDraggingId(null);
+    const target = event.currentTarget;
+    if (target.hasPointerCapture(event.pointerId)) target.releasePointerCapture(event.pointerId);
+    if (!target.contains(document.elementFromPoint(event.clientX, event.clientY))) setHovered(null);
+  };
+
   return (
     <div className={`@container relative flex flex-col overflow-hidden bg-white font-['Work_Sans'] ${className}`}>
       <ul className="flex flex-wrap gap-1.5 px-3 pt-3 @xl:px-4 @xl:pt-4">
@@ -282,20 +343,46 @@ export function SkillsWordCloud({ className = '' }: { className?: string }) {
                 }}
               />
             ))}
-            {layout.placed.map((word) => {
+            {links.length > 0 && (
+              <svg
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -z-[5]"
+                width={width}
+                height={layout.height}
+              >
+                {links.map((link) => (
+                  <line
+                    key={link.id}
+                    x1={link.from.x}
+                    y1={link.from.y}
+                    x2={link.to.x}
+                    y2={link.to.y}
+                    stroke="#a3a3a3"
+                    strokeOpacity={0.25}
+                    strokeWidth={1}
+                  />
+                ))}
+              </svg>
+            )}
+            {layout.placed.map((word, index) => {
               const related = isRelated(word, active, activeWord);
               const focused = activeWord?.id === word.id;
               const label = isCN ? word.labelCN : word.label;
+              const position = positions.get(word.id) ?? word;
+              const floating = Boolean(active) && related && !reduceMotion && draggingId !== word.id;
               return (
                 <button
                   key={word.id}
                   type="button"
                   aria-label={`${label}, ${word.weight} ${isCN ? '个项目' : word.weight === 1 ? 'project' : 'projects'}`}
                   aria-pressed={pinned?.kind === 'word' && pinned.id === word.id}
-                  className="absolute flex items-center justify-center whitespace-nowrap rounded-full font-medium leading-none outline-none transition-[opacity,transform,box-shadow,background-color] duration-200 ease-out focus-visible:ring-2 focus-visible:ring-neutral-900/25"
+                  className={`absolute flex select-none items-center justify-center whitespace-nowrap rounded-full font-medium leading-none outline-none transition-[opacity,transform,box-shadow,background-color] duration-200 ease-out focus-visible:ring-2 focus-visible:ring-neutral-900/25 ${
+                    draggingId === word.id ? 'cursor-grabbing' : 'cursor-grab'
+                  }`}
                   style={{
-                    left: word.x - word.w / 2,
-                    top: word.y - word.h / 2,
+                    left: position.x - word.w / 2,
+                    top: position.y - word.h / 2,
+                    animation: floating ? `word-float 2.6s ease-in-out ${-(index % 6) * 0.43}s infinite` : undefined,
                     width: word.w,
                     height: word.h,
                     fontSize: word.size,
@@ -307,13 +394,23 @@ export function SkillsWordCloud({ className = '' }: { className?: string }) {
                     boxShadow: focused ? '0 6px 12px -4px rgba(0,0,0,0.12)' : '0 4px 9px -4px rgba(0,0,0,0.08)',
                     opacity: related ? 1 : 0.2,
                     transform: focused ? 'translateY(-2px) scale(1.04)' : undefined,
-                    zIndex: focused ? 1 : undefined,
+                    zIndex: focused || draggingId === word.id ? 1 : undefined,
                   }}
                   onMouseEnter={() => setHovered({ kind: 'word', id: word.id })}
-                  onMouseLeave={() => setHovered(null)}
+                  onMouseLeave={() => !drag.current && setHovered(null)}
                   onFocus={() => setHovered({ kind: 'word', id: word.id })}
                   onBlur={() => setHovered(null)}
-                  onClick={() => togglePin({ kind: 'word', id: word.id })}
+                  onPointerDown={(event) => startDrag(event, word)}
+                  onPointerMove={(event) => moveDrag(event, word)}
+                  onPointerUp={endDrag}
+                  onPointerCancel={endDrag}
+                  onClick={() => {
+                    if (suppressClick.current) {
+                      suppressClick.current = false;
+                      return;
+                    }
+                    togglePin({ kind: 'word', id: word.id });
+                  }}
                 >
                   {label}
                 </button>

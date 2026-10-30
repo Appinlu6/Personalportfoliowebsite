@@ -6,6 +6,7 @@ import { ArrowLeft, X } from 'lucide-react';
 import { ProjectSectionNavigator } from '../components/ProjectSectionNavigator';
 import { useLanguage } from '../context/LanguageContext';
 import { LocalizedContent } from '../i18n/LocalizedContent';
+import { useLocalizedImage } from '../i18n/localizedImages';
 import { bauhiniaMindTranslations } from '../i18n/caseStudyTranslations';
 import { projects } from '../data/projects';
 
@@ -1419,6 +1420,7 @@ function PrototypeJourneyInteractive() {
     { id: '09', src: '/prototype-slot-9.webp', top: '85.431%', left: '59.394%' },
   ] as const;
 
+  const journeySrc = useLocalizedImage('/prototype-journey.webp');
   const slotRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [isTouch, setIsTouch] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -1468,7 +1470,7 @@ function PrototypeJourneyInteractive() {
   return (
     <div className="relative overflow-hidden rounded-[0.625rem] bg-white/70">
       <img
-        src="/prototype-journey.webp"
+        src={journeySrc}
         alt="Prototype journey"
         className="block h-auto w-full"
         data-no-zoom-mobile="true"

@@ -1,9 +1,11 @@
 import { Children, cloneElement, isValidElement, type ReactElement, type ReactNode } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { cnImages } from './localizedImages';
 
 export type TranslationMap = Record<string, string>;
 
 const translatableProps = ['alt', 'aria-label', 'caption', 'intro', 'label', 'note', 'title'] as const;
+const imageProps = ['src', 'imageSrc', 'href'] as const;
 
 function normalize(value: string) {
   return value.replace(/\s+/g, ' ').trim();
@@ -27,6 +29,13 @@ function translateNode(node: ReactNode, translations: TranslationMap): ReactNode
     const propValue = element.props[propName];
     if (typeof propValue === 'string') {
       nextProps[propName] = translateString(propValue, translations);
+    }
+  }
+
+  for (const propName of imageProps) {
+    const propValue = element.props[propName];
+    if (typeof propValue === 'string' && cnImages[propValue]) {
+      nextProps[propName] = cnImages[propValue];
     }
   }
 
